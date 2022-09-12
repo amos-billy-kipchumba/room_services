@@ -1,0 +1,79 @@
+.main-host-account__page {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 80vh;
+    padding: 10px 20px;
+}
+
+.main-host-account__info {
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+}
+
+.main-host-account__info-left {
+    flex: 1;
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: antiquewhite;
+}
+
+.incase-you-know {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.host-image {
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;
+}
+
+.host-image > img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 100%;
+}
+
+.main-host-account__info-left > p {
+    margin: 20px 10px 10px 10px;
+}
+
+.host-navigation {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    justify-items: center;
+    margin: 5px auto;
+}
+
+.host-navigation > li {
+    display: flex;
+    background-color: white;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.host-navigation > li:hover {
+    background-color: #ff7779;
+    color: white;
+}
+
+.main-host-account__info-right {
+    flex: 4;
+    width: 100%;
+    min-height: 100%;
+    background-color: white;
+    border: 1px solid antiquewhite;
+}

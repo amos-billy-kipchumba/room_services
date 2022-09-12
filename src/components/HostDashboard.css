@@ -1,0 +1,123 @@
+.host-dashboard__page {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 80vh;
+}
+
+.host-dashboardPage__info {
+    padding: 10px 20px;
+}
+
+.open-doors {
+    display: flex;
+    width: 100%;
+    min-height: 60vh;
+}
+
+.open-doors-left {
+    flex: 1;
+    width: 100%;
+    min-height: 100%;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.open-doors-left > h1 {
+    color: white;
+}
+
+.open-doors-left > button {
+    background-color: #ff7779;
+    color: white;
+    transition: all 0.3s ease-in-out;
+    margin-top: 10px;
+    text-transform: inherit;
+}
+
+.open-doors-left > button:hover {
+    background-color: white;
+    color: #ff7779;
+}
+
+.open-doors-right {
+    flex: 1;
+    width: 100%;
+    min-height: 100%;
+}
+
+.door-video {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.find-out-earn {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.find-out-button {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.find-out-button-one {
+    padding: 10px;
+    background-color: rgb(243, 243, 243);
+    width: 300px;
+    border-radius: 10px;
+} 
+
+.find-out-button-one > span {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.find-out-button-two {
+    padding: 10px;
+    background-color: rgb(243, 243, 243);
+    width: 300px;
+    border-radius: 10px;
+} 
+
+.find-out-button-two > span {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.find-out-button-three {
+    padding: 10px;
+    background-color: rgb(243, 243, 243);
+    width: 300px;
+    border-radius: 10px;
+} 
+
+.find-out-button-three > span {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.about-yourself {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.map-container-host {
+    width: 100%;
+    min-height: 60vh;
+    background-color: #ff7779;
+}

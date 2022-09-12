@@ -1,0 +1,8 @@
+.home__section {
+    display: flex;
+    padding: 30px;
+    width: 100%;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    position: relative;
+} 

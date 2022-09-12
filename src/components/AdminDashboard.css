@@ -1,0 +1,18 @@
+.admin-dashboardPage__info {
+    padding: 20px;
+}
+
+.admin-dashboardPage__info > p {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.admin-dashboardPage__info > h1 {
+    margin-bottom: 30px;
+}
+
+.admin-dashboardPage__info > button {
+    border-radius: 30px;
+    text-transform: inherit;
+    margin: 5px;
+}

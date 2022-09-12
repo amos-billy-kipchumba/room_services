@@ -1,0 +1,148 @@
+.add-house-host__page {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 80vh;
+    padding: 10px 20px;
+}
+
+.add-house-host__info {
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+}
+
+.add-house-host__info-left {
+    flex: 1;
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: antiquewhite;
+}
+
+.incase-you-know {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.host-image {
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;
+}
+
+.host-image > img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 100%;
+}
+
+.add-house-host__info-left > p {
+    margin: 20px 10px 10px 10px;
+}
+
+.host-navigation {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    justify-items: center;
+    margin: 5px auto;
+}
+
+.host-navigation > li {
+    display: flex;
+    background-color: white;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.host-navigation > li:hover {
+    background-color: #ff7779;
+    color: white;
+}
+
+.add-house-host__info-right {
+    flex: 4;
+    width: 100%;
+    min-height: 100%;
+    background-color: white;
+    border: 1px solid antiquewhite;
+    display: flex;
+    flex-direction: column;
+}
+
+.fill-up-detail-header {
+    display: flex;
+    justify-content: space-evenly;
+    border-bottom: 1px solid antiquewhite;
+    align-items: center;
+}
+
+.fill-up-detail-header > p {
+    margin: 10px 0;
+    padding: 10px;
+}
+
+.fill-up-detail-header > p:nth-child(2) {
+    border: 1px solid antiquewhite;
+    border-radius: 10px;
+}
+
+.fill-up-detail-form {
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+    border: 1px solid antiquewhite;
+}
+
+.fill-up-detail-form > label {
+    margin: 10px 5px 10px 10px;
+}
+
+.fill-up-detail-form > input {
+    margin: 10px 10px;
+    padding: 10px;
+}
+
+.fill-up-detail-form > button {
+    background-color: #fca1a3;
+    color: white;
+    text-transform: inherit;
+    transition: all 0.3s ease-in-out;
+    margin-top: 10px;
+}
+
+.lilo-link {
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    color: black;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.lilo-link:hover {
+    color: white;
+}
+
+.fill-up-detail-form > button:hover {
+    background-color: #ff7779;
+    color: white;
+}
+
+.fill-up-detail-form > textarea {
+    padding: 10px;
+    margin: 10px 10px;
+}
