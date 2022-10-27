@@ -1,11 +1,13 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import './SearchPage.css'
 import Button from '@mui/material/Button';
 import SearchResult from './SearchResult';
-import Mule5 from './Images/mule5.jpg'
-import Mule6 from './Images/mule1.jpg'
 import {useLocation} from 'react-router-dom'
 import { format } from 'date-fns'
+import axios from 'axios'
+import {useNavigate} from 'react-router-dom'
+import NoRecordYet from './NoRecordYet';
+import BaseURL from './BaseUrl';
 
 function SearchPage() {
 
@@ -19,13 +21,45 @@ function SearchPage() {
 
     const range = `${formattedStartDate} --- ${formattedEndDate}`;
 
+    const [matchSearch, setMatchSearch] = useState([]);
+    const [loadStone, setLoadStone] = useState(true);
+
+    useEffect(()=>{
+        const getJoinSearchDetails = async () => {
+            const request = await axios.get(`${BaseURL}/api/get-join-magic-details`);
+            setMatchSearch(request.data.joinSearchDetails);
+            if(request.data.joinSearchDetails) {
+                setLoadStone(false)
+            }
+        }
+        getJoinSearchDetails();
+    },[]);
+
+    const [searchFul, setSearchFul] = useState("");
+    const [searchTitle, setSearchTitle] = useState("");
+    const [searchPrice, setSearchPrice] = useState("");
+
+    useEffect(()=>{
+        setSearchFul(location);
+    },[location]);
+
+    useEffect(()=>{
+        setSearchTitle(location);
+    },[location]);
+
+    useEffect(()=>{
+        setSearchPrice(location);
+    },[location]);
+
+    const Navigate = useNavigate();
+
   return (
     <div className='search__page'>
 
         <div className='searchPage__info'>
 
             <p>300+ .Stays - {range} - for {noOfGuests}</p>
-            <h1>Stays in {location}</h1>
+            <h1>Stays nearby {location}</h1>
             <Button variant="outlined">
                 Type of place
             </Button>
@@ -42,26 +76,45 @@ function SearchPage() {
                 More filters
             </Button>
 
-            <SearchResult 
-                img={Mule5}
-                title="Stay at this spacious Edwardian House"
-                location="Private room in center of London"
-                description="1 guest . 1 bedroom . 1 bed . 1.5 shared bathrooms . Wifi . Kitchen . Free parking . Washing Machine"
-                star={4.73}
-                price="$30 / night"
-                total="$117 total"
-            />
-
-            <SearchResult 
-                img={Mule6}
-                title="Stay at Malibu club"
-                location="City of Florida"
-                description="10 guest . 20 bedroom . 40 bed . 2.5 shared bathrooms . Wifi . Kitchen . Free parking . Washing Machine"
-                star={4.62}
-                price="$30 / night"
-                total="$117 total"
-            />
-
+            {matchSearch === null || loadStone === true ?
+                <NoRecordYet />
+                :
+                <>
+                    {matchSearch && matchSearch.filter((val) => {
+                        if(searchFul === "") {
+                        return val
+                        }
+                        if (val.location.toLowerCase().includes(searchFul.toLowerCase())) {
+                        return val
+                        }
+                        if (val.title.toLowerCase().includes(searchTitle.toLowerCase())) {
+                            return val
+                        }
+                        if (val.price.toLowerCase().includes(searchPrice.toLowerCase())) {
+                        return val
+                        }
+                        else {
+                        return ""
+                        }
+                    }).map((item,index)=>{
+                        return(
+                            <div onClick={()=> {
+                                Navigate(`/more-details/${item.id}`);
+                            }} key={index}>
+                            <SearchResult 
+                            img={`http://127.0.0.1:8000/uploads/${item.cover}`}
+                            title={item.title}
+                            location={`${item.location}`}
+                            description={`${item.max_no_of_guests} guests . ${item.number_of_bedrooms} bedrooms . ${item.number_of_beds} beds . ${item.number_of_bathtubs} bathrooms`}
+                            star={4.73}
+                            price={`$${item.price} / night`}
+                            />
+                            </div>
+                        );
+                    })}
+                </>
+            }
+            
         </div>
 
     </div>

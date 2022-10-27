@@ -226,3 +226,710 @@
     color: white;
 }
 
+/* 440px Mobile resposive */
+@media screen and (max-width: 440px) {
+    .page-three-add__page {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        min-height: 80vh;
+        padding: 10px 20px;
+    }
+    
+    .page-three-add__info {
+        width: 100%;
+        min-height: 80vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .page-three-add__info-left {
+        flex: 1;
+        width: 100%;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: antiquewhite;
+    }
+    
+    .incase-you-know {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 10px;
+    }
+    
+    .host-image {
+        border-radius: 100%;
+        height: 40px;
+        width: 40px;
+    }
+    
+    .host-image > img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        border-radius: 100%;
+    }
+    
+    .page-three-add__info-left > p {
+        margin: 20px 10px 10px 10px;
+    }
+    
+    .host-navigation {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        justify-items: center;
+        margin: 5px auto;
+    }
+    
+    .host-navigation > li {
+        display: flex;
+        background-color: white;
+        padding: 5px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        margin-top: 10px;
+        justify-content: center;
+    }
+    
+    .host-navigation > li:hover {
+        background-color: #ff7779;
+        color: white;
+    }
+    
+    .page-three-add__info-right {
+        flex: 4;
+        width: 100%;
+        min-height: 100%;
+        background-color: white;
+        border: 1px solid antiquewhite;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .fill-up-detail-header {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid antiquewhite;
+        align-items: center;
+    }
+    
+    .fill-up-detail-header > p {
+        margin: 10px 0;
+        padding: 10px;
+    }
+    
+    .fill-up-detail-header > p:nth-child(2) {
+        border: 1px solid antiquewhite;
+        border-radius: 10px;
+    }
+    
+    .fill-up-detail-form-three {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        border-bottom: 1px solid antiquewhite;
+        border-top: 1px solid antiquewhite;
+    }
+    
+    .fill-up-detail-form > label {
+        margin: 10px 5px 10px 10px;
+    }
+    
+    .fill-up-detail-form > input {
+        margin: 10px 10px;
+        padding: 10px;
+    }
+    
+    .fill-up-detail-form > button {
+        background-color: #fca1a3;
+        color: white;
+        text-transform: inherit;
+        transition: all 0.3s ease-in-out;
+        margin-top: 10px;
+    }
+    
+    .fill-up-detail-form > button:hover {
+        background-color: #ff7779;
+        color: white;
+    }
+    
+    .page-three-add__info-right > button {
+        margin: 10px auto;
+        background-color: #fca1a3;
+        color: white;
+        text-transform: inherit;
+        transition: all 0.3s ease-in-out;
+    } 
+    
+    .page-three-add__info-right > button:hover {
+        background-color: #ff7779;
+        color: white;
+    }
+    
+    .page-three-form-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .page-three-form-container-one {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .page-three-form-container-one > h4 {
+        margin: 10px auto;
+    } 
+    
+    .page-three-form-container-one > p {
+        margin: 5px auto;
+        display: flex;
+        align-items: center;
+    }
+    
+    .page-three-form-container-one > p > input {
+        margin: auto;
+    }
+    
+    .page-three-form-container-one > p > span {
+        margin: auto 10px;
+    }
+    
+    .page-three-form-container-two {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        border-left: 1px solid antiquewhite;
+    }
+    
+    .page-three-form-container-two > h4 {
+        margin: 10px auto;
+    } 
+    
+    .page-three-form-container-three {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        border-left: 1px solid antiquewhite;
+    }
+    
+    .page-three-form-container-three > h4 {
+        margin: 10px auto;
+    } 
+    
+    .what-the-place-offers {
+        display: flex;
+        margin: 10px auto;
+        align-items: center;
+    }
+    
+    .what-the-place-offers > p {
+        margin: 10px auto;
+    }
+    
+    .icon-name-value {
+        display: flex;
+    }
+    
+    .icon-name-value-one, .icon-name-value-two, .icon-name-value-three {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        margin: 10px auto;
+    }
+    
+    .fill-up-detail-form-three > button {
+        background-color: #fca1a3;
+        color: white;
+        text-transform: inherit;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .fill-up-detail-form-three > button:hover {
+        background-color: #ff7779;
+        color: white;
+    }
+}
+/* end */
+
+
+/* 540px to 750px Mobile resposive */
+@media screen and (min-width: 540px) and (max-width: 750px) {
+    .page-three-add__page {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        min-height: 80vh;
+        padding: 10px 20px;
+    }
+    
+    .page-three-add__info {
+        width: 100%;
+        min-height: 80vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .page-three-add__info-left {
+        flex: 1;
+        width: 100%;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: antiquewhite;
+    }
+    
+    .incase-you-know {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 10px;
+    }
+    
+    .host-image {
+        border-radius: 100%;
+        height: 40px;
+        width: 40px;
+    }
+    
+    .host-image > img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        border-radius: 100%;
+    }
+    
+    .page-three-add__info-left > p {
+        margin: 20px 10px 10px 10px;
+    }
+    
+    .host-navigation {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        justify-items: center;
+        margin: 5px auto;
+    }
+    
+    .host-navigation > li {
+        display: flex;
+        background-color: white;
+        padding: 5px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        margin-top: 10px;
+        justify-content: center;
+    }
+    
+    .host-navigation > li:hover {
+        background-color: #ff7779;
+        color: white;
+    }
+    
+    .page-three-add__info-right {
+        flex: 4;
+        width: 100%;
+        min-height: 100%;
+        background-color: white;
+        border: 1px solid antiquewhite;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .fill-up-detail-header {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid antiquewhite;
+        align-items: center;
+    }
+    
+    .fill-up-detail-header > p {
+        margin: 10px 0;
+        padding: 10px;
+    }
+    
+    .fill-up-detail-header > p:nth-child(2) {
+        border: 1px solid antiquewhite;
+        border-radius: 10px;
+    }
+    
+    .fill-up-detail-form-three {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        border-bottom: 1px solid antiquewhite;
+        border-top: 1px solid antiquewhite;
+    }
+    
+    .fill-up-detail-form > label {
+        margin: 10px 5px 10px 10px;
+    }
+    
+    .fill-up-detail-form > input {
+        margin: 10px 10px;
+        padding: 10px;
+    }
+    
+    .fill-up-detail-form > button {
+        background-color: #fca1a3;
+        color: white;
+        text-transform: inherit;
+        transition: all 0.3s ease-in-out;
+        margin-top: 10px;
+    }
+    
+    .fill-up-detail-form > button:hover {
+        background-color: #ff7779;
+        color: white;
+    }
+    
+    .page-three-add__info-right > button {
+        margin: 10px auto;
+        background-color: #fca1a3;
+        color: white;
+        text-transform: inherit;
+        transition: all 0.3s ease-in-out;
+    } 
+    
+    .page-three-add__info-right > button:hover {
+        background-color: #ff7779;
+        color: white;
+    }
+    
+    .page-three-form-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .page-three-form-container-one {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .page-three-form-container-one > h4 {
+        margin: 10px auto;
+    } 
+    
+    .page-three-form-container-one > p {
+        margin: 5px auto;
+        display: flex;
+        align-items: center;
+    }
+    
+    .page-three-form-container-one > p > input {
+        margin: auto;
+    }
+    
+    .page-three-form-container-one > p > span {
+        margin: auto 10px;
+    }
+    
+    .page-three-form-container-two {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        border-left: 1px solid antiquewhite;
+    }
+    
+    .page-three-form-container-two > h4 {
+        margin: 10px auto;
+    } 
+    
+    .page-three-form-container-three {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        border-left: 1px solid antiquewhite;
+    }
+    
+    .page-three-form-container-three > h4 {
+        margin: 10px auto;
+    } 
+    
+    .what-the-place-offers {
+        display: flex;
+        margin: 10px auto;
+        align-items: center;
+    }
+    
+    .what-the-place-offers > p {
+        margin: 10px auto;
+    }
+    
+    .icon-name-value {
+        display: flex;
+    }
+    
+    .icon-name-value-one, .icon-name-value-two, .icon-name-value-three {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        margin: 10px auto;
+    }
+    
+    .fill-up-detail-form-three > button {
+        background-color: #fca1a3;
+        color: white;
+        text-transform: inherit;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .fill-up-detail-form-three > button:hover {
+        background-color: #ff7779;
+        color: white;
+    }
+}
+/* end */
+
+
+/* 760px  to 1030px Mobile resposive */
+@media screen and (min-width: 760px) and (max-width: 1030px) {
+    .page-three-add__page {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        min-height: 80vh;
+        padding: 10px 20px;
+    }
+    
+    .page-three-add__info {
+        width: 100%;
+        min-height: 80vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .page-three-add__info-left {
+        flex: 1;
+        width: 100%;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: antiquewhite;
+    }
+    
+    .incase-you-know {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 10px;
+    }
+    
+    .host-image {
+        border-radius: 100%;
+        height: 40px;
+        width: 40px;
+    }
+    
+    .host-image > img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        border-radius: 100%;
+    }
+    
+    .page-three-add__info-left > p {
+        margin: 20px 10px 10px 10px;
+    }
+    
+    .host-navigation {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        justify-items: center;
+        margin: 5px auto;
+    }
+    
+    .host-navigation > li {
+        display: flex;
+        background-color: white;
+        padding: 5px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        margin-top: 10px;
+        justify-content: center;
+    }
+    
+    .host-navigation > li:hover {
+        background-color: #ff7779;
+        color: white;
+    }
+    
+    .page-three-add__info-right {
+        flex: 4;
+        width: 100%;
+        min-height: 100%;
+        background-color: white;
+        border: 1px solid antiquewhite;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .fill-up-detail-header {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid antiquewhite;
+        align-items: center;
+    }
+    
+    .fill-up-detail-header > p {
+        margin: 10px 0;
+        padding: 10px;
+    }
+    
+    .fill-up-detail-header > p:nth-child(2) {
+        border: 1px solid antiquewhite;
+        border-radius: 10px;
+    }
+    
+    .fill-up-detail-form-three {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        border-bottom: 1px solid antiquewhite;
+        border-top: 1px solid antiquewhite;
+    }
+    
+    .fill-up-detail-form > label {
+        margin: 10px 5px 10px 10px;
+    }
+    
+    .fill-up-detail-form > input {
+        margin: 10px 10px;
+        padding: 10px;
+    }
+    
+    .fill-up-detail-form > button {
+        background-color: #fca1a3;
+        color: white;
+        text-transform: inherit;
+        transition: all 0.3s ease-in-out;
+        margin-top: 10px;
+    }
+    
+    .fill-up-detail-form > button:hover {
+        background-color: #ff7779;
+        color: white;
+    }
+    
+    .page-three-add__info-right > button {
+        margin: 10px auto;
+        background-color: #fca1a3;
+        color: white;
+        text-transform: inherit;
+        transition: all 0.3s ease-in-out;
+    } 
+    
+    .page-three-add__info-right > button:hover {
+        background-color: #ff7779;
+        color: white;
+    }
+    
+    .page-three-form-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .page-three-form-container-one {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .page-three-form-container-one > h4 {
+        margin: 10px auto;
+    } 
+    
+    .page-three-form-container-one > p {
+        margin: 5px auto;
+        display: flex;
+        align-items: center;
+    }
+    
+    .page-three-form-container-one > p > input {
+        margin: auto;
+    }
+    
+    .page-three-form-container-one > p > span {
+        margin: auto 10px;
+    }
+    
+    .page-three-form-container-two {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        border-left: 1px solid antiquewhite;
+    }
+    
+    .page-three-form-container-two > h4 {
+        margin: 10px auto;
+    } 
+    
+    .page-three-form-container-three {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        border-left: 1px solid antiquewhite;
+    }
+    
+    .page-three-form-container-three > h4 {
+        margin: 10px auto;
+    } 
+    
+    .what-the-place-offers {
+        display: flex;
+        margin: 10px auto;
+        align-items: center;
+    }
+    
+    .what-the-place-offers > p {
+        margin: 10px auto;
+    }
+    
+    .icon-name-value {
+        display: flex;
+    }
+    
+    .icon-name-value-one, .icon-name-value-two, .icon-name-value-three {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        margin: 10px auto;
+    }
+    
+    .fill-up-detail-form-three > button {
+        background-color: #fca1a3;
+        color: white;
+        text-transform: inherit;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .fill-up-detail-form-three > button:hover {
+        background-color: #ff7779;
+        color: white;
+    }
+}
+/* end */
+

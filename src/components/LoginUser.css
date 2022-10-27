@@ -43,6 +43,15 @@
     outline: none;
 }
 
+.forgot_span {
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.forgot_span:hover {
+    color: #ff7779;
+}
+
 .form-login > button {
     margin-top: 10px;
     width: 150px;
@@ -57,4 +66,229 @@
     background-color: white;
     transition: all 0.3s ease-in-out;
 }
+
+/* 440px Mobile resposive */
+@media screen and (max-width: 440px) {
+    .login-user__page {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        min-height: 80vh;
+    }
+    
+    .login-userPage__info {
+        padding: 20px;
+    }
+    
+    .login-userPage__info > p {
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+    
+    .login-userPage__info > h1 {
+        margin-bottom: 30px;
+    }
+    
+    .login-userPage__info > button {
+        border-radius: 30px;
+        text-transform: inherit;
+        margin: 5px;
+    }
+    
+    .form-login {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
+        padding: 10px;
+        margin-bottom: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+    }
+    
+    .form-login > input {
+        margin-top: 20px;
+        height: 30px;
+        padding: 5px;
+        outline: none;
+        border: 1px solid lightblue;
+    }
+    
+    .forgot_span {
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .forgot_span:hover {
+        color: #ff7779;
+    }
+    
+    .form-login > button {
+        margin-top: 10px;
+        width: 150px;
+        align-self: center;
+        background-color: #ff7779;
+        text-transform: inherit;
+        color: white;
+    }
+    
+    .form-login > button:hover {
+        color: #ff7779;
+        background-color: white;
+        transition: all 0.3s ease-in-out;
+    }
+}
+/* end */
+
+
+
+/* 540px to 750px Mobile resposive */
+@media screen and (min-width: 540px) and (max-width: 750px) {
+    .login-user__page {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        min-height: 80vh;
+    }
+    
+    .login-userPage__info {
+        padding: 20px;
+    }
+    
+    .login-userPage__info > p {
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+    
+    .login-userPage__info > h1 {
+        margin-bottom: 30px;
+    }
+    
+    .login-userPage__info > button {
+        border-radius: 30px;
+        text-transform: inherit;
+        margin: 5px;
+    }
+    
+    .form-login {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
+        padding: 10px;
+        margin-bottom: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+    }
+    
+    .form-login > input {
+        margin-top: 20px;
+        height: 30px;
+        padding: 5px;
+        outline: none;
+        border: 1px solid lightblue;
+    }
+    
+    .forgot_span {
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .forgot_span:hover {
+        color: #ff7779;
+    }
+    
+    .form-login > button {
+        margin-top: 10px;
+        width: 150px;
+        align-self: center;
+        background-color: #ff7779;
+        text-transform: inherit;
+        color: white;
+    }
+    
+    .form-login > button:hover {
+        color: #ff7779;
+        background-color: white;
+        transition: all 0.3s ease-in-out;
+    }
+}
+/* end */
+
+
+/* 760px  to 1030px Mobile resposive */
+@media screen and (min-width: 760px) and (max-width: 1030px) {
+    .login-user__page {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        min-height: 80vh;
+    }
+    
+    .login-userPage__info {
+        padding: 20px;
+    }
+    
+    .login-userPage__info > p {
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+    
+    .login-userPage__info > h1 {
+        margin-bottom: 30px;
+    }
+    
+    .login-userPage__info > button {
+        border-radius: 30px;
+        text-transform: inherit;
+        margin: 5px;
+    }
+    
+    .form-login {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
+        padding: 10px;
+        margin-bottom: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+    }
+    
+    .form-login > input {
+        margin-top: 20px;
+        height: 30px;
+        padding: 5px;
+        outline: none;
+        border: 1px solid lightblue;
+    }
+    
+    .forgot_span {
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .forgot_span:hover {
+        color: #ff7779;
+    }
+    
+    .form-login > button {
+        margin-top: 10px;
+        width: 150px;
+        align-self: center;
+        background-color: #ff7779;
+        text-transform: inherit;
+        color: white;
+    }
+    
+    .form-login > button:hover {
+        color: #ff7779;
+        background-color: white;
+        transition: all 0.3s ease-in-out;
+    }
+}
+/* end */
 

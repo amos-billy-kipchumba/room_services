@@ -1,55 +1,165 @@
 import React, {useState, useEffect} from 'react'
 import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
-import ImageDetails from './HouseImages';
 import './Slider.css'
+import axios from 'axios'
 import ArrowRight from '@mui/icons-material/ArrowRight';
-function Slider() {
-   const [imageData, setImageData] = useState([]);
+import BaseURL from './BaseUrl';
+function Slider(props) {
 
-   useEffect(()=>{
-    setImageData(ImageDetails);
-   },[]);
 
-   const [slideIndex, setSlideIndex] = useState(1);
+   const [ArrayListSome] = useState([]);
+   const [output] = useState([]);
+
+
+  useEffect(()=>{
+    const getThousandDetails = async () => {
+      const request = await axios.get(`${BaseURL}/api/get-join-thousand-details/${props.lured}`);
+  
+      if(request.data.joinThousand[0].sitting_room)
+      {
+        ArrayListSome.push(request.data.joinThousand[0].sitting_room);
+      }
+  
+      if(request.data.joinThousand[0].dinning_room !== null)
+      {
+        ArrayListSome.push(request.data.joinThousand[0].dinning_room);
+      }
+  
+      if(request.data.joinThousand[0].kitchen !== null)
+      {
+        ArrayListSome.push(request.data.joinThousand[0].kitchen);
+      }
+  
+      if(request.data.joinThousand[0].bathroom !== null)
+      {
+        ArrayListSome.push(request.data.joinThousand[0].bathroom);
+      }
+  
+  
+      if(request.data.joinThousand[0].bedroom !== null)
+      {
+        ArrayListSome.push(request.data.joinThousand[0].bedroom);
+      }
+  
+  
+      if(request.data.joinThousand[0].swimming_pool !== null)
+      {
+        ArrayListSome.push(request.data.joinThousand[0].swimming_pool);
+      }
+  
+      if(request.data.joinThousand[0].lake !== null)
+      {
+        ArrayListSome.push(request.data.joinThousand[0].lake);
+      }
+  
+  
+      if(request.data.joinThousand[0].beach !== null)
+      {
+        ArrayListSome.push(request.data.joinThousand[0].beach);
+      }
+  
+  
+      if(request.data.joinThousand[0].ocean_view !== null)
+      {
+        ArrayListSome.push(request.data.joinThousand[0].ocean_view);
+      }
+  
+      if(request.data.joinThousand[0].balcony !== null)
+      {
+        ArrayListSome.push(request.data.joinThousand[0].balcony);
+      }
+  
+      if(request.data.joinThousand[0].parking !== null)
+      {
+        ArrayListSome.push(request.data.joinThousand[0].parking);
+      }
+  
+      if(request.data.joinThousand[0].front !== null)
+      {
+        ArrayListSome.push(request.data.joinThousand[0].front);
+      }
+  
+      if(request.data.joinThousand[0].right !== null)
+      {
+        ArrayListSome.push(request.data.joinThousand[0].right);
+      }
+  
+  
+      if(request.data.joinThousand[0].left !== null)
+      {
+        ArrayListSome.push(request.data.joinThousand[0].left);
+      }
+  
+  
+      if(request.data.joinThousand[0].back !== null)
+      {
+        ArrayListSome.push(request.data.joinThousand[0].back);
+      }
+  
+      if(request.data.joinThousand[0].aerial !== null)
+      {
+        ArrayListSome.push(request.data.joinThousand[0].aerial);
+      }
+  
+      ArrayListSome.forEach((item) => {
+        if (output.indexOf(item) === -1) {
+          output.push(item);
+        }
+      })
+    }
+    getThousandDetails();
+  },[ArrayListSome, output, props.lured]);
+
+
+
+  //Start of sliding arrows
+
+  const [sliderIndex, setSliderIndex] = useState(1);
 
    const nextSlide = () => {
-    if(slideIndex !== imageData.length) {
-        setSlideIndex(slideIndex + 1)
+    if(sliderIndex !== output.length) {
+      setSliderIndex(sliderIndex + 1);
     }
-    else if (slideIndex === imageData.length) {
-        setSlideIndex(1)
+    else if (sliderIndex === output.length) {
+      setSliderIndex(1);
     }
    }
 
    const prevSlide = () => {
-    if(slideIndex !== 1) {
-        setSlideIndex(slideIndex - 1)
+    if(sliderIndex !== 1) {
+      setSliderIndex(sliderIndex - 1);
     }
-    else if(slideIndex === 1){
-        setSlideIndex(imageData.length)
+    else if (sliderIndex === 1) {
+      setSliderIndex(output.length)
     }
    }
 
    const moveDot = index => {
-    setSlideIndex(index)
+    setSliderIndex(index);
    }
 
+
+   //end of sliding arrows
+
   return (
-    <div className='container-slider'>
-      {imageData && imageData.map((obj, index)=> {
+    <div className='container-slider' id="myList">
+      {output && output.map((object, index)=>{
         return(
-            <div className={slideIndex === index + 1 ? "slide active-anim" : "slide"} key={obj.id} >
-                <img src={obj.img} alt="" /> 
-            </div>
+          <div className={sliderIndex === index + 1 ? "slide active-anim" : "slide"} key={index}>
+            <img src={`${BaseURL}/parts/${object}`} alt="" /> 
+          </div>
         );
       })}
 
-      <span className="prev" onClick={prevSlide}><ArrowLeftIcon /></span>
-      <span className="next" onClick={nextSlide}><ArrowRight /></span>
-
+      <span className={sliderIndex === 1 ? "vanish" : "prev"} onClick={prevSlide}><ArrowLeftIcon /></span>
+      <span className={sliderIndex === output.length ? "vanish" : "next"} onClick={nextSlide}><ArrowRight /></span>
       <div className='dots'>
-        {Array.from({length: imageData.length}).map((item, index) => (
-            <div className={slideIndex === index + 1 ? "dot-outlined" : "dot"} onClick={()=> moveDot(index + 1)}></div>
+        {Array.from({length: output.length}).map((item, index) => (
+          <div 
+          className={sliderIndex === index + 1 ? "dot dot-outlined" : "dot"}
+          onClick={()=> {
+            moveDot(index + 1);
+          }} key={index}></div>
         ))}
       </div>
     </div>

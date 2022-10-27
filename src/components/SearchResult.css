@@ -41,6 +41,8 @@
 .searchResult__infoTop > h3 {
     font-weight: 300;
     margin-top: 10px;
+    display: flex;
+    align-items: center;
 } 
 
 .searchResult__info > button {
@@ -53,6 +55,8 @@
     margin-top: 10px;
     font-size: 13px;
     color: gray;
+    display: flex;
+    align-items: center;
 }
 
 .searchResult__infoBottom {
@@ -83,3 +87,204 @@ searchResult__price {
 .searchResult__price > p {
     text-align: right;
 }
+
+/* 440px Mobile resposive */
+@media screen and (max-width: 440px) {
+    .search__result {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        margin: 10px auto;
+        width: 100%;
+        padding: 20px;
+        border-bottom: 1px solid lightgray;
+        opacity: 1;
+        cursor: pointer;
+    }
+    
+    .search__result:hover {
+        opacity: 0.8;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .search__result > img {
+        height: 200px;
+        width: 90%;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-right: 10px;
+    }
+    
+    .searchResult__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 0px;
+        overflow: hidden;
+    }
+    
+    .searchResult__heart {
+        position: absolute;
+        top: 20px;
+        right: 10px;
+    }
+    
+    .searchResult__infoTop {
+        width: 100VW;
+        display: flex;
+        flex-direction: column;
+        margin-right: 10px;
+    }
+    
+    .searchResult__infoTop > h3 {
+        font-weight: 300;
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+    } 
+    
+    .searchResult__info > button {
+        border-radius: 30px;
+        text-transform: inherit;
+        margin: 5px;
+    }
+    
+    .searchResult__infoTop > p {
+        margin-top: 10px;
+        font-size: 13px;
+        color: gray;
+        display: flex;
+        align-items: center;
+    }
+    
+    .searchResult__infoBottom {
+        display: flex;
+        justify-content: space-between;
+    } 
+    
+    .searchResult__infoBottom > p {
+        display: flex;
+        align-items: center;
+    }
+    
+    .searchResult__infoBottom > p > strong {
+        margin-left: 5px;
+    }
+    
+    .searchResult__star {
+        color: red;
+        align-items: center;
+    }
+    
+    searchResult__price {
+        position: absolute;
+        bottom: 20px;
+        right: 30px;
+    }
+    
+    .searchResult__price > p {
+        text-align: right;
+    }
+}
+/* end */
+
+
+/* 540px to 750px Mobile resposive */
+@media screen and (min-width: 540px) and (max-width: 750px) {
+    .search__result {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        margin: 10px auto;
+        width: 100%;
+        padding: 20px;
+        border-bottom: 1px solid lightgray;
+        opacity: 1;
+        cursor: pointer;
+    }
+    
+    .search__result:hover {
+        opacity: 0.8;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .search__result > img {
+        height: 40vh;
+        width: 90%;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-right: 10px;
+    }
+    
+    .searchResult__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 0px;
+        overflow: hidden;
+    }
+    
+    .searchResult__heart {
+        position: absolute;
+        top: 20px;
+        right: 10px;
+    }
+    
+    .searchResult__infoTop {
+        width: 100VW;
+        display: flex;
+        flex-direction: column;
+        margin-right: 10px;
+    }
+    
+    .searchResult__infoTop > h3 {
+        font-weight: 300;
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+    } 
+    
+    .searchResult__info > button {
+        border-radius: 30px;
+        text-transform: inherit;
+        margin: 5px;
+    }
+    
+    .searchResult__infoTop > p {
+        margin-top: 10px;
+        font-size: 13px;
+        color: gray;
+        display: flex;
+        align-items: center;
+    }
+    
+    .searchResult__infoBottom {
+        display: flex;
+        justify-content: space-between;
+    } 
+    
+    .searchResult__infoBottom > p {
+        display: flex;
+        align-items: center;
+    }
+    
+    .searchResult__infoBottom > p > strong {
+        margin-left: 5px;
+    }
+    
+    .searchResult__star {
+        color: red;
+        align-items: center;
+    }
+    
+    searchResult__price {
+        position: absolute;
+        bottom: 20px;
+        right: 30px;
+    }
+    
+    .searchResult__price > p {
+        text-align: right;
+    }
+}
+/* end */

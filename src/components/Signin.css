@@ -37,6 +37,10 @@
     margin-top: 20px;
 }
 
+.sign_form > label {
+    margin-top: 10px;
+}
+
 .sign_form > input {
     margin-top: 10px;
     height: 30px;
@@ -72,3 +76,256 @@
 .validate-span {
     color: #ff7779;
 }
+
+/* 440px Mobile resposive */
+@media screen and (max-width: 440px) {
+    .sign__page {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        min-height: 80vh;
+    }
+    
+    
+    .signPage__info {
+        padding: 10px;
+    }
+    
+    .signPage__info > p {
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+    
+    .signPage__info > h1 {
+        margin-bottom: 30px;
+    }
+    
+    .signPage__info > button {
+        border-radius: 30px;
+        text-transform: inherit;
+        margin: 5px;
+    }
+    
+    .sign_form {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
+        padding: 10px;
+        margin-bottom: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+    }
+    
+    .sign_form > label {
+        margin-top: 10px;
+    }
+    
+    .sign_form > input {
+        margin-top: 20px;
+        height: 30px;
+        padding: 5px;
+        outline: none;
+        border: 1px solid lightblue;
+    }
+    
+    .sign_form > button {
+        margin-top: 10px;
+        width: 150px;
+        align-self: center;
+        background-color: #ff7779;
+        text-transform: inherit;
+        color: white;
+    }
+    
+    .sign_form > button:hover {
+        color: #ff7779;
+        background-color: white;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .sign_span {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+    
+    .sin-link {
+        color: #ff7779;
+    }
+    
+    .validate-span {
+        color: #ff7779;
+    }
+}
+/* end */
+
+/* 540px to 750px Mobile resposive */
+@media screen and (min-width: 540px) and (max-width: 750px) {
+    .sign__page {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        min-height: 80vh;
+    }
+    
+    
+    .signPage__info {
+        padding: 10px;
+    }
+    
+    .signPage__info > p {
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+    
+    .signPage__info > h1 {
+        margin-bottom: 30px;
+    }
+    
+    .signPage__info > button {
+        border-radius: 30px;
+        text-transform: inherit;
+        margin: 5px;
+    }
+    
+    .sign_form {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
+        padding: 10px;
+        margin-bottom: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+    }
+    
+    .sign_form > label {
+        margin-top: 10px;
+    }
+    
+    .sign_form > input {
+        margin-top: 20px;
+        height: 30px;
+        padding: 5px;
+        outline: none;
+        border: 1px solid lightblue;
+    }
+    
+    .sign_form > button {
+        margin-top: 10px;
+        width: 150px;
+        align-self: center;
+        background-color: #ff7779;
+        text-transform: inherit;
+        color: white;
+    }
+    
+    .sign_form > button:hover {
+        color: #ff7779;
+        background-color: white;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .sign_span {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+    
+    .sin-link {
+        color: #ff7779;
+    }
+    
+    .validate-span {
+        color: #ff7779;
+    }
+}
+/* end */
+
+
+/* 760px  to 1030px Mobile resposive */
+@media screen and (min-width: 760px) and (max-width: 1030px) {
+    .sign__page {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        min-height: 80vh;
+    }
+    
+    
+    .signPage__info {
+        padding: 10px;
+    }
+    
+    .signPage__info > p {
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+    
+    .signPage__info > h1 {
+        margin-bottom: 30px;
+    }
+    
+    .signPage__info > button {
+        border-radius: 30px;
+        text-transform: inherit;
+        margin: 5px;
+    }
+    
+    .sign_form {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
+        padding: 10px;
+        margin-bottom: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+    }
+    
+    .sign_form > label {
+        margin-top: 10px;
+    }
+    
+    .sign_form > input {
+        margin-top: 20px;
+        height: 30px;
+        padding: 5px;
+        outline: none;
+        border: 1px solid lightblue;
+    }
+    
+    .sign_form > button {
+        margin-top: 10px;
+        width: 150px;
+        align-self: center;
+        background-color: #ff7779;
+        text-transform: inherit;
+        color: white;
+    }
+    
+    .sign_form > button:hover {
+        color: #ff7779;
+        background-color: white;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .sign_span {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+    
+    .sin-link {
+        color: #ff7779;
+    }
+    
+    .validate-span {
+        color: #ff7779;
+    }
+}
+/* end */

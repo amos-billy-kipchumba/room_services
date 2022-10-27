@@ -1,50 +1,170 @@
-import React from 'react'
+import React, {Component, useState, useEffect} from 'react'
 import './PageTwoAdd.css'
-import HostImage from '../../Images/people/face20.jpg'
-import {useNavigate} from 'react-router-dom'
 import Button from '@mui/material/Button';
-import Add from '@mui/icons-material/Add';
-function PageTwoAdd() {
-    const navigate = useNavigate()
-  return (
-    <div className='page-two-add__page'>
+import axios from 'axios'
+import {useNavigate, Link} from 'react-router-dom'
+import BaseURL from '../../BaseUrl';
+import swal from 'sweetalert';
+class PageTwoAdd extends Component {
+    constructor() {
+      super()
+    
+      this.state = {
+         guests: '',
+         bedrooms: '',
+         beds: '',
+         bathtubs: '',
+         user: '',
+         userId: '',
+         house_id: '',
+         firstName: '',
+      }
+      
+      this.handleChange = this.handleChange.bind(this)
+      this.SubmitForm = this.SubmitForm.bind(this)
+    }
 
-        <div className='page-two-add__info'>
-           <div className="page-two-add__info-left">
-            <div className='incase-you-know'>
-                <div className="host-image"><img src={HostImage} alt="" /></div>
-                <div>
-                    <h4>Henry Klein</h4>
-                    <p>Host</p>
+    componentDidMount = async () => {
+        const userData = JSON.parse(localStorage.getItem('user-info'));
+        const userInfo = userData;
+
+        const houseDataDetail = JSON.parse(localStorage.getItem('house_data_detail_api'));
+    
+        this.setState({
+            user: userInfo.data.id,
+            userId: userInfo.data.id,
+            firstName: userInfo.data.first_name,
+            house_id: houseDataDetail.id,
+        });
+    }
+
+    handleChange = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value
+        });
+    }
+
+    SubmitForm = (e) => {
+
+        e.preventDefault();
+        document.getElementById('submit').innerHTML = "sending"
+        document.getElementById('submit').disabled = true;
+        console.log(this.state.house_name);
+        const url = `${BaseURL}/api/add-fifty-details`;
+        const data = new FormData();
+        data.append('guests', this.state.guests);
+        data.append('bedrooms', this.state.bedrooms);
+        data.append('beds', this.state.beds);
+        data.append('bathtubs', this.state.bathtubs);
+        data.append('userId', this.state.user);
+        data.append('house_id', this.state.house_id);
+
+        axios.post(url,data).then(res => {
+            document.getElementById('submit').innerHTML = "sending"
+            if(res.data.status === 200) {
+                swal('success','House details added! You are remaining with 50% to completion','success')
+            this.setState({
+                guests: '',
+                bedrooms: '',
+                beds: '',
+                bathtubs: '',
+                user: '',
+            });
+            this.props.navigation('/add-house-host-page-three');
+            }
+        })
+    }
+    
+
+    render() {
+        return (
+            <div className='page-two-add__page'>
+        
+                <div className='page-two-add__info'>
+                   <div className="page-two-add__info-left">
+                    <div className='incase-you-know'>
+                        <div className="host-image"><img src={this.props.hostMainImage} alt="" /></div>
+                        <div>
+                            <h4>{this.state.firstName}</h4>
+                            <p>Host</p>
+                        </div>
+                        <div><h2 style={{ display: 'flex', alignItems: 'center' }}>...</h2></div>
+                    </div>
+                    <p>Navigation</p>
+        
+                    <ul className='host-navigation'>
+                        <li><Link to="/main-host-account" className='lilo-link'>DashBoard</Link></li>
+                        <li>Your House or Room</li>
+                        <li>Tenants Details</li>
+                        <li>Host Profile</li>
+                    </ul>
+                   </div>
+                   <div className="page-two-add__info-right">
+                        <div className="fill-up-detail-header"><p>Add your house/room details:</p> <p><span><strong>50%</strong></span> of completion</p></div>
+                        <form className="fill-up-detail-form page-two" onSubmit={this.SubmitForm}>
+                            <input type="number" min="1" value={this.state.guests} name="guests" onChange={this.handleChange} placeholder="Enter the max-number of Guests" id="back_input" />
+                            <input type="number" min="0" value={this.state.bedrooms} name="bedrooms" onChange={this.handleChange} placeholder="Enter the number of bedrooms" id="back_input1" />
+                            <input type="number" min="0" value={this.state.beds} name="beds" onChange={this.handleChange} placeholder="Enter the number of beds" id="back_input2" />
+                            <input type="number" min="0" value={this.state.bathtubs} name="bathtubs" onChange={this.handleChange} placeholder="Enter the number of bathtubs" id="back_input3" />
+                            <Button type="submit" id="submit">Submit</Button>
+                        </form>
+        
+                        <Button onClick={()=>{
+                            this.props.navigation(`/back-first/${this.state.house_id}`);
+                        }}>Back</Button>
+
+                        <Button id="back_id"
+                        onClick={()=>{
+                            this.props.navigation('/add-house-host-page-three');
+                        }}>Next</Button>
+                   </div>
                 </div>
-                <div><h2 style={{ display: 'flex', alignItems: 'center' }}>...</h2></div>
+        
             </div>
-            <p>Navigation</p>
-
-            <ul className='host-navigation'>
-                <li onClick={()=> navigate('/main-host-account')}>DashBoard</li>
-                <li style={{ backgroundColor: '#ff7779' }}><Add /> Add House or Room</li>
-                <li>Your House or Room</li>
-                <li>Tenants Details</li>
-                <li>Host Profile</li>
-            </ul>
-           </div>
-           <div className="page-two-add__info-right">
-                <div className="fill-up-detail-header"><p>Add your house/room details:</p> <p><span><strong>50%</strong></span> to completion</p></div>
-                <form className="fill-up-detail-form page-two">
-                    <input type="text" name="house-max-guests" placeholder="Enter the max-number of Guests" />
-                    <input type="text" name="no-of-bedrooms" placeholder="Enter the number of bedrooms" />
-                    <input type="text" name="no-of-beds" placeholder="Enter the number of beds" />
-                    <input type="text" name="no-of-bathtubs" placeholder="Enter the number of bathtubs" />
-                    <Button type="submit" onClick={()=> navigate('/add-house-host-page-three')}>Submit</Button>
-                </form>
-
-                <Button onClick={()=> navigate('/add-house-host')}>Back</Button>
-           </div>
-        </div>
-
-    </div>
-  )
+          )
+    }
 }
+
+export function PageTwoAddWithRouter(props) {
+    const navigation = useNavigate();
+    const userData = JSON.parse(localStorage.getItem('user-info'));
+    const [userId] = useState(userData.data.id);
+    const houseData = JSON.parse(localStorage.getItem('house_data_detail_api'));
+    const [houseId] = useState(houseData.id);
+    const [hostMainImage, setHostMainImage] = useState();
+
+    useEffect(()=>{
+        const getReal = async () => {
+            const request = await axios.get(`${BaseURL}/api/get-host-specific-details/${userId}`);
+            setHostMainImage(`${BaseURL}/users/${request.data.hostSpecific.image}`);
+        }
+        getReal();
+    },[userId]);
+
+    useEffect(()=>{
+        const getHouseFifty = async () => {
+            const request = await axios.get(`${BaseURL}/api/get-moon-details/${houseId}`);
+            if(request.data.status === 404) {
+                document.getElementById('back_id').style.display = 'none';
+            }
+
+            if(request.data.status === 200) {
+                document.getElementById('back_input').disabled = true;
+                document.getElementById('back_input1').disabled = true;
+                document.getElementById('back_input2').disabled = true;
+                document.getElementById('back_input3').disabled = true;
+                document.getElementById('submit').disabled = true;
+            }
+        }
+        getHouseFifty();
+    },[houseId]);
+
+    //Scroll to the top on load
+    useEffect(()=>{
+        window.scrollTo({top: 0, left: 0, behavior: 'smooth'})
+    },[]);
+    //End of Scroll to the top on load
+    return <PageTwoAdd {...props} navigation={navigation} hostMainImage={hostMainImage} />;
+  }
 
 export default PageTwoAdd

@@ -29,10 +29,11 @@
     flex-direction: column;
     box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
     padding: 10px;
-    margin-bottom: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
+    margin: auto;
+}
+
+.form-host > label {
+    margin-top: 10px;
 }
 
 .form-host > input {
@@ -66,3 +67,161 @@
 .login-link {
     color: #ff7779;
 }
+
+/* 440px Mobile resposive */
+@media screen and (max-width: 440px) {
+    .become__page {
+        display: flex;
+        flex-direction: column;
+        min-height: 80vh;
+    }
+    
+    .becomePage__info {
+        padding: 20px;
+    }
+    
+    .becomePage__info > p {
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+    
+    .becomePage__info > h1 {
+        margin-bottom: 30px;
+    }
+    
+    .becomePage__info > button {
+        border-radius: 30px;
+        text-transform: inherit;
+        margin: 5px;
+    }
+    
+    .form-host {
+        width: 350px;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
+        padding: 10px;
+        margin-bottom: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+    }
+    
+    .form-host > label {
+        margin-top: 10px;
+    }
+    
+    .form-host > input {
+        margin: 5px auto;
+        width: 90%;
+        height: 30px;
+        padding: 5px;
+        outline: none;
+    }
+    
+    .form-host > button {
+        margin-top: 10px;
+        width: 150px;
+        align-self: center;
+        background-color: #ff7779;
+        text-transform: inherit;
+        color: white;
+    }
+    
+    .form-host > button:hover {
+        color: #ff7779;
+        background-color: white;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .become_span {
+        cursor: pointer;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .login-link {
+        color: #ff7779;
+    }
+}
+/* end */
+
+
+/* 540px to 750px Mobile resposive */
+@media screen and (min-width: 540px) and (max-width: 750px) {
+    .become__page {
+        display: flex;
+        flex-direction: column;
+        min-height: 80vh;
+    }
+    
+    .becomePage__info {
+        padding: 20px;
+    }
+    
+    .becomePage__info > p {
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+    
+    .becomePage__info > h1 {
+        margin-bottom: 30px;
+    }
+    
+    .becomePage__info > button {
+        border-radius: 30px;
+        text-transform: inherit;
+        margin: 5px;
+    }
+    
+    .form-host {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
+        padding: 10px;
+        margin-bottom: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+    }
+    
+    .form-host > label {
+        margin-top: 10px;
+    }
+    
+    .form-host > input {
+        margin: 5px auto;
+        width: 90%;
+        height: 30px;
+        padding: 5px;
+        border: 1px solid lightblue;
+        outline: none;
+    }
+    
+    .form-host > button {
+        margin-top: 10px;
+        width: 150px;
+        align-self: center;
+        background-color: #ff7779;
+        text-transform: inherit;
+        color: white;
+    }
+    
+    .form-host > button:hover {
+        color: #ff7779;
+        background-color: white;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .become_span {
+        cursor: pointer;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .login-link {
+        color: #ff7779;
+    }
+}
+/* end */

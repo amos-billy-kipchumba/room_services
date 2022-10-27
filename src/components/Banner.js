@@ -10,7 +10,7 @@ function Banner(props) {
         <div className='banner__info'>
             <h1>Get out and stretch your imagination</h1>
             <h5>Plan a different kind of gate away to uncover the hidden gems near you</h5>
-            <Button variant="outlined" onClick={()=> navigate('/explore-nearby')}>Explore nearby</Button>
+            <Button variant="outlined" onClick={()=> navigate('/become-a-host')}>Become a host</Button>
         </div>
 
     </div>

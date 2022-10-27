@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState, useRef} from 'react'
 import './Header.css'
 import Logo from './Images/logo.png'
 import SearchIcon from '@mui/icons-material/Search';
@@ -6,7 +6,7 @@ import LanguageIcon from '@mui/icons-material/Language';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Avatar from '@mui/material/Avatar';
 import { Link } from 'react-router-dom';
-
+import Close from '@mui/icons-material/Close';
 import './Search.css'
 import "react-date-range/dist/styles.css"
 import "react-date-range/dist/theme/default.css"
@@ -15,6 +15,7 @@ import PeopleIcon from '@mui/icons-material/People'
 import CloseIcon from '@mui/icons-material/Close';
 import Button from '@mui/material/Button';
 import {useNavigate} from 'react-router-dom'
+import BaseURL from './BaseUrl';
 
 function Header() {
     const [showSearch, setShowSearch] = useState(false);
@@ -24,9 +25,6 @@ function Header() {
     const [endDate, setEndDate] = useState(new Date());
     const [noOfGuests, setNoOfGuest] = useState(1);
 
-    function showView() {
-        setShowSearch(!showSearch)
-    }
 
     const selectionRange = {
         startDate: startDate,
@@ -38,9 +36,6 @@ function Header() {
         setStartDate(ranges.selection.startDate);
         setEndDate(ranges.selection.endDate);
     }
-
-    
-
 
     const navigate = useNavigate();
 
@@ -57,51 +52,150 @@ function Header() {
     }
 
     const userData = JSON.parse(localStorage.getItem('user-info'));
-    const userInfo = userData;
+    const [magicProfile, setMagicProfile] = useState(null);
+    const [magicLink, setMagicLink] = useState(null);
 
+    const [loginDetails, setLoginDetails] = useState(null);
+    useEffect(()=>{
+        if(userData){
+            setLoginDetails(userData.data.user_type)
+            setMagicProfile(`${BaseURL}/users/${userData.data.image}`);
+            if(userData.data.user_type === 1) {
+                setMagicLink("/main-host-account");
+            }
+            if(userData.data.user_type === 2) {
+                setMagicLink("/customer-main-account");
+            }
+            if(userData.data.user_type === 3) {
+                setMagicLink("/admin-dashboard");
+            }
+        }
+    },[loginDetails, userData, magicProfile]);
+
+    const [showLogOut, setShowLogOut] = useState(false);
+    
+
+    let menuRef = useRef();
+
+    useEffect(()=>{
+        let handler = (e) => {
+            if(!menuRef?.current?.contains(e.target)) {
+                setShowLogOut(false);
+            }
+        };
+
+        document.addEventListener("mousedown", handler);
+
+        return() => {
+            document.removeEventListener("mousedown", handler);
+        }
+    },[]);
+
+    const handleNowLogOut = () => {
+        localStorage.clear();
+        navigate('/');
+    }
+
+    let searchRef = useRef();
+    useEffect(()=>{
+        let handler = (e) => {
+            if(!searchRef?.current?.contains(e.target)) {
+                setShowSearch(false);
+            }
+        };
+
+        document.addEventListener("mousedown", handler);
+
+        return() => {
+            document.removeEventListener("mousedown", handler);
+        }
+    },[showSearch]);
+
+    const handleHomeNavigation = () => {
+        navigate('/');
+    }
   return (
     <div className='header__container'>
 
         <div className='header'>
 
-            <Link to='/'>
-                <img className="header__icon" src={Logo} alt="" />
-            </Link>
+            <img className="header__icon"
+             src={Logo}
+            alt=""
+            onClick={handleHomeNavigation} />
 
-            <div className='header__center' onClick={showView}>
+            <div className={showSearch === false ? 'header__center_realer header__center' : 'header__center'} onClick={()=> setShowSearch(!showSearch)}>
                 <input type='text' placeholder='Start your search' value={searchInput} onChange={(e)=> setSearchInput(e.target.value)} name="placeholder" required />
                 <SearchIcon />
             </div>
 
             <div className='header__right'>
-                {
-                userInfo ?
-                <Link to='/main-host-account' className='text-decoration-none'>
-                <p>Account</p>
+                <span className='live-it'>
+                    <Link to={{ 
+                        pathname: "become-a-host",
+                    }} className='text-decoration-none'>
+                    Become a host
+                    </Link>
+                </span>
+                <span className="languageSpan"><LanguageIcon /></span>
+                {showLogOut === false ?
+                    <span onClick={()=> {
+                        setShowLogOut(!showLogOut)
+                    }}><ExpandMoreIcon /></span>
+                    :
+                    <span onClick={()=> {
+                        setShowLogOut(!showLogOut)
+                    }}><ExpandMoreIcon /></span>
+                }
+                <span>
+                {userData !== null ?
+                <Link to={{ 
+                    pathname: magicLink,
+                 }} className='text-decoration-none'>
+                        <img src={magicProfile} alt="" className="magicImageSource" />
                 </Link>
-                 :
-                 <Link to='/become-a-host' className='text-decoration-none'>
-                    <p>Become a host</p>
-                 </Link>
-                 }
-                
-                <span><LanguageIcon /></span>
-                <span><ExpandMoreIcon /></span>
+                :
                 <Link to='/sign-in' className='text-decoration-none'>
                     <span><Avatar /></span>
                 </Link>
+                }
+                </span>
             </div>
 
+                {showLogOut !== false ?
+                    <div className='header__right-float' ref={menuRef}>
+                        <div className='magicFloatingHeader'>
+                            <span onClick={()=>{
+                                navigate('/sign-in')
+                            }}>Become a tenant</span>
+                            <span onClick={()=>{
+                                navigate('/become-a-host');
+                            }}>Become a host</span>
+                            <span onClick={()=>{
+                                navigate('/login-user')
+                            }}>Sign in</span>
+                            <Button onClick={handleNowLogOut}>Log out</Button>
+                            <Button onClick={()=> {
+                                setShowLogOut(!showLogOut)
+                            }}><Close /></Button>
+                        </div>
+                    </div>
+                    :
+                    null
+                }
         </div>
-        {showSearch && <div className='search'>
+        {showSearch && <div className='search' ref={searchRef}>
 
-            <DateRangePicker ranges={[selectionRange]} minDate={new Date()} rangeColors={['#ff7779']} onChange={handleSelect} />
+            <DateRangePicker ranges={[selectionRange]}
+             minDate={new Date()} 
+             rangeColors={['#ff7779']}
+              onChange={handleSelect} className="sumbufDate" />
 
             <div className='searchNumber__container'>
                 <h2>Number of guests<span><PeopleIcon /></span></h2>
                 <input min={1} type="number" value={noOfGuests} onChange={(e)=> setNoOfGuest(e.target.value)} />
                 <Button variant='outlined' onClick={navigateSearch}>Search Rooms</Button>
-                <Button variant='outlined' onClick={showView}><CloseIcon /></Button>
+                <Button variant='outlined' onClick={()=>  setShowSearch(!showSearch)}><CloseIcon /></Button>
             </div>
 
         </div> }

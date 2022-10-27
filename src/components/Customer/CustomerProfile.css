@@ -1,0 +1,561 @@
+.customer-profile__page {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 80vh;
+    padding: 10px 20px;
+}
+
+.customer-profile__info {
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+}
+
+.customer-profile__info-left {
+    flex: 1;
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: antiquewhite;
+}
+
+.incase-you-know {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.host-image {
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;
+}
+
+.host-image > img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 100%;
+}
+
+.customer-profile__info-left > p {
+    margin: 20px 10px 10px 10px;
+}
+
+.host-navigation {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    justify-items: center;
+    margin: 5px auto;
+}
+
+.host-navigation > li {
+    display: flex;
+    background-color: white;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.host-navigation > li:hover {
+    background-color: #ff7779;
+    color: white;
+}
+
+.customer-profile__info-right {
+    flex: 4;
+    width: 100%;
+    min-height: 100%;
+    background-color: white;
+    border: 1px solid antiquewhite;
+    display: flex;
+    flex-direction: column;
+}
+
+.customer-profile-card {
+    max-width: 400px;
+    min-width: 300px;
+    box-shadow: 2px 4px 8px 2px rgba(0,0,0,0.2);
+    background-color: white;
+    margin: auto auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.customer-profile-card-image-preview {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.customer-profile-card-image-preview-now {
+    width: 100%;
+    height: 35vh;
+    position: relative;
+}
+
+.customer-profile-card-image-preview-now > img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+} 
+
+.customer-profile-card-image-preview > input {
+    margin: 5px auto;
+    padding: 5px;
+}
+
+.customer-profile-card-image-preview > button {
+    margin: 5px auto;
+    text-transform: inherit;
+    color: white;
+    background-color: #ff7779;
+    transition: all 0.3s ease-in-out;
+}
+
+.customer-profile-card-image-preview > button:hover {
+    border: 1px solid #ff7779;
+    background-color: white;
+    color: #ff7779;
+}
+
+/* 440px Mobile resposive */
+@media screen and (max-width: 440px) {
+    .customer-profile__page {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        min-height: 80vh;
+        padding: 10px 20px;
+    }
+    
+    .customer-profile__info {
+        width: 100%;
+        min-height: 80vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .customer-profile__info-left {
+        flex: 1;
+        width: 100%;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: antiquewhite;
+    }
+    
+    .incase-you-know {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 10px;
+    }
+    
+    .host-image {
+        border-radius: 100%;
+        height: 40px;
+        width: 40px;
+    }
+    
+    .host-image > img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        border-radius: 100%;
+    }
+    
+    .customer-profile__info-left > p {
+        margin: 20px 10px 10px 10px;
+    }
+    
+    .host-navigation {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        justify-items: center;
+        margin: 5px auto;
+    }
+    
+    .host-navigation > li {
+        display: flex;
+        background-color: white;
+        padding: 5px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        margin-top: 10px;
+        justify-content: center;
+    }
+
+    .baby {
+        margin-bottom: 10px;
+    }
+    
+    .host-navigation > li:hover {
+        background-color: #ff7779;
+        color: white;
+    }
+    
+    .customer-profile__info-right {
+        flex: 4;
+        width: 100%;
+        min-height: 100%;
+        background-color: white;
+        border: 1px solid antiquewhite;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .customer-profile-card {
+        max-width: 400px;
+        min-width: 300px;
+        box-shadow: 2px 4px 8px 2px rgba(0,0,0,0.2);
+        background-color: white;
+        margin: auto auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .customer-profile-card-image-preview {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .customer-profile-card-image-preview-now {
+        width: 90%;
+        margin: 10px auto;
+        height: 30vh;
+        position: relative;
+    }
+    
+    .customer-profile-card-image-preview-now > img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+    } 
+    
+    .customer-profile-card-image-preview > input {
+        margin: 5px auto;
+        padding: 5px;
+        border: 1px solid lightblue;
+    }
+    
+    .customer-profile-card-image-preview > button {
+        margin: 5px auto;
+        text-transform: inherit;
+        color: white;
+        background-color: #ff7779;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .customer-profile-card-image-preview > button:hover {
+        border: 1px solid #ff7779;
+        background-color: white;
+        color: #ff7779;
+    }
+}
+/* end */
+
+/* 540px to 750px Mobile resposive */
+@media screen and (min-width: 540px) and (max-width: 750px){
+    .customer-profile__page {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        min-height: 80vh;
+        padding: 10px 20px;
+    }
+    
+    .customer-profile__info {
+        width: 100%;
+        min-height: 80vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .customer-profile__info-left {
+        flex: 1;
+        width: 100%;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: antiquewhite;
+    }
+    
+    .incase-you-know {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 10px;
+    }
+    
+    .host-image {
+        border-radius: 100%;
+        height: 40px;
+        width: 40px;
+    }
+    
+    .host-image > img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        border-radius: 100%;
+    }
+    
+    .customer-profile__info-left > p {
+        margin: 20px 10px 10px 10px;
+    }
+    
+    .host-navigation {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        justify-items: center;
+        margin: 5px auto;
+    }
+    
+    .host-navigation > li {
+        display: flex;
+        background-color: white;
+        padding: 5px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        margin-top: 10px;
+        justify-content: center;
+    }
+
+    .baby {
+        margin-bottom: 10px;
+    }
+    
+    .host-navigation > li:hover {
+        background-color: #ff7779;
+        color: white;
+    }
+    
+    .customer-profile__info-right {
+        flex: 4;
+        width: 100%;
+        min-height: 100%;
+        background-color: white;
+        border: 1px solid antiquewhite;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .customer-profile-card {
+        max-width: 400px;
+        min-width: 300px;
+        box-shadow: 2px 4px 8px 2px rgba(0,0,0,0.2);
+        background-color: white;
+        margin: auto auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 20px auto;
+    }
+    
+    .customer-profile-card-image-preview {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .customer-profile-card-image-preview-now {
+        width: 90%;
+        margin: 10px auto;
+        height: 30vh;
+        position: relative;
+    }
+    
+    .customer-profile-card-image-preview-now > img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+    } 
+    
+    .customer-profile-card-image-preview > input {
+        margin: 5px auto;
+        padding: 5px;
+        border: 1px solid lightblue;
+    }
+    
+    .customer-profile-card-image-preview > button {
+        margin: 5px auto;
+        text-transform: inherit;
+        color: white;
+        background-color: #ff7779;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .customer-profile-card-image-preview > button:hover {
+        border: 1px solid #ff7779;
+        background-color: white;
+        color: #ff7779;
+    }
+}
+/* end */
+
+
+
+/* 760px  to 1030px Mobile resposive */
+@media screen and (min-width: 760px) and (max-width: 1030px) {
+    .customer-profile__page {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        min-height: 80vh;
+        padding: 10px 20px;
+    }
+    
+    .customer-profile__info {
+        width: 100%;
+        min-height: 80vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .customer-profile__info-left {
+        flex: 1;
+        width: 100%;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: antiquewhite;
+    }
+    
+    .incase-you-know {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 10px;
+    }
+    
+    .host-image {
+        border-radius: 100%;
+        height: 40px;
+        width: 40px;
+    }
+    
+    .host-image > img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        border-radius: 100%;
+    }
+    
+    .customer-profile__info-left > p {
+        margin: 20px 10px 10px 10px;
+    }
+    
+    .host-navigation {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        justify-items: center;
+        margin: 5px auto;
+    }
+    
+    .host-navigation > li {
+        display: flex;
+        background-color: white;
+        padding: 5px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        margin-top: 10px;
+        justify-content: center;
+    }
+
+    .baby {
+        margin-bottom: 10px;
+    }
+    
+    .host-navigation > li:hover {
+        background-color: #ff7779;
+        color: white;
+    }
+    
+    .customer-profile__info-right {
+        flex: 4;
+        width: 100%;
+        min-height: 100%;
+        background-color: white;
+        border: 1px solid antiquewhite;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .customer-profile-card {
+        max-width: 400px;
+        min-width: 300px;
+        box-shadow: 2px 4px 8px 2px rgba(0,0,0,0.2);
+        background-color: white;
+        margin: auto auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 20px auto;
+    }
+    
+    .customer-profile-card-image-preview {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .customer-profile-card-image-preview-now {
+        width: 90%;
+        margin: 10px auto;
+        height: 30vh;
+        position: relative;
+    }
+    
+    .customer-profile-card-image-preview-now > img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+    } 
+    
+    .customer-profile-card-image-preview > input {
+        margin: 5px auto;
+        padding: 5px;
+        border: 1px solid lightblue;
+    }
+    
+    .customer-profile-card-image-preview > button {
+        margin: 5px auto;
+        text-transform: inherit;
+        color: white;
+        background-color: #ff7779;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .customer-profile-card-image-preview > button:hover {
+        border: 1px solid #ff7779;
+        background-color: white;
+        color: #ff7779;
+    }
+}
+/* end */

@@ -1,0 +1,324 @@
+.homeLoadingContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: white;
+    min-height: 40vh;
+}
+
+.homeLoadingCard {
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    border: 0px solid black;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
+    transition: transform 300ms ease-in;
+    cursor: pointer;
+    width: 30%;
+    animation: skeleton 1s ease infinite alternate;
+}
+
+@keyframes skeleton {
+    to {
+        opacity: 0.5;
+    }
+}
+.homeLoadingCardImage {
+    width: 100%;
+    height: 35vh;
+    background: #e7e2e2;
+}
+
+.homeLoadingCardContainer {
+    width: 100%;
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.homeLoadingCardSpan1 {
+    width: 160px;
+    background-color: #e7e2e2;
+    height: 20px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.homeLoadingCardSpan2 {
+    width: 220px;
+    background-color: #e7e2e2;
+    height: 20px;
+    margin-left: 10px;
+    border-radius: 10px;
+}
+
+.homeLoadingCardSpan3 {
+    width: 160px;
+    background-color: #e7e2e2;
+    height: 20px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.homeLoadingCardSpan4 {
+    width: 140px;
+    background-color: #e7e2e2;
+    height: 20px;
+    margin-left: 10px;
+    border-radius: 10px;
+}
+
+/* 440px Mobile resposive */
+@media screen and (max-width: 440px) {
+    .homeLoadingContainer {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: white;
+        min-height: 40vh;
+    }
+    
+    .homeLoadingCard {
+        min-height: 50vh;
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+        border: 0px solid black;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
+        transition: transform 300ms ease-in;
+        cursor: pointer;
+        width: 90%;
+        animation: skeleton 1s ease infinite alternate;
+    }
+    
+    @keyframes skeleton {
+        to {
+            opacity: 0.5;
+        }
+    }
+    .homeLoadingCardImage {
+        width: 100%;
+        height: 35vh;
+        background: #e7e2e2;
+    }
+    
+    .homeLoadingCardContainer {
+        width: 100%;
+        height: 25vh;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .homeLoadingCardSpan1 {
+        width: 160px;
+        background-color: #e7e2e2;
+        height: 20px;
+        margin: 10px;
+        border-radius: 10px;
+    }
+    
+    .homeLoadingCardSpan2 {
+        width: 220px;
+        background-color: #e7e2e2;
+        height: 20px;
+        margin-left: 10px;
+        border-radius: 10px;
+    }
+    
+    .homeLoadingCardSpan3 {
+        width: 160px;
+        background-color: #e7e2e2;
+        height: 20px;
+        margin: 10px;
+        border-radius: 10px;
+    }
+    
+    .homeLoadingCardSpan4 {
+        width: 140px;
+        background-color: #e7e2e2;
+        height: 20px;
+        margin-left: 10px;
+        border-radius: 10px;
+    }
+}
+/* end */
+
+/* 540px to 750px Mobile resposive */
+@media screen and (min-width: 540px) and (max-width: 750px) {
+    .homeLoadingContainer {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: white;
+        min-height: 40vh;
+    }
+    
+    .homeLoadingCard {
+        min-height: 50vh;
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+        border: 0px solid black;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
+        transition: transform 300ms ease-in;
+        cursor: pointer;
+        width: 40%;
+        animation: skeleton 1s ease infinite alternate;
+    }
+    
+    @keyframes skeleton {
+        to {
+            opacity: 0.5;
+        }
+    }
+    .homeLoadingCardImage {
+        width: 100%;
+        height: 35vh;
+        background: #e7e2e2;
+    }
+    
+    .homeLoadingCardContainer {
+        width: 100%;
+        height: 25vh;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .homeLoadingCardSpan1 {
+        width: 160px;
+        background-color: #e7e2e2;
+        height: 20px;
+        margin: 10px;
+        border-radius: 10px;
+    }
+    
+    .homeLoadingCardSpan2 {
+        width: 220px;
+        background-color: #e7e2e2;
+        height: 20px;
+        margin-left: 10px;
+        border-radius: 10px;
+    }
+    
+    .homeLoadingCardSpan3 {
+        width: 160px;
+        background-color: #e7e2e2;
+        height: 20px;
+        margin: 10px;
+        border-radius: 10px;
+    }
+    
+    .homeLoadingCardSpan4 {
+        width: 140px;
+        background-color: #e7e2e2;
+        height: 20px;
+        margin-left: 10px;
+        border-radius: 10px;
+    }
+}
+/* end */
+
+
+/* 760px  to 1030px Mobile resposive */
+@media screen and (min-width: 760px) and (max-width: 1030px) {
+    .homeLoadingContainer {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: white;
+        min-height: 40vh;
+    }
+    
+    .homeLoadingCard {
+        min-height: 50vh;
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+        border: 0px solid black;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
+        transition: transform 300ms ease-in;
+        cursor: pointer;
+        width: 30%;
+        animation: skeleton 1s ease infinite alternate;
+    }
+    
+    @keyframes skeleton {
+        to {
+            opacity: 0.5;
+        }
+    }
+    .homeLoadingCardImage {
+        width: 100%;
+        height: 35vh;
+        background: #e7e2e2;
+    }
+    
+    .homeLoadingCardContainer {
+        width: 100%;
+        height: 25vh;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .homeLoadingCardSpan1 {
+        width: 160px;
+        background-color: #e7e2e2;
+        height: 20px;
+        margin: 10px;
+        border-radius: 10px;
+    }
+    
+    .homeLoadingCardSpan2 {
+        width: 220px;
+        background-color: #e7e2e2;
+        height: 20px;
+        margin-left: 10px;
+        border-radius: 10px;
+    }
+    
+    .homeLoadingCardSpan3 {
+        width: 160px;
+        background-color: #e7e2e2;
+        height: 20px;
+        margin: 10px;
+        border-radius: 10px;
+    }
+    
+    .homeLoadingCardSpan4 {
+        width: 140px;
+        background-color: #e7e2e2;
+        height: 20px;
+        margin-left: 10px;
+        border-radius: 10px;
+    }
+}
+/* end */

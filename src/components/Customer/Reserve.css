@@ -1,0 +1,420 @@
+.reserve-container {
+    background-color: white;
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.reserve-container-handler {
+    width: 80%;
+    margin: auto auto;
+    display: flex;
+    background-color: white;
+    box-shadow: 2px 4px 8px 2px rgba(0,0,0,0.2);
+    border-radius: 10px;
+}
+
+.reserve-container-handler-image {
+    flex: 1;
+    display: flex;
+    width: 100%;
+}
+
+.reserve-container-handler-image > img {
+    width: 100%;
+    min-height: 40vh;
+    object-fit: fill;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+} 
+
+.reserve-container-handler-description {
+    flex: 1;
+    width: 100%;
+    display: flex;
+}
+
+.reserve-container-handler-description-now {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 40vh;
+    border-right: 1px solid lightgray;
+    padding: 10px;
+}
+
+.reserve-container-handler-description-now > label {
+    margin: 5px 10px;
+    color: black;
+    font-weight: 600;
+}
+
+.reserve-container-handler-description-now > p {
+    margin: 0px 5px 10px 10px;
+    border-bottom: 1px solid lightgray;
+}
+
+.reserve-container-handler-description-now > button {
+    margin: 10px auto;
+    text-transform: inherit;
+    background-color: white;
+    color: black;
+    border: 1px solid gray;
+    transition: all 0.3s ease-in-out;
+}
+
+.reserve-container-handler-description-now > button:hover {
+    border: 1px solid #ff7779;
+}
+
+.reserve-container-handler-description-then {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.reserve-container-handler-description-then > label {
+    margin: 5px 10px;
+    color: black;
+    font-weight: 600;
+}
+
+.reserve-container-handler-description-then > p {
+    margin: 0px 5px 10px 10px;
+    border-bottom: 1px solid lightgray;
+}
+
+.reserve-container-handler-description-then > button { 
+    text-transform: inherit;
+    color: white;
+    background-color: #ff7779;
+    transition: all 0.3s ease-in-out;
+    margin: 20px auto;
+}
+
+.reserve-container-handler-description-then > button:hover {
+    border: 1px solid #ff7779;
+    background-color: white;
+    color: #ff7779;
+}
+
+/* 440px Mobile resposive */
+@media screen and (max-width: 440px) {
+    .reserve-container {
+        background-color: white;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .reserve-container-handler {
+        width: 90%;
+        margin: 20px auto;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        box-shadow: 2px 4px 8px 2px rgba(0,0,0,0.2);
+        border-radius: 10px;
+    }
+    
+    .reserve-container-handler-image {
+        flex: 1;
+        display: flex;
+        width: 100%;
+    }
+    
+    .reserve-container-handler-image > img {
+        width: 100%;
+        min-height: 40vh;
+        object-fit: fill;
+        border-radius: 10px;
+    } 
+    
+    .reserve-container-handler-description {
+        flex: 1;
+        width: 100%;
+        display: flex;
+    }
+    
+    .reserve-container-handler-description-now {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        min-height: 40vh;
+        border-right: 1px solid lightgray;
+        padding: 10px;
+    }
+    
+    .reserve-container-handler-description-now > label {
+        margin: 5px 10px;
+        color: black;
+        font-weight: 600;
+    }
+    
+    .reserve-container-handler-description-now > p {
+        margin: 0px 5px 10px 10px;
+        border-bottom: 1px solid lightgray;
+    }
+    
+    .reserve-container-handler-description-now > button {
+        margin: 10px auto;
+        text-transform: inherit;
+        background-color: white;
+        color: black;
+        border: 1px solid gray;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .reserve-container-handler-description-now > button:hover {
+        border: 1px solid #ff7779;
+    }
+    
+    .reserve-container-handler-description-then {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    .reserve-container-handler-description-then > label {
+        margin: 5px 10px;
+        color: black;
+        font-weight: 600;
+    }
+    
+    .reserve-container-handler-description-then > p {
+        margin: 0px 5px 10px 10px;
+        border-bottom: 1px solid lightgray;
+    }
+    
+    .reserve-container-handler-description-then > button { 
+        text-transform: inherit;
+        color: white;
+        background-color: #ff7779;
+        transition: all 0.3s ease-in-out;
+        margin: 20px auto;
+    }
+    
+    .reserve-container-handler-description-then > button:hover {
+        border: 1px solid #ff7779;
+        background-color: white;
+        color: #ff7779;
+    }
+}
+/* end */
+
+
+/* 540px to 750px Mobile resposive */
+@media screen and (min-width: 540px) and (max-width: 750px) {
+    .reserve-container {
+        background-color: white;
+        width: 100%;
+        min-height: 80vh;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .reserve-container-handler {
+        width: 90%;
+        margin: 20px auto;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        box-shadow: 2px 4px 8px 2px rgba(0,0,0,0.2);
+        border-radius: 10px;
+    }
+    
+    .reserve-container-handler-image {
+        flex: 1;
+        display: flex;
+        width: 100%;
+    }
+    
+    .reserve-container-handler-image > img {
+        width: 100%;
+        min-height: 40vh;
+        object-fit: fill;
+        border-radius: 10px;
+    } 
+    
+    .reserve-container-handler-description {
+        flex: 1;
+        width: 100%;
+        display: flex;
+    }
+    
+    .reserve-container-handler-description-now {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        min-height: 40vh;
+        border-right: 1px solid lightgray;
+        padding: 10px;
+    }
+    
+    .reserve-container-handler-description-now > label {
+        margin: 5px 10px;
+        color: black;
+        font-weight: 600;
+    }
+    
+    .reserve-container-handler-description-now > p {
+        margin: 0px 5px 10px 10px;
+        border-bottom: 1px solid lightgray;
+    }
+    
+    .reserve-container-handler-description-now > button {
+        margin: 10px auto;
+        text-transform: inherit;
+        background-color: white;
+        color: black;
+        border: 1px solid gray;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .reserve-container-handler-description-now > button:hover {
+        border: 1px solid #ff7779;
+    }
+    
+    .reserve-container-handler-description-then {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    .reserve-container-handler-description-then > label {
+        margin: 5px 10px;
+        color: black;
+        font-weight: 600;
+    }
+    
+    .reserve-container-handler-description-then > p {
+        margin: 0px 5px 10px 10px;
+        border-bottom: 1px solid lightgray;
+    }
+    
+    .reserve-container-handler-description-then > button { 
+        text-transform: inherit;
+        color: white;
+        background-color: #ff7779;
+        transition: all 0.3s ease-in-out;
+        margin: 20px auto;
+    }
+    
+    .reserve-container-handler-description-then > button:hover {
+        border: 1px solid #ff7779;
+        background-color: white;
+        color: #ff7779;
+    }
+}
+/* end */
+
+
+/* 760px  to 1030px Mobile resposive */
+@media screen and (min-width: 760px) and (max-width: 1030px) {
+    .reserve-container {
+        background-color: white;
+        width: 100%;
+        min-height: 80vh;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .reserve-container-handler {
+        width: 90%;
+        margin: 20px auto;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        box-shadow: 2px 4px 8px 2px rgba(0,0,0,0.2);
+        border-radius: 10px;
+    }
+    
+    .reserve-container-handler-image {
+        flex: 1;
+        display: flex;
+        width: 100%;
+    }
+    
+    .reserve-container-handler-image > img {
+        width: 100%;
+        min-height: 40vh;
+        object-fit: fill;
+        border-radius: 10px;
+    } 
+    
+    .reserve-container-handler-description {
+        flex: 1;
+        width: 100%;
+        display: flex;
+    }
+    
+    .reserve-container-handler-description-now {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        min-height: 40vh;
+        border-right: 1px solid lightgray;
+        padding: 10px;
+    }
+    
+    .reserve-container-handler-description-now > label {
+        margin: 5px 10px;
+        color: black;
+        font-weight: 600;
+    }
+    
+    .reserve-container-handler-description-now > p {
+        margin: 0px 5px 10px 10px;
+        border-bottom: 1px solid lightgray;
+    }
+    
+    .reserve-container-handler-description-now > button {
+        margin: 10px auto;
+        text-transform: inherit;
+        background-color: white;
+        color: black;
+        border: 1px solid gray;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .reserve-container-handler-description-now > button:hover {
+        border: 1px solid #ff7779;
+    }
+    
+    .reserve-container-handler-description-then {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    .reserve-container-handler-description-then > label {
+        margin: 5px 10px;
+        color: black;
+        font-weight: 600;
+    }
+    
+    .reserve-container-handler-description-then > p {
+        margin: 0px 5px 10px 10px;
+        border-bottom: 1px solid lightgray;
+    }
+    
+    .reserve-container-handler-description-then > button { 
+        text-transform: inherit;
+        color: white;
+        background-color: #ff7779;
+        transition: all 0.3s ease-in-out;
+        margin: 20px auto;
+    }
+    
+    .reserve-container-handler-description-then > button:hover {
+        border: 1px solid #ff7779;
+        background-color: white;
+        color: #ff7779;
+    }
+}
+/* end */

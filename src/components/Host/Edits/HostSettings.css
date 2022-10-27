@@ -1,0 +1,771 @@
+.host-settings__page {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 80vh;
+    padding: 10px 20px;
+}
+
+.host-settings__info {
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+}
+
+.host-settings__info-left {
+    flex: 1;
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: antiquewhite;
+}
+
+.incase-you-know {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.host-image {
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;
+}
+
+.host-image > img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 100%;
+}
+
+.host-settings__info-left > p {
+    margin: 20px 10px 10px 10px;
+}
+
+.host-navigation {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    justify-items: center;
+    margin: 5px auto;
+}
+
+.host-navigation > li {
+    display: flex;
+    background-color: white;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.host-navigation > li:hover {
+    background-color: #ff7779;
+    color: white;
+}
+
+.host-settings__info-right {
+    flex: 4;
+    width: 100%;
+    min-height: 100%;
+    background-color: white;
+    border: 1px solid antiquewhite;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.host-settings__info-rightDelete {
+    background-color: #ff7779;
+    color: white;
+    text-transform: inherit;
+    transition: all 0.3s ease-in-out;
+}
+
+.host-settings__info-rightDelete:hover {
+    background-color: white;
+    border: 1px solid #ff7779;
+    color: #ff7779;
+}
+
+/* 440px Mobile resposive */
+@media screen and (max-width: 440px) {
+    .host-settings__page {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        min-height: 80vh;
+        padding: 10px 10px;
+    }
+    
+    .host-settings__info {
+        width: 100%;
+        min-height: 80vh;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .host-settings__info-left {
+        flex: 1;
+        width: 100%;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: antiquewhite;
+    }
+    
+    .incase-you-know {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 10px;
+    }
+    
+    .host-image {
+        border-radius: 100%;
+        height: 40px;
+        width: 40px;
+    }
+    
+    .host-image > img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        border-radius: 100%;
+    }
+    
+    .host-settings__info-left > p {
+        margin: 20px 10px 10px 10px;
+    }
+    
+    .host-navigation {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        justify-items: center;
+        margin: 5px auto;
+    }
+    
+    .host-navigation > li {
+        display: flex;
+        background-color: white;
+        padding: 5px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        margin-top: 10px;
+        justify-content: center;
+    }
+
+    .deal-done {
+        margin-bottom: 10px;
+    }
+    
+    .host-navigation > li:hover {
+        background-color: #ff7779;
+        color: white;
+    }
+    
+    .host-settings__info-right {
+        flex: 4;
+        width: 100%;
+        min-height: 100%;
+        background-color: white;
+        border: 1px solid antiquewhite;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    
+    .host-settings__info-rightHousesCard {
+        margin: 20px auto;
+        background-color: antiquewhite;
+        padding: 10px;
+        width: 80%;
+        min-height: 20vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        cursor: pointer;
+    
+        border: 0px solid black;
+        box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
+    }
+    
+    .host-settings__info-rightHousesCard:hover {
+        -webkit-filter: brightness(95%);
+        -webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        -ms-transition: all 1s ease;
+        transition: all 1s ease;
+    }
+    
+    .host-settings__info-rightHousesCard > span {
+        background-color: white;
+        padding: 10px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto 20px;
+    
+        font-weight: bolder;
+    }
+    
+    .host-settings__info-rightHousesCard > h2 {
+        display: flex;
+        margin: auto;
+        align-items: center;
+    }
+    
+    .host-settings__info-rightCustomerCard {
+        margin: 20px auto;
+        background-color: antiquewhite;
+        padding: 10px;
+        width: 80%;
+        min-height: 20vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: 10px;
+        align-items: center;
+        cursor: pointer;
+        border: 0px solid black;
+        box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
+    }
+    
+    .host-settings__info-rightCustomerCard:hover {
+        -webkit-filter: brightness(95%);
+        -webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        -ms-transition: all 1s ease;
+        transition: all 1s ease;
+    }
+    
+    .host-settings__info-rightCustomerCard > h2 {
+        display: flex;
+        margin: auto;
+        align-items: center;
+    }
+    
+    .host-settings__info-rightCustomerCard > span {
+        background-color: white;
+        padding: 10px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto 20px;
+        font-weight: bolder;
+    }
+    
+    .host-settings__info-rightNotificationCard {
+        margin: 20px auto;
+        background-color: antiquewhite;
+        padding: 10px;
+        width: 80%;
+        min-height: 20vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        cursor: pointer;
+    
+        border: 0px solid black;
+        box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
+    }
+    
+    .host-settings__info-rightNotificationCard:hover {
+        -webkit-filter: brightness(95%);
+        -webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        -ms-transition: all 1s ease;
+        transition: all 1s ease;
+    }
+    
+    .host-settings__info-rightNotificationCard > h2 {
+        display: flex;
+        margin: auto;
+        align-items: center;
+    }
+    
+    .host-settings__info-rightNotificationCard > span {
+        background-color: white;
+        padding: 10px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto 20px;
+    
+        font-weight: bolder;
+    }
+}
+/* end */
+
+
+
+/* 540px to 750px Mobile resposive */
+@media screen and (min-width: 540px) and (max-width: 750px) {
+    .host-settings__page {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        min-height: 80vh;
+        padding: 10px 10px;
+    }
+    
+    .host-settings__info {
+        width: 100%;
+        min-height: 80vh;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .host-settings__info-left {
+        flex: 1;
+        width: 100%;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: antiquewhite;
+    }
+    
+    .incase-you-know {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 10px;
+    }
+    
+    .host-image {
+        border-radius: 100%;
+        height: 40px;
+        width: 40px;
+    }
+    
+    .host-image > img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        border-radius: 100%;
+    }
+    
+    .host-settings__info-left > p {
+        margin: 20px 10px 10px 10px;
+    }
+    
+    .host-navigation {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        justify-items: center;
+        margin: 5px auto;
+    }
+    
+    .host-navigation > li {
+        display: flex;
+        background-color: white;
+        padding: 5px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        margin-top: 10px;
+        justify-content: center;
+    }
+
+    .deal-done {
+        margin-bottom: 10px;
+    }
+    
+    .host-navigation > li:hover {
+        background-color: #ff7779;
+        color: white;
+    }
+    
+    .host-settings__info-right {
+        flex: 4;
+        width: 100%;
+        min-height: 100%;
+        background-color: white;
+        border: 1px solid antiquewhite;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    
+    .host-settings__info-rightHousesCard {
+        margin: 20px auto;
+        background-color: antiquewhite;
+        padding: 10px;
+        width: 80%;
+        min-height: 20vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        cursor: pointer;
+    
+        border: 0px solid black;
+        box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
+    }
+    
+    .host-settings__info-rightHousesCard:hover {
+        -webkit-filter: brightness(95%);
+        -webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        -ms-transition: all 1s ease;
+        transition: all 1s ease;
+    }
+    
+    .host-settings__info-rightHousesCard > span {
+        background-color: white;
+        padding: 10px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto 20px;
+    
+        font-weight: bolder;
+    }
+    
+    .host-settings__info-rightHousesCard > h2 {
+        display: flex;
+        margin: auto;
+        align-items: center;
+    }
+    
+    .host-settings__info-rightCustomerCard {
+        margin: 20px auto;
+        background-color: antiquewhite;
+        padding: 10px;
+        width: 80%;
+        min-height: 20vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: 10px;
+        align-items: center;
+        cursor: pointer;
+        border: 0px solid black;
+        box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
+    }
+    
+    .host-settings__info-rightCustomerCard:hover {
+        -webkit-filter: brightness(95%);
+        -webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        -ms-transition: all 1s ease;
+        transition: all 1s ease;
+    }
+    
+    .host-settings__info-rightCustomerCard > h2 {
+        display: flex;
+        margin: auto;
+        align-items: center;
+    }
+    
+    .host-settings__info-rightCustomerCard > span {
+        background-color: white;
+        padding: 10px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto 20px;
+        font-weight: bolder;
+    }
+    
+    .host-settings__info-rightNotificationCard {
+        margin: 20px auto;
+        background-color: antiquewhite;
+        padding: 10px;
+        width: 80%;
+        min-height: 20vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        cursor: pointer;
+    
+        border: 0px solid black;
+        box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
+    }
+    
+    .host-settings__info-rightNotificationCard:hover {
+        -webkit-filter: brightness(95%);
+        -webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        -ms-transition: all 1s ease;
+        transition: all 1s ease;
+    }
+    
+    .host-settings__info-rightNotificationCard > h2 {
+        display: flex;
+        margin: auto;
+        align-items: center;
+    }
+    
+    .host-settings__info-rightNotificationCard > span {
+        background-color: white;
+        padding: 10px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto 20px;
+    
+        font-weight: bolder;
+    }
+}
+/* end */
+
+
+/* 760px  to 1030px Mobile resposive */
+@media screen and (min-width: 760px) and (max-width: 1030px) {
+    .host-settings__page {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        min-height: 80vh;
+        padding: 10px 10px;
+    }
+    
+    .host-settings__info {
+        width: 100%;
+        min-height: 80vh;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .host-settings__info-left {
+        flex: 1;
+        width: 100%;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: antiquewhite;
+    }
+    
+    .incase-you-know {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 10px;
+    }
+    
+    .host-image {
+        border-radius: 100%;
+        height: 40px;
+        width: 40px;
+    }
+    
+    .host-image > img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        border-radius: 100%;
+    }
+    
+    .host-settings__info-left > p {
+        margin: 20px 10px 10px 10px;
+    }
+    
+    .host-navigation {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        justify-items: center;
+        margin: 5px auto;
+    }
+    
+    .host-navigation > li {
+        display: flex;
+        background-color: white;
+        padding: 5px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        margin-top: 10px;
+        justify-content: center;
+    }
+
+    .deal-done {
+        margin-bottom: 10px;
+    }
+    
+    .host-navigation > li:hover {
+        background-color: #ff7779;
+        color: white;
+    }
+    
+    .host-settings__info-right {
+        flex: 4;
+        width: 100%;
+        min-height: 100%;
+        background-color: white;
+        border: 1px solid antiquewhite;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    
+    .host-settings__info-rightHousesCard {
+        margin: 20px auto;
+        background-color: antiquewhite;
+        padding: 10px;
+        width: 50%;
+        min-height: 20vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        cursor: pointer;
+    
+        border: 0px solid black;
+        box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
+    }
+    
+    .host-settings__info-rightHousesCard:hover {
+        -webkit-filter: brightness(95%);
+        -webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        -ms-transition: all 1s ease;
+        transition: all 1s ease;
+    }
+    
+    .host-settings__info-rightHousesCard > span {
+        background-color: white;
+        padding: 10px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto 20px;
+    
+        font-weight: bolder;
+    }
+    
+    .host-settings__info-rightHousesCard > h2 {
+        display: flex;
+        margin: auto;
+        align-items: center;
+    }
+    
+    .host-settings__info-rightCustomerCard {
+        margin: 20px auto;
+        background-color: antiquewhite;
+        padding: 10px;
+        width: 50%;
+        min-height: 20vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: 10px;
+        align-items: center;
+        cursor: pointer;
+        border: 0px solid black;
+        box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
+    }
+    
+    .host-settings__info-rightCustomerCard:hover {
+        -webkit-filter: brightness(95%);
+        -webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        -ms-transition: all 1s ease;
+        transition: all 1s ease;
+    }
+    
+    .host-settings__info-rightCustomerCard > h2 {
+        display: flex;
+        margin: auto;
+        align-items: center;
+    }
+    
+    .host-settings__info-rightCustomerCard > span {
+        background-color: white;
+        padding: 10px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto 20px;
+        font-weight: bolder;
+    }
+    
+    .host-settings__info-rightNotificationCard {
+        margin: 20px auto;
+        background-color: antiquewhite;
+        padding: 10px;
+        width: 50%;
+        min-height: 20vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        cursor: pointer;
+    
+        border: 0px solid black;
+        box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
+    }
+    
+    .host-settings__info-rightNotificationCard:hover {
+        -webkit-filter: brightness(95%);
+        -webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        -ms-transition: all 1s ease;
+        transition: all 1s ease;
+    }
+    
+    .host-settings__info-rightNotificationCard > h2 {
+        display: flex;
+        margin: auto;
+        align-items: center;
+    }
+    
+    .host-settings__info-rightNotificationCard > span {
+        background-color: white;
+        padding: 10px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto 20px;
+    
+        font-weight: bolder;
+    }
+}
+/* end */

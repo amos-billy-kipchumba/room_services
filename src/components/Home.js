@@ -3,29 +3,43 @@ import './Home.css'
 import Banner from './Banner'
 import Card from './Card'
 import axios from 'axios'
+import HomeLoading from './HomeLoading'
+import BaseURL from './BaseUrl'
 
 function Home() {
-  const [houseData, setHouseData] = useState([]);
+    const [houseData, setHouseData] = useState([]);
+    const [loading, setLoading] = useState(true);
 
-  const getHouseData = async () => {
-    const data = await axios.get('http://127.0.0.1:8000/api/get-house-details');
-    console.log(data.data);
-    setHouseData(data.data.house_details);
-  }
 
-  useEffect(()=>{
-    getHouseData();
-  },[]);
+    useEffect(()=>{
+      const getHouseData = async () => {
+        const data = await axios.get(`${BaseURL}/api/get-house-details`);
+        if(data.data.status === 200) {
+          setLoading(false);
+        }
+        setHouseData(data.data.house_details);
+      }
+      getHouseData();
+    },[]);
+
+    //Scroll to the top on load
+    useEffect(()=>{
+        window.scrollTo({top: 0, left: 0, behavior: 'smooth'})
+    },[]);
+    //End of Scroll to the top on load
 
   return (
     <div className='home'>
 
       <Banner />
+      {loading !== false ? 
+        <HomeLoading /> 
+        :
       <div className='home__section'>
       {houseData && houseData.map((data)=>{
         return (
           <Card
-            src={"http://127.0.0.1:8000/uploads/" + data.cover}
+            src={`${BaseURL}/uploads/${data.cover}`}
             title={data.title}
             description={data.description}
             price={data.price}
@@ -36,6 +50,7 @@ function Home() {
         );
       })}
       </div>
+      }
 
     </div>
   )

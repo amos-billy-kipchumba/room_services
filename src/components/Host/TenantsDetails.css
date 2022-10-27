@@ -1,0 +1,766 @@
+.tenants-details__page {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 80vh;
+    padding: 10px 20px;
+}
+
+.tenants-details__info {
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+}
+
+.tenants-details__info-left {
+    flex: 1;
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: antiquewhite;
+}
+
+.incase-you-know {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.host-image {
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;
+}
+
+.host-image > img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 100%;
+}
+
+.tenants-details__info-left > p {
+    margin: 20px 10px 10px 10px;
+}
+
+.host-navigation {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    justify-items: center;
+    margin: 5px auto;
+}
+
+.host-navigation > li {
+    display: flex;
+    background-color: white;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.host-navigation > li:hover {
+    background-color: #ff7779;
+    color: white;
+}
+
+.tenants-details__info-right {
+    flex: 4;
+    width: 100%;
+    min-height: 100%;
+    background-color: white;
+    border: 1px solid antiquewhite;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+.tenants-details__info-rightMainContainer {
+    width: 30%;
+    min-height: 80vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    margin: 10px auto;
+    border: 1px solid antiquewhite;
+    border: 0px solid black;
+    box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
+}
+
+.tenants-details__info-rightMainContainerTop {
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.tenants-details__info-rightMainContainerTop:hover {
+    -webkit-filter: brightness(95%);
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+.tenants-details__info-rightMainContainerTop > img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.tenants-details__info-rightMainContainerBottom {
+    width: 100%;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.tenants-details__info-rightMainContainerBottom > label {
+    margin: 5px 10px;
+    border-bottom: 1px solid lightgray;
+    width: 180px;
+    font-weight: bold;
+}
+
+.tenants-details__info-rightMainContainerBottom > p { 
+    margin: 0 10px;
+}
+
+.tenants-details__info-rightMainContainerBottom > p:nth-of-type(10) {
+    margin: 0 10px 10px 10px;
+}
+
+.tenants-details__info-rightMainContainerBottomImage {
+    position: absolute;
+    width: 80px;
+    height: 60px;
+    top: 10px;
+    right: 20px;
+}
+
+.tenants-details__info-rightMainContainerBottomImage:hover {
+    -webkit-filter: brightness(95%);
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+.tenants-details__info-rightMainContainerBottomImage > img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.tenants-details__info-rightMainContainerBottomButton {
+    position: absolute;
+    top: 80px;
+    right: 20px;
+}
+
+.tenants-details__info-rightMainContainerBottomButton > button {
+    background-color: #ff7779;
+    color: white;
+    text-transform: inherit;
+    transition: all 0.3s ease-in-out;
+}
+
+.tenants-details__info-rightMainContainerBottomButton > button:hover {
+    background-color: white;
+    color: #ff7779;
+    border: 1px solid #ff7779;
+}
+
+
+/* 440px Mobile resposive */
+@media screen and (max-width: 440px) {
+    .tenants-details__page {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        min-height: 80vh;
+        padding: 10px 10px;
+    }
+    
+    .tenants-details__info {
+        width: 100%;
+        min-height: 80vh;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .tenants-details__info-left {
+        flex: 1;
+        width: 100%;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: antiquewhite;
+    }
+    
+    .incase-you-know {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 10px;
+    }
+    
+    .host-image {
+        border-radius: 100%;
+        height: 40px;
+        width: 40px;
+    }
+    
+    .host-image > img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        border-radius: 100%;
+    }
+    
+    .tenants-details__info-left > p {
+        margin: 20px 10px 10px 10px;
+    }
+    
+    .host-navigation {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        justify-items: center;
+        margin: 5px auto;
+    }
+    
+    .host-navigation > li {
+        display: flex;
+        background-color: white;
+        padding: 5px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        margin-top: 10px;
+        justify-content: center;
+    }
+
+    .deal-done {
+        margin-bottom: 10px;
+    }
+    
+    .host-navigation > li:hover {
+        background-color: #ff7779;
+        color: white;
+    }
+    
+    .tenants-details__info-right {
+        flex: 4;
+        width: 100%;
+        min-height: 100%;
+        background-color: white;
+        border: 1px solid antiquewhite;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    
+    .tenants-details__info-rightMainContainer {
+        width: 90%;
+        min-height: 80vh;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        margin: 10px auto;
+        border: 1px solid antiquewhite;
+        border: 0px solid black;
+        box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
+    }
+    
+    .tenants-details__info-rightMainContainerTop {
+        width: 100%;
+        height: 30vh;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .tenants-details__info-rightMainContainerTop:hover {
+        -webkit-filter: brightness(95%);
+        -webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        -ms-transition: all 1s ease;
+        transition: all 1s ease;
+    }
+    
+    .tenants-details__info-rightMainContainerTop > img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+    }
+    
+    .tenants-details__info-rightMainContainerBottom {
+        width: 100%;
+        min-height: 50vh;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+    
+    .tenants-details__info-rightMainContainerBottom > label {
+        margin: 5px 10px;
+        border-bottom: 1px solid lightgray;
+        width: 180px;
+        font-weight: bold;
+    }
+    
+    .tenants-details__info-rightMainContainerBottom > p { 
+        margin: 0 10px;
+    }
+    
+    .tenants-details__info-rightMainContainerBottom > p:nth-of-type(10) {
+        margin: 0 10px 10px 10px;
+    }
+    
+    .tenants-details__info-rightMainContainerBottomImage {
+        position: absolute;
+        width: 80px;
+        height: 60px;
+        top: 10px;
+        right: 20px;
+    }
+    
+    .tenants-details__info-rightMainContainerBottomImage:hover {
+        -webkit-filter: brightness(95%);
+        -webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        -ms-transition: all 1s ease;
+        transition: all 1s ease;
+    }
+    
+    .tenants-details__info-rightMainContainerBottomImage > img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+    }
+    
+    .tenants-details__info-rightMainContainerBottomButton {
+        position: absolute;
+        top: 80px;
+        right: 20px;
+    }
+    
+    .tenants-details__info-rightMainContainerBottomButton > button {
+        background-color: #ff7779;
+        color: white;
+        text-transform: inherit;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .tenants-details__info-rightMainContainerBottomButton > button:hover {
+        background-color: white;
+        color: #ff7779;
+        border: 1px solid #ff7779;
+    }
+}
+/* end */
+
+
+
+/* 540px to 750px Mobile resposive */
+@media screen and (min-width: 540px) and (max-width: 750px) {
+    .tenants-details__page {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        min-height: 80vh;
+        padding: 10px 10px;
+    }
+    
+    .tenants-details__info {
+        width: 100%;
+        min-height: 80vh;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .tenants-details__info-left {
+        flex: 1;
+        width: 100%;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: antiquewhite;
+    }
+    
+    .incase-you-know {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 10px;
+    }
+    
+    .host-image {
+        border-radius: 100%;
+        height: 40px;
+        width: 40px;
+    }
+    
+    .host-image > img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        border-radius: 100%;
+    }
+    
+    .tenants-details__info-left > p {
+        margin: 20px 10px 10px 10px;
+    }
+    
+    .host-navigation {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        justify-items: center;
+        margin: 5px auto;
+    }
+    
+    .host-navigation > li {
+        display: flex;
+        background-color: white;
+        padding: 5px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        margin-top: 10px;
+        justify-content: center;
+    }
+
+    .deal-done {
+        margin-bottom: 10px;
+    }
+    
+    .host-navigation > li:hover {
+        background-color: #ff7779;
+        color: white;
+    }
+    
+    .tenants-details__info-right {
+        flex: 4;
+        width: 100%;
+        min-height: 100%;
+        background-color: white;
+        border: 1px solid antiquewhite;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    
+    .tenants-details__info-rightMainContainer {
+        width: 60%;
+        min-height: 80vh;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        margin: 10px auto;
+        border: 1px solid antiquewhite;
+        border: 0px solid black;
+        box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
+    }
+    
+    .tenants-details__info-rightMainContainerTop {
+        width: 100%;
+        height: 30vh;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .tenants-details__info-rightMainContainerTop:hover {
+        -webkit-filter: brightness(95%);
+        -webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        -ms-transition: all 1s ease;
+        transition: all 1s ease;
+    }
+    
+    .tenants-details__info-rightMainContainerTop > img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+    }
+    
+    .tenants-details__info-rightMainContainerBottom {
+        width: 100%;
+        min-height: 50vh;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+    
+    .tenants-details__info-rightMainContainerBottom > label {
+        margin: 5px 10px;
+        border-bottom: 1px solid lightgray;
+        width: 180px;
+        font-weight: bold;
+    }
+    
+    .tenants-details__info-rightMainContainerBottom > p { 
+        margin: 0 10px;
+    }
+    
+    .tenants-details__info-rightMainContainerBottom > p:nth-of-type(10) {
+        margin: 0 10px 10px 10px;
+    }
+    
+    .tenants-details__info-rightMainContainerBottomImage {
+        position: absolute;
+        width: 80px;
+        height: 60px;
+        top: 10px;
+        right: 20px;
+    }
+    
+    .tenants-details__info-rightMainContainerBottomImage:hover {
+        -webkit-filter: brightness(95%);
+        -webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        -ms-transition: all 1s ease;
+        transition: all 1s ease;
+    }
+    
+    .tenants-details__info-rightMainContainerBottomImage > img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+    }
+    
+    .tenants-details__info-rightMainContainerBottomButton {
+        position: absolute;
+        top: 80px;
+        right: 20px;
+    }
+    
+    .tenants-details__info-rightMainContainerBottomButton > button {
+        background-color: #ff7779;
+        color: white;
+        text-transform: inherit;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .tenants-details__info-rightMainContainerBottomButton > button:hover {
+        background-color: white;
+        color: #ff7779;
+        border: 1px solid #ff7779;
+    }
+}
+/* end */
+
+
+/* 760px  to 1030px Mobile resposive */
+@media screen and (min-width: 760px) and (max-width: 1030px) {
+    .tenants-details__page {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        min-height: 80vh;
+        padding: 10px 10px;
+    }
+    
+    .tenants-details__info {
+        width: 100%;
+        min-height: 80vh;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .tenants-details__info-left {
+        flex: 1;
+        width: 100%;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: antiquewhite;
+    }
+    
+    .incase-you-know {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 10px;
+    }
+    
+    .host-image {
+        border-radius: 100%;
+        height: 40px;
+        width: 40px;
+    }
+    
+    .host-image > img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        border-radius: 100%;
+    }
+    
+    .tenants-details__info-left > p {
+        margin: 20px 10px 10px 10px;
+    }
+    
+    .host-navigation {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        justify-items: center;
+        margin: 5px auto;
+    }
+    
+    .host-navigation > li {
+        display: flex;
+        background-color: white;
+        padding: 5px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        margin-top: 10px;
+        justify-content: center;
+    }
+
+    .deal-done {
+        margin-bottom: 10px;
+    }
+    
+    .host-navigation > li:hover {
+        background-color: #ff7779;
+        color: white;
+    }
+    
+    .tenants-details__info-right {
+        flex: 4;
+        width: 100%;
+        min-height: 100%;
+        background-color: white;
+        border: 1px solid antiquewhite;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    
+    .tenants-details__info-rightMainContainer {
+        width: 45%;
+        min-height: 80vh;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        margin: 10px auto;
+        border: 1px solid antiquewhite;
+        border: 0px solid black;
+        box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
+    }
+    
+    .tenants-details__info-rightMainContainerTop {
+        width: 100%;
+        height: 30vh;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .tenants-details__info-rightMainContainerTop:hover {
+        -webkit-filter: brightness(95%);
+        -webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        -ms-transition: all 1s ease;
+        transition: all 1s ease;
+    }
+    
+    .tenants-details__info-rightMainContainerTop > img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+    }
+    
+    .tenants-details__info-rightMainContainerBottom {
+        width: 100%;
+        min-height: 50vh;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+    
+    .tenants-details__info-rightMainContainerBottom > label {
+        margin: 5px 10px;
+        border-bottom: 1px solid lightgray;
+        width: 180px;
+        font-weight: bold;
+    }
+    
+    .tenants-details__info-rightMainContainerBottom > p { 
+        margin: 0 10px;
+    }
+    
+    .tenants-details__info-rightMainContainerBottom > p:nth-of-type(10) {
+        margin: 0 10px 10px 10px;
+    }
+    
+    .tenants-details__info-rightMainContainerBottomImage {
+        position: absolute;
+        width: 80px;
+        height: 60px;
+        top: 10px;
+        right: 20px;
+    }
+    
+    .tenants-details__info-rightMainContainerBottomImage:hover {
+        -webkit-filter: brightness(95%);
+        -webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        -ms-transition: all 1s ease;
+        transition: all 1s ease;
+    }
+    
+    .tenants-details__info-rightMainContainerBottomImage > img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+    }
+    
+    .tenants-details__info-rightMainContainerBottomButton {
+        position: absolute;
+        top: 80px;
+        right: 20px;
+    }
+    
+    .tenants-details__info-rightMainContainerBottomButton > button {
+        background-color: #ff7779;
+        color: white;
+        text-transform: inherit;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .tenants-details__info-rightMainContainerBottomButton > button:hover {
+        background-color: white;
+        color: #ff7779;
+        border: 1px solid #ff7779;
+    }
+}
+/* end */

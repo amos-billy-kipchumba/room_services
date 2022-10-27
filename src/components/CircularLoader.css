@@ -1,0 +1,8 @@
+.CircularLoader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    min-height: 80vh;
+    width: 100%;
+}

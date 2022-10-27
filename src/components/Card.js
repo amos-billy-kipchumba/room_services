@@ -5,10 +5,7 @@ function Card({ src, title, description, price, location, id }) {
   const navigate = useNavigate();
 
     function navigateHouse () {
-      navigate('/more-details',{state:{
-        id:id,
-      }
-      });
+        navigate(`/more-details/${id}`);
     }
   return (
     <div className='card' onClick={navigateHouse}>

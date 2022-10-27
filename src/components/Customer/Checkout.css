@@ -1,0 +1,163 @@
+.checkout-container {
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.checkout-and-pin {
+    width: 25%;
+    margin: auto auto;
+    min-height: 40vh;
+    background-color: white;
+    box-shadow: 2px 4px 8px 2px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.checkout-and-pin > input {
+    margin: 20px auto;
+    padding: 10px;
+    width: 200px;
+}
+
+.checkout-and-pin > button { 
+    color: white;
+    background-color: #ff7779;
+    transition: all 0.3s ease-in-out;
+    margin: 10px auto;
+}
+
+.checkout-and-pin > button:hover {
+    border: 1px solid #ff7779;
+    background-color: white;
+    color: #ff7779;
+}
+
+/* 440px Mobile resposive */
+@media screen and (max-width: 440px) {
+    .checkout-container {
+        width: 100%;
+        min-height: 80vh;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .checkout-and-pin {
+        width: 90%;
+        margin: auto auto;
+        min-height: 40vh;
+        background-color: white;
+        box-shadow: 2px 4px 8px 2px rgba(0,0,0,0.2);
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    .checkout-and-pin > input {
+        margin: 20px auto;
+        padding: 10px;
+        width: 200px;
+        border: 1px solid lightblue;
+    }
+    
+    .checkout-and-pin > button { 
+        color: white;
+        background-color: #ff7779;
+        transition: all 0.3s ease-in-out;
+        margin: 10px auto;
+    }
+    
+    .checkout-and-pin > button:hover {
+        border: 1px solid #ff7779;
+        background-color: white;
+        color: #ff7779;
+    }
+}
+/* end */
+
+/* 540px to 750px Mobile resposive */
+@media screen and (min-width: 540px) and (max-width: 750px) {
+    .checkout-container {
+        width: 100%;
+        min-height: 80vh;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .checkout-and-pin {
+        width: 90%;
+        margin: auto auto;
+        min-height: 40vh;
+        background-color: white;
+        box-shadow: 2px 4px 8px 2px rgba(0,0,0,0.2);
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    .checkout-and-pin > input {
+        margin: 20px auto;
+        padding: 10px;
+        width: 200px;
+        border: 1px solid lightblue;
+    }
+    
+    .checkout-and-pin > button { 
+        color: white;
+        background-color: #ff7779;
+        transition: all 0.3s ease-in-out;
+        margin: 10px auto;
+    }
+    
+    .checkout-and-pin > button:hover {
+        border: 1px solid #ff7779;
+        background-color: white;
+        color: #ff7779;
+    }
+}
+/* end */
+
+
+/* 760px  to 1030px Mobile resposive */
+@media screen and (min-width: 760px) and (max-width: 1030px) {
+    .checkout-container {
+        width: 100%;
+        min-height: 80vh;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .checkout-and-pin {
+        width: 50%;
+        margin: auto auto;
+        min-height: 40vh;
+        background-color: white;
+        box-shadow: 2px 4px 8px 2px rgba(0,0,0,0.2);
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    .checkout-and-pin > input {
+        margin: 20px auto;
+        padding: 10px;
+        width: 200px;
+        border: 1px solid lightblue;
+    }
+    
+    .checkout-and-pin > button { 
+        color: white;
+        background-color: #ff7779;
+        transition: all 0.3s ease-in-out;
+        margin: 10px auto;
+    }
+    
+    .checkout-and-pin > button:hover {
+        border: 1px solid #ff7779;
+        background-color: white;
+        color: #ff7779;
+    }
+}
+/* end */

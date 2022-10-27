@@ -42,18 +42,19 @@ function LoginUser () {
         
         result = await result.json();
 
-    
-        localStorage.setItem("user-info", JSON.stringify(result))
         if(result.status === 200 && result.data.user_type === 1) {
             navigation('/main-host-account')
+            localStorage.setItem("user-info", JSON.stringify(result))
         }
         
         if(result.status === 200 && result.data.user_type === 2) {
             navigation('/')
+            localStorage.setItem("user-info", JSON.stringify(result))
         }
         
         if(result.status === 200 && result.data.user_type === 3) {
             navigation('/admin-dashboard')
+            localStorage.setItem("user-info", JSON.stringify(result))
         }
 
         if (result.status === 404) {
@@ -66,22 +67,6 @@ function LoginUser () {
 
             <div className='login-userPage__info'>
 
-                <Button variant="outlined">
-                    Type of place
-                </Button>
-
-                <Button variant="outlined">
-                    Price
-                </Button>
-
-                <Button variant="outlined">
-                    Rooms and beds
-                </Button>
-
-                <Button variant="outlined">
-                    More filters
-                </Button>
-
                 <form className='form-login' onSubmit={handleSubmit}>
                     <h2>Sign in</h2>
                     <input type="email" name="email" placeholder="Enter your Email" value={email} onChange={(e) => setEmail(e.target.value)} />
@@ -89,6 +74,9 @@ function LoginUser () {
                     <input type="password" name="password" placeholder="Enter your password" value={password} onChange={(e) => setPassword(e.target.value)} />
                     <span className='validate-span'>{error_list_password}</span>
                     <span style={{ color: '#a10453', marginTop: '10px' }}>{mommaError}</span>
+                    <span className='forgot_span' onClick={()=> {
+                        navigation('/forgot-password');
+                    }}>forgot password ?</span>
                     <Button variant="outlined" type="submit">Sign in</Button>
                 </form>
 

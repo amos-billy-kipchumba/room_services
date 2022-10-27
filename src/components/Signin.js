@@ -4,6 +4,7 @@ import axios from 'axios'
 import Button from '@mui/material/Button';
 import {Link} from 'react-router-dom'
 import BaseURL from './BaseUrl'
+import swal from 'sweetalert';
 class Signin extends Component {
     constructor() {
         super() 
@@ -15,9 +16,11 @@ class Signin extends Component {
             password: '',
             error_list: [],
             base_url: BaseURL,
+            image: '',
         }
         this.handleChange = this.handleChange.bind(this)
         this.saveCustomer = this.saveCustomer.bind(this)
+        this.handleImage = this.handleImage.bind(this)
     }
 
     handleChange(e) {
@@ -26,53 +29,64 @@ class Signin extends Component {
         });
     }
 
+    handleImage = (e) => {
+        this.setState({
+            image: e.target.files[0],
+        })
+    }
+
     saveCustomer = async (e) => {
         e.preventDefault();
-        console.log(this.state);
-        const response = await axios.post(`${this.state.base_url}/api/add-venturer`, this.state);
+        document.getElementById('submit').innerHTML = "creating";
+        const url = `${this.state.base_url}/api/add-venturer`;
+        const data = new FormData();
+        data.append('first_name', this.state.first_name);
+        data.append('last_name', this.state.last_name);
+        data.append('email', this.state.email);
+        data.append('phone', this.state.phone);
+        data.append('password', this.state.password);
+        data.append('image', this.state.image);
 
-        if(response.data.status === 200)
-        {
-            console.log(response.data.message);
+        axios.post(url,data).then(res => {
+            if(res.data.status === 200)
+            {
+           document.getElementById('submit').innerHTML = "created";
+           swal('success','account created successfully you can now proceed to login','success')
             this.setState({
                 first_name: '',
                 last_name: '',
                 email:'',
                 phone: '',
                 password: '',
+                error_list: [],
+                base_url: BaseURL,
+                image: '',
             });
-        }
-        else
-        {
-          this.setState({
-            error_list: response.data.validate_err,
-          });
-        }
+            }
+            else
+            {
+            this.setState({
+                error_list: res.data.validate_err,
+            });
+            }
+        })
     }
+
+    //Scroll to the top on load
+    componentDidMount() {
+        window.scrollTo({top: 0, left: 0, behavior: 'smooth'})
+    }
+    //End of Scroll to the top on load
   render() {
     return (
         <div className='sign__page'>
 
         <div className='signPage__info'>
 
-            <Button variant="outlined">
-                Type of place
-            </Button>
-
-            <Button variant="outlined">
-                Price
-            </Button>
-
-            <Button variant="outlined">
-                Rooms and beds
-            </Button>
-
-            <Button variant="outlined">
-                More filters
-            </Button>
-
             <form className="sign_form" onSubmit={this.saveCustomer}>
                 <h2>Start adventure</h2>
+                <label>Select <strong>Profile</strong> image</label>
+                <input type="file" name="image" value={this.state.userImage} onChange={this.handleImage} />
                 <input type="text" name="first_name" placeholder="Enter your first name" onChange={this.handleChange} value={this.state.first_name} />
                 <span className='validate-span'>{this.state.error_list.first_name}</span>
                 <input type="text" name="last_name" placeholder="Enter your last name" onChange={this.handleChange} value={this.state.last_name} />
@@ -85,7 +99,7 @@ class Signin extends Component {
                 <span className='validate-span'>{this.state.error_list.password}</span>
 
                 <p className="sign_span">Have an account? <span><Link to="/login-user" className='sin-link'>Login</Link></span></p>
-                <Button variant="outlined" type="submit">Create account</Button>
+                <Button variant="outlined" type="submit" id="submit">Create account</Button>
             </form>
 
         </div>

@@ -1,0 +1,29 @@
+.pageNotFound {
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.pageNotFound > p {
+    margin: 20px auto;
+}
+
+.pageNotFound > span {
+    margin: 20px auto;
+}
+
+.pageNotFound > button {
+    margin: 20px auto;
+    width: 200px;
+    text-transform: inherit;
+    background-color: #ff7779;
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+.pageNotFound > button:hover {
+    background-color: white;
+    border: 1px solid #ff7779;
+    color: black;
+}

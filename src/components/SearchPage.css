@@ -1,3 +1,10 @@
+.search__page {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .searchPage__info {
     padding: 20px;
 }
@@ -16,3 +23,26 @@
     text-transform: inherit;
     margin: 5px;
 }
+
+/* 440px Mobile resposive */
+@media screen and (max-width: 440px) {
+    .searchPage__info {
+        padding: 10px;
+    }
+    
+    .searchPage__info > p {
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+    
+    .searchPage__info > h1 {
+        margin-bottom: 30px;
+    }
+    
+    .searchPage__info > button {
+        border-radius: 30px;
+        text-transform: inherit;
+        margin: 5px;
+    }
+}
+/* end */

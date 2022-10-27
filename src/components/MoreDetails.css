@@ -318,7 +318,7 @@
 }
 
 .right-host-form {
-    width: 60%;
+    min-width: 60%;
     min-height: 80vh;
     background-color: white;
     position: absolute;
@@ -340,6 +340,7 @@
     flex-direction: column;
     align-items: center;
     padding: 20px;
+    position: relative;
 }   
 
 .strike-text {
@@ -347,20 +348,39 @@
 }
 
 .striker-date {
-    margin-top: 10px;
+    margin-top: 20px;
     display: flex;
     width: 100%;
+    min-height: 10vh;
     justify-content: space-evenly;
     flex-wrap: wrap;
 }
 
 .strike-one {
     display: flex;
+    margin: auto 5px;
     flex-direction: column;
 }
 
-.strike-one > label {
-    margin-bottom: 5px;
+.strike-one > button {
+    margin: auto;
+    color: white;
+    text-transform: inherit;
+    background-color: #ff7779;
+    transition: all 0.3s ease-in-out;
+}
+
+.datePickerTribe {
+    margin: 10px auto;
+    width: 150px;
+    height: fit-content;
+    padding: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.strike-one > button:hover {
+    border: 1px solid #ff7779;
+    color: #ff7779;
 }
 
 .strike-one > input {
@@ -369,11 +389,21 @@
 
 .strike-two {
     display: flex;
+    margin: auto 5px;
     flex-direction: column;
 }
 
-.strike-two > label {
-    margin-bottom: 5px;
+.strike-two > button {
+    margin: auto;
+    color: white;
+    text-transform: inherit;
+    background-color: #ff7779;
+    transition: all 0.3s ease-in-out;
+}
+
+.strike-two > button:hover {
+    border: 1px solid #ff7779;
+    color: #ff7779;
 }
 
 .strike-two > input {
@@ -389,6 +419,7 @@
 
 .strike-number-guests > input {
     padding: 10px;
+    min-width: 150px;
 }
 
 .right-host-form-inner > button {
@@ -401,8 +432,9 @@
 }
 
 .right-host-form-inner > button:hover {
-    background-color: #ff7779;
-    color: #000;
+    border: 1px solid #ff7779;
+    background-color: white;
+    color: #ff7779;
 }
 
 .right-host-form-inner > p {
@@ -439,4 +471,2477 @@
     margin: 10px auto;
     border-radius: 10px;
     overflow: hidden;
+
+    border: 0px solid black;
+    box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
 }
+
+.viewAllImages {
+    margin: auto;
+    background-color: white;
+    color: black;
+    text-transform: inherit;
+    border: 1px solid grey;
+    transition: all 0.3s ease-in-out;
+}
+
+.viewAllImages:hover { 
+    border-image-source: linear-gradient(90deg, #ff7779 50%, orange 50%);
+    border-image-slice: 1;
+}
+
+.magicDateClass {
+    position: absolute;
+    top: 10px;
+    width: 500px;
+    min-height: 50vh;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.magicDateClassTitle{
+    width: 100%;
+    min-height: 50vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.magicDateClassHeaders {
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calendar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 600;
+    padding: 10px;
+}
+
+.calendar-body {
+    padding: 10px;
+}
+
+.calendar-week-day {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-weight: 600;
+}
+
+.calendar-week-day > div {
+    display: grid;
+    place-items: center;
+    color: #848484;
+    min-height: 50px;
+}
+
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+    color: #272727;
+}
+
+.calendar-days > div > span {
+    position: absolute;
+}
+
+.calendar-days > div:hover > span {
+    transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+}
+
+.calendar-days > div > span:nth-child(1),
+.calendar-days > div > span:nth-child(3) {
+    width: 2px;
+    height: 0;
+    background-color: #ff7779;
+}
+
+.calendar-days > div:hover > span:nth-child(1),
+.calendar-days > div:hover > span:nth-child(3) {
+    height: 100%;
+}
+
+.calendar-days > div > span:nth-child(1) {
+    bottom: 0;
+    left: 0;
+}
+
+.calendar-days > div > span:nth-child(3) {
+    top: 0;
+    right: 0;
+}
+
+.calendar-days > div > span:nth-child(2),
+.calendar-days > div > span:nth-child(4) {
+    width: 0;
+    height: 2px;
+    background-color: #ff7779;
+}
+
+.calendar-days > div:hover > span:nth-child(2),
+.calendar-days > div:hover > span:nth-child(4) {
+    width: 100%;
+}
+
+.calendar-days > div > span:nth-child(2) {
+    top: 0;
+    left: 0;
+}
+
+.calendar-days > div > span:nth-child(4) {
+    bottom: 0;
+    right: 0;
+}
+
+.calendar-days > div:hover > span:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.calendar-days > div:hover > span:nth-child(3) {
+    transition-delay: 0.4s;
+}
+
+.calendar-days > div:hover > span:nth-child(4) {
+    transition-delay: 0.6s;
+}
+
+.calendar-days > div {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    position: relative;
+    cursor: pointer;
+}
+
+.month-picker {
+    padding: 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.month-picker:hover {
+    background-color: #eee;
+}
+
+.year-picker {
+    display: flex;
+    align-items: center;
+}
+
+.year-change {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.year-change:hover {
+    background-color: #eee;
+}
+
+.magicDateClassHeadersLeft {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.magicDateClassHeadersCenter {
+    flex: 4;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.magicDateClassHeadersRight {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.magicDateClassHolders {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+
+.magicDateClassHolders > button {
+    background-color: #ff7779;
+    color: white;
+    text-transform: inherit;
+    transition: all 0.3s ease-in-out;
+}
+
+.magicDateClassHolders > button:hover {
+    border: 1px solid #ff7779;
+    background-color: white;
+    color: #ff7779;
+}
+
+.magicTimeClass {
+    position: absolute;
+    top: 10px;
+    width: 500px;
+    min-height: 50vh;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.magicTimeClassHolders {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+
+.magicTimeClassHolders > button {
+    background-color: #ff7779;
+    color: white;
+    text-transform: inherit;
+    transition: all 0.3s ease-in-out;
+}
+
+.magicTimeClassHolders > button:hover {
+    border: 1px solid #ff7779;
+    background-color: white;
+    color: #ff7779;
+}
+
+
+/* 440px Mobile resposive */
+@media screen and (max-width: 440px) {
+    .more__page {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .morePage__info {
+        padding: 10px;
+    }
+    
+    .morePage__info > p {
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+    
+    .morePage__info > h1 {
+        margin-bottom: 30px;
+    }
+    
+    .morePage__info > button {
+        border-radius: 30px;
+        text-transform: inherit;
+        margin: 5px;
+    }
+    
+    .selected-info {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .selected-info > h2 {
+        margin: 10px;
+    }
+    
+    .map-save {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .map-save > p {
+        margin-left: 10px;
+    }
+    
+    .map-save > p .map-save-link {
+        color: black;
+    }
+    
+    .button-share {
+        margin-right: 10px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .button-share > button {
+        color: black;
+        margin-left: 10px;
+        text-transform: inherit;
+        display: flex;
+        align-items: center;
+        border-radius: 5px;
+    }
+    
+    .button-share > button > span {
+        margin-right: 5px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .selected-image-collections {
+        width: 100%;
+        height: 50vh;
+        display: flex;
+        margin-top: 10px;
+        align-items: center;
+    }
+    
+    .selected-image-collections-left {
+        width: 50%;
+        height: 100%;
+        margin-left: 80px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    
+    .selected-image-collections-left:hover {
+        -webkit-filter: brightness(80%);
+        -webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        -ms-transition: all 1s ease;
+        transition: all 1s ease;
+    }
+    
+    
+    .selected-image-collections-left > img{
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+    
+    .selected-image-collections-right {
+        width: 50%;
+        height: 100%;
+        margin-left: 5px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        padding: 0;
+        margin-right: 80px;
+    }
+    
+    .left-tired {
+        width: 49.5%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .right-tired {
+        width: 49.5%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-left: auto;
+        align-items: center;
+        border-top-right-radius: 10px;
+    }
+    
+    .selected-image-collections-right-image > img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+    }
+    
+    .selected-image-collections-right-image:nth-of-type(1) {
+        width: 100%;
+        height: 49.5%;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .selected-image-collections-right-image:nth-of-type(1):hover {
+        -webkit-filter: brightness(80%);
+        -webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        -ms-transition: all 1s ease;
+        transition: all 1s ease;
+    }
+    
+    .selected-image-collections-right-image:nth-of-type(2) {
+        width: 100%;
+        height: 49.5%;
+        margin-top: auto;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .selected-image-collections-right-image:nth-of-type(2):hover {
+        -webkit-filter: brightness(80%);
+        -webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        -ms-transition: all 1s ease;
+        transition: all 1s ease;
+    }
+    
+    .selected-image-collections-right-image-dash > img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+    }
+    
+    .dash-one {
+        width: 100%;
+        height: 49.5%;
+        border-top-right-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .dash-one:hover {
+        -webkit-filter: brightness(80%);
+        -webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        -ms-transition: all 1s ease;
+        transition: all 1s ease;
+    }
+    
+    .dash-one > img {
+        border-top-right-radius: 10px;
+    }
+    
+    .dash-two {
+        width: 100%;
+        height: 49.5%;
+        margin-top: auto;
+        border-bottom-right-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .dash-two:hover {
+        -webkit-filter: brightness(80%);
+        -webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        -ms-transition: all 1s ease;
+        transition: all 1s ease;
+    }
+    
+    .dash-two > img {
+        border-bottom-right-radius: 10px;
+    }
+    
+    .hosted-by {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        margin-top: 20px;
+    }
+    .hosted-by-left-main {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .hosted-by-left {
+        flex-grow: 1;
+        width: 100%;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-bottom: 1px solid lightgray;
+        margin-left: 0px;
+        margin-right: 0px;
+        padding-bottom: 20px;
+    }
+    
+    .hosted-by-left-one {
+        margin-top: 10px;
+    }
+    
+    .hosted-by-left-one > p {
+        color: black;
+        margin-top: 5px;
+    }
+    
+    .hosted-by-left-two {
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        margin-top: 20px;
+        margin-bottom: auto;
+        margin-right: 10px;
+    }
+    
+    .hosted-by-left-two > img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        border-radius: 100%;
+    }
+    
+    .dive-right {
+        flex-grow: 1;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid lightgray;
+        margin-top: 20px;
+        margin-left: 0px;
+        margin-right: 0px;
+        padding-bottom: 20px;
+    }
+    
+    .dive-right-one {
+        font-size: 20px;
+    }
+    
+    .dive-right-two {
+        margin-left: 10px;
+    }
+    
+    .mine-rude {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+    }
+    
+    .less-rude {
+        display: flex;
+        align-items: center;
+        width: fit-content;
+    }
+    
+    
+    .more-rude {
+        display: flex;
+        margin-left: 10px;
+        width: fit-content;
+        flex-grow: 1;
+    }
+    
+    .hosted-by-right {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        align-items: center;
+    }
+    
+    .right-host-form {
+        min-width: 60%;
+        min-height: 80vh;
+        background-color: white;
+        position: absolute;
+        position: sticky;
+        position: -webkit-sticky;
+        top: 50px;
+        padding-top: 70px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    .right-host-form-inner {
+        background-color: white;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        position: relative;
+    }   
+    
+    .strike-text {
+        text-decoration: line-through;
+    }
+    
+    .striker-date {
+        margin-top: 20px;
+        display: flex;
+        width: 100%;
+        min-height: 10vh;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+    
+    .strike-one {
+        display: flex;
+        margin: auto 5px;
+        flex-direction: column;
+    }
+    
+    .strike-one > button {
+        margin: auto;
+        color: white;
+        text-transform: inherit;
+        background-color: #ff7779;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .datePickerTribe {
+        margin: 15px auto;
+        width: 200px;
+        height: fit-content;
+        padding: 10px;
+        transition: all 0.3s ease-in-out;
+        border: 1px solid lightblue;
+    }
+    
+    .strike-one > button:hover {
+        border: 1px solid #ff7779;
+        color: #ff7779;
+    }
+    
+    .strike-one > input {
+        padding: 5px;
+    }
+    
+    .strike-two {
+        display: flex;
+        margin: auto 5px;
+        flex-direction: column;
+    }
+    
+    .strike-two > button {
+        margin: auto;
+        color: white;
+        text-transform: inherit;
+        background-color: #ff7779;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .strike-two > button:hover {
+        border: 1px solid #ff7779;
+        color: #ff7779;
+    }
+    
+    .strike-two > input {
+        padding: 5px;
+    }
+    
+    .strike-number-guests {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    
+    .strike-number-guests > input {
+        padding: 10px;
+        width: 200px;
+        border: 1px solid lightblue;
+    }
+    
+    .right-host-form-inner > button {
+        background-color: #ff7779;
+        color: white;
+        margin-top: 20px;
+        text-transform: inherit;
+        width: 100%;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .right-host-form-inner > button:hover {
+        border: 1px solid #ff7779;
+        background-color: white;
+        color: #ff7779;
+    }
+    
+    .right-host-form-inner > p {
+        margin-top: 10px;
+    }
+    
+    .strike-price {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+        border-bottom: 1px solid lightgray;
+        min-height: 20vh;
+    }
+    
+    .strike-price > h4 {
+        align-self: center;
+        margin: 10px auto;
+    }
+    
+    .strike-price-top {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    
+    .strike-price-top > p {
+        border-bottom: 1px solid #848484;
+    }
+    
+    .setSliderRight {
+        width: 90%;
+        height: 30vh;
+        margin: 10px auto;
+        border-radius: 10px;
+        overflow: hidden;
+    
+        border: 0px solid black;
+        box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
+    }
+    
+    .viewAllImages {
+        margin: auto;
+        background-color: white;
+        color: black;
+        text-transform: inherit;
+        border: 1px solid grey;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .viewAllImages:hover { 
+        border-image-source: linear-gradient(90deg, #ff7779 50%, orange 50%);
+        border-image-slice: 1;
+    }
+    
+    .magicDateClass {
+        position: absolute;
+        top: 10px;
+        width: 500px;
+        min-height: 50vh;
+        background-color: white;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        border-radius: 10px;
+        padding: 10px;
+    }
+    
+    .magicDateClassTitle{
+        width: 100%;
+        min-height: 50vh;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 10px;
+    }
+    
+    .magicDateClassHeaders {
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .calendar-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-weight: 600;
+        padding: 10px;
+    }
+    
+    .calendar-body {
+        padding: 10px;
+    }
+    
+    .calendar-week-day {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        font-weight: 600;
+    }
+    
+    .calendar-week-day > div {
+        display: grid;
+        place-items: center;
+        color: #848484;
+        min-height: 50px;
+    }
+    
+    
+    .calendar-days {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 2px;
+        color: #272727;
+    }
+    
+    .calendar-days > div > span {
+        position: absolute;
+    }
+    
+    .calendar-days > div:hover > span {
+        transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+    }
+    
+    .calendar-days > div > span:nth-child(1),
+    .calendar-days > div > span:nth-child(3) {
+        width: 2px;
+        height: 0;
+        background-color: #ff7779;
+    }
+    
+    .calendar-days > div:hover > span:nth-child(1),
+    .calendar-days > div:hover > span:nth-child(3) {
+        height: 100%;
+    }
+    
+    .calendar-days > div > span:nth-child(1) {
+        bottom: 0;
+        left: 0;
+    }
+    
+    .calendar-days > div > span:nth-child(3) {
+        top: 0;
+        right: 0;
+    }
+    
+    .calendar-days > div > span:nth-child(2),
+    .calendar-days > div > span:nth-child(4) {
+        width: 0;
+        height: 2px;
+        background-color: #ff7779;
+    }
+    
+    .calendar-days > div:hover > span:nth-child(2),
+    .calendar-days > div:hover > span:nth-child(4) {
+        width: 100%;
+    }
+    
+    .calendar-days > div > span:nth-child(2) {
+        top: 0;
+        left: 0;
+    }
+    
+    .calendar-days > div > span:nth-child(4) {
+        bottom: 0;
+        right: 0;
+    }
+    
+    .calendar-days > div:hover > span:nth-child(2) {
+        transition-delay: 0.2s;
+    }
+    
+    .calendar-days > div:hover > span:nth-child(3) {
+        transition-delay: 0.4s;
+    }
+    
+    .calendar-days > div:hover > span:nth-child(4) {
+        transition-delay: 0.6s;
+    }
+    
+    .calendar-days > div {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+        position: relative;
+        cursor: pointer;
+    }
+    
+    .month-picker {
+        padding: 5px 10px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    
+    .month-picker:hover {
+        background-color: #eee;
+    }
+    
+    .year-picker {
+        display: flex;
+        align-items: center;
+    }
+    
+    .year-change {
+        display: flex;
+        align-items: center;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        margin: 0 10px;
+        cursor: pointer;
+    }
+    
+    .year-change:hover {
+        background-color: #eee;
+    }
+    
+    .magicDateClassHeadersLeft {
+        flex: 1;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .magicDateClassHeadersCenter {
+        flex: 4;
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    
+    .magicDateClassHeadersRight {
+        flex: 1;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .magicDateClassHolders {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        padding: 10px;
+    }
+    
+    .magicDateClassHolders > button {
+        background-color: #ff7779;
+        color: white;
+        text-transform: inherit;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .magicDateClassHolders > button:hover {
+        border: 1px solid #ff7779;
+        background-color: white;
+        color: #ff7779;
+    }
+    
+    .magicTimeClass {
+        position: absolute;
+        top: 10px;
+        width: 500px;
+        min-height: 50vh;
+        background-color: white;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        border-radius: 10px;
+        padding: 10px;
+    }
+    
+    .magicTimeClassHolders {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        padding: 10px;
+    }
+    
+    .magicTimeClassHolders > button {
+        background-color: #ff7779;
+        color: white;
+        text-transform: inherit;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .magicTimeClassHolders > button:hover {
+        border: 1px solid #ff7779;
+        background-color: white;
+        color: #ff7779;
+    }
+}
+
+/* end */
+
+
+/* 440px Mobile resposive */
+@media screen and (min-width: 540px) and (max-width: 750px) {
+    .more__page {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .morePage__info {
+        padding: 10px;
+    }
+    
+    .morePage__info > p {
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+    
+    .morePage__info > h1 {
+        margin-bottom: 30px;
+    }
+    
+    .morePage__info > button {
+        border-radius: 30px;
+        text-transform: inherit;
+        margin: 5px;
+    }
+    
+    .selected-info {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .selected-info > h2 {
+        margin: 10px;
+    }
+    
+    .map-save {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .map-save > p {
+        margin-left: 10px;
+    }
+    
+    .map-save > p .map-save-link {
+        color: black;
+    }
+    
+    .button-share {
+        margin-right: 10px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .button-share > button {
+        color: black;
+        margin-left: 10px;
+        text-transform: inherit;
+        display: flex;
+        align-items: center;
+        border-radius: 5px;
+    }
+    
+    .button-share > button > span {
+        margin-right: 5px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .selected-image-collections {
+        width: 100%;
+        height: 50vh;
+        display: flex;
+        margin-top: 10px;
+        align-items: center;
+    }
+    
+    .selected-image-collections-left {
+        width: 50%;
+        height: 100%;
+        margin-left: 80px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    
+    .selected-image-collections-left:hover {
+        -webkit-filter: brightness(80%);
+        -webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        -ms-transition: all 1s ease;
+        transition: all 1s ease;
+    }
+    
+    
+    .selected-image-collections-left > img{
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+    
+    .selected-image-collections-right {
+        width: 50%;
+        height: 100%;
+        margin-left: 5px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        padding: 0;
+        margin-right: 80px;
+    }
+    
+    .left-tired {
+        width: 49.5%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .right-tired {
+        width: 49.5%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-left: auto;
+        align-items: center;
+        border-top-right-radius: 10px;
+    }
+    
+    .selected-image-collections-right-image > img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+    }
+    
+    .selected-image-collections-right-image:nth-of-type(1) {
+        width: 100%;
+        height: 49.5%;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .selected-image-collections-right-image:nth-of-type(1):hover {
+        -webkit-filter: brightness(80%);
+        -webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        -ms-transition: all 1s ease;
+        transition: all 1s ease;
+    }
+    
+    .selected-image-collections-right-image:nth-of-type(2) {
+        width: 100%;
+        height: 49.5%;
+        margin-top: auto;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .selected-image-collections-right-image:nth-of-type(2):hover {
+        -webkit-filter: brightness(80%);
+        -webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        -ms-transition: all 1s ease;
+        transition: all 1s ease;
+    }
+    
+    .selected-image-collections-right-image-dash > img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+    }
+    
+    .dash-one {
+        width: 100%;
+        height: 49.5%;
+        border-top-right-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .dash-one:hover {
+        -webkit-filter: brightness(80%);
+        -webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        -ms-transition: all 1s ease;
+        transition: all 1s ease;
+    }
+    
+    .dash-one > img {
+        border-top-right-radius: 10px;
+    }
+    
+    .dash-two {
+        width: 100%;
+        height: 49.5%;
+        margin-top: auto;
+        border-bottom-right-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .dash-two:hover {
+        -webkit-filter: brightness(80%);
+        -webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        -ms-transition: all 1s ease;
+        transition: all 1s ease;
+    }
+    
+    .dash-two > img {
+        border-bottom-right-radius: 10px;
+    }
+    
+    .hosted-by {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        margin-top: 20px;
+    }
+    .hosted-by-left-main {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .hosted-by-left {
+        flex-grow: 1;
+        width: 100%;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-bottom: 1px solid lightgray;
+        margin-left: 0px;
+        margin-right: 0px;
+        padding-bottom: 20px;
+    }
+    
+    .hosted-by-left-one {
+        margin-top: 10px;
+    }
+    
+    .hosted-by-left-one > p {
+        color: black;
+        margin-top: 5px;
+    }
+    
+    .hosted-by-left-two {
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        margin-top: 20px;
+        margin-bottom: auto;
+        margin-right: 10px;
+    }
+    
+    .hosted-by-left-two > img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        border-radius: 100%;
+    }
+    
+    .dive-right {
+        flex-grow: 1;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid lightgray;
+        margin-top: 20px;
+        margin-left: 0px;
+        margin-right: 0px;
+        padding-bottom: 20px;
+    }
+    
+    .dive-right-one {
+        font-size: 20px;
+    }
+    
+    .dive-right-two {
+        margin-left: 10px;
+    }
+    
+    .mine-rude {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+    }
+    
+    .less-rude {
+        display: flex;
+        align-items: center;
+        width: fit-content;
+    }
+    
+    
+    .more-rude {
+        display: flex;
+        margin-left: 10px;
+        width: fit-content;
+        flex-grow: 1;
+    }
+    
+    .hosted-by-right {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        align-items: center;
+    }
+    
+    .right-host-form {
+        min-width: 60%;
+        min-height: 80vh;
+        background-color: white;
+        position: absolute;
+        position: sticky;
+        position: -webkit-sticky;
+        top: 50px;
+        padding-top: 70px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    .right-host-form-inner {
+        background-color: white;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        position: relative;
+    }   
+    
+    .strike-text {
+        text-decoration: line-through;
+    }
+    
+    .striker-date {
+        margin-top: 20px;
+        display: flex;
+        width: 100%;
+        min-height: 10vh;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+    
+    .strike-one {
+        display: flex;
+        margin: auto 5px;
+        flex-direction: column;
+    }
+    
+    .strike-one > button {
+        margin: auto;
+        color: white;
+        text-transform: inherit;
+        background-color: #ff7779;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .datePickerTribe {
+        margin: 15px auto;
+        width: 200px;
+        height: fit-content;
+        padding: 10px;
+        transition: all 0.3s ease-in-out;
+        border: 1px solid lightblue;
+    }
+    
+    .strike-one > button:hover {
+        border: 1px solid #ff7779;
+        color: #ff7779;
+    }
+    
+    .strike-one > input {
+        padding: 5px;
+    }
+    
+    .strike-two {
+        display: flex;
+        margin: auto 5px;
+        flex-direction: column;
+    }
+    
+    .strike-two > button {
+        margin: auto;
+        color: white;
+        text-transform: inherit;
+        background-color: #ff7779;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .strike-two > button:hover {
+        border: 1px solid #ff7779;
+        color: #ff7779;
+    }
+    
+    .strike-two > input {
+        padding: 5px;
+    }
+    
+    .strike-number-guests {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    
+    .strike-number-guests > input {
+        padding: 10px;
+        width: 200px;
+        border: 1px solid lightblue;
+    }
+    
+    .right-host-form-inner > button {
+        background-color: #ff7779;
+        color: white;
+        margin-top: 20px;
+        text-transform: inherit;
+        width: 100%;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .right-host-form-inner > button:hover {
+        border: 1px solid #ff7779;
+        background-color: white;
+        color: #ff7779;
+    }
+    
+    .right-host-form-inner > p {
+        margin-top: 10px;
+    }
+    
+    .strike-price {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+        border-bottom: 1px solid lightgray;
+        min-height: 20vh;
+    }
+    
+    .strike-price > h4 {
+        align-self: center;
+        margin: 10px auto;
+    }
+    
+    .strike-price-top {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    
+    .strike-price-top > p {
+        border-bottom: 1px solid #848484;
+    }
+    
+    .setSliderRight {
+        width: 90%;
+        height: 40vh;
+        margin: 10px auto;
+        border-radius: 10px;
+        overflow: hidden;
+    
+        border: 0px solid black;
+        box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
+    }
+    
+    .viewAllImages {
+        margin: auto;
+        background-color: white;
+        color: black;
+        text-transform: inherit;
+        border: 1px solid grey;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .viewAllImages:hover { 
+        border-image-source: linear-gradient(90deg, #ff7779 50%, orange 50%);
+        border-image-slice: 1;
+    }
+    
+    .magicDateClass {
+        position: absolute;
+        top: 10px;
+        width: 500px;
+        min-height: 50vh;
+        background-color: white;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        border-radius: 10px;
+        padding: 10px;
+    }
+    
+    .magicDateClassTitle{
+        width: 100%;
+        min-height: 50vh;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 10px;
+    }
+    
+    .magicDateClassHeaders {
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .calendar-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-weight: 600;
+        padding: 10px;
+    }
+    
+    .calendar-body {
+        padding: 10px;
+    }
+    
+    .calendar-week-day {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        font-weight: 600;
+    }
+    
+    .calendar-week-day > div {
+        display: grid;
+        place-items: center;
+        color: #848484;
+        min-height: 50px;
+    }
+    
+    
+    .calendar-days {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 2px;
+        color: #272727;
+    }
+    
+    .calendar-days > div > span {
+        position: absolute;
+    }
+    
+    .calendar-days > div:hover > span {
+        transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+    }
+    
+    .calendar-days > div > span:nth-child(1),
+    .calendar-days > div > span:nth-child(3) {
+        width: 2px;
+        height: 0;
+        background-color: #ff7779;
+    }
+    
+    .calendar-days > div:hover > span:nth-child(1),
+    .calendar-days > div:hover > span:nth-child(3) {
+        height: 100%;
+    }
+    
+    .calendar-days > div > span:nth-child(1) {
+        bottom: 0;
+        left: 0;
+    }
+    
+    .calendar-days > div > span:nth-child(3) {
+        top: 0;
+        right: 0;
+    }
+    
+    .calendar-days > div > span:nth-child(2),
+    .calendar-days > div > span:nth-child(4) {
+        width: 0;
+        height: 2px;
+        background-color: #ff7779;
+    }
+    
+    .calendar-days > div:hover > span:nth-child(2),
+    .calendar-days > div:hover > span:nth-child(4) {
+        width: 100%;
+    }
+    
+    .calendar-days > div > span:nth-child(2) {
+        top: 0;
+        left: 0;
+    }
+    
+    .calendar-days > div > span:nth-child(4) {
+        bottom: 0;
+        right: 0;
+    }
+    
+    .calendar-days > div:hover > span:nth-child(2) {
+        transition-delay: 0.2s;
+    }
+    
+    .calendar-days > div:hover > span:nth-child(3) {
+        transition-delay: 0.4s;
+    }
+    
+    .calendar-days > div:hover > span:nth-child(4) {
+        transition-delay: 0.6s;
+    }
+    
+    .calendar-days > div {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+        position: relative;
+        cursor: pointer;
+    }
+    
+    .month-picker {
+        padding: 5px 10px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    
+    .month-picker:hover {
+        background-color: #eee;
+    }
+    
+    .year-picker {
+        display: flex;
+        align-items: center;
+    }
+    
+    .year-change {
+        display: flex;
+        align-items: center;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        margin: 0 10px;
+        cursor: pointer;
+    }
+    
+    .year-change:hover {
+        background-color: #eee;
+    }
+    
+    .magicDateClassHeadersLeft {
+        flex: 1;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .magicDateClassHeadersCenter {
+        flex: 4;
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    
+    .magicDateClassHeadersRight {
+        flex: 1;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .magicDateClassHolders {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        padding: 10px;
+    }
+    
+    .magicDateClassHolders > button {
+        background-color: #ff7779;
+        color: white;
+        text-transform: inherit;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .magicDateClassHolders > button:hover {
+        border: 1px solid #ff7779;
+        background-color: white;
+        color: #ff7779;
+    }
+    
+    .magicTimeClass {
+        position: absolute;
+        top: 10px;
+        width: 500px;
+        min-height: 50vh;
+        background-color: white;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        border-radius: 10px;
+        padding: 10px;
+    }
+    
+    .magicTimeClassHolders {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        padding: 10px;
+    }
+    
+    .magicTimeClassHolders > button {
+        background-color: #ff7779;
+        color: white;
+        text-transform: inherit;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .magicTimeClassHolders > button:hover {
+        border: 1px solid #ff7779;
+        background-color: white;
+        color: #ff7779;
+    }
+}
+
+/* end */
+
+
+/* 760px  to 1030px Mobile resposive */
+@media screen and (min-width: 760px) and (max-width: 1030px) {
+    .more__page {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .morePage__info {
+        padding: 10px;
+    }
+    
+    .morePage__info > p {
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+    
+    .morePage__info > h1 {
+        margin-bottom: 30px;
+    }
+    
+    .morePage__info > button {
+        border-radius: 30px;
+        text-transform: inherit;
+        margin: 5px;
+    }
+    
+    .selected-info {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .selected-info > h2 {
+        margin: 10px;
+    }
+    
+    .map-save {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .map-save > p {
+        margin-left: 10px;
+    }
+    
+    .map-save > p .map-save-link {
+        color: black;
+    }
+    
+    .button-share {
+        margin-right: 10px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .button-share > button {
+        color: black;
+        margin-left: 10px;
+        text-transform: inherit;
+        display: flex;
+        align-items: center;
+        border-radius: 5px;
+    }
+    
+    .button-share > button > span {
+        margin-right: 5px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .selected-image-collections {
+        width: 100%;
+        height: 50vh;
+        display: flex;
+        margin-top: 10px;
+        align-items: center;
+    }
+    
+    .selected-image-collections-left {
+        width: 50%;
+        height: 100%;
+        margin-left: 80px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    
+    .selected-image-collections-left:hover {
+        -webkit-filter: brightness(80%);
+        -webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        -ms-transition: all 1s ease;
+        transition: all 1s ease;
+    }
+    
+    
+    .selected-image-collections-left > img{
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+    
+    .selected-image-collections-right {
+        width: 50%;
+        height: 100%;
+        margin-left: 5px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        padding: 0;
+        margin-right: 80px;
+    }
+    
+    .left-tired {
+        width: 49.5%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .right-tired {
+        width: 49.5%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-left: auto;
+        align-items: center;
+        border-top-right-radius: 10px;
+    }
+    
+    .selected-image-collections-right-image > img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+    }
+    
+    .selected-image-collections-right-image:nth-of-type(1) {
+        width: 100%;
+        height: 49.5%;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .selected-image-collections-right-image:nth-of-type(1):hover {
+        -webkit-filter: brightness(80%);
+        -webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        -ms-transition: all 1s ease;
+        transition: all 1s ease;
+    }
+    
+    .selected-image-collections-right-image:nth-of-type(2) {
+        width: 100%;
+        height: 49.5%;
+        margin-top: auto;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .selected-image-collections-right-image:nth-of-type(2):hover {
+        -webkit-filter: brightness(80%);
+        -webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        -ms-transition: all 1s ease;
+        transition: all 1s ease;
+    }
+    
+    .selected-image-collections-right-image-dash > img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+    }
+    
+    .dash-one {
+        width: 100%;
+        height: 49.5%;
+        border-top-right-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .dash-one:hover {
+        -webkit-filter: brightness(80%);
+        -webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        -ms-transition: all 1s ease;
+        transition: all 1s ease;
+    }
+    
+    .dash-one > img {
+        border-top-right-radius: 10px;
+    }
+    
+    .dash-two {
+        width: 100%;
+        height: 49.5%;
+        margin-top: auto;
+        border-bottom-right-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .dash-two:hover {
+        -webkit-filter: brightness(80%);
+        -webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        -ms-transition: all 1s ease;
+        transition: all 1s ease;
+    }
+    
+    .dash-two > img {
+        border-bottom-right-radius: 10px;
+    }
+    
+    .hosted-by {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        margin-top: 20px;
+    }
+    .hosted-by-left-main {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .hosted-by-left {
+        flex-grow: 1;
+        width: 100%;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-bottom: 1px solid lightgray;
+        margin-left: 0px;
+        margin-right: 0px;
+        padding-bottom: 20px;
+    }
+    
+    .hosted-by-left-one {
+        margin-top: 10px;
+    }
+    
+    .hosted-by-left-one > p {
+        color: black;
+        margin-top: 5px;
+    }
+    
+    .hosted-by-left-two {
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        margin-top: 20px;
+        margin-bottom: auto;
+        margin-right: 10px;
+    }
+    
+    .hosted-by-left-two > img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        border-radius: 100%;
+    }
+    
+    .dive-right {
+        flex-grow: 1;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid lightgray;
+        margin-top: 20px;
+        margin-left: 0px;
+        margin-right: 0px;
+        padding-bottom: 20px;
+    }
+    
+    .dive-right-one {
+        font-size: 20px;
+    }
+    
+    .dive-right-two {
+        margin-left: 10px;
+    }
+    
+    .mine-rude {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+    }
+    
+    .less-rude {
+        display: flex;
+        align-items: center;
+        width: fit-content;
+    }
+    
+    
+    .more-rude {
+        display: flex;
+        margin-left: 10px;
+        width: fit-content;
+        flex-grow: 1;
+    }
+    
+    .hosted-by-right {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        align-items: center;
+    }
+    
+    .right-host-form {
+        min-width: 60%;
+        min-height: 80vh;
+        background-color: white;
+        position: absolute;
+        position: sticky;
+        position: -webkit-sticky;
+        top: 50px;
+        padding-top: 70px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    .right-host-form-inner {
+        background-color: white;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        position: relative;
+    }   
+    
+    .strike-text {
+        text-decoration: line-through;
+    }
+    
+    .striker-date {
+        margin-top: 20px;
+        display: flex;
+        width: 100%;
+        min-height: 10vh;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+    
+    .strike-one {
+        display: flex;
+        margin: auto 5px;
+        flex-direction: column;
+    }
+    
+    .strike-one > button {
+        margin: auto;
+        color: white;
+        text-transform: inherit;
+        background-color: #ff7779;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .datePickerTribe {
+        margin: 15px auto;
+        width: 200px;
+        height: fit-content;
+        padding: 10px;
+        transition: all 0.3s ease-in-out;
+        border: 1px solid lightblue;
+    }
+    
+    .strike-one > button:hover {
+        border: 1px solid #ff7779;
+        color: #ff7779;
+    }
+    
+    .strike-one > input {
+        padding: 5px;
+    }
+    
+    .strike-two {
+        display: flex;
+        margin: auto 5px;
+        flex-direction: column;
+    }
+    
+    .strike-two > button {
+        margin: auto;
+        color: white;
+        text-transform: inherit;
+        background-color: #ff7779;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .strike-two > button:hover {
+        border: 1px solid #ff7779;
+        color: #ff7779;
+    }
+    
+    .strike-two > input {
+        padding: 5px;
+    }
+    
+    .strike-number-guests {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    
+    .strike-number-guests > input {
+        padding: 10px;
+        width: 200px;
+        border: 1px solid lightblue;
+    }
+    
+    .right-host-form-inner > button {
+        background-color: #ff7779;
+        color: white;
+        margin-top: 20px;
+        text-transform: inherit;
+        width: 100%;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .right-host-form-inner > button:hover {
+        border: 1px solid #ff7779;
+        background-color: white;
+        color: #ff7779;
+    }
+    
+    .right-host-form-inner > p {
+        margin-top: 10px;
+    }
+    
+    .strike-price {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+        border-bottom: 1px solid lightgray;
+        min-height: 20vh;
+    }
+    
+    .strike-price > h4 {
+        align-self: center;
+        margin: 10px auto;
+    }
+    
+    .strike-price-top {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    
+    .strike-price-top > p {
+        border-bottom: 1px solid #848484;
+    }
+    
+    .setSliderRight {
+        width: 90%;
+        height: 40vh;
+        margin: 10px auto;
+        border-radius: 10px;
+        overflow: hidden;
+    
+        border: 0px solid black;
+        box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
+    }
+    
+    .viewAllImages {
+        margin: auto;
+        background-color: white;
+        color: black;
+        text-transform: inherit;
+        border: 1px solid grey;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .viewAllImages:hover { 
+        border-image-source: linear-gradient(90deg, #ff7779 50%, orange 50%);
+        border-image-slice: 1;
+    }
+    
+    .magicDateClass {
+        position: absolute;
+        top: 10px;
+        width: 500px;
+        min-height: 50vh;
+        background-color: white;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        border-radius: 10px;
+        padding: 10px;
+    }
+    
+    .magicDateClassTitle{
+        width: 100%;
+        min-height: 50vh;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 10px;
+    }
+    
+    .magicDateClassHeaders {
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .calendar-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-weight: 600;
+        padding: 10px;
+    }
+    
+    .calendar-body {
+        padding: 10px;
+    }
+    
+    .calendar-week-day {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        font-weight: 600;
+    }
+    
+    .calendar-week-day > div {
+        display: grid;
+        place-items: center;
+        color: #848484;
+        min-height: 50px;
+    }
+    
+    
+    .calendar-days {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 2px;
+        color: #272727;
+    }
+    
+    .calendar-days > div > span {
+        position: absolute;
+    }
+    
+    .calendar-days > div:hover > span {
+        transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+    }
+    
+    .calendar-days > div > span:nth-child(1),
+    .calendar-days > div > span:nth-child(3) {
+        width: 2px;
+        height: 0;
+        background-color: #ff7779;
+    }
+    
+    .calendar-days > div:hover > span:nth-child(1),
+    .calendar-days > div:hover > span:nth-child(3) {
+        height: 100%;
+    }
+    
+    .calendar-days > div > span:nth-child(1) {
+        bottom: 0;
+        left: 0;
+    }
+    
+    .calendar-days > div > span:nth-child(3) {
+        top: 0;
+        right: 0;
+    }
+    
+    .calendar-days > div > span:nth-child(2),
+    .calendar-days > div > span:nth-child(4) {
+        width: 0;
+        height: 2px;
+        background-color: #ff7779;
+    }
+    
+    .calendar-days > div:hover > span:nth-child(2),
+    .calendar-days > div:hover > span:nth-child(4) {
+        width: 100%;
+    }
+    
+    .calendar-days > div > span:nth-child(2) {
+        top: 0;
+        left: 0;
+    }
+    
+    .calendar-days > div > span:nth-child(4) {
+        bottom: 0;
+        right: 0;
+    }
+    
+    .calendar-days > div:hover > span:nth-child(2) {
+        transition-delay: 0.2s;
+    }
+    
+    .calendar-days > div:hover > span:nth-child(3) {
+        transition-delay: 0.4s;
+    }
+    
+    .calendar-days > div:hover > span:nth-child(4) {
+        transition-delay: 0.6s;
+    }
+    
+    .calendar-days > div {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+        position: relative;
+        cursor: pointer;
+    }
+    
+    .month-picker {
+        padding: 5px 10px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    
+    .month-picker:hover {
+        background-color: #eee;
+    }
+    
+    .year-picker {
+        display: flex;
+        align-items: center;
+    }
+    
+    .year-change {
+        display: flex;
+        align-items: center;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        margin: 0 10px;
+        cursor: pointer;
+    }
+    
+    .year-change:hover {
+        background-color: #eee;
+    }
+    
+    .magicDateClassHeadersLeft {
+        flex: 1;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .magicDateClassHeadersCenter {
+        flex: 4;
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    
+    .magicDateClassHeadersRight {
+        flex: 1;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .magicDateClassHolders {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        padding: 10px;
+    }
+    
+    .magicDateClassHolders > button {
+        background-color: #ff7779;
+        color: white;
+        text-transform: inherit;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .magicDateClassHolders > button:hover {
+        border: 1px solid #ff7779;
+        background-color: white;
+        color: #ff7779;
+    }
+    
+    .magicTimeClass {
+        position: absolute;
+        top: 10px;
+        width: 500px;
+        min-height: 50vh;
+        background-color: white;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        border-radius: 10px;
+        padding: 10px;
+    }
+    
+    .magicTimeClassHolders {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        padding: 10px;
+    }
+    
+    .magicTimeClassHolders > button {
+        background-color: #ff7779;
+        color: white;
+        text-transform: inherit;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .magicTimeClassHolders > button:hover {
+        border: 1px solid #ff7779;
+        background-color: white;
+        color: #ff7779;
+    }
+}
+/* end */
