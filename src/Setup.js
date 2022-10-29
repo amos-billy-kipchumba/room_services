@@ -2,7 +2,7 @@ import React from 'react'
 import './Setup.css'
 function Setup() {
   return (
-    <div>Setup</div>
+    <div>Setup. The sun i too hot</div>
   )
 }
 
