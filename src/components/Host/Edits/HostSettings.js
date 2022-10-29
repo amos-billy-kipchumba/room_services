@@ -7,6 +7,7 @@ import {useNavigate} from 'react-router-dom'
 import BaseURL from '../../BaseUrl';
 import { Button } from '@mui/material';
 import swal from 'sweetalert';
+import { MoreHoriz } from '@mui/icons-material';
 function HostSettings() {
   const userData = JSON.parse(localStorage.getItem('user-info'));
   const [userId] = useState(userData.data.id);
@@ -39,6 +40,23 @@ function HostSettings() {
       }
   }
 
+  const [showMenuBar, setShowMenuBar] = useState(false);
+
+  useEffect(()=>{
+    if(window.innerWidth < 1024) {
+      setShowMenuBar(false)
+    }
+  
+    if(window.innerWidth > 1024) {
+      setShowMenuBar(true);
+    }
+  },[]);
+
+  const handleMenuBar = () => {
+    setShowMenuBar(!showMenuBar);
+    
+  }
+
   //Scroll to the top on load
   useEffect(()=>{
     window.scrollTo({top: 0, left: 0, behavior: 'smooth'})
@@ -57,10 +75,16 @@ function HostSettings() {
                       <h4>{userFirstName}</h4>
                       <p>Host</p>
                   </div>
-                  <div><h2 style={{ display: 'flex', alignItems: 'center' }}>...</h2></div>
+                  <div className='hostSettingMenuBar' onClick={handleMenuBar}><h2 style={{ display: 'flex', alignItems: 'center' }}><MoreHoriz /></h2></div>
               </div>
+
+              {showMenuBar ?
               <p>Navigation</p>
+              :
+              null
+              }
   
+              {showMenuBar ?
               <ul className='host-navigation'>
                 <li onClick={()=>{
                     Navigate('/main-host-account');
@@ -72,7 +96,15 @@ function HostSettings() {
                 }}>Tenants Details</li>
                 <li onClick={()=> Navigate('/host-profile')}>Host Profile</li>
                 <li className='deal-done' style={{ backgroundColor: '#ff7779' }}>Settings</li>
+                <li onClick={()=> {
+                  localStorage.removeItem("user-info");
+                  Navigate('/');
+                }}
+                className='baby'>Logout</li>
               </ul>
+              :
+              null
+              }
              </div>
              <div className="host-settings__info-right">
                 <Button className='host-settings__info-rightDelete' onClick={()=>handleDelete()} 

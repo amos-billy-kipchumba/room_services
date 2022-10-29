@@ -4,7 +4,7 @@ import Add from '@mui/icons-material/Add';
 import {Link} from 'react-router-dom'
 import axios from 'axios'
 import {useNavigate} from 'react-router-dom'
-import { House, People } from '@mui/icons-material';
+import { House, MoreHoriz, People } from '@mui/icons-material';
 import BaseURL from './BaseUrl';
 function MainHostAccount() {
   const Navigate = useNavigate();
@@ -43,6 +43,24 @@ function MainHostAccount() {
 
   },[userId]);
 
+
+  const [showMenuBar, setShowMenuBar] = useState(false);
+
+  useEffect(()=>{
+    if(window.innerWidth < 1024) {
+      setShowMenuBar(false)
+    }
+  
+    if(window.innerWidth > 1024) {
+      setShowMenuBar(true);
+    }
+  },[]);
+
+  const handleMenuBar = () => {
+    setShowMenuBar(!showMenuBar);
+    
+  }
+
   //Scroll to the top on load
   useEffect(()=>{
     window.scrollTo({top: 0, left: 0, behavior: 'smooth'})
@@ -54,15 +72,25 @@ function MainHostAccount() {
           <div className='main-host-account__info'>
              <div className="main-host-account__info-left">
               <div className='incase-you-know'>
-                  <div className="host-image"><img src={imageToBe} alt="" /></div>
+                  <div className="host-image" onClick={
+                    ()=> {
+                      Navigate('/host-profile');
+                    }
+                  }><img src={imageToBe} alt="" /></div>
                   <div>
                       <h4>{userFirstName}</h4>
                       <p>Host</p>
                   </div>
-                  <div><h2 style={{ display: 'flex', alignItems: 'center' }}>...</h2></div>
+                  <div className='hostMenuBar' onClick={handleMenuBar}><h2><MoreHoriz /> </h2></div>
               </div>
+
+              {showMenuBar ? 
               <p>Navigation</p>
+              :
+              null
+              }
   
+              {showMenuBar ? 
               <ul className='host-navigation'>
                 <li style={{ backgroundColor: '#ff7779' }}>Dashboard</li>
                 <li><Link to="/host-houses" className='lilo-link'>Your houses</Link></li>
@@ -72,7 +100,16 @@ function MainHostAccount() {
                 }}>Tenants Details</li>
                 <li onClick={()=> Navigate('/host-profile')}>Host Profile</li>
                 <li onClick={()=> Navigate('/host-settings')} className='deal-done'>Settings</li>
+                <li onClick={()=> {
+                  localStorage.removeItem("user-info");
+                  Navigate('/');
+                }}
+                className='baby'>Logout</li>
               </ul>
+              :
+              null
+              }
+
              </div>
              <div className="main-host-account__info-right">
                 <div 
@@ -80,14 +117,14 @@ function MainHostAccount() {
                 onClick={()=> {
                   Navigate('/host-houses');
                 }}>
-                  <h2><House /> houses</h2>
+                  <h2><House style={{margin: 'auto 5px'}} /> houses</h2>
                   <span>{houseData.length}</span>
                 </div>
 
                 <div className='main-host-account__info-rightCustomerCard' onClick={()=>{
                   Navigate('/tenants-details');
                 }}>
-                  <h2><People /> tenants</h2>
+                  <h2><People style={{margin: 'auto 5px'}} /> tenants</h2>
                   <span>{totalBooked.length}</span>
                 </div>
              </div>

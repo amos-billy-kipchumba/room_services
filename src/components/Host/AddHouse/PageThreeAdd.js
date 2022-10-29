@@ -27,6 +27,7 @@ import Drier from '../../Images/drier.jpg'
 import KitchenIcon from '@mui/icons-material/Kitchen';
 import BaseURL from '../../BaseUrl';
 import swal from 'sweetalert';
+import { Add, MoreHoriz } from '@mui/icons-material';
 class PageThreeAdd extends Component {
     constructor() {
       super()
@@ -64,6 +65,7 @@ class PageThreeAdd extends Component {
          userDetails: [],
          house_id: '',
          firstName: '',
+         showMenu: false,
       }
       this.handleSubmit = this.handleSubmit.bind(this)
       this.handleChange1 = this.handleChange1.bind(this)
@@ -92,6 +94,7 @@ class PageThreeAdd extends Component {
       this.handleChange24 = this.handleChange24.bind(this)
       this.handleChange25 = this.handleChange25.bind(this)
       this.handleChange26 = this.handleChange26.bind(this)
+      this.handleMenuBar = this.handleMenuBar.bind(this)
     }
     
     handleChange1 = () => {
@@ -236,6 +239,24 @@ class PageThreeAdd extends Component {
             firstName: userInfo.data.first_name,
             house_id: houseDataDetail.id,
         });
+
+        if(window.innerWidth < 1024) {
+            this.setState({
+                showMenu: false,
+            });
+          }
+        
+          if(window.innerWidth > 1024) {
+            this.setState({
+                showMenu: true,
+            });
+          }
+    }
+
+    handleMenuBar = () => {
+        this.setState({
+            showMenu: !this.state.showMenu,
+        });
     }
 
     handleSubmit = (e) => {
@@ -320,17 +341,22 @@ class PageThreeAdd extends Component {
                     <h4>{this.state.firstName}</h4>
                     <p>Host</p>
                 </div>
-                <div><h2 style={{ display: 'flex', alignItems: 'center' }}>...</h2></div>
+                <div className='addThreeMenuBar' onClick={this.handleMenuBar}><h2 style={{ display: 'flex', alignItems: 'center' }}><MoreHoriz /></h2></div>
             </div>
+            {this.state.showMenu ?
             <p>Navigation</p>
+            :
+            null
+            }
 
+            {this.state.showMenu ?
             <ul className='host-navigation'>
                 <li><Link to="/main-host-account" className='lilo-link'>DashBoard</Link></li>
-                <li>Your House or Room</li>
-                <li>Tenants Details</li>
-                <li>Host Profile</li>
-                <li>Settings</li>
+                <li style={{ backgroundColor: '#ff7779', marginBottom: '10px' }}><Add /> Room</li>
             </ul>
+            :
+            null
+            }
            </div>
            <div className="page-three-add__info-right">
                 <div className="fill-up-detail-header">

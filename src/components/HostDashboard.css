@@ -25,6 +25,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    padding: 5px;
 }
 
 .open-doors-left > h1 {
@@ -75,7 +76,7 @@
 .find-out-button-one {
     padding: 10px;
     background-color: rgb(243, 243, 243);
-    width: 300px;
+    max-width: 250px;
     border-radius: 10px;
 } 
 
@@ -87,7 +88,7 @@
 .find-out-button-two {
     padding: 10px;
     background-color: rgb(243, 243, 243);
-    width: 300px;
+    max-width: 250px;
     border-radius: 10px;
 } 
 
@@ -99,7 +100,7 @@
 .find-out-button-three {
     padding: 10px;
     background-color: rgb(243, 243, 243);
-    width: 300px;
+    max-width: 250px;
     border-radius: 10px;
 } 
 
@@ -137,9 +138,9 @@
     
     .open-doors {
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: column;
         width: 100%;
-        min-height: 60vh;
+        min-height: 50vh;
     }
     
     .open-doors-left {
@@ -274,9 +275,9 @@
     
     .open-doors {
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: column;
         width: 100%;
-        min-height: 60vh;
+        min-height: 40vh;
     }
     
     .open-doors-left {
@@ -413,9 +414,9 @@
     
     .open-doors {
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: column;
         width: 100%;
-        min-height: 60vh;
+        min-height: 30vh;
     }
     
     .open-doors-left {

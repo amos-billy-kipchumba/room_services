@@ -16,7 +16,7 @@ function Card({ src, title, description, price, location, id }) {
             <h2>{title}</h2>
             <h4>{description}</h4>
             <h4 style={{ color: '#272727', fontWeight: 'bold' }}>{location}</h4>
-            <h3>{price}</h3>
+            <h3>${price}</h3>
         </div>
 
     </div>

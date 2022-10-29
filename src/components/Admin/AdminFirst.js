@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import './AdminFirst.css'
 import {useNavigate} from 'react-router-dom'
 import axios from 'axios'
-import { Dashboard, Logout, People, PeopleAltOutlined, PeopleAltRounded, PeopleOutlineTwoTone } from '@mui/icons-material';
+import { Dashboard, Logout, MoreHoriz, People, PeopleAltOutlined, PeopleAltRounded, PeopleOutlineTwoTone } from '@mui/icons-material';
 import BaseURL from '../BaseUrl';
 function AdminFirst() {
   const userData = JSON.parse(localStorage.getItem('user-info'));
@@ -52,6 +52,25 @@ function AdminFirst() {
     realFour();
   },[adminUserType]);
 
+    const [showMenuBar, setShowMenuBar] = useState(false);
+
+    useEffect(()=>{
+      if(window.innerWidth < 1024) {
+        setShowMenuBar(false)
+      }
+    
+      if(window.innerWidth > 1024) {
+        setShowMenuBar(true);
+      }
+    },[]);
+
+    const handleMenuBar = () => {
+      setShowMenuBar(!showMenuBar);
+      
+    }
+
+    
+
     //Scroll to the top on load
     useEffect(()=>{
       window.scrollTo({top: 0, left: 0, behavior: 'smooth'})
@@ -70,10 +89,15 @@ function AdminFirst() {
                       <h4>{useful.first_name}</h4>
                       <p>Admin</p>
                   </div>
-                  <div><h2 style={{ display: 'flex', alignItems: 'center' }}>...</h2></div>
+                  <div className='adminFirstMenuBar' onClick={handleMenuBar}><h2 style={{ display: 'flex', alignItems: 'center' }}><MoreHoriz /> </h2></div>
               </div>
+              {showMenuBar ?
               <p>Navigation</p>
+              :
+              null 
+              }
   
+              {showMenuBar ?
               <ul className='host-navigation'>
                 <li style={{ backgroundColor: '#ff7779' }}><Dashboard style={{ margin: 'auto 5px' }} /> Dashboard</li>
                 <li
@@ -88,12 +112,19 @@ function AdminFirst() {
                 onClick={()=> {
                   Navigate('/admin-fourth')
                 }}><PeopleOutlineTwoTone style={{ margin: 'auto 5px' }} /> Customers</li>
+                <li
+                onClick={()=> {
+                  Navigate('/admin-fifth')
+                }}>Profile</li>
                 <li onClick={()=> {
                   localStorage.removeItem("user-info");
                   Navigate('/');
                 }}
                 className="baby"><Logout style={{ margin: 'auto 5px' }} /> Logout</li>
               </ul>
+              :
+              null
+              }
              </div>
              <div className="admin_first__info-right">
               <div className="admin_first__info-rightONE"

@@ -4,7 +4,7 @@ import axios from 'axios'
 import {useNavigate} from 'react-router-dom';
 import { FaPen, FaTimes } from 'react-icons/fa';
 import { Button } from '@mui/material';
-import { Settings } from '@mui/icons-material';
+import { MoreHoriz, Settings } from '@mui/icons-material';
 import BaseURL from '../BaseUrl';
 function CustomerProfile() {
   const userData = JSON.parse(localStorage.getItem('user-info'));
@@ -104,6 +104,23 @@ function CustomerProfile() {
                 }
             }
     }
+
+    const [showMenuBar, setShowMenuBar] = useState(false);
+
+    useEffect(()=>{
+      if(window.innerWidth < 1024) {
+        setShowMenuBar(false)
+      }
+    
+      if(window.innerWidth > 1024) {
+        setShowMenuBar(true);
+      }
+    },[]);
+
+    const handleMenuBar = () => {
+      setShowMenuBar(!showMenuBar);
+      
+    }
     return (
       <div className='customer-profile__page'>
   
@@ -115,10 +132,15 @@ function CustomerProfile() {
                       <h4>{useful.first_name}</h4>
                       <p>Customer</p>
                   </div>
-                  <div><h2 style={{ display: 'flex', alignItems: 'center' }}>...</h2></div>
+                  <div className='customerProfileMenuBar' onClick={handleMenuBar}><h2 style={{ display: 'flex', alignItems: 'center' }}><MoreHoriz /> </h2></div>
               </div>
+              {showMenuBar ?
               <p>Navigation</p>
+              :
+              null
+              }
   
+              {showMenuBar ?
               <ul className='host-navigation'>
                 <li onClick={()=> Navigate('/customer-main-account')}>Dashboard</li>
                 <li onClick={()=> Navigate('/customer-second-page')}>Booked house</li>
@@ -133,6 +155,9 @@ function CustomerProfile() {
                 }}
                 className='baby'>Logout</li>
               </ul>
+              :
+              null
+              }
              </div>
              <div className="customer-profile__info-right">
                 <form className="customer-profile-card" encType='multipart/form-data' onSubmit={handleUpdate}>

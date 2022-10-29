@@ -5,6 +5,7 @@ import axios from 'axios';
 import {useNavigate, Link} from 'react-router-dom';
 import BaseURL from '../../BaseUrl';
 import swal from 'sweetalert';
+import { Add, MoreHoriz } from '@mui/icons-material';
 class PageFourAdd extends Component {
     constructor() {
       super()
@@ -31,6 +32,7 @@ class PageFourAdd extends Component {
          userDetails: [],
          house_id: '',
          firstName: '',
+         showMenu: false,
       }
       this.handleSubmit = this.handleSubmit.bind(this)
       this.handleImage1 = this.handleImage1.bind(this)
@@ -49,6 +51,7 @@ class PageFourAdd extends Component {
       this.handleImage14 = this.handleImage14.bind(this)
       this.handleImage15 = this.handleImage15.bind(this)
       this.handleImage16 = this.handleImage16.bind(this)
+      this.handleMenuBar = this.handleMenuBar.bind(this)
     }
     
     handleImage1 = (e) => {
@@ -157,6 +160,24 @@ class PageFourAdd extends Component {
             firstName: userInfo.data.first_name,
             house_id: houseDataDetail.id,
         });
+
+        if(window.innerWidth < 1024) {
+            this.setState({
+                showMenu: false,
+            });
+          }
+        
+          if(window.innerWidth > 1024) {
+            this.setState({
+                showMenu: true,
+            });
+          }
+    }
+
+    handleMenuBar = () => {
+        this.setState({
+            showMenu: !this.state.showMenu,
+        });
     }
 
     handleSubmit = (e) => {
@@ -258,17 +279,22 @@ class PageFourAdd extends Component {
                     <h4>{this.state.firstName}</h4>
                     <p>Host</p>
                 </div>
-                <div><h2 style={{ display: 'flex', alignItems: 'center' }}>...</h2></div>
+                <div onClick={this.handleMenuBar} className='addFourMenuBar'><h2 style={{ display: 'flex', alignItems: 'center' }}><MoreHoriz /></h2></div>
             </div>
+            {this.state.showMenu ?
             <p>Navigation</p>
+            :
+            null
+            }
 
+            {this.state.showMenu ?
             <ul className='host-navigation'>
                 <li><Link to="/main-host-account" className='lilo-link'>DashBoard</Link></li>
-                <li>Your House or Room</li>
-                <li>Tenants Details</li>
-                <li>Host Profile</li>
-                <li className="baby">Settings</li>
+                <li style={{ backgroundColor: '#ff7779', marginBottom: '10px' }}><Add /> House</li>
             </ul>
+            :
+            null
+            }
            </div>
            <div className="page-four-add__info-right grown-ups">
                 <div className="fill-up-detail-header"><p>Add your house/room details:</p> <p><span><strong>100%</strong></span> to completion</p></div>

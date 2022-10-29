@@ -28,6 +28,19 @@
     margin-top: 10px;
 }
 
+.adminSecondMenuBar {
+    cursor: pointer;
+    background-color: #ff7779;
+    padding: 10px;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+}
+
+.adminSecondMenuBar:hover {
+    color: white;
+}
+
+
 .host-image {
     border-radius: 100%;
     height: 40px;

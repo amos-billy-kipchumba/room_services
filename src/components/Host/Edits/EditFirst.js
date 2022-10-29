@@ -8,6 +8,7 @@ import {useNavigate, useParams} from 'react-router-dom';
 import { FaPen, FaTimes } from 'react-icons/fa';
 import BaseURL from '../../BaseUrl';
 import swal from 'sweetalert';
+import { MoreHoriz } from '@mui/icons-material';
 function EditFirst() {
 
   const params = useParams();
@@ -101,6 +102,23 @@ function EditFirst() {
    
   }
 
+    const [showMenuBar, setShowMenuBar] = useState(false);
+
+    useEffect(()=>{
+      if(window.innerWidth < 1024) {
+        setShowMenuBar(false)
+      }
+    
+      if(window.innerWidth > 1024) {
+        setShowMenuBar(true);
+      }
+    },[]);
+
+    const handleMenuBar = () => {
+      setShowMenuBar(!showMenuBar);
+      
+    }
+
     //Scroll to the top on load
     useEffect(()=>{
       window.scrollTo({top: 0, left: 0, behavior: 'smooth'})
@@ -118,10 +136,15 @@ function EditFirst() {
                       <h4>Henry Klein</h4>
                       <p>Host</p>
                   </div>
-                  <div><h2 style={{ display: 'flex', alignItems: 'center' }}>...</h2></div>
+                  <div className='editFirstMenuBar' onClick={handleMenuBar}><h2 style={{ display: 'flex', alignItems: 'center' }}> <MoreHoriz /> </h2></div>
               </div>
+              {showMenuBar ?
               <p>Navigation</p>
+              :
+              null
+              }
   
+              {showMenuBar ?
               <ul className='host-navigation'>
                 <li><Link to="/main-host-account" className='lilo-link'>DashBoard</Link></li>
                 <li style={{ backgroundColor: '#ff7779' }}><Link to="/host-houses" className='lilo-link'>Your houses</Link></li>
@@ -129,7 +152,15 @@ function EditFirst() {
                 <li>Tenants Details</li>
                 <li onClick={()=> Navigate('/host-profile')}>Host Profile</li>
                 <li onClick={()=> Navigate('/host-profile')} className='baby'>Settings</li>
+                <li onClick={()=> {
+                  localStorage.removeItem("user-info");
+                  Navigate('/');
+                }}
+                className='baby'>Logout</li>
               </ul>
+              :
+              null
+              }
              </div>
              <div className="edit-first__info-right">
               <form className="edit-first__info-right-block" encType='multipart/form-data' onSubmit={handleUpdate}>

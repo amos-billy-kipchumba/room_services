@@ -25,7 +25,32 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin-top: 10px;
+    margin-top: 20px;
+}
+
+.hostMenuBar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.hostMenuBar:hover {
+    color: white;
+}
+
+.hostMenuBar > h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: center;
+    background-color: #ff7779;
+    padding: 10px;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    margin: auto;
 }
 
 .host-image {
@@ -110,7 +135,8 @@
 .main-host-account__info-rightHousesCard > span {
     background-color: white;
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 50%;
+    min-width: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -155,7 +181,8 @@
 .main-host-account__info-rightCustomerCard > span {
     background-color: white;
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 50%;
+    min-width: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -195,7 +222,8 @@
 .main-host-account__info-rightNotificationCard > span {
     background-color: white;
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 50%;
+    min-width: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -234,7 +262,7 @@
         display: flex;
         justify-content: space-evenly;
         align-items: center;
-        margin-top: 10px;
+        margin-top: 20px;
     }
     
     .host-image {
@@ -325,7 +353,8 @@
     .main-host-account__info-rightHousesCard > span {
         background-color: white;
         padding: 10px;
-        border-radius: 10px;
+        border-radius: 50%;
+        min-width: 40px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -374,7 +403,8 @@
     .main-host-account__info-rightCustomerCard > span {
         background-color: white;
         padding: 10px;
-        border-radius: 10px;
+        border-radius: 50%;
+        min-width: 40px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -417,7 +447,8 @@
     .main-host-account__info-rightNotificationCard > span {
         background-color: white;
         padding: 10px;
-        border-radius: 10px;
+        border-radius: 50%;
+        min-width: 40px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -460,7 +491,7 @@
         display: flex;
         justify-content: space-evenly;
         align-items: center;
-        margin-top: 10px;
+        margin-top: 20px;
     }
     
     .host-image {
@@ -551,7 +582,8 @@
     .main-host-account__info-rightHousesCard > span {
         background-color: white;
         padding: 10px;
-        border-radius: 10px;
+        border-radius: 50%;
+        min-width: 40px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -600,7 +632,8 @@
     .main-host-account__info-rightCustomerCard > span {
         background-color: white;
         padding: 10px;
-        border-radius: 10px;
+        border-radius: 50%;
+        min-width: 40px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -643,7 +676,8 @@
     .main-host-account__info-rightNotificationCard > span {
         background-color: white;
         padding: 10px;
-        border-radius: 10px;
+        border-radius: 50%;
+        min-width: 40px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -685,7 +719,7 @@
         display: flex;
         justify-content: space-evenly;
         align-items: center;
-        margin-top: 10px;
+        margin-top: 20px;
     }
     
     .host-image {
@@ -776,7 +810,8 @@
     .main-host-account__info-rightHousesCard > span {
         background-color: white;
         padding: 10px;
-        border-radius: 10px;
+        border-radius: 50%;
+        min-width: 40px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -825,7 +860,8 @@
     .main-host-account__info-rightCustomerCard > span {
         background-color: white;
         padding: 10px;
-        border-radius: 10px;
+        border-radius: 50%;
+        min-width: 40px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -868,7 +904,8 @@
     .main-host-account__info-rightNotificationCard > span {
         background-color: white;
         padding: 10px;
-        border-radius: 10px;
+        border-radius: 50%;
+        min-width: 40px;
         display: flex;
         align-items: center;
         justify-content: center;

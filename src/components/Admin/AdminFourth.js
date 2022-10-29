@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import './AdminFourth.css'
 import {useNavigate} from 'react-router-dom'
 import axios from 'axios'
-import { CheckOutlined, Dashboard, Delete, Logout, People, PeopleAltOutlined, PeopleOutlineTwoTone } from '@mui/icons-material';
+import { CheckOutlined, Dashboard, Delete, Logout, MoreHoriz, People, PeopleAltOutlined, PeopleOutlineTwoTone } from '@mui/icons-material';
 import BaseURL from '../BaseUrl';
 function AdminFourth() {
   const userData = JSON.parse(localStorage.getItem('user-info'));
@@ -41,9 +41,25 @@ function AdminFourth() {
     if(res.data.status === 200)
     {
       clickedNight.closest("tr").remove();
-      console.log(res.data.message);
     }
   }
+
+    const [showMenuBar, setShowMenuBar] = useState(false);
+
+      useEffect(()=>{
+        if(window.innerWidth < 1024) {
+          setShowMenuBar(false)
+        }
+      
+        if(window.innerWidth > 1024) {
+          setShowMenuBar(true);
+        }
+      },[]);
+
+      const handleMenuBar = () => {
+        setShowMenuBar(!showMenuBar);
+        
+      }
 
   //Scroll to the top on load
   useEffect(()=>{
@@ -63,10 +79,16 @@ function AdminFourth() {
                       <h4>{useful.first_name}</h4>
                       <p>Admin</p>
                   </div>
-                  <div><h2 style={{ display: 'flex', alignItems: 'center' }}>...</h2></div>
+                  <div className='adminFourthMenuBar' onClick={handleMenuBar}><h2 style={{ display: 'flex', alignItems: 'center' }}><MoreHoriz /> </h2></div>
               </div>
+
+              {showMenuBar ?
               <p>Navigation</p>
+              :
+              null
+              }
   
+              {showMenuBar ?
               <ul className='host-navigation'>
                 <li
                 onClick={()=> {
@@ -84,12 +106,19 @@ function AdminFourth() {
                 <li
                 style={{ backgroundColor: '#ff7779' }}
                 ><PeopleOutlineTwoTone style={{ margin: 'auto 5px' }} /> Customers</li>
+                <li
+                onClick={()=> {
+                  Navigate('/admin-fifth')
+                }}>Profile</li>
                 <li onClick={()=> {
                   localStorage.removeItem("user-info");
                   Navigate('/');
                 }}
                 className='baby'><Logout style={{ margin: 'auto 5px' }} /> Logout</li>
               </ul>
+              :
+              null
+              }
              </div>
              <div className="admin-fourth__info-right">
                 <h4>Number of customers: {customerDetails.length}</h4>
