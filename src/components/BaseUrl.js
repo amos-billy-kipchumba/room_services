@@ -1,4 +1,4 @@
-const BaseURL = 'http://dinenstayapi.amosbilly.co.ke/public';
+const BaseURL = 'https://dinenstayapi.amosbilly.co.ke/public';
 
 
 export default BaseURL;
