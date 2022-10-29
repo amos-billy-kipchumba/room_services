@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import './CustomerSettings.css'
 import axios from 'axios'
 import {useNavigate} from 'react-router-dom';
-import { Settings } from '@mui/icons-material';
+import { MoreHoriz, Settings } from '@mui/icons-material';
 import BaseURL from '../BaseUrl';
 import { Button } from '@mui/material';
 import swal from 'sweetalert';
@@ -40,6 +40,23 @@ function CustomerSettings() {
         }
         }
 
+        const [showMenuBar, setShowMenuBar] = useState(false);
+
+        useEffect(()=>{
+          if(window.innerWidth < 1024) {
+            setShowMenuBar(false)
+          }
+        
+          if(window.innerWidth > 1024) {
+            setShowMenuBar(true);
+          }
+        },[]);
+
+        const handleMenuBar = () => {
+          setShowMenuBar(!showMenuBar);
+          
+        }
+
         const Navigate = useNavigate();
     return (
       <div className='customer-settings__page'>
@@ -52,10 +69,15 @@ function CustomerSettings() {
                       <h4>{useful.first_name}</h4>
                       <p>Customer</p>
                   </div>
-                  <div><h2 style={{ display: 'flex', alignItems: 'center' }}>...</h2></div>
+                  <div className='customerSettingsMenuBar' onClick={handleMenuBar}><h2 style={{ display: 'flex', alignItems: 'center' }}><MoreHoriz /> </h2></div>
               </div>
+              {showMenuBar ?
               <p>Navigation</p>
+              :
+              null
+              }
   
+              {showMenuBar ?
               <ul className='host-navigation'>
                 <li onClick={()=> Navigate('/customer-main-account')}>Dashboard</li>
                 <li onClick={()=> Navigate('/customer-second-page')}>Booked houses</li>
@@ -68,6 +90,9 @@ function CustomerSettings() {
                 }}
                 >Logout</li>
               </ul>
+              :
+              null
+              }
              </div>
              <div className="customer-settings__info-right">
                 <Button

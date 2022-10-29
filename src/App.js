@@ -1,6 +1,7 @@
 import React from 'react'
 import { Routes, Route, BrowserRouter } from "react-router-dom"
 import './App.css';
+import AdminFifth from './components/Admin/AdminFifth';
 import AdminFirst from "./components/Admin/AdminFirst";
 import AdminFourth from './components/Admin/AdminFourth';
 import AdminSecond from './components/Admin/AdminSecond';
@@ -93,6 +94,9 @@ function App() {
              } />
             <Route exact path="/edit-admin-second/:id" element={ 
               <Protected Cmp={EditAdminSecond} />
+             } />
+             <Route exact path="/admin-fifth" element={ 
+              <Protected Cmp={AdminFifth} />
              } />
             <Route exact path="/admin-fourth" element={ 
               <Protected Cmp={AdminFourth} />

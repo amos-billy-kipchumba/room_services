@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import './EditAdminSecond.css'
 import {useNavigate, useParams} from 'react-router-dom'
 import axios from 'axios'
-import { Dashboard, Logout, People, PeopleAltOutlined, PeopleOutlineTwoTone } from '@mui/icons-material';
+import { Dashboard, Logout, MoreHoriz, People, PeopleAltOutlined, PeopleOutlineTwoTone } from '@mui/icons-material';
 import BaseURL from '../BaseUrl';
 function EditAdminSecond() {
   const userData = JSON.parse(localStorage.getItem('user-info'));
@@ -10,6 +10,8 @@ function EditAdminSecond() {
   const [imageToBe, setImageToBe] = useState(null);
   const [useful, setUseful] = useState([]);
   const [oneHost, setOneHost] = useState([]);
+
+  const [sendImage, setSendImage] = useState(null);
 
   const params = useParams();
     const paramaId = params.id;
@@ -27,11 +29,28 @@ function EditAdminSecond() {
   useEffect(()=>{
     const realFive = async () => {
       const request = await axios.get(`${BaseURL}/api/get-one-host-details/${paramaId}`);
-      setOneHost(request.data.oneHost);
-      console.log(request.data.oneHost);
+      setOneHost(request.data.oneHost[0]);
+      setSendImage(`${BaseURL}/users/${request.data.oneHost[0].image}`)
     }
     realFive();
   },[paramaId]);
+
+  const [showMenuBar, setShowMenuBar] = useState(false);
+
+    useEffect(()=>{
+      if(window.innerWidth < 1024) {
+        setShowMenuBar(false)
+      }
+    
+      if(window.innerWidth > 1024) {
+        setShowMenuBar(true);
+      }
+    },[]);
+
+    const handleMenuBar = () => {
+      setShowMenuBar(!showMenuBar);
+      
+    }
 
   //Scroll to the top on load
   useEffect(()=>{
@@ -51,20 +70,25 @@ function EditAdminSecond() {
                       <h4>{useful.first_name}</h4>
                       <p>Admin</p>
                   </div>
-                  <div><h2 style={{ display: 'flex', alignItems: 'center' }}>...</h2></div>
+                  <div className='editAdminMenuBar' onClick={handleMenuBar}><h2 style={{ display: 'flex', alignItems: 'center' }}><MoreHoriz /> </h2></div>
               </div>
+              {showMenuBar ?
               <p>Navigation</p>
+              :
+              null
+              }
   
+              {showMenuBar ?
               <ul className='host-navigation'>
                 <li 
-                style={{ backgroundColor: '#ff7779' }}
                 onClick={()=>{
                   Navigate('/admin-dashboard');
                 }}><Dashboard style={{ margin: 'auto 5px' }} /> Dashboard</li>
                 <li
                 onClick={()=> {
                   Navigate('/admin-second')
-                }}><People style={{ margin: 'auto 5px' }} /> Hosts</li>
+                }}
+                style={{ backgroundColor: '#ff7779' }}><People style={{ margin: 'auto 5px' }} /> Hosts</li>
                 <li
                 onClick={()=> {
                   Navigate('/admin-third')
@@ -73,33 +97,38 @@ function EditAdminSecond() {
                 onClick={()=> {
                   Navigate('/admin-fourth')
                 }}><PeopleOutlineTwoTone style={{ margin: 'auto 5px' }} /> Customers</li>
+                <li
+                onClick={()=> {
+                  Navigate('/admin-fifth')
+                }}>Profile</li>
                 <li onClick={()=> {
                   localStorage.removeItem("user-info");
                   Navigate('/');
                 }}
                 className="baby"><Logout style={{ margin: 'auto 5px' }} /> Logout</li>
               </ul>
+              :
+              null
+              }
              </div>
              <div className="edit_admin_second__info-right">
-             {oneHost && oneHost.map((data)=> {
-                return(
+             
                 <div className="edit_admin_second__info-rightContainer">
                     <div className="edit_admin_second__info-rightContainerImage">
-                        <img src={`${BaseURL}/users/${data.image}`} alt="" />
+                        <img src={sendImage} alt="" />
                     </div>
-                    <div className="edit_admin_second__info-rightContainerDetails" key={data.id}>
+                    <div className="edit_admin_second__info-rightContainerDetails">
                         <p>First name</p>
-                        <span>{data.first_name}</span>
+                        <span>{oneHost.first_name}</span>
                         <p>Last Name</p>
-                        <span>{data.last_name}</span>
+                        <span>{oneHost.last_name}</span>
                         <p>Email</p>
-                        <span>{data.email}</span>
+                        <span>{oneHost.email}</span>
                         <p>Phone</p>
-                        <span>{data.phone}</span>
+                        <span>{oneHost.phone}</span>
                     </div>
                 </div>
-                );
-            })}
+               
              </div>
           </div>
   

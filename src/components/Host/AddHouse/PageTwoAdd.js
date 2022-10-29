@@ -5,6 +5,7 @@ import axios from 'axios'
 import {useNavigate, Link} from 'react-router-dom'
 import BaseURL from '../../BaseUrl';
 import swal from 'sweetalert';
+import { Add, MoreHoriz } from '@mui/icons-material';
 class PageTwoAdd extends Component {
     constructor() {
       super()
@@ -18,10 +19,12 @@ class PageTwoAdd extends Component {
          userId: '',
          house_id: '',
          firstName: '',
+         showMenu: false,
       }
       
       this.handleChange = this.handleChange.bind(this)
       this.SubmitForm = this.SubmitForm.bind(this)
+      this.handleMenuBar = this.handleMenuBar.bind(this)
     }
 
     componentDidMount = async () => {
@@ -35,6 +38,24 @@ class PageTwoAdd extends Component {
             userId: userInfo.data.id,
             firstName: userInfo.data.first_name,
             house_id: houseDataDetail.id,
+        });
+
+        if(window.innerWidth < 1024) {
+            this.setState({
+                showMenu: false,
+            });
+          }
+        
+          if(window.innerWidth > 1024) {
+            this.setState({
+                showMenu: true,
+            });
+          }
+    }
+
+    handleMenuBar = () => {
+        this.setState({
+            showMenu: !this.state.showMenu,
         });
     }
 
@@ -88,16 +109,23 @@ class PageTwoAdd extends Component {
                             <h4>{this.state.firstName}</h4>
                             <p>Host</p>
                         </div>
-                        <div><h2 style={{ display: 'flex', alignItems: 'center' }}>...</h2></div>
+                        <div className='addTwoMenuBar' onClick={this.handleMenuBar}><h2 style={{ display: 'flex', alignItems: 'center' }}><MoreHoriz /></h2></div>
                     </div>
+
+                    {this.state.showMenu ? 
                     <p>Navigation</p>
+                    :
+                    null
+                    }
         
+                    {this.state.showMenu ? 
                     <ul className='host-navigation'>
                         <li><Link to="/main-host-account" className='lilo-link'>DashBoard</Link></li>
-                        <li>Your House or Room</li>
-                        <li>Tenants Details</li>
-                        <li>Host Profile</li>
+                        <li style={{ backgroundColor: '#ff7779', marginBottom: '10px' }}><Add /> house</li>
                     </ul>
+                    :
+                    null
+                    }
                    </div>
                    <div className="page-two-add__info-right">
                         <div className="fill-up-detail-header"><p>Add your house/room details:</p> <p><span><strong>50%</strong></span> of completion</p></div>

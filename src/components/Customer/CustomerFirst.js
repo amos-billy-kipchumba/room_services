@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import './CustomerFirst.css'
 import axios from 'axios'
 import {useNavigate} from 'react-router-dom';
-import { House, Settings } from '@mui/icons-material';
+import { House, MoreHoriz, Settings } from '@mui/icons-material';
 import BaseURL from '../BaseUrl';
 function CustomerFirst() {
   const userData = JSON.parse(localStorage.getItem('user-info'));
@@ -33,6 +33,23 @@ function CustomerFirst() {
 
   },[userId]);
 
+    const [showMenuBar, setShowMenuBar] = useState(false);
+
+    useEffect(()=>{
+      if(window.innerWidth < 1024) {
+        setShowMenuBar(false)
+      }
+    
+      if(window.innerWidth > 1024) {
+        setShowMenuBar(true);
+      }
+    },[]);
+
+    const handleMenuBar = () => {
+      setShowMenuBar(!showMenuBar);
+      
+    }
+
   const Navigate = useNavigate();
     return (
       <div className='customer_first__page'>
@@ -45,10 +62,15 @@ function CustomerFirst() {
                       <h4>{useful.first_name}</h4>
                       <p>Customer</p>
                   </div>
-                  <div><h2 style={{ display: 'flex', alignItems: 'center' }}>...</h2></div>
+                  <div className='customerFirstMenuBar' onClick={handleMenuBar}><h2 style={{ display: 'flex', alignItems: 'center' }}> <MoreHoriz /> </h2></div>
               </div>
+              {showMenuBar ?
               <p>Navigation</p>
+              :
+              null 
+              }
   
+              {showMenuBar ?
               <ul className='host-navigation'>
                 <li style={{ backgroundColor: '#ff7779' }}>Dashboard</li>
                 <li onClick={()=> Navigate('/customer-second-page')}>Booked houses</li>
@@ -61,6 +83,9 @@ function CustomerFirst() {
                   Navigate('/');
                 }}>Logout</li>
               </ul>
+              :
+              null
+              }
              </div>
              <div className="customer_first__info-right">
               <div className='customer_first__info-rightBookedHouses'

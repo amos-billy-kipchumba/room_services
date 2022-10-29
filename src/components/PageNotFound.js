@@ -11,7 +11,7 @@ function PageNotFound() {
         <span><Face /> </span>
         <Button
         onClick={() => {
-            Navigate('/');
+            Navigate(-1);
             }}>Go back</Button>
     </div>
   )

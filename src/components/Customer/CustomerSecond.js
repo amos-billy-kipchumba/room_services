@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import './CustomerSecond.css'
 import axios from 'axios'
 import {useNavigate} from 'react-router-dom'
-import { DoorSliding, LocationCity, Settings } from '@mui/icons-material';
+import { DoorSliding, LocationCity, MoreHoriz, Settings } from '@mui/icons-material';
 import { Button } from '@mui/material';
 import BaseURL from '../BaseUrl';
 import swal from 'sweetalert';
@@ -55,6 +55,23 @@ function CustomerSecond() {
       }
   }
 
+  const [showMenuBar, setShowMenuBar] = useState(false);
+
+    useEffect(()=>{
+      if(window.innerWidth < 1024) {
+        setShowMenuBar(false)
+      }
+    
+      if(window.innerWidth > 1024) {
+        setShowMenuBar(true);
+      }
+    },[]);
+
+    const handleMenuBar = () => {
+      setShowMenuBar(!showMenuBar);
+      
+    }
+
 
   const Navigate = useNavigate();
     return (
@@ -68,10 +85,15 @@ function CustomerSecond() {
                       <h4>{useful.first_name}</h4>
                       <p>Customer</p>
                   </div>
-                  <div><h2 style={{ display: 'flex', alignItems: 'center' }}>...</h2></div>
+                  <div className='customerSecondMenuBar' onClick={handleMenuBar}><h2 style={{ display: 'flex', alignItems: 'center' }}><MoreHoriz /> </h2></div>
               </div>
+              {showMenuBar ?
               <p>Navigation</p>
+              :
+              null
+              }
   
+              {showMenuBar ?
               <ul className='host-navigation'>
                 <li onClick={()=> Navigate('/customer-main-account')}>Dashboard</li>
                 <li  style={{ backgroundColor: '#ff7779' }}>Booked houses</li>
@@ -86,6 +108,9 @@ function CustomerSecond() {
                 }}
                 className='baby'>Logout</li>
               </ul>
+              :
+              null
+              }
              </div>
              <div className="customer_second__info-right">
               {bookedInfo && bookedInfo.map((object, index)=>{

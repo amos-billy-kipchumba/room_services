@@ -41,6 +41,7 @@
     height: 30px;
     padding: 5px;
     outline: none;
+    border: 1px solid lightblue;
 }
 
 .form-host > button {

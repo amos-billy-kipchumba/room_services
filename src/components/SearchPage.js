@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react'
 import './SearchPage.css'
-import Button from '@mui/material/Button';
 import SearchResult from './SearchResult';
 import {useLocation} from 'react-router-dom'
 import { format } from 'date-fns'
@@ -58,23 +57,13 @@ function SearchPage() {
 
         <div className='searchPage__info'>
 
-            <p>300+ .Stays - {range} - for {noOfGuests}</p>
-            <h1>Stays nearby {location}</h1>
-            <Button variant="outlined">
-                Type of place
-            </Button>
+            <p>Stays - {range} - for {noOfGuests}</p>
 
-            <Button variant="outlined">
-                Price
-            </Button>
-
-            <Button variant="outlined">
-                Rooms and beds
-            </Button>
-
-            <Button variant="outlined">
-                More filters
-            </Button>
+            {location === "" ?
+            <h1>All houses</h1>
+            :
+            <h1>Places nearby {location}</h1>
+            }
 
             {matchSearch === null || loadStone === true ?
                 <NoRecordYet />
@@ -102,7 +91,7 @@ function SearchPage() {
                                 Navigate(`/more-details/${item.id}`);
                             }} key={index}>
                             <SearchResult 
-                            img={`http://127.0.0.1:8000/uploads/${item.cover}`}
+                            img={`${BaseURL}/uploads/${item.cover}`}
                             title={item.title}
                             location={`${item.location}`}
                             description={`${item.max_no_of_guests} guests . ${item.number_of_bedrooms} bedrooms . ${item.number_of_beds} beds . ${item.number_of_bathtubs} bathrooms`}

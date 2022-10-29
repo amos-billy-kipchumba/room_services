@@ -5,7 +5,7 @@ import {useNavigate} from 'react-router-dom';
 import { FaPen, FaTimes } from 'react-icons/fa';
 import { Button } from '@mui/material';
 import BaseURL from '../../BaseUrl';
-import { Add } from '@mui/icons-material';
+import { Add, MoreHoriz } from '@mui/icons-material';
 import swal from 'sweetalert';
 function HostProfile() {
   const userData = JSON.parse(localStorage.getItem('user-info'));
@@ -62,6 +62,23 @@ function HostProfile() {
 
   const Navigate = useNavigate();
 
+  const [showMenuBar, setShowMenuBar] = useState(false);
+
+  useEffect(()=>{
+    if(window.innerWidth < 1024) {
+      setShowMenuBar(false)
+    }
+  
+    if(window.innerWidth > 1024) {
+      setShowMenuBar(true);
+    }
+  },[]);
+
+  const handleMenuBar = () => {
+    setShowMenuBar(!showMenuBar);
+    
+  }
+
   const handleUpdate = (e) => {
     const sendMe = userId;
     e.preventDefault();
@@ -93,10 +110,16 @@ function HostProfile() {
                       <h4>Henry Klein</h4>
                       <p>Host</p>
                   </div>
-                  <div><h2 style={{ display: 'flex', alignItems: 'center' }}>...</h2></div>
+                  <div className='HostProfileMenu' onClick={handleMenuBar}><h2 style={{ display: 'flex', alignItems: 'center' }}> <MoreHoriz /> </h2></div>
               </div>
+
+              {showMenuBar ?
               <p>Navigation</p>
+              :
+              null
+              }
   
+              {showMenuBar ?
               <ul className='host-navigation'>
                 <li onClick={()=> Navigate('/main-host-account')}>Dashboard</li>
                 <li onClick={()=> Navigate('/host-houses')}>Your house</li>
@@ -105,7 +128,15 @@ function HostProfile() {
                 <li onClick={()=> Navigate('/tenants-details')}>Tenants details</li>
                 <li style={{ backgroundColor: '#ff7779' }}>Profile</li>
                 <li className='baby' onClick={()=> Navigate('/host-settings')}>Settings</li>
+                <li onClick={()=> {
+                  localStorage.removeItem("user-info");
+                  Navigate('/');
+                }}
+                className='baby'>Logout</li>
               </ul>
+              :
+              null
+              }
              </div>
              <div className="host-profile__info-right">
                 <form className="host-profile-card" encType='multipart/form-data' onSubmit={handleUpdate}>

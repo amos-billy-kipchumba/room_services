@@ -3,7 +3,6 @@ import './MoreDetails.css'
 import Button from '@mui/material/Button';
 import { FaSwimmingPool, FaUpload, FaRegStar, FaRegCalendarTimes, FaBed } from 'react-icons/fa';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
-import {Link} from 'react-router-dom'
 import Slider from './Slider';
 import {useParams} from 'react-router-dom'
 import axios from 'axios'
@@ -162,7 +161,7 @@ function MoreDetails() {
     useEffect(()=>{
         const seventhHeaven = async () => {
             const request = await axios.get(`${BaseURL}/api/get-host-join-details/${paramaId}`);
-            setHostImage(`http://127.0.0.1:8000/users/${request.data.hostJoin[0].image}`);
+            setHostImage(`${BaseURL}/users/${request.data.hostJoin[0].image}`);
             setHostDit(request.data.hostJoin[0]);
         }
         seventhHeaven();
@@ -408,7 +407,7 @@ function MoreDetails() {
                 }
                 <div className='map-save'>
                 {zero ?
-                    <p><Link to="/" className='map-save-link'>{zero.location}</Link></p>
+                    <p style={{ margin: '0px 10px' }}>{zero.location}</p>
                     :
                     null
                 }
@@ -485,7 +484,7 @@ function MoreDetails() {
                             <div className='dive-right-one'><FaRegStar /></div>
                             <div className='dive-right-two'>
                                 <h2>Experienced host</h2>
-                                <p>{hostDit.first_name} has 650 reviews for other places.</p>
+                                <p>{hostDit.first_name} has:</p>
                                 <p>{likeLike.length} {likeLike.length > 1 ?
                                 'likes'
                                 :

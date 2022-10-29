@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 import Button from '@mui/material/Button';
 import axios from 'axios'
 import {useNavigate} from 'react-router-dom';
-import { Add } from '@mui/icons-material';
+import { Add, MoreHoriz } from '@mui/icons-material';
 import BaseURL from '../../BaseUrl';
 import swal from 'sweetalert';
 class AddHouse extends Component {
@@ -23,11 +23,13 @@ class AddHouse extends Component {
         house_type: '',
         something: [],
         firstName: '',
+        showMenu: false,
       }
       this.handleChange = this.handleChange.bind(this)
       this.handleSubmit = this.handleSubmit.bind(this)
       this.handleImage = this.handleImage.bind(this)
       this.onOptionChangeHandler = this.onOptionChangeHandler.bind(this)
+      this.handleMenuBar = this.handleMenuBar.bind(this)
     }
 
     handleChange(e) {
@@ -66,9 +68,26 @@ class AddHouse extends Component {
             hostImage: `${BaseURL}/users/${request.data.hostSpecific.image}`,
             something: data
         });
+
+        if(window.innerWidth < 1024) {
+            this.setState({
+                showMenu: false,
+            });
+          }
+        
+          if(window.innerWidth > 1024) {
+            this.setState({
+                showMenu: true,
+            });
+          }
     }
 
    
+    handleMenuBar = () => {
+        this.setState({
+            showMenu: !this.state.showMenu,
+        });
+    }
 
     handleSubmit = async (e) => {
         e.preventDefault();
@@ -113,10 +132,15 @@ class AddHouse extends Component {
                             <h4>{this.state.firstName}</h4>
                             <p>Host</p>
                         </div>
-                        <div><h2 style={{ display: 'flex', alignItems: 'center' }}>...</h2></div>
+                        <div className='addHouseMenuBar' onClick={this.handleMenuBar}><h2 style={{ display: 'flex', alignItems: 'center' }}><MoreHoriz /></h2></div>
                     </div>
+                    {this.state.showMenu ? 
                     <p>Navigation</p>
+                    :
+                    null 
+                    }
         
+                    {this.state.showMenu ? 
                     <ul className='host-navigation'>
                         <li><Link to="/main-host-account" className='lilo-link'>DashBoard</Link></li>
                         <li><Link to="/host-houses" className='lilo-link'>Your houses</Link></li>
@@ -126,16 +150,20 @@ class AddHouse extends Component {
                         <li className='baby' onClick={()=>{
                             this.props.navigation('/host-settings');
                         }}><Link to="/add-house-host" className='lilo-link'>Settings</Link></li>
+                        
                     </ul>
+                    :
+                    null
+                    }
                    </div>
                    <div className="add-house-host__info-right">
                         <div className="fill-up-detail-header"><p>Add your house details:</p> <p><span><strong>25%</strong></span> of completion</p></div>
                         <form className="fill-up-detail-form" encType='multipart/form-data' onSubmit={this.handleSubmit}>
                             <label>Enter house cover image</label>
-                            <input type="file" name="image" value={this.state.houseCoverImage} onChange={this.handleImage} />
-                            <input type="text" name="houseTitle" value={this.state.houseTitle} placeholder="Enter the title of the house" onChange={this.handleChange} />
-                            <input type="text" name="location" value={this.state.location} placeholder="Enter the location of the house" onChange={this.handleChange} />
-                            <select name="house_type" value={this.state.house_type} onChange={this.onOptionChangeHandler}>
+                            <input type="file" name="image" value={this.state.houseCoverImage} onChange={this.handleImage} required />
+                            <input type="text" name="houseTitle" value={this.state.houseTitle} placeholder="Enter the title of the house" onChange={this.handleChange} required />
+                            <input type="text" name="location" value={this.state.location} placeholder="Enter the location of the house" onChange={this.handleChange} required />
+                            <select name="house_type" value={this.state.house_type} onChange={this.onOptionChangeHandler} required>
                                 <option>-- Type of house --</option>
                                 {this.state.options.map((option, index)=>{
                                     return(
@@ -143,8 +171,8 @@ class AddHouse extends Component {
                                     );
                                 })}
                             </select>
-                            <textarea name="description" value={this.state.description} placeholder="Enter the description" onChange={this.handleChange}></textarea>
-                            <input type="number" name="price" value={this.state.price} placeholder="Enter the price in $ /night" onChange={this.handleChange} />
+                            <textarea name="description" value={this.state.description} placeholder="Enter the description" onChange={this.handleChange} required></textarea>
+                            <input type="number" name="price" value={this.state.price} placeholder="Enter the price in $ /night" onChange={this.handleChange} required />
                             <Button type="submit" id="submit">Submit</Button>
                         </form>
                    </div>
