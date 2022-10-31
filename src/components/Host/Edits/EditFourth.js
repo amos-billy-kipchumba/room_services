@@ -930,7 +930,7 @@ function EditFourth() {
                 <li><Link to="/main-host-account" className='lilo-link'>DashBoard</Link></li>
                 <li style={{ backgroundColor: '#ff7779' }}><Link to="/host-houses" className='lilo-link'>Your houses</Link></li>
                 <li><Link to="/add-house-host" className='lilo-link'><Add /> house</Link></li>
-                <li>Tenants Details</li>
+                <li onClick={()=> Navigate('/tenants-details')}>Tenants Details</li>
                 <li onClick={()=> Navigate('/host-profile')}>Host Profile</li>
                 <li onClick={()=> Navigate('/host-settings')} className='baby'>Settings</li>
                 <li onClick={()=> {
@@ -1021,7 +1021,7 @@ function EditFourth() {
                             }}><FaTimes /></span>
                             }
                             <p className={editImage1 === `${BaseURL}/parts/null` ? "dance-title-two" : "dance-title"}>update dining room</p>
-                            {editImage !== `${BaseURL}/parts/null` || editImage1 !== null ?
+                            {editImage1 !== `${BaseURL}/parts/null` ?
                             <Button 
                             className="edit-fourth__info-right-imageButtonCrazy"
                             style={{ 
@@ -1186,7 +1186,7 @@ function EditFourth() {
                             }}><FaTimes /></span>
                             }
                             <p className={editImage4 === `${BaseURL}/parts/null` ? "dance-title-two" : "dance-title"}>update bedroom</p>
-                            {EditFourth !== `${BaseURL}/parts/null` || editImage4 !== null ?
+                            {editImage4 !== `${BaseURL}/parts/null` ?
                             <Button 
                             className="edit-fourth__info-right-imageButtonCrazy"
                             style={{ 

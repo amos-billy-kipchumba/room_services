@@ -149,7 +149,7 @@ function EditFirst() {
                 <li><Link to="/main-host-account" className='lilo-link'>DashBoard</Link></li>
                 <li style={{ backgroundColor: '#ff7779' }}><Link to="/host-houses" className='lilo-link'>Your houses</Link></li>
                 <li><Link to="/add-house-host" className='lilo-link'><Add /> house</Link></li>
-                <li>Tenants Details</li>
+                <li onClick={()=> Navigate('/tenants-details')}>Tenants Details</li>
                 <li onClick={()=> Navigate('/host-profile')}>Host Profile</li>
                 <li onClick={()=> Navigate('/host-profile')} className='baby'>Settings</li>
                 <li onClick={()=> {

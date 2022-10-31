@@ -13,7 +13,7 @@ function Slider(props) {
     const getThousandDetails = async () => {
       const request = await axios.get(`${BaseURL}/api/get-join-thousand-details/${props.lured}`);
   
-      if(request.data.joinThousand[0].sitting_room)
+      if(request.data.joinThousand[0].sitting_room !== null)
       {
         ArrayListSome.push(`${BaseURL}/parts/${request.data.joinThousand[0].sitting_room}`);
       }
@@ -107,8 +107,6 @@ function Slider(props) {
     }
     getThousandDetails();
   },[ArrayListSome, output, props.lured]);
-
-
 
 
   //Start of sliding arrows

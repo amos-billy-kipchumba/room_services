@@ -50,16 +50,26 @@ function MoreDetails() {
         var userEmail = userDataPie.data.email;
         var userPhone = userDataPie.data.phone;
     }
-   
-    const [fifty, setFifty] = useState([]);
     const [hostImage, setHostImage] = useState(null);
-    const [zero, setZero] = useState([]);
-    const [sevenFive, setSevenFive] = useState([]);
     const [loading, setLoading] = useState(true);
     const [hostDit, setHostDit] = useState([]);
 
     const params = useParams();
     const paramaId = params.id;
+
+
+    const [allHousesForMore, setAllHousesForMore] = useState([]);
+    useEffect(()=>{
+        const getAllForMoreDetails = async () => {
+            const userPin = paramaId;
+            const request = await axios.get(`${BaseURL}/api/get-all-house-more-details/${userPin}`);
+            if(request.data.status === 200){
+                setAllHousesForMore(request.data.bookingInfoForHost[0])
+                setLoading(false);
+            }
+        }
+        getAllForMoreDetails();
+    },[paramaId]);
 
     //booked dates converter
 
@@ -141,22 +151,6 @@ function MoreDetails() {
 
     //
 
-    useEffect(()=>{
-        const ninthHeaven = async () => {
-            try {
-            const request = await axios.get(`${BaseURL}/api/get-join-fifty-details/${paramaId}`);
-            setZero(request.data.joinFifty[0]);
-            setFifty(request.data.joinFifty[0]);
-            if(request.data.status === 200) {
-                setLoading(false);
-            }
-            } catch (error) {
-                console.error(error.message);
-            }
-        }
-        ninthHeaven();
-    },[paramaId]);
-
    
 
     useEffect(()=>{
@@ -169,24 +163,6 @@ function MoreDetails() {
     },[paramaId]);
 
 
-    useEffect(()=>{
-        const eightHeaven = async () => {
-            const request = await axios.get(`${BaseURL}/api/get-join-seventy-five-details/${paramaId}`);
-            setSevenFive(request.data.joinSeventyFive[0]);
-        }
-        eightHeaven();
-    },[paramaId]);
-
-
-    const [zeroImage, setZeroImage] = useState(null);
-      useEffect(()=>{
-        const getZeroDetails = async () => {
-            const request = await axios.get(`${BaseURL}/api/get-zero-details/${paramaId}`);
-            setZero(request.data.zero);
-            setZeroImage(`${BaseURL}/uploads/${request.data.zero.cover}`)
-          }
-        getZeroDetails();
-      },[paramaId]);
 
       const Navigate = useNavigate();
 
@@ -224,8 +200,8 @@ function MoreDetails() {
 
     const dayDay = Math.ceil(time / (1000*60*60*24));
 
-    if(zero){
-        var priceTag = parseInt(zero.price);
+    if(allHousesForMore){
+        var priceTag = parseInt(allHousesForMore.price);
 
         var numberTag = parseInt(handleMaxGuestNo);
 
@@ -318,11 +294,11 @@ function MoreDetails() {
                 customerEndDateFmtYMD: endDateYMD,
                 customerEndDateFmtISO8601: endDateISO8601,
                 houseId: paramaId,
-                houseCover: zero.cover,
-                houseTitle: zero.title,
-                houseDescription: zero.description,
-                houseLocation: zero.location,
-                housePrice: zero.price,
+                houseCover: allHousesForMore.cover,
+                houseTitle: allHousesForMore.title,
+                houseDescription: allHousesForMore.description,
+                houseLocation: allHousesForMore.location,
+                housePrice: allHousesForMore.price,
 
                 totalPrice: totalPriceTag,
                 numberOfGuests: handleMaxGuestNo,
@@ -338,10 +314,10 @@ function MoreDetails() {
     //end of booking calendar
 
     useEffect(()=> {
-        if(fifty === undefined) {
+        if(allHousesForMore.max_no_of_guests === null) {
             Navigate('/');
         }
-    },[fifty, Navigate]);
+    },[Navigate, allHousesForMore]);
 
     const [likeLike, setLikeLike] = useState([]);
 
@@ -393,9 +369,11 @@ function MoreDetails() {
         },[]);
     //End of Scroll to the top on load
 
+    
+
   return (
     <>
-    {loading !== false ? 
+    {loading !== false ?
         <MoreDetailsLoader /> 
         :
     <div className='more__page'>
@@ -403,14 +381,14 @@ function MoreDetails() {
         <div className='morePage__info'>
 
             <div className="selected-info">
-                {zero ?
-                    <h2>{zero.title}</h2>
+                {allHousesForMore ?
+                    <h2>{allHousesForMore.title}</h2>
                      :
                      null
                 }
                 <div className='map-save'>
-                {zero ?
-                    <p style={{ margin: '0px 10px' }}>{zero.location}</p>
+                {allHousesForMore ?
+                    <p style={{ margin: '0px 10px' }}>{allHousesForMore.location}</p>
                     :
                     null
                 }
@@ -426,7 +404,7 @@ function MoreDetails() {
                 </div>
 
                 <div className="setSliderRight">
-                    <Slider lured={paramaId} zero={zeroImage} />
+                    <Slider lured={paramaId} allHousesForMore={allHousesForMore} />
                 </div>
 
                 <Button className="viewAllImages" onClick={()=> {
@@ -435,16 +413,16 @@ function MoreDetails() {
 
                 <div className='hosted-by'>
                     <div className='hosted-by-left-main'>
-                        {zero ? 
+                        {allHousesForMore ? 
                         
                         <div className='hosted-by-left'>
                             <div className='hosted-by-left-one'>
-                            {zero ?
-                                <h2>Entire {zero.house_type} hosted by {hostDit.first_name}</h2>
+                            {allHousesForMore ?
+                                <h2>Entire {allHousesForMore.house_type} hosted by {hostDit.first_name}</h2>
                                 :
                                 null}
-                                {zero ?
-                                <p>{fifty.max_no_of_guests} guests . {fifty.number_of_bedrooms} bedrooms . {fifty.number_of_beds} beds . {fifty.number_of_bathtubs} baths</p>
+                                {allHousesForMore ?
+                                <p>{allHousesForMore.max_no_of_guests} guests . {allHousesForMore.number_of_bedrooms} bedrooms . {allHousesForMore.number_of_beds} beds . {allHousesForMore.number_of_bathtubs} baths</p>
                                 :
                                 null
                                 }
@@ -463,13 +441,13 @@ function MoreDetails() {
                                 <p><span style={{ fontWeight: 'bold' }}>Phone: </span><span>{hostDit.phone}</span> <span style={{ fontWeight: 'bold' }}>Email: </span><span>{hostDit.email}</span></p>
                             </div>
                         </div>
-                        {sevenFive.pool === `1` ?
+                        {allHousesForMore.pool === `1` ?
                         <div className='dive-right'>
-                        {sevenFive.pool === `1` ?
+                        {allHousesForMore.pool === `1` ?
                             <div className='dive-right-one'><FaSwimmingPool /></div> :
                             null
                          }
-                            {sevenFive.pool === `1` ?
+                            {allHousesForMore.pool === `1` ?
                             <div className='dive-right-two'>
                                 <h2>Dive right in</h2>
                                 <p>This is one of the few places in the area with a pool.</p>
@@ -508,13 +486,13 @@ function MoreDetails() {
                             <div className='dive-right-one'><FaBed /></div>
                             <div className='dive-right-two'>
                                 <h2>Where you will sleep.</h2>
-                                {zero ?
-                                <p>Number of Bedrooms: {parseInt(fifty.number_of_bedrooms) >= 1 ? fifty.number_of_bedrooms : 0}</p>
+                                {allHousesForMore ?
+                                <p>Number of Bedrooms: {parseInt(allHousesForMore.number_of_bedrooms) >= 1 ? allHousesForMore.number_of_bedrooms : 0}</p>
                                 :
                                 null
                                 }
-                                {zero ?
-                                <p>Number of Beds: {parseInt(fifty.number_of_beds) >= 1 ? fifty.number_of_beds : 0}</p>
+                                {allHousesForMore ?
+                                <p>Number of Beds: {parseInt(allHousesForMore.number_of_beds) >= 1 ? allHousesForMore.number_of_beds : 0}</p>
                                 :
                                 null}
                             </div>
@@ -524,14 +502,14 @@ function MoreDetails() {
                             <div className='dive-right-two'>
                                 <h2>What this place offers</h2>
                                 <h4>Bedroom</h4>
-                                {sevenFive.bathtub === `1` ?
+                                {allHousesForMore.bathtub === `1` ?
                                 <div style={{ display: 'flex', flexDirection: 'column' }}>
                                     <p style={{ alignItems: 'center', marginTop: '10px', display: 'flex' }}><span style={{ marginRight: '10px', color: 'black', alignItems: 'center' }}><FaBath /></span> <span style={{ alignItems: 'center' }}>bath tub</span></p>
                                 </div>
                                 :
                                 null}
 
-                                {sevenFive.hair_drier === `1` ?
+                                {allHousesForMore.hair_drier === `1` ?
                                 <div style={{ display: 'flex', flexDirection: 'column' }}>
                                     <p style={{ alignItems: 'center', marginTop: '10px', display: 'flex' }}><span style={{ marginRight: '10px', color: 'black', alignItems: 'center' }}><img src={Drier} alt="" style={{ width: '20px' }} /></span> <span style={{ alignItems: 'center' }}>hair drier</span></p>
                                 </div>
@@ -541,7 +519,7 @@ function MoreDetails() {
 
                                 <h4 style={{ marginTop: '10px' }}>Bedroom and laundry</h4>
                                 
-                                {sevenFive.washer === `1` ?
+                                {allHousesForMore.washer === `1` ?
                                 <div className="mine-rude">
                                     <div className='less-rude'>
                                         <span><LocalLaundryServiceIcon /></span>
@@ -553,7 +531,7 @@ function MoreDetails() {
                                 :
                                 null}
 
-                                {sevenFive.drier === `1` ?
+                                {allHousesForMore.drier === `1` ?
                                 <div className="mine-rude">
                                     <div className='less-rude'>
                                         <span><DryCleaningIcon /></span>
@@ -565,7 +543,7 @@ function MoreDetails() {
                                 :
                                 null}
 
-                                {sevenFive.essentials === `1` ?
+                                {allHousesForMore.essentials === `1` ?
                                 <div className="mine-rude">
                                     <div className='less-rude'>
                                         <span><FaToiletPaper /></span>
@@ -578,7 +556,7 @@ function MoreDetails() {
                                 :
                                 null}
 
-                                {sevenFive.iron === `1` ?
+                                {allHousesForMore.iron === `1` ?
                                 <div className="mine-rude">
                                     <div className='less-rude'>
                                         <span><IronIcon /></span>
@@ -591,7 +569,7 @@ function MoreDetails() {
                                 null}
                         
                                 <h4 style={{ marginTop: '10px' }}>Entertainment</h4>
-                                {sevenFive.tv === `1` ?
+                                {allHousesForMore.tv === `1` ?
                                 <div className="mine-rude">
                                     <div className='less-rude'>
                                         <span><FaTv /></span>
@@ -604,7 +582,7 @@ function MoreDetails() {
                                 null}
 
                                 <h4 style={{ marginTop: '10px' }}>Heating and cooling</h4>
-                                {sevenFive.air_condition === `1` ?
+                                {allHousesForMore.air_condition === `1` ?
                                 <div className="mine-rude">
                                     <div className='less-rude'>
                                         <span><AcUnitIcon /></span>
@@ -616,7 +594,7 @@ function MoreDetails() {
                                 :
                                 null}
 
-                                {sevenFive.heating === `1` ?
+                                {allHousesForMore.heating === `1` ?
                                 <div className="mine-rude">
                                     <div className='less-rude'>
                                         <span><FaTemperatureHigh /></span>
@@ -629,7 +607,7 @@ function MoreDetails() {
                                 null}
 
                                 <h4 style={{ marginTop: '10px' }}>Internet and office</h4>
-                                {sevenFive.wifi === `1` ?
+                                {allHousesForMore.wifi === `1` ?
                                 <div className="mine-rude">
                                     <div className='less-rude'>
                                         <span><FaWifi /></span>
@@ -642,7 +620,7 @@ function MoreDetails() {
                                 null}
 
                                 <h4 style={{ marginTop: '10px' }}>Kitchen and dining</h4>
-                                {sevenFive.refrigeration === `1` ?
+                                {allHousesForMore.refrigeration === `1` ?
                                 <div className="mine-rude">
                                     <div className='less-rude'>
                                         <span><KitchenIcon /></span>
@@ -654,7 +632,7 @@ function MoreDetails() {
                                 :
                                 null}
 
-                                {sevenFive.microwave === `1` ?
+                                {allHousesForMore.microwave === `1` ?
                                 <div className="mine-rude">
                                     <div className='less-rude'>
                                         <span><MicrowaveIcon /></span>
@@ -666,7 +644,7 @@ function MoreDetails() {
                                 :
                                 null}
 
-                                {sevenFive.dishes_silverware === `1` ?
+                                {allHousesForMore.dishes_silverware === `1` ?
                                 <div className="mine-rude">
                                     <div className='less-rude'>
                                         <span><RiceBowlIcon /></span>
@@ -678,7 +656,7 @@ function MoreDetails() {
                                 :
                                 null}
 
-                                {sevenFive.kitchen === `1` ?
+                                {allHousesForMore.kitchen === `1` ?
                                 <div className="mine-rude">
                                     <div className='less-rude'>
                                         <span><LocalDiningIcon /></span>
@@ -691,7 +669,7 @@ function MoreDetails() {
                                 :
                                 null}
 
-                                {sevenFive.blender === `1` ?
+                                {allHousesForMore.blender === `1` ?
                                 <div className="mine-rude">
                                     <div className='less-rude'>
                                         <span><BlenderIcon /></span>
@@ -703,7 +681,7 @@ function MoreDetails() {
                                 :
                                 null}
 
-                                {sevenFive.coffee_maker === `1` ?
+                                {allHousesForMore.coffee_maker === `1` ?
                                 <div className="mine-rude">
                                     <div className='less-rude'>
                                         <span><CoffeeMakerIcon /></span>
@@ -715,7 +693,7 @@ function MoreDetails() {
                                 :
                                 null}
 
-                                {sevenFive.fire_extinguisher === `1` ?
+                                {allHousesForMore.fire_extinguisher === `1` ?
                                 <div className="mine-rude">
                                     <div className='less-rude'>
                                         <span><FireExtinguisherIcon /></span>
@@ -727,7 +705,7 @@ function MoreDetails() {
                                 :
                                 null}
 
-                                {sevenFive.bread_toaster === `1` ?
+                                {allHousesForMore.bread_toaster === `1` ?
                                 <div className="mine-rude">
                                     <div className='less-rude'>
                                         <span><FaBreadSlice /></span>
@@ -740,7 +718,7 @@ function MoreDetails() {
                                 null}
 
                                 <h4 style={{ marginTop: '10px' }}>Outdoor</h4>
-                                {sevenFive.patio_balcony === `1` ?
+                                {allHousesForMore.patio_balcony === `1` ?
                                 <div className="mine-rude">
                                     <div className='less-rude'>
                                         <span><BalconyIcon /></span>
@@ -752,7 +730,7 @@ function MoreDetails() {
                                 :
                                 null}
 
-                                {sevenFive.backyard === `1` ?
+                                {allHousesForMore.backyard === `1` ?
                                 <div className="mine-rude">
                                     <div className='less-rude'>
                                         <span><YardIcon /></span>
@@ -764,7 +742,7 @@ function MoreDetails() {
                                 :
                                 null}
 
-                                {sevenFive.outdoor_grill === `1` ?
+                                {allHousesForMore.outdoor_grill === `1` ?
                                 <div className="mine-rude">
                                     <div className='less-rude'>
                                         <span><OutdoorGrillIcon /></span>
@@ -776,7 +754,7 @@ function MoreDetails() {
                                 :
                                 null}
 
-                                {sevenFive.beach_essential === `1` ?
+                                {allHousesForMore.beach_essential === `1` ?
                                 <div className="mine-rude">
                                     <div className='less-rude'>
                                         <span><BeachAccessIcon /></span>
@@ -789,7 +767,7 @@ function MoreDetails() {
                                 :
                                 null}
 
-                                {sevenFive.pool === `1` ?
+                                {allHousesForMore.pool === `1` ?
                                 <div className="mine-rude">
                                     <div className='less-rude'>
                                         <span><PoolIcon /></span>
@@ -801,7 +779,7 @@ function MoreDetails() {
                                 :
                                 null}
 
-                                {sevenFive.parking === `1` ?
+                                {allHousesForMore.parking === `1` ?
                                 <div className="mine-rude">
                                     <div className='less-rude'>
                                         <span><LocalParkingIcon /></span>
@@ -813,7 +791,7 @@ function MoreDetails() {
                                 :
                                 null}
 
-                                {sevenFive.long_term === `1` ?
+                                {allHousesForMore.long_term === `1` ?
                                 <div className="mine-rude">
                                     <div className='less-rude'>
                                         <span><CalendarMonthIcon /></span>
@@ -826,7 +804,7 @@ function MoreDetails() {
                                 :
                                 null}
 
-                                {sevenFive.private_entrance === `1` ?
+                                {allHousesForMore.private_entrance === `1` ?
                                 <div className="mine-rude">
                                     <div className='less-rude'>
                                         <span><NoMeetingRoomIcon /></span>
@@ -843,13 +821,13 @@ function MoreDetails() {
                     <div className='hosted-by-right'>
                         <div className="right-host-form">
                             <div className='right-host-form-inner'>
-                                {zero ?
-                                <h4><span className='strong-text'>${zero.price}</span> / night</h4>
+                                {allHousesForMore ?
+                                <h4><span className='strong-text'>${allHousesForMore.price}</span> / night</h4>
                                 :
                                 null}
                                 <div className="striker-date">
                                     <div className='strike-one'>
-                                    {zero ?
+                                    {allHousesForMore ?
                                         <DatePicker
                                          selected={selectedDate}
                                          minDate={new Date()}
@@ -870,7 +848,7 @@ function MoreDetails() {
                                     </div>
 
                                     <div className='strike-two'>
-                                    {zero ?
+                                    {allHousesForMore ?
                                         <DatePicker
                                          selected={selectedDate2}
                                          minDate={selectedDate}
@@ -893,10 +871,10 @@ function MoreDetails() {
                                 </div>
 
                                 <div className="strike-number-guests">
-                                {zero ?
+                                {allHousesForMore ?
                                     <input type="number"
                                      min="1"
-                                     max={fifty.max_no_of_guests}
+                                     max={allHousesForMore.max_no_of_guests}
                                      name='number-of-guests'
                                      placeholder='No of guests'
                                      value={handleMaxGuestNo}
