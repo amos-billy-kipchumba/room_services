@@ -45,12 +45,10 @@ import SearchPage from "./components/SearchPage";
 import SignIn from "./components/Signin";
 import Slider from "./components/Slider";
 import Protected from './Protected';
+import MoreDetails from "./components/MoreDetails";
 
 // import Home from './components/Home';
 const LazyHome = React.lazy(() => import('./components/Home'))
-
-// import MoreDetails from "./components/MoreDetails";
-const LazyMoreDetails = React.lazy(() => import('./components/MoreDetails'))
 
 // import BecomeAHost from "./components/BecomeAHost";
 const LazyBecomeAHost = React.lazy(() => import('./components/BecomeAHost'))
@@ -153,9 +151,7 @@ function App() {
             <Route exact path="/main-host-account" element={ 
               <Protected Cmp={MainHostAccount} />} />
             <Route exact path="/more-details/:id" element={
-              <React.Suspense fallback={<CircularLoader />}>
-                <LazyMoreDetails />
-              </React.Suspense>
+                <MoreDetails />
                } />
             <Route exact path="/slider" element={ <Slider /> } />
             <Route exact path="/sign-in" element={ <SignIn /> } />
