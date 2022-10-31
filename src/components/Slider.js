@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
 import './Slider.css'
-import axios from 'axios'
 import ArrowRight from '@mui/icons-material/ArrowRight';
 import BaseURL from './BaseUrl';
 function Slider(props) {
@@ -9,104 +8,107 @@ function Slider(props) {
 
    const [ArrayListSome] = useState([]);
    const [output] = useState([]);
+
   useEffect(()=>{
     const getThousandDetails = async () => {
-      const request = await axios.get(`${BaseURL}/api/get-join-thousand-details/${props.lured}`);
-  
-      if(request.data.joinThousand[0].sitting_room !== null)
-      {
-        ArrayListSome.push(`${BaseURL}/parts/${request.data.joinThousand[0].sitting_room}`);
-      }
-  
-      if(request.data.joinThousand[0].dinning_room !== null)
-      {
-        ArrayListSome.push(`${BaseURL}/parts/${request.data.joinThousand[0].dinning_room}`);
-      }
-  
-      if(request.data.joinThousand[0].kitchen !== null)
-      {
-        ArrayListSome.push(`${BaseURL}/parts/${request.data.joinThousand[0].kitchen}`);
-      }
-  
-      if(request.data.joinThousand[0].bathroom !== null)
-      {
-        ArrayListSome.push(`${BaseURL}/parts/${request.data.joinThousand[0].bathroom}`);
-      }
-  
-  
-      if(request.data.joinThousand[0].bedroom !== null)
-      {
-        ArrayListSome.push(`${BaseURL}/parts/${request.data.joinThousand[0].bedroom}`);
-      }
-  
-  
-      if(request.data.joinThousand[0].swimming_pool !== null)
-      {
-        ArrayListSome.push(`${BaseURL}/parts/${request.data.joinThousand[0].swimming_pool}`);
-      }
-  
-      if(request.data.joinThousand[0].lake !== null)
-      {
-        ArrayListSome.push(`${BaseURL}/parts/${request.data.joinThousand[0].lake}`);
-      }
-  
-  
-      if(request.data.joinThousand[0].beach !== null)
-      {
-        ArrayListSome.push(`${BaseURL}/parts/${request.data.joinThousand[0].beach}`);
-      }
-  
-  
-      if(request.data.joinThousand[0].ocean_view !== null)
-      {
-        ArrayListSome.push(`${BaseURL}/parts/${request.data.joinThousand[0].ocean_view}`);
-      }
-  
-      if(request.data.joinThousand[0].balcony !== null)
-      {
-        ArrayListSome.push(`${BaseURL}/parts/${request.data.joinThousand[0].balcony}`);
-      }
-  
-      if(request.data.joinThousand[0].parking !== null)
-      {
-        ArrayListSome.push(`${BaseURL}/parts/${request.data.joinThousand[0].parking}`);
-      }
-  
-      if(request.data.joinThousand[0].front !== null)
-      {
-        ArrayListSome.push(`${BaseURL}/parts/${request.data.joinThousand[0].front}`);
-      }
-  
-      if(request.data.joinThousand[0].right !== null)
-      {
-        ArrayListSome.push(`${BaseURL}/parts/${request.data.joinThousand[0].right}`);
-      }
-  
-  
-      if(request.data.joinThousand[0].left !== null)
-      {
-        ArrayListSome.push(`${BaseURL}/parts/${request.data.joinThousand[0].left}`);
-      }
-  
-  
-      if(request.data.joinThousand[0].back !== null)
-      {
-        ArrayListSome.push(`${BaseURL}/parts/${request.data.joinThousand[0].back}`);
-      }
-  
-      if(request.data.joinThousand[0].aerial !== null)
-      {
-        ArrayListSome.push(`${BaseURL}/parts/${request.data.joinThousand[0].aerial}`);
-      }
-  
-      ArrayListSome.forEach((item) => {
-        if (output.indexOf(item) === -1) {
-          output.push(item);
+
+      if(props.allHousesForMore) {
+        if(props.allHousesForMore.sitting_room !== null)
+        {
+          ArrayListSome.push(`${BaseURL}/parts/${props.allHousesForMore.sitting_room}`);
         }
-      })
+    
+        if(props.allHousesForMore.dinning_room !== null)
+        {
+          ArrayListSome.push(`${BaseURL}/parts/${props.allHousesForMore.dinning_room}`);
+        }
+    
+        if(props.allHousesForMore.kitchen !== null)
+        {
+          ArrayListSome.push(`${BaseURL}/parts/${props.allHousesForMore.kitchen}`);
+        }
+    
+        if(props.allHousesForMore.bathroom !== null)
+        {
+          ArrayListSome.push(`${BaseURL}/parts/${props.allHousesForMore.bathroom}`);
+        }
+    
+    
+        if(props.allHousesForMore.bedroom !== null)
+        {
+          ArrayListSome.push(`${BaseURL}/parts/${props.allHousesForMore.bedroom}`);
+        }
+    
+    
+        if(props.allHousesForMore.swimming_pool !== null)
+        {
+          ArrayListSome.push(`${BaseURL}/parts/${props.allHousesForMore.swimming_pool}`);
+        }
+    
+        if(props.allHousesForMore.lake !== null)
+        {
+          ArrayListSome.push(`${BaseURL}/parts/${props.allHousesForMore.lake}`);
+        }
+    
+    
+        if(props.allHousesForMore.beach !== null)
+        {
+          ArrayListSome.push(`${BaseURL}/parts/${props.allHousesForMore.beach}`);
+        }
+    
+    
+        if(props.allHousesForMore.ocean_view !== null)
+        {
+          ArrayListSome.push(`${BaseURL}/parts/${props.allHousesForMore.ocean_view}`);
+        }
+    
+        if(props.allHousesForMore.balcony !== null)
+        {
+          ArrayListSome.push(`${BaseURL}/parts/${props.allHousesForMore.balcony}`);
+        }
+    
+        if(props.allHousesForMore.parking !== null)
+        {
+          ArrayListSome.push(`${BaseURL}/parts/${props.allHousesForMore.parking}`);
+        }
+    
+        if(props.allHousesForMore.front !== null)
+        {
+          ArrayListSome.push(`${BaseURL}/parts/${props.allHousesForMore.front}`);
+        }
+    
+        if(props.allHousesForMore.right !== null)
+        {
+          ArrayListSome.push(`${BaseURL}/parts/${props.allHousesForMore.right}`);
+        }
+    
+    
+        if(props.allHousesForMore.left !== null)
+        {
+          ArrayListSome.push(`${BaseURL}/parts/${props.allHousesForMore.left}`);
+        }
+    
+    
+        if(props.allHousesForMore.back !== null)
+        {
+          ArrayListSome.push(`${BaseURL}/parts/${props.allHousesForMore.back}`);
+        }
+    
+        if(props.allHousesForMore.aerial !== null)
+        {
+          ArrayListSome.push(`${BaseURL}/parts/${props.allHousesForMore.aerial}`);
+        }
+    
+        ArrayListSome.forEach((item) => {
+          if (output.indexOf(item) === -1) {
+            output.push(item);
+          }
+        })
+      }
+
     }
     getThousandDetails();
-  },[ArrayListSome, output, props.lured]);
+  },[ArrayListSome, output, props.lured, props]);
 
 
   //Start of sliding arrows
