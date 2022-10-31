@@ -9,96 +9,94 @@ function Slider(props) {
 
    const [ArrayListSome] = useState([]);
    const [output] = useState([]);
-
-
   useEffect(()=>{
     const getThousandDetails = async () => {
       const request = await axios.get(`${BaseURL}/api/get-join-thousand-details/${props.lured}`);
   
       if(request.data.joinThousand[0].sitting_room)
       {
-        ArrayListSome.push(request.data.joinThousand[0].sitting_room);
+        ArrayListSome.push(`${BaseURL}/parts/${request.data.joinThousand[0].sitting_room}`);
       }
   
       if(request.data.joinThousand[0].dinning_room !== null)
       {
-        ArrayListSome.push(request.data.joinThousand[0].dinning_room);
+        ArrayListSome.push(`${BaseURL}/parts/${request.data.joinThousand[0].dinning_room}`);
       }
   
       if(request.data.joinThousand[0].kitchen !== null)
       {
-        ArrayListSome.push(request.data.joinThousand[0].kitchen);
+        ArrayListSome.push(`${BaseURL}/parts/${request.data.joinThousand[0].kitchen}`);
       }
   
       if(request.data.joinThousand[0].bathroom !== null)
       {
-        ArrayListSome.push(request.data.joinThousand[0].bathroom);
+        ArrayListSome.push(`${BaseURL}/parts/${request.data.joinThousand[0].bathroom}`);
       }
   
   
       if(request.data.joinThousand[0].bedroom !== null)
       {
-        ArrayListSome.push(request.data.joinThousand[0].bedroom);
+        ArrayListSome.push(`${BaseURL}/parts/${request.data.joinThousand[0].bedroom}`);
       }
   
   
       if(request.data.joinThousand[0].swimming_pool !== null)
       {
-        ArrayListSome.push(request.data.joinThousand[0].swimming_pool);
+        ArrayListSome.push(`${BaseURL}/parts/${request.data.joinThousand[0].swimming_pool}`);
       }
   
       if(request.data.joinThousand[0].lake !== null)
       {
-        ArrayListSome.push(request.data.joinThousand[0].lake);
+        ArrayListSome.push(`${BaseURL}/parts/${request.data.joinThousand[0].lake}`);
       }
   
   
       if(request.data.joinThousand[0].beach !== null)
       {
-        ArrayListSome.push(request.data.joinThousand[0].beach);
+        ArrayListSome.push(`${BaseURL}/parts/${request.data.joinThousand[0].beach}`);
       }
   
   
       if(request.data.joinThousand[0].ocean_view !== null)
       {
-        ArrayListSome.push(request.data.joinThousand[0].ocean_view);
+        ArrayListSome.push(`${BaseURL}/parts/${request.data.joinThousand[0].ocean_view}`);
       }
   
       if(request.data.joinThousand[0].balcony !== null)
       {
-        ArrayListSome.push(request.data.joinThousand[0].balcony);
+        ArrayListSome.push(`${BaseURL}/parts/${request.data.joinThousand[0].balcony}`);
       }
   
       if(request.data.joinThousand[0].parking !== null)
       {
-        ArrayListSome.push(request.data.joinThousand[0].parking);
+        ArrayListSome.push(`${BaseURL}/parts/${request.data.joinThousand[0].parking}`);
       }
   
       if(request.data.joinThousand[0].front !== null)
       {
-        ArrayListSome.push(request.data.joinThousand[0].front);
+        ArrayListSome.push(`${BaseURL}/parts/${request.data.joinThousand[0].front}`);
       }
   
       if(request.data.joinThousand[0].right !== null)
       {
-        ArrayListSome.push(request.data.joinThousand[0].right);
+        ArrayListSome.push(`${BaseURL}/parts/${request.data.joinThousand[0].right}`);
       }
   
   
       if(request.data.joinThousand[0].left !== null)
       {
-        ArrayListSome.push(request.data.joinThousand[0].left);
+        ArrayListSome.push(`${BaseURL}/parts/${request.data.joinThousand[0].left}`);
       }
   
   
       if(request.data.joinThousand[0].back !== null)
       {
-        ArrayListSome.push(request.data.joinThousand[0].back);
+        ArrayListSome.push(`${BaseURL}/parts/${request.data.joinThousand[0].back}`);
       }
   
       if(request.data.joinThousand[0].aerial !== null)
       {
-        ArrayListSome.push(request.data.joinThousand[0].aerial);
+        ArrayListSome.push(`${BaseURL}/parts/${request.data.joinThousand[0].aerial}`);
       }
   
       ArrayListSome.forEach((item) => {
@@ -109,6 +107,7 @@ function Slider(props) {
     }
     getThousandDetails();
   },[ArrayListSome, output, props.lured]);
+
 
 
 
@@ -146,7 +145,7 @@ function Slider(props) {
       {output && output.map((object, index)=>{
         return(
           <div className={sliderIndex === index + 1 ? "slide active-anim" : "slide"} key={index}>
-            <img src={`${BaseURL}/parts/${object}`} alt="" /> 
+            <img src={object} alt="" /> 
           </div>
         );
       })}
