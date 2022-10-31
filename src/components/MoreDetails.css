@@ -29,6 +29,19 @@
     flex-direction: column;
 }
 
+.selected-info .viewAllImages {
+    margin: auto;
+    background-color: white;
+    color: black;
+    text-transform: inherit;
+    border: 1px solid grey;
+    transition: all 0.3s ease-in-out;
+}
+
+.selected-info .viewAllImages:hover { 
+    border-image-source: linear-gradient(90deg, #ff7779 50%, orange 50%);
+    border-image-slice: 1;
+}
 .selected-info > h2 {
     margin: 10px;
 }
@@ -476,19 +489,7 @@
     box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
 }
 
-.viewAllImages {
-    margin: auto;
-    background-color: white;
-    color: black;
-    text-transform: inherit;
-    border: 1px solid grey;
-    transition: all 0.3s ease-in-out;
-}
 
-.viewAllImages:hover { 
-    border-image-source: linear-gradient(90deg, #ff7779 50%, orange 50%);
-    border-image-slice: 1;
-}
 
 .magicDateClass {
     position: absolute;
@@ -1213,7 +1214,7 @@
         box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
     }
     
-    .viewAllImages {
+    .selected-info .viewAllImages {
         margin: auto;
         background-color: white;
         color: black;
@@ -1222,7 +1223,7 @@
         transition: all 0.3s ease-in-out;
     }
     
-    .viewAllImages:hover { 
+    .selected-info .viewAllImages:hover { 
         border-image-source: linear-gradient(90deg, #ff7779 50%, orange 50%);
         border-image-slice: 1;
     }
@@ -1953,7 +1954,7 @@
         box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
     }
     
-    .viewAllImages {
+    .selected-info .viewAllImages {
         margin: auto;
         background-color: white;
         color: black;
@@ -1962,7 +1963,7 @@
         transition: all 0.3s ease-in-out;
     }
     
-    .viewAllImages:hover { 
+    .selected-info .viewAllImages:hover { 
         border-image-source: linear-gradient(90deg, #ff7779 50%, orange 50%);
         border-image-slice: 1;
     }
@@ -2693,7 +2694,7 @@
         box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
     }
     
-    .viewAllImages {
+    .selected-info .viewAllImages {
         margin: auto;
         background-color: white;
         color: black;
@@ -2702,7 +2703,7 @@
         transition: all 0.3s ease-in-out;
     }
     
-    .viewAllImages:hover { 
+    .selected-info .viewAllImages:hover { 
         border-image-source: linear-gradient(90deg, #ff7779 50%, orange 50%);
         border-image-slice: 1;
     }
