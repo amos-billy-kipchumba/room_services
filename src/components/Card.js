@@ -1,14 +1,9 @@
 import React from 'react'
 import './Card.css'
-import {useNavigate} from 'react-router-dom'
-function Card({ src, title, description, price, location, id }) {
-  const navigate = useNavigate();
+function Card({ src, title, description, price, location, handleNavigation}) {
 
-    function navigateHouse () {
-        navigate(`/more-details/${id}`);
-    }
   return (
-    <div className='card' onClick={navigateHouse}>
+    <div className='card' onClick={handleNavigation}>
 
         <img src={src} alt="" />
 

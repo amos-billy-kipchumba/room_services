@@ -5,6 +5,7 @@ import Card from './Card'
 import axios from 'axios'
 import HomeLoading from './HomeLoading'
 import BaseURL from './BaseUrl'
+import {useNavigate} from 'react-router-dom'
 
 function Home() {
     const [houseData, setHouseData] = useState([]);
@@ -28,6 +29,12 @@ function Home() {
     },[]);
     //End of Scroll to the top on load
 
+    const Navigate = useNavigate();
+
+    const handleNavigation =(e, id)=> {
+      Navigate(`more-details/${id}`)
+    }
+
   return (
     <div className='home'>
 
@@ -45,7 +52,7 @@ function Home() {
             price={data.price}
             location={data.location}
             key={data.id}
-            id={data.id}
+            handleNavigation={(e)=> handleNavigation(e, data.id)}
           />
         );
       })}
