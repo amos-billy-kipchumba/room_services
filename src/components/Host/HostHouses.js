@@ -109,7 +109,7 @@ function HostHouses() {
                         }}
                         key={index}>
                           <div className='host-houses-me__info-rightHousesCardImage'>
-                            <img src={`http://127.0.0.1:8000/uploads/${object.cover}`} alt="" />
+                            <img src={`${BaseURL}/uploads/${object.cover}`} alt="" />
                           </div>
                           <div className='host-houses-me__info-rightHousesCardDetails'>
                             <h4>{object.title}</h4>

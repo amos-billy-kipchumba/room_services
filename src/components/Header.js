@@ -115,7 +115,7 @@ function Header() {
         navigate('/');
     }
   return (
-    <div className='header__container'>
+    <div className={showSearch === false ? 'header__container' : 'header__scrollable'}>
 
         <div className='header'>
 
