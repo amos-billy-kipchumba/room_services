@@ -178,10 +178,12 @@ function MoreDetails() {
     },[paramaId]);
 
 
+    const [zeroImage, setZeroImage] = useState(null);
       useEffect(()=>{
         const getZeroDetails = async () => {
             const request = await axios.get(`${BaseURL}/api/get-zero-details/${paramaId}`);
             setZero(request.data.zero);
+            setZeroImage(`${BaseURL}/uploads/${request.data.zero.cover}`)
           }
         getZeroDetails();
       },[paramaId]);
@@ -424,7 +426,7 @@ function MoreDetails() {
                 </div>
 
                 <div className="setSliderRight">
-                    <Slider lured={paramaId} />
+                    <Slider lured={paramaId} zero={zeroImage} />
                 </div>
 
                 <Button className="viewAllImages" onClick={()=> {
