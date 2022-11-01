@@ -928,7 +928,7 @@ function EditFourth() {
                 {showMenuBar ? 
               <ul className='host-navigation'>
                 <li><Link to="/main-host-account" className='lilo-link'>DashBoard</Link></li>
-                <li style={{ backgroundColor: '#ff7779' }}><Link to="/host-houses" className='lilo-link'>Your houses</Link></li>
+                <li style={{ backgroundColor: '#F78513' }}><Link to="/host-houses" className='lilo-link'>Your houses</Link></li>
                 <li><Link to="/add-house-host" className='lilo-link'><Add /> house</Link></li>
                 <li onClick={()=> Navigate('/tenants-details')}>Tenants Details</li>
                 <li onClick={()=> Navigate('/host-profile')}>Host Profile</li>
@@ -970,7 +970,7 @@ function EditFourth() {
                             <Button 
                             className="edit-fourth__info-right-imageButtonCrazy"
                             style={{ 
-                                backgroundColor: '#ff7779',
+                                backgroundColor: '#F78513',
                                 color: 'white',
                                 position: 'absolute',
                                 bottom: '50px',
@@ -1025,7 +1025,7 @@ function EditFourth() {
                             <Button 
                             className="edit-fourth__info-right-imageButtonCrazy"
                             style={{ 
-                                backgroundColor: '#ff7779',
+                                backgroundColor: '#F78513',
                                 color: 'white',
                                 position: 'absolute',
                                 bottom: '50px',
@@ -1080,7 +1080,7 @@ function EditFourth() {
                             <Button 
                             className="edit-fourth__info-right-imageButtonCrazy"
                             style={{ 
-                                backgroundColor: '#ff7779',
+                                backgroundColor: '#F78513',
                                 color: 'white',
                                 position: 'absolute',
                                 bottom: '50px',
@@ -1135,7 +1135,7 @@ function EditFourth() {
                             <Button 
                             className="edit-fourth__info-right-imageButtonCrazy"
                             style={{ 
-                                backgroundColor: '#ff7779',
+                                backgroundColor: '#F78513',
                                 color: 'white',
                                 position: 'absolute',
                                 bottom: '50px',
@@ -1190,7 +1190,7 @@ function EditFourth() {
                             <Button 
                             className="edit-fourth__info-right-imageButtonCrazy"
                             style={{ 
-                                backgroundColor: '#ff7779',
+                                backgroundColor: '#F78513',
                                 color: 'white',
                                 position: 'absolute',
                                 bottom: '50px',
@@ -1245,7 +1245,7 @@ function EditFourth() {
                             <Button 
                             className="edit-fourth__info-right-imageButtonCrazy"
                             style={{ 
-                                backgroundColor: '#ff7779',
+                                backgroundColor: '#F78513',
                                 color: 'white',
                                 position: 'absolute',
                                 bottom: '50px',
@@ -1300,7 +1300,7 @@ function EditFourth() {
                             <Button 
                             className="edit-fourth__info-right-imageButtonCrazy"
                             style={{ 
-                                backgroundColor: '#ff7779',
+                                backgroundColor: '#F78513',
                                 color: 'white',
                                 position: 'absolute',
                                 bottom: '50px',
@@ -1355,7 +1355,7 @@ function EditFourth() {
                             <Button 
                             className="edit-fourth__info-right-imageButtonCrazy"
                             style={{ 
-                                backgroundColor: '#ff7779',
+                                backgroundColor: '#F78513',
                                 color: 'white',
                                 position: 'absolute',
                                 bottom: '50px',
@@ -1410,7 +1410,7 @@ function EditFourth() {
                             <Button 
                             className="edit-fourth__info-right-imageButtonCrazy"
                             style={{ 
-                                backgroundColor: '#ff7779',
+                                backgroundColor: '#F78513',
                                 color: 'white',
                                 position: 'absolute',
                                 bottom: '50px',
@@ -1465,7 +1465,7 @@ function EditFourth() {
                             <Button 
                             className="edit-fourth__info-right-imageButtonCrazy"
                             style={{ 
-                                backgroundColor: '#ff7779',
+                                backgroundColor: '#F78513',
                                 color: 'white',
                                 position: 'absolute',
                                 bottom: '50px',
@@ -1519,7 +1519,7 @@ function EditFourth() {
                             <Button 
                             className="edit-fourth__info-right-imageButtonCrazy"
                             style={{ 
-                                backgroundColor: '#ff7779',
+                                backgroundColor: '#F78513',
                                 color: 'white',
                                 position: 'absolute',
                                 bottom: '50px',
@@ -1574,7 +1574,7 @@ function EditFourth() {
                             <Button 
                             className="edit-fourth__info-right-imageButtonCrazy"
                             style={{ 
-                                backgroundColor: '#ff7779',
+                                backgroundColor: '#F78513',
                                 color: 'white',
                                 position: 'absolute',
                                 bottom: '50px',
@@ -1629,7 +1629,7 @@ function EditFourth() {
                             <Button 
                             className="edit-fourth__info-right-imageButtonCrazy"
                             style={{ 
-                                backgroundColor: '#ff7779',
+                                backgroundColor: '#F78513',
                                 color: 'white',
                                 position: 'absolute',
                                 bottom: '50px',
@@ -1684,7 +1684,7 @@ function EditFourth() {
                             <Button 
                             className="edit-fourth__info-right-imageButtonCrazy"
                             style={{ 
-                                backgroundColor: '#ff7779',
+                                backgroundColor: '#F78513',
                                 color: 'white',
                                 position: 'absolute',
                                 bottom: '50px',
@@ -1739,7 +1739,7 @@ function EditFourth() {
                             <Button 
                             className="edit-fourth__info-right-imageButtonCrazy"
                             style={{ 
-                                backgroundColor: '#ff7779',
+                                backgroundColor: '#F78513',
                                 color: 'white',
                                 position: 'absolute',
                                 bottom: '50px',
@@ -1794,7 +1794,7 @@ function EditFourth() {
                             <Button 
                             className="edit-fourth__info-right-imageButtonCrazy"
                             style={{ 
-                                backgroundColor: '#ff7779',
+                                backgroundColor: '#F78513',
                                 color: 'white',
                                 position: 'absolute',
                                 bottom: '50px',
@@ -1833,7 +1833,7 @@ function EditFourth() {
                 <Button onClick={()=> Navigate(`/edit-first/${paramaId}`)} style={{ marginRight: '10px' }}>Page 1</Button>
                 <Button onClick={()=> Navigate(`/edit-second/${paramaId}`)} style={{ marginRight: '10px' }}>Page 2</Button>
                 <Button onClick={()=> Navigate(`/edit-third/${paramaId}`)} style={{ marginRight: '10px' }}>Page 3</Button>
-                <Button onClick={()=> Navigate(`/edit-four/${paramaId}`)} style={{ backgroundColor: '#ff7779', color: 'white' }} id="updated">Page 4</Button>
+                <Button onClick={()=> Navigate(`/edit-four/${paramaId}`)} style={{ backgroundColor: '#F78513', color: 'white' }} id="updated">Page 4</Button>
                 </div>
               </form>
              </div>

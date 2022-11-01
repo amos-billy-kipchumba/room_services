@@ -25,11 +25,11 @@
     background-color: white !important;
     font-weight: 900 !important;
     text-transform: inherit !important;
-    color: #ff7779 !important;
+    color: #F78513 !important;
 }
 
 .banner__info > button {
-    background-color: #ff7779;
+    background-color: #F78513;
     color: white;
     text-transform: inherit;
     margin-top: 20px;
@@ -38,7 +38,7 @@
 
 .banner__info > button:hover {
     background-color: white;
-    color: #ff7779;
+    color: #F78513;
     transition: all 0.3s ease-in-out;
     cursor: pointer;
     box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
@@ -79,11 +79,11 @@
         background-color: white !important;
         font-weight: 900 !important;
         text-transform: inherit !important;
-        color: #ff7779 !important;
+        color: #F78513 !important;
     }
     
     .banner__info > button {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
         text-transform: inherit;
         margin-top: 20px;
@@ -92,7 +92,7 @@
     
     .banner__info > button:hover {
         background-color: white;
-        color: #ff7779;
+        color: #F78513;
         transition: all 0.3s ease-in-out;
         cursor: pointer;
         box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);

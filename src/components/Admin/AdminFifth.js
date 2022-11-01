@@ -155,7 +155,7 @@ function AdminFifth() {
                   Navigate('/admin-fourth')
                 }}><PeopleOutlineTwoTone style={{ margin: 'auto 5px' }} /> Customers</li>
                 <li
-                style={{ backgroundColor: '#ff7779' }}>Profile</li>
+                style={{ backgroundColor: '#F78513' }}>Profile</li>
                 <li onClick={()=> {
                   localStorage.removeItem("user-info");
                   Navigate('/');

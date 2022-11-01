@@ -144,7 +144,7 @@ class AddHouse extends Component {
                     <ul className='host-navigation'>
                         <li><Link to="/main-host-account" className='lilo-link'>DashBoard</Link></li>
                         <li><Link to="/host-houses" className='lilo-link'>Your houses</Link></li>
-                        <li style={{ backgroundColor: '#ff7779' }}><Link to="/add-house-host" className='lilo-link'><Add /> house</Link></li>
+                        <li style={{ backgroundColor: '#F78513' }}><Link to="/add-house-host" className='lilo-link'><Add /> house</Link></li>
                         <li><Link to="/tenants-details" className='lilo-link'>Tenants Details</Link></li>
                         <li><Link to="/host-profile" className='lilo-link'>Host Profile</Link></li>
                         <li className='baby' onClick={()=>{
@@ -173,7 +173,7 @@ class AddHouse extends Component {
                             </select>
                             <textarea name="description" value={this.state.description} placeholder="Enter the description" onChange={this.handleChange} required></textarea>
                             <input type="number" name="price" value={this.state.price} placeholder="Enter the price in $ /night" onChange={this.handleChange} required />
-                            <Button type="submit" id="submit">Submit</Button>
+                            <Button type="submit" id="submit" style={{ backgroundColor: '#F78513' }}>Submit</Button>
                         </form>
                    </div>
                 </div>

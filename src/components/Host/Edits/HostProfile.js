@@ -126,7 +126,7 @@ function HostProfile() {
                 <li
                 onClick={()=> Navigate('/add-house-host')}><Add /> house</li>
                 <li onClick={()=> Navigate('/tenants-details')}>Tenants details</li>
-                <li style={{ backgroundColor: '#ff7779' }}>Profile</li>
+                <li style={{ backgroundColor: '#F78513' }}>Profile</li>
                 <li className='baby' onClick={()=> Navigate('/host-settings')}>Settings</li>
                 <li onClick={()=> {
                   localStorage.removeItem("user-info");

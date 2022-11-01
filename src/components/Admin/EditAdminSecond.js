@@ -88,7 +88,7 @@ function EditAdminSecond() {
                 onClick={()=> {
                   Navigate('/admin-second')
                 }}
-                style={{ backgroundColor: '#ff7779' }}><People style={{ margin: 'auto 5px' }} /> Hosts</li>
+                style={{ backgroundColor: '#F78513' }}><People style={{ margin: 'auto 5px' }} /> Hosts</li>
                 <li
                 onClick={()=> {
                   Navigate('/admin-third')

@@ -49,20 +49,20 @@
 }
 
 .forgot_span:hover {
-    color: #ff7779;
+    color: #F78513;
 }
 
 .form-login > button {
     margin-top: 10px;
     width: 150px;
     align-self: center;
-    background-color: #ff7779;
+    background-color: #F78513;
     text-transform: inherit;
     color: white;
 }
 
 .form-login > button:hover {
-    color: #ff7779;
+    color: #F78513;
     background-color: white;
     transition: all 0.3s ease-in-out;
 }
@@ -121,20 +121,20 @@
     }
     
     .forgot_span:hover {
-        color: #ff7779;
+        color: #F78513;
     }
     
     .form-login > button {
         margin-top: 10px;
         width: 150px;
         align-self: center;
-        background-color: #ff7779;
+        background-color: #F78513;
         text-transform: inherit;
         color: white;
     }
     
     .form-login > button:hover {
-        color: #ff7779;
+        color: #F78513;
         background-color: white;
         transition: all 0.3s ease-in-out;
     }
@@ -197,20 +197,20 @@
     }
     
     .forgot_span:hover {
-        color: #ff7779;
+        color: #F78513;
     }
     
     .form-login > button {
         margin-top: 10px;
         width: 150px;
         align-self: center;
-        background-color: #ff7779;
+        background-color: #F78513;
         text-transform: inherit;
         color: white;
     }
     
     .form-login > button:hover {
-        color: #ff7779;
+        color: #F78513;
         background-color: white;
         transition: all 0.3s ease-in-out;
     }
@@ -272,20 +272,20 @@
     }
     
     .forgot_span:hover {
-        color: #ff7779;
+        color: #F78513;
     }
     
     .form-login > button {
         margin-top: 10px;
         width: 150px;
         align-self: center;
-        background-color: #ff7779;
+        background-color: #F78513;
         text-transform: inherit;
         color: white;
     }
     
     .form-login > button:hover {
-        color: #ff7779;
+        color: #F78513;
         background-color: white;
         transition: all 0.3s ease-in-out;
     }

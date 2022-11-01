@@ -121,7 +121,7 @@ class PageTwoAdd extends Component {
                     {this.state.showMenu ? 
                     <ul className='host-navigation'>
                         <li><Link to="/main-host-account" className='lilo-link'>DashBoard</Link></li>
-                        <li style={{ backgroundColor: '#ff7779', marginBottom: '10px' }}><Add /> house</li>
+                        <li style={{ backgroundColor: '#F78513', marginBottom: '10px' }}><Add /> house</li>
                     </ul>
                     :
                     null

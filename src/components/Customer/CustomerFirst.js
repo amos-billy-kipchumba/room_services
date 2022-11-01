@@ -72,7 +72,7 @@ function CustomerFirst() {
   
               {showMenuBar ?
               <ul className='host-navigation'>
-                <li style={{ backgroundColor: '#ff7779' }}>Dashboard</li>
+                <li style={{ backgroundColor: '#F78513' }}>Dashboard</li>
                 <li onClick={()=> Navigate('/customer-second-page')}>Booked houses</li>
                 <li onClick={()=> Navigate('/customer-profile')}>Profile</li>
                 <li onClick={()=> {

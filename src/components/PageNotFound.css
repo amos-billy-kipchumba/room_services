@@ -17,13 +17,13 @@
     margin: 20px auto;
     width: 200px;
     text-transform: inherit;
-    background-color: #ff7779;
+    background-color: #F78513;
     color: white;
     transition: all 0.3s ease-in-out;
 }
 
 .pageNotFound > button:hover {
     background-color: white;
-    border: 1px solid #ff7779;
+    border: 1px solid #F78513;
     color: black;
 }

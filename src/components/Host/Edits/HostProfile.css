@@ -29,7 +29,7 @@
 }
 
 .HostProfileMenu {
-    background-color: #ff7779;
+    background-color: #F78513;
     padding: 10px;
     border-radius: 50%;
     cursor: pointer;
@@ -78,7 +78,7 @@
 }
 
 .host-navigation > li:hover {
-    background-color: #ff7779;
+    background-color: #F78513;
     color: white;
 }
 
@@ -129,14 +129,14 @@
     margin: 5px auto;
     text-transform: inherit;
     color: white;
-    background-color: #ff7779;
+    background-color: #F78513;
     transition: all 0.3s ease-in-out;
 }
 
 .host-profile-card-image-preview > button:hover {
-    border: 1px solid #ff7779;
+    border: 1px solid #F78513;
     background-color: white;
-    color: #ff7779;
+    color: #F78513;
 }
 
 /* 440px Mobile resposive */
@@ -214,7 +214,7 @@
     }
     
     .host-navigation > li:hover {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
     }
     
@@ -271,14 +271,14 @@
         margin: 0 auto 20px auto;
         text-transform: inherit;
         color: white;
-        background-color: #ff7779;
+        background-color: #F78513;
         transition: all 0.3s ease-in-out;
     }
     
     .host-profile-card-image-preview > button:hover {
-        border: 1px solid #ff7779;
+        border: 1px solid #F78513;
         background-color: white;
-        color: #ff7779;
+        color: #F78513;
     }
 }
 /* end */
@@ -359,7 +359,7 @@
     }
     
     .host-navigation > li:hover {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
     }
     
@@ -416,14 +416,14 @@
         margin: 0 auto 20px auto;
         text-transform: inherit;
         color: white;
-        background-color: #ff7779;
+        background-color: #F78513;
         transition: all 0.3s ease-in-out;
     }
     
     .host-profile-card-image-preview > button:hover {
-        border: 1px solid #ff7779;
+        border: 1px solid #F78513;
         background-color: white;
-        color: #ff7779;
+        color: #F78513;
     }
 }
 /* end */
@@ -504,7 +504,7 @@
     }
     
     .host-navigation > li:hover {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
     }
     
@@ -561,14 +561,14 @@
         margin: 0 auto 20px auto;
         text-transform: inherit;
         color: white;
-        background-color: #ff7779;
+        background-color: #F78513;
         transition: all 0.3s ease-in-out;
     }
     
     .host-profile-card-image-preview > button:hover {
-        border: 1px solid #ff7779;
+        border: 1px solid #F78513;
         background-color: white;
-        color: #ff7779;
+        color: #F78513;
     }
 }
 /* end */

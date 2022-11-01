@@ -19,7 +19,7 @@ function HostDashboard() {
             <div className="open-doors">
                 <div className='open-doors-left'>
                     <h1>Open your door <br /> to hosting</h1>
-                    <Button onClick={()=> navigate('/become-a-host-register')}>Try hosting</Button>
+                    <Button onClick={()=> navigate('/become-a-host-register')}>Create host account</Button>
                 </div>
             </div>
 

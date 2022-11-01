@@ -99,7 +99,7 @@ function AdminFirst() {
   
               {showMenuBar ?
               <ul className='host-navigation'>
-                <li style={{ backgroundColor: '#ff7779' }}><Dashboard style={{ margin: 'auto 5px' }} /> Dashboard</li>
+                <li style={{ backgroundColor: '#F78513' }}><Dashboard style={{ margin: 'auto 5px' }} /> Dashboard</li>
                 <li
                 onClick={()=> {
                   Navigate('/admin-second')

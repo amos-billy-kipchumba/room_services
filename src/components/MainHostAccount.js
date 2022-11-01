@@ -92,7 +92,7 @@ function MainHostAccount() {
   
               {showMenuBar ? 
               <ul className='host-navigation'>
-                <li style={{ backgroundColor: '#ff7779' }}>Dashboard</li>
+                <li style={{ backgroundColor: '#F78513' }}>Dashboard</li>
                 <li><Link to="/host-houses" className='lilo-link'>Your houses</Link></li>
                 <li><Link to="/add-house-host" className='lilo-link'><Add /> house</Link></li>
                 <li onClick={()=>{

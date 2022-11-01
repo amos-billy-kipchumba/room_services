@@ -2,7 +2,6 @@ import React, {useEffect, useState, useRef} from 'react'
 import './Header.css'
 import Logo from './Images/logo.png'
 import SearchIcon from '@mui/icons-material/Search';
-import LanguageIcon from '@mui/icons-material/Language';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Avatar from '@mui/material/Avatar';
 import { Link } from 'react-router-dom';
@@ -16,6 +15,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import Button from '@mui/material/Button';
 import {useNavigate} from 'react-router-dom'
 import BaseURL from './BaseUrl';
+import { Cottage } from '@mui/icons-material';
 
 function Header() {
     const [showSearch, setShowSearch] = useState(false);
@@ -137,7 +137,7 @@ function Header() {
                     Become a host
                     </Link>
                 </span>
-                <span className="languageSpan"><LanguageIcon /></span>
+                <span className="languageSpan"><Cottage /> </span>
                 {showLogOut === false ?
                     <span onClick={()=> {
                         setShowLogOut(!showLogOut)
@@ -167,10 +167,10 @@ function Header() {
                         <div className='magicFloatingHeader'>
                             <span onClick={()=>{
                                 navigate('/sign-in')
-                            }}>Become a tenant</span>
+                            }}>Create client account</span>
                             <span onClick={()=>{
-                                navigate('/become-a-host');
-                            }}>Become a host</span>
+                                navigate('/become-a-host-register');
+                            }}>Create host account</span>
                             <span onClick={()=>{
                                 navigate('/login-user')
                             }}>Sign in</span>
@@ -188,7 +188,7 @@ function Header() {
 
             <DateRangePicker ranges={[selectionRange]}
              minDate={new Date()} 
-             rangeColors={['#ff7779']}
+             rangeColors={['#F78513']}
               onChange={handleSelect} className="sumbufDate" />
 
             <div className='searchNumber__container'>

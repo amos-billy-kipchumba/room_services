@@ -45,7 +45,7 @@
     align-items: center;
     justify-content: center;
     justify-content: center;
-    background-color: #ff7779;
+    background-color: #F78513;
     padding: 10px;
     border-radius: 50%;
     height: 40px;
@@ -91,7 +91,7 @@
 }
 
 .host-navigation > li:hover {
-    background-color: #ff7779;
+    background-color: #F78513;
     color: white;
 }
 
@@ -307,7 +307,7 @@
     }
     
     .host-navigation > li:hover {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
     }
     
@@ -536,7 +536,7 @@
     }
     
     .host-navigation > li:hover {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
     }
     
@@ -764,7 +764,7 @@
     }
     
     .host-navigation > li:hover {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
     }
     

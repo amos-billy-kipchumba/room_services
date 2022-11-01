@@ -1,25 +1,14 @@
 import React, {useState, useEffect} from 'react'
 import './AllHouseImage.css'
-import {useParams, useNavigate} from 'react-router-dom'
-import axios from 'axios'
+import {useNavigate} from 'react-router-dom'
 import { Button } from '@mui/material';
 import BaseURL from './BaseUrl';
+import {useLocation} from 'react-router-dom'
 function AllhouseImage() {
-    const params = useParams();
-    const paramaId = params.id;
+
+    const room = useLocation();
 
     const Navigate = useNavigate();
-
-    let [zero, setZero] = useState([]);
-
-
-      useEffect(()=>{
-        const getZeroDetails = async () => {
-            const request = await axios.get(`${BaseURL}/api/get-zero-details/${paramaId}`);
-            setZero(request.data.zero);
-          }
-        getZeroDetails();
-      },[paramaId]);
 
     const [thousand, setThousand] = useState([]);
     const [lebo, setLebo] = useState(null);
@@ -42,56 +31,57 @@ function AllhouseImage() {
  
    useEffect(()=>{
     const getThousandDetails = async () => {
-        const request = await axios.get(`${BaseURL}/api/get-join-thousand-details/${paramaId}`);
-        setThousand(request.data.joinThousand[0]);
+        if(room.state.allHousesForMore) {
+        setThousand(room.state.allHousesForMore);
     
-        setLebo(`${BaseURL}/parts/${request.data.joinThousand[0].sitting_room}`);
+        setLebo(`${BaseURL}/parts/${room.state.allHousesForMore.sitting_room}`);
        
     
-        setLebo2(`${BaseURL}/parts/${request.data.joinThousand[0].dinning_room}`);
+        setLebo2(`${BaseURL}/parts/${room.state.allHousesForMore.dinning_room}`);
        
     
-        setLebo3(`${BaseURL}/parts/${request.data.joinThousand[0].kitchen}`);
+        setLebo3(`${BaseURL}/parts/${room.state.allHousesForMore.kitchen}`);
        
     
-        setLebo4(`${BaseURL}/parts/${request.data.joinThousand[0].bathroom}`);
+        setLebo4(`${BaseURL}/parts/${room.state.allHousesForMore.bathroom}`);
        
     
-        setLebo5(`${BaseURL}/parts/${request.data.joinThousand[0].bedroom}`);
+        setLebo5(`${BaseURL}/parts/${room.state.allHousesForMore.bedroom}`);
         
     
-        setLebo6(`${BaseURL}/parts/${request.data.joinThousand[0].swimming_pool}`);
+        setLebo6(`${BaseURL}/parts/${room.state.allHousesForMore.swimming_pool}`);
         
     
-        setLebo7(`${BaseURL}/parts/${request.data.joinThousand[0].lake}`);
+        setLebo7(`${BaseURL}/parts/${room.state.allHousesForMore.lake}`);
     
-        setLebo8(`${BaseURL}/parts/${request.data.joinThousand[0].beach}`);
+        setLebo8(`${BaseURL}/parts/${room.state.allHousesForMore.beach}`);
     
-        setLebo9(`${BaseURL}/parts/${request.data.joinThousand[0].ocean_view}`);
+        setLebo9(`${BaseURL}/parts/${room.state.allHousesForMore.ocean_view}`);
     
-        setLebo10(`${BaseURL}/parts/${request.data.joinThousand[0].balcony}`);
+        setLebo10(`${BaseURL}/parts/${room.state.allHousesForMore.balcony}`);
       
     
-        setLebo11(`${BaseURL}/parts/${request.data.joinThousand[0].parking}`);
+        setLebo11(`${BaseURL}/parts/${room.state.allHousesForMore.parking}`);
         
     
-        setLebo12(`${BaseURL}/parts/${request.data.joinThousand[0].front}`);
+        setLebo12(`${BaseURL}/parts/${room.state.allHousesForMore.front}`);
         
     
-        setLebo13(`${BaseURL}/parts/${request.data.joinThousand[0].right}`);
+        setLebo13(`${BaseURL}/parts/${room.state.allHousesForMore.right}`);
        
     
-        setLebo14(`${BaseURL}/parts/${request.data.joinThousand[0].left}`);
+        setLebo14(`${BaseURL}/parts/${room.state.allHousesForMore.left}`);
        
     
-        setLebo15(`${BaseURL}/parts/${request.data.joinThousand[0].back}`);
+        setLebo15(`${BaseURL}/parts/${room.state.allHousesForMore.back}`);
        
     
-        setLebo16(`${BaseURL}/parts/${request.data.joinThousand[0].aerial}`);
+        setLebo16(`${BaseURL}/parts/${room.state.allHousesForMore.aerial}`);
+        }
         
       }
      getThousandDetails();
-   },[paramaId]);
+   },[room.state.allHousesForMore]);
 
     //Scroll to the top on load
     useEffect(()=>{
@@ -103,7 +93,7 @@ function AllhouseImage() {
         <Button onClick={()=> {
             Navigate(-1);
         }}>Back</Button>
-        <p>{zero.title}</p>
+        <p>{room.state.allHousesForMore.title}</p>
         <div className='ParentAllHouses'>
         {thousand.sitting_room !== null ?
             <div className='ChildAllHouses'>

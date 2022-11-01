@@ -85,7 +85,7 @@
     background-color: white;
     padding: 10px;
     box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
-    top: 12vh;
+    top: 15vh;
     right: 30px;
     z-index: 1;
     border-radius: 5px;
@@ -112,11 +112,11 @@
 }
 
 .magicFloatingHeader > span:hover {
-    color: #ff7779;
+    color: #F78513;
 }
 
 .magicFloatingHeader > button {
-    background-color: #ff7779;
+    background-color: #F78513;
     text-transform: inherit;
     color: white;
     transform: all 0.3s ease-in-out;
@@ -124,8 +124,8 @@
 }
 
 .magicFloatingHeader > button:hover {
-    color:#ff7779;
-    border: 1px solid #ff7779;
+    color:#F78513;
+    border: 1px solid #F78513;
     background-color: white;
 }
 
@@ -136,7 +136,7 @@
 
 .header__right > p:hover {
     transition: all 0.3s ease-in-out;
-    color: #ff7779 !important;
+    color: #F78513 !important;
 }
 
 .header__right > span {
@@ -148,7 +148,7 @@
 
 .header__right > span:hover {
     transition: all 0.3s ease-in-out;
-    color: #ff7779 !important;
+    color: #F78513 !important;
 }
 
 .header__right .text-decoration-none {
@@ -168,7 +168,7 @@
 
 .header__right .text-decoration-none:hover {
     transition: all 0.3s ease-in-out;
-    color: #ff7779 !important;
+    color: #F78513 !important;
 }
 
 /* 440px Mobile resposive */
@@ -266,7 +266,7 @@
         background-color: white;
         padding: 10px;
         box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
-        top: 10vh;
+        top: 12vh;
         right: 10px;
         z-index: 1;
         border-radius: 5px;
@@ -278,15 +278,15 @@
         min-height: 20vh;
     }
     .magicFloatingHeader > button {
-        background-color: #ff7779;
+        background-color: #F78513;
         text-transform: inherit;
         color: white;
         transform: all 0.3s ease-in-out;
     }
     
     .magicFloatingHeader > button:hover {
-        color:#ff7779;
-        border: 1px solid #ff7779;
+        color:#F78513;
+        border: 1px solid #F78513;
         background-color: white;
     }
     
@@ -297,7 +297,7 @@
     
     .header__right > p:hover {
         transition: all 0.3s ease-in-out;
-        color: #ff7779 !important;
+        color: #F78513 !important;
     }
     
     .header__right > span {
@@ -309,7 +309,7 @@
     
     .header__right > span:hover {
         transition: all 0.3s ease-in-out;
-        color: #ff7779 !important;
+        color: #F78513 !important;
     }
 
     .header__right .languageSpan {
@@ -333,7 +333,7 @@
     
     .header__right .text-decoration-none:hover {
         transition: all 0.3s ease-in-out;
-        color: #ff7779 !important;
+        color: #F78513 !important;
     }
     .header__right .live-it {
         display: none;
@@ -438,7 +438,7 @@
         background-color: white;
         padding: 10px;
         box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
-        top: 10vh;
+        top: 13vh;
         right: 10px;
         z-index: 1;
         border-radius: 5px;
@@ -450,15 +450,15 @@
         min-height: 20vh;
     }
     .magicFloatingHeader > button {
-        background-color: #ff7779;
+        background-color: #F78513;
         text-transform: inherit;
         color: white;
         transform: all 0.3s ease-in-out;
     }
     
     .magicFloatingHeader > button:hover {
-        color:#ff7779;
-        border: 1px solid #ff7779;
+        color:#F78513;
+        border: 1px solid #F78513;
         background-color: white;
     }
     
@@ -469,7 +469,7 @@
     
     .header__right > p:hover {
         transition: all 0.3s ease-in-out;
-        color: #ff7779 !important;
+        color: #F78513 !important;
     }
     
     .header__right > span {
@@ -481,7 +481,7 @@
     
     .header__right > span:hover {
         transition: all 0.3s ease-in-out;
-        color: #ff7779 !important;
+        color: #F78513 !important;
     }
     
     .header__right .text-decoration-none {
@@ -501,7 +501,7 @@
     
     .header__right .text-decoration-none:hover {
         transition: all 0.3s ease-in-out;
-        color: #ff7779 !important;
+        color: #F78513 !important;
     }
     .header__right .live-it {
         display: none;
@@ -607,7 +607,7 @@
         background-color: white;
         padding: 10px;
         box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
-        top: 10vh;
+        top: 9vh;
         right: 10px;
         z-index: 1;
         border-radius: 5px;
@@ -619,15 +619,15 @@
         min-height: 20vh;
     }
     .magicFloatingHeader > button {
-        background-color: #ff7779;
+        background-color: #F78513;
         text-transform: inherit;
         color: white;
         transform: all 0.3s ease-in-out;
     }
     
     .magicFloatingHeader > button:hover {
-        color:#ff7779;
-        border: 1px solid #ff7779;
+        color:#F78513;
+        border: 1px solid #F78513;
         background-color: white;
     }
     
@@ -638,7 +638,7 @@
     
     .header__right > p:hover {
         transition: all 0.3s ease-in-out;
-        color: #ff7779 !important;
+        color: #F78513 !important;
     }
     
     .header__right > span {
@@ -650,7 +650,7 @@
     
     .header__right > span:hover {
         transition: all 0.3s ease-in-out;
-        color: #ff7779 !important;
+        color: #F78513 !important;
     }
     
     .header__right .text-decoration-none {
@@ -670,7 +670,7 @@
     
     .header__right .text-decoration-none:hover {
         transition: all 0.3s ease-in-out;
-        color: #ff7779 !important;
+        color: #F78513 !important;
     }
 }
 

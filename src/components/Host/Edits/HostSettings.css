@@ -29,7 +29,7 @@
 }
 
 .hostSettingMenuBar {
-    background-color: #ff7779;
+    background-color: #F78513;
     padding: 10px;
     border-radius: 50%;
     transition: all 0.3s ease-in-out;
@@ -78,7 +78,7 @@
 }
 
 .host-navigation > li:hover {
-    background-color: #ff7779;
+    background-color: #F78513;
     color: white;
 }
 
@@ -95,7 +95,7 @@
 }
 
 .host-settings__info-rightDelete {
-    background-color: #ff7779;
+    background-color: #F78513;
     color: white;
     text-transform: inherit;
     transition: all 0.3s ease-in-out;
@@ -103,8 +103,8 @@
 
 .host-settings__info-rightDelete:hover {
     background-color: white;
-    border: 1px solid #ff7779;
-    color: #ff7779;
+    border: 1px solid #F78513;
+    color: #F78513;
 }
 
 /* 440px Mobile resposive */
@@ -182,7 +182,7 @@
     }
     
     .host-navigation > li:hover {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
     }
     
@@ -408,7 +408,7 @@
     }
     
     .host-navigation > li:hover {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
     }
     
@@ -633,7 +633,7 @@
     }
     
     .host-navigation > li:hover {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
     }
     

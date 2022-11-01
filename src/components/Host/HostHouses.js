@@ -80,7 +80,7 @@ function HostHouses() {
               {showMenuBar ?
               <ul className='host-navigation'>
                 <li><Link to="/main-host-account" className='lilo-link'>Dashboard</Link></li>
-                <li style={{ backgroundColor: '#ff7779' }}><Link to="/host-houses" className='lilo-link'>Your houses</Link></li>
+                <li style={{ backgroundColor: '#F78513' }}><Link to="/host-houses" className='lilo-link'>Your houses</Link></li>
                 <li><Link to="/add-house-host" className='lilo-link'><Add /> house</Link></li>
                 <li onClick={()=>{
                   Navigate('/tenants-details');

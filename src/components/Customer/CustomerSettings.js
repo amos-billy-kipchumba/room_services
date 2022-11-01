@@ -83,7 +83,7 @@ function CustomerSettings() {
                 <li onClick={()=> Navigate('/customer-second-page')}>Booked houses</li>
                 <li onClick={()=> Navigate('/customer-profile')}>Profile</li>
                 <li
-                style={{ backgroundColor: '#ff7779' }}><Settings style={{ margin: 'auto 5px' }} /> Settings</li>
+                style={{ backgroundColor: '#F78513' }}><Settings style={{ margin: 'auto 5px' }} /> Settings</li>
                 <li onClick={()=> {
                   localStorage.removeItem("user-info");
                   Navigate('/');

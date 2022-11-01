@@ -33,7 +33,7 @@
 }
 
 .open-doors-left > button {
-    background-color: #ff7779;
+    background-color: #F78513;
     color: white;
     transition: all 0.3s ease-in-out;
     margin-top: 10px;
@@ -42,7 +42,7 @@
 
 .open-doors-left > button:hover {
     background-color: white;
-    color: #ff7779;
+    color: #F78513;
 }
 
 .open-doors-right {
@@ -120,7 +120,7 @@
 .map-container-host {
     width: 100%;
     min-height: 60vh;
-    background-color: #ff7779;
+    background-color: #F78513;
 }
 
 /* 440px Mobile resposive */
@@ -159,7 +159,7 @@
     }
     
     .open-doors-left > button {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
         transition: all 0.3s ease-in-out;
         margin-top: 10px;
@@ -168,7 +168,7 @@
     
     .open-doors-left > button:hover {
         background-color: white;
-        color: #ff7779;
+        color: #F78513;
     }
     
     .open-doors-right {
@@ -254,7 +254,7 @@
     .map-container-host {
         width: 100%;
         min-height: 60vh;
-        background-color: #ff7779;
+        background-color: #F78513;
     }
     
 }
@@ -297,7 +297,7 @@
     }
     
     .open-doors-left > button {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
         transition: all 0.3s ease-in-out;
         margin-top: 10px;
@@ -306,7 +306,7 @@
     
     .open-doors-left > button:hover {
         background-color: white;
-        color: #ff7779;
+        color: #F78513;
     }
     
     .open-doors-right {
@@ -393,7 +393,7 @@
     .map-container-host {
         width: 100%;
         min-height: 60vh;
-        background-color: #ff7779;
+        background-color: #F78513;
     }
     
 }
@@ -436,7 +436,7 @@
     }
     
     .open-doors-left > button {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
         transition: all 0.3s ease-in-out;
         margin-top: 10px;
@@ -445,7 +445,7 @@
     
     .open-doors-left > button:hover {
         background-color: white;
-        color: #ff7779;
+        color: #F78513;
     }
     
     .open-doors-right {
@@ -532,7 +532,7 @@
     .map-container-host {
         width: 100%;
         min-height: 60vh;
-        background-color: #ff7779;
+        background-color: #F78513;
     }
 }
 /* end */

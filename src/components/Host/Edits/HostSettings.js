@@ -95,7 +95,7 @@ function HostSettings() {
                   Navigate('/tenants-details');
                 }}>Tenants Details</li>
                 <li onClick={()=> Navigate('/host-profile')}>Host Profile</li>
-                <li className='deal-done' style={{ backgroundColor: '#ff7779' }}>Settings</li>
+                <li className='deal-done' style={{ backgroundColor: '#F78513' }}>Settings</li>
                 <li onClick={()=> {
                   localStorage.removeItem("user-info");
                   Navigate('/');
@@ -109,7 +109,7 @@ function HostSettings() {
              <div className="host-settings__info-right">
                 <Button className='host-settings__info-rightDelete' onClick={()=>handleDelete()} 
                 style={{ 
-                    backgroundColor: '#ff7779',
+                    backgroundColor: '#F78513',
                     color: 'white',
                     textTransform: 'inherit'
                  }}
