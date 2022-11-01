@@ -29,7 +29,7 @@
 }
 
 .customerSecondMenuBar {
-    background-color: #ff7779;
+    background-color: #F78513;
     cursor: pointer;
     padding: 10px;
     transition: all 0.3s ease-in-out;
@@ -80,7 +80,7 @@
 }
 
 .host-navigation > li:hover {
-    background-color: #ff7779;
+    background-color: #F78513;
     color: white;
 }
 
@@ -182,14 +182,14 @@
 
 .customer_second__info-right-container-right-details > button {
     margin: 20px auto;
-    background-color: #ff7779;
+    background-color: #F78513;
     color: white;
     transition: all 0.3s ease-in-out;
     text-transform: inherit;
 }
 
 .customer_second__info-right-container-right-details > button:hover {
-    border: 1px solid #ff7779;
+    border: 1px solid #F78513;
     background-color: white;
     color: black;
 }
@@ -271,7 +271,7 @@
     }
     
     .host-navigation > li:hover {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
     }
     
@@ -374,14 +374,14 @@
     
     .customer_second__info-right-container-right-details > button {
         margin: 20px auto;
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
         transition: all 0.3s ease-in-out;
         text-transform: inherit;
     }
     
     .customer_second__info-right-container-right-details > button:hover {
-        border: 1px solid #ff7779;
+        border: 1px solid #F78513;
         background-color: white;
         color: black;
     }
@@ -466,7 +466,7 @@
     }
     
     .host-navigation > li:hover {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
     }
     
@@ -569,14 +569,14 @@
     
     .customer_second__info-right-container-right-details > button {
         margin: 20px auto;
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
         transition: all 0.3s ease-in-out;
         text-transform: inherit;
     }
     
     .customer_second__info-right-container-right-details > button:hover {
-        border: 1px solid #ff7779;
+        border: 1px solid #F78513;
         background-color: white;
         color: black;
     }
@@ -662,7 +662,7 @@
     }
     
     .host-navigation > li:hover {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
     }
     
@@ -765,14 +765,14 @@
     
     .customer_second__info-right-container-right-details > button {
         margin: 20px auto;
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
         transition: all 0.3s ease-in-out;
         text-transform: inherit;
     }
     
     .customer_second__info-right-container-right-details > button:hover {
-        border: 1px solid #ff7779;
+        border: 1px solid #F78513;
         background-color: white;
         color: black;
     }

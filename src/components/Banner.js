@@ -8,8 +8,8 @@ function Banner(props) {
     <div className='banner'>
 
         <div className='banner__info'>
-            <h1>Get out and stretch your imagination</h1>
-            <h5>Plan a different kind of gate away to uncover the hidden gems near you</h5>
+            <h1>Lovely modelled homes</h1>
+            <h5>perfectly priced for the current market</h5>
             <Button variant="outlined" onClick={()=> navigate('/become-a-host')}>Become a host</Button>
         </div>
 

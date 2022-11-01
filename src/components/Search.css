@@ -46,7 +46,7 @@
 
 .search .searchNumber__container > button {
     text-transform: inherit !important;
-    background-color: #ff7779;
+    background-color: #F78513;
     color: white;
     padding: 10px;
 }
@@ -57,7 +57,7 @@
 
 .search .searchNumber__container > button:hover {
     background-color: white;
-    color: #ff7779;
+    color: #F78513;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
 }
@@ -118,7 +118,7 @@
     
     .search .searchNumber__container > button {
         text-transform: inherit !important;
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
         padding: 10px;
     }
@@ -129,7 +129,7 @@
     
     .search .searchNumber__container > button:hover {
         background-color: white;
-        color: #ff7779;
+        color: #F78513;
         cursor: pointer;
         transition: all 0.3s ease-in-out;
     }
@@ -194,7 +194,7 @@
     
     .search .searchNumber__container > button {
         text-transform: inherit !important;
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
         padding: 10px;
     }
@@ -205,7 +205,7 @@
     
     .search .searchNumber__container > button:hover {
         background-color: white;
-        color: #ff7779;
+        color: #F78513;
         cursor: pointer;
         transition: all 0.3s ease-in-out;
     }

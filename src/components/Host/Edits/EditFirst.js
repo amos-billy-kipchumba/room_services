@@ -147,7 +147,7 @@ function EditFirst() {
               {showMenuBar ?
               <ul className='host-navigation'>
                 <li><Link to="/main-host-account" className='lilo-link'>DashBoard</Link></li>
-                <li style={{ backgroundColor: '#ff7779' }}><Link to="/host-houses" className='lilo-link'>Your houses</Link></li>
+                <li style={{ backgroundColor: '#F78513' }}><Link to="/host-houses" className='lilo-link'>Your houses</Link></li>
                 <li><Link to="/add-house-host" className='lilo-link'><Add /> house</Link></li>
                 <li onClick={()=> Navigate('/tenants-details')}>Tenants Details</li>
                 <li onClick={()=> Navigate('/host-profile')}>Host Profile</li>
@@ -236,7 +236,7 @@ function EditFirst() {
                 <div className="edit-first__info-right-buttonOne"><Button type="submit">Update (1/4) </Button></div>
 
                 <div className="edit-first__info-right-buttonTwo">
-                <Button onClick={()=> Navigate('/edit-first')} style={{ marginRight: '10px', backgroundColor: '#ff7779', color: 'white' }} id="updated">Page 1</Button>
+                <Button onClick={()=> Navigate('/edit-first')} style={{ marginRight: '10px', backgroundColor: '#F78513', color: 'white' }} id="updated">Page 1</Button>
                 <Button onClick={()=> Navigate(`/edit-second/${paramaId}`)} style={{ marginRight: '10px' }}>Page 2</Button>
                 <Button onClick={()=> Navigate(`/edit-third/${paramaId}`)} style={{ marginRight: '10px' }}>Page 3</Button>
                 <Button onClick={()=> Navigate(`/edit-four/${paramaId}`)}>Page 4</Button>

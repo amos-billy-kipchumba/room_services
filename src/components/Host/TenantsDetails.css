@@ -29,7 +29,7 @@
 }
 
 .TenantsDetailsMenuBar {
-    background-color: #ff7779;
+    background-color: #F78513;
     padding: 10px;
     border-radius: 50%;
     transition: all 0.3s ease-in-out;
@@ -78,7 +78,7 @@
 }
 
 .host-navigation > li:hover {
-    background-color: #ff7779;
+    background-color: #F78513;
     color: white;
 }
 
@@ -182,7 +182,7 @@
 }
 
 .tenants-details__info-rightMainContainerBottomButton > button {
-    background-color: #ff7779;
+    background-color: #F78513;
     color: white;
     text-transform: inherit;
     transition: all 0.3s ease-in-out;
@@ -190,8 +190,8 @@
 
 .tenants-details__info-rightMainContainerBottomButton > button:hover {
     background-color: white;
-    color: #ff7779;
-    border: 1px solid #ff7779;
+    color: #F78513;
+    border: 1px solid #F78513;
 }
 
 
@@ -270,7 +270,7 @@
     }
     
     .host-navigation > li:hover {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
     }
     
@@ -374,7 +374,7 @@
     }
     
     .tenants-details__info-rightMainContainerBottomButton > button {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
         text-transform: inherit;
         transition: all 0.3s ease-in-out;
@@ -382,8 +382,8 @@
     
     .tenants-details__info-rightMainContainerBottomButton > button:hover {
         background-color: white;
-        color: #ff7779;
-        border: 1px solid #ff7779;
+        color: #F78513;
+        border: 1px solid #F78513;
     }
 }
 /* end */
@@ -465,7 +465,7 @@
     }
     
     .host-navigation > li:hover {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
     }
     
@@ -569,7 +569,7 @@
     }
     
     .tenants-details__info-rightMainContainerBottomButton > button {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
         text-transform: inherit;
         transition: all 0.3s ease-in-out;
@@ -577,8 +577,8 @@
     
     .tenants-details__info-rightMainContainerBottomButton > button:hover {
         background-color: white;
-        color: #ff7779;
-        border: 1px solid #ff7779;
+        color: #F78513;
+        border: 1px solid #F78513;
     }
 }
 /* end */
@@ -659,7 +659,7 @@
     }
     
     .host-navigation > li:hover {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
     }
     
@@ -763,7 +763,7 @@
     }
     
     .tenants-details__info-rightMainContainerBottomButton > button {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
         text-transform: inherit;
         transition: all 0.3s ease-in-out;
@@ -771,8 +771,8 @@
     
     .tenants-details__info-rightMainContainerBottomButton > button:hover {
         background-color: white;
-        color: #ff7779;
-        border: 1px solid #ff7779;
+        color: #F78513;
+        border: 1px solid #F78513;
     }
 }
 /* end */

@@ -29,7 +29,7 @@
 }
 
 .editAdminMenuBar {
-    background-color: #ff7779;
+    background-color: #F78513;
     padding: 10px;
     border-radius: 50%;
     cursor: pointer;
@@ -78,7 +78,7 @@
 }
 
 .host-navigation > li:hover {
-    background-color: #ff7779;
+    background-color: #F78513;
     color: white;
 }
 
@@ -207,7 +207,7 @@
     }
     
     .host-navigation > li:hover {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
     }
     
@@ -338,7 +338,7 @@
     }
     
     .host-navigation > li:hover {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
     }
     

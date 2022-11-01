@@ -84,7 +84,7 @@ function TenantsDetails() {
                 }}>Dashboard</li>
                 <li><Link to="/host-houses" className='lilo-link'>Your houses</Link></li>
                 <li><Link to="/add-house-host" className='lilo-link'><Add /> house</Link></li>
-                <li style={{ backgroundColor: '#ff7779' }}>Tenants Details</li>
+                <li style={{ backgroundColor: '#F78513' }}>Tenants Details</li>
                 <li onClick={()=> Navigate('/host-profile')}>Host Profile</li>
                 <li onClick={()=> Navigate('/host-settings')} className='deal-done'>Settings</li>
                 <li onClick={()=> {

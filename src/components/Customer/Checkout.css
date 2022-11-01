@@ -24,15 +24,15 @@
 
 .checkout-and-pin > button { 
     color: white;
-    background-color: #ff7779;
+    background-color: #F78513;
     transition: all 0.3s ease-in-out;
     margin: 10px auto;
 }
 
 .checkout-and-pin > button:hover {
-    border: 1px solid #ff7779;
+    border: 1px solid #F78513;
     background-color: white;
-    color: #ff7779;
+    color: #F78513;
 }
 
 /* 440px Mobile resposive */
@@ -64,15 +64,15 @@
     
     .checkout-and-pin > button { 
         color: white;
-        background-color: #ff7779;
+        background-color: #F78513;
         transition: all 0.3s ease-in-out;
         margin: 10px auto;
     }
     
     .checkout-and-pin > button:hover {
-        border: 1px solid #ff7779;
+        border: 1px solid #F78513;
         background-color: white;
-        color: #ff7779;
+        color: #F78513;
     }
 }
 /* end */
@@ -106,15 +106,15 @@
     
     .checkout-and-pin > button { 
         color: white;
-        background-color: #ff7779;
+        background-color: #F78513;
         transition: all 0.3s ease-in-out;
         margin: 10px auto;
     }
     
     .checkout-and-pin > button:hover {
-        border: 1px solid #ff7779;
+        border: 1px solid #F78513;
         background-color: white;
-        color: #ff7779;
+        color: #F78513;
     }
 }
 /* end */
@@ -149,15 +149,15 @@
     
     .checkout-and-pin > button { 
         color: white;
-        background-color: #ff7779;
+        background-color: #F78513;
         transition: all 0.3s ease-in-out;
         margin: 10px auto;
     }
     
     .checkout-and-pin > button:hover {
-        border: 1px solid #ff7779;
+        border: 1px solid #F78513;
         background-color: white;
-        color: #ff7779;
+        color: #F78513;
     }
 }
 /* end */

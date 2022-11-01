@@ -65,7 +65,7 @@
 }
 
 .reserve-container-handler-description-now > button:hover {
-    border: 1px solid #ff7779;
+    border: 1px solid #F78513;
 }
 
 .reserve-container-handler-description-then {
@@ -89,15 +89,15 @@
 .reserve-container-handler-description-then > button { 
     text-transform: inherit;
     color: white;
-    background-color: #ff7779;
+    background-color: #F78513;
     transition: all 0.3s ease-in-out;
     margin: 20px auto;
 }
 
 .reserve-container-handler-description-then > button:hover {
-    border: 1px solid #ff7779;
+    border: 1px solid #F78513;
     background-color: white;
-    color: #ff7779;
+    color: #F78513;
 }
 
 /* 440px Mobile resposive */
@@ -168,7 +168,7 @@
     }
     
     .reserve-container-handler-description-now > button:hover {
-        border: 1px solid #ff7779;
+        border: 1px solid #F78513;
     }
     
     .reserve-container-handler-description-then {
@@ -192,15 +192,15 @@
     .reserve-container-handler-description-then > button { 
         text-transform: inherit;
         color: white;
-        background-color: #ff7779;
+        background-color: #F78513;
         transition: all 0.3s ease-in-out;
         margin: 20px auto;
     }
     
     .reserve-container-handler-description-then > button:hover {
-        border: 1px solid #ff7779;
+        border: 1px solid #F78513;
         background-color: white;
-        color: #ff7779;
+        color: #F78513;
     }
 }
 /* end */
@@ -275,7 +275,7 @@
     }
     
     .reserve-container-handler-description-now > button:hover {
-        border: 1px solid #ff7779;
+        border: 1px solid #F78513;
     }
     
     .reserve-container-handler-description-then {
@@ -299,15 +299,15 @@
     .reserve-container-handler-description-then > button { 
         text-transform: inherit;
         color: white;
-        background-color: #ff7779;
+        background-color: #F78513;
         transition: all 0.3s ease-in-out;
         margin: 20px auto;
     }
     
     .reserve-container-handler-description-then > button:hover {
-        border: 1px solid #ff7779;
+        border: 1px solid #F78513;
         background-color: white;
-        color: #ff7779;
+        color: #F78513;
     }
 }
 /* end */
@@ -382,7 +382,7 @@
     }
     
     .reserve-container-handler-description-now > button:hover {
-        border: 1px solid #ff7779;
+        border: 1px solid #F78513;
     }
     
     .reserve-container-handler-description-then {
@@ -406,15 +406,15 @@
     .reserve-container-handler-description-then > button { 
         text-transform: inherit;
         color: white;
-        background-color: #ff7779;
+        background-color: #F78513;
         transition: all 0.3s ease-in-out;
         margin: 20px auto;
     }
     
     .reserve-container-handler-description-then > button:hover {
-        border: 1px solid #ff7779;
+        border: 1px solid #F78513;
         background-color: white;
-        color: #ff7779;
+        color: #F78513;
     }
 }
 /* end */

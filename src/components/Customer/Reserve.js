@@ -6,6 +6,7 @@ import { Button } from '@mui/material';
 import { CheckOutlined } from '@mui/icons-material';
 import {useNavigate} from 'react-router-dom'
 import BaseURL from '../BaseUrl';
+import {useLocation} from 'react-router-dom'
 function Reserve() {
     const bookingData = JSON.parse(localStorage.getItem('booking-data'));
     const [numberOfGuests] = useState(bookingData.numberOfGuests);
@@ -14,6 +15,10 @@ function Reserve() {
 
     const params = useParams();
     const paramaId = params.paramaId;
+
+    const room = useLocation();
+
+    const [allHousesForMore] = useState(room.state.allHousesForMore)
 
     const [editImage, setEditImage] = useState('');
     const [editTitle, setEditTitle] = useState('');
@@ -56,7 +61,10 @@ function Reserve() {
             <label>Location</label>
             <p>{editLocation}</p>
             <Button onClick={()=> {
-              Navigate(`/all-house-images/${paramaId}`)
+              Navigate(`/all-house-images/${paramaId}`,{state:{
+                allHousesForMore
+            }
+            });
           }}>View all house images</Button>
           </div>
           <div className='reserve-container-handler-description-then'>

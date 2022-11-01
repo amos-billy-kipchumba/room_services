@@ -29,7 +29,7 @@
 }
 
 .customerSettingsMenuBar {
-    background-color: #ff7779;
+    background-color: #F78513;
     cursor: pointer;
     padding: 10px;
     border-radius: 50%;
@@ -80,7 +80,7 @@
 }
 
 .host-navigation > li:hover {
-    background-color: #ff7779;
+    background-color: #F78513;
     color: white;
 }
 
@@ -96,7 +96,7 @@
 }
 
 .customer-settings__info-right > button {
-    background-color: #ff7779;
+    background-color: #F78513;
     color: white;
     margin: auto;
     text-transform: inherit;
@@ -105,8 +105,8 @@
 
 .customer-settings__info-right > button:hover {
     background-color: white;
-    border: 1px solid #ff7779;
-    color: #ff7779;
+    border: 1px solid #F78513;
+    color: #F78513;
 }
 
 /* 440px Mobile resposive */
@@ -182,7 +182,7 @@
     }
     
     .host-navigation > li:hover {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
     }
     
@@ -295,7 +295,7 @@
     }
     
     .host-navigation > li:hover {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
     }
     
@@ -383,7 +383,7 @@
     }
     
     .host-navigation > li:hover {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
     }
     

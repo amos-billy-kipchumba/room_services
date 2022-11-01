@@ -29,7 +29,7 @@
 }
 
 .addTwoMenuBar {
-    background-color: #ff7779;
+    background-color: #F78513;
     padding: 10px;
     border-radius: 50%;
     transition: all 0.3s ease-in-out;
@@ -78,7 +78,7 @@
 }
 
 .host-navigation > li:hover {
-    background-color: #ff7779;
+    background-color: #F78513;
     color: white;
 }
 
@@ -139,7 +139,7 @@
 }
 
 .fill-up-detail-form > button:hover {
-    background-color: #ff7779;
+    background-color: #F78513;
     color: white;
 }
 
@@ -152,7 +152,7 @@
 } 
 
 .page-two-add__info-right > button:hover {
-    background-color: #ff7779;
+    background-color: #F78513;
     color: white;
 }
 
@@ -227,7 +227,7 @@
     }
     
     .host-navigation > li:hover {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
     }
     
@@ -288,7 +288,7 @@
     }
     
     .fill-up-detail-form > button:hover {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
     }
     
@@ -301,7 +301,7 @@
     } 
     
     .page-two-add__info-right > button:hover {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
     }
 }
@@ -379,7 +379,7 @@
     }
     
     .host-navigation > li:hover {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
     }
     
@@ -440,7 +440,7 @@
     }
     
     .fill-up-detail-form > button:hover {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
     }
     
@@ -453,7 +453,7 @@
     } 
     
     .page-two-add__info-right > button:hover {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
     }
 }
@@ -532,7 +532,7 @@
     }
     
     .host-navigation > li:hover {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
     }
     
@@ -593,7 +593,7 @@
     }
     
     .fill-up-detail-form > button:hover {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
     }
     
@@ -606,7 +606,7 @@
     } 
     
     .page-two-add__info-right > button:hover {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
     }
 }

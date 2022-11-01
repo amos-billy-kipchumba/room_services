@@ -29,7 +29,7 @@
 }
 
 .adminFourthMenuBar {
-    background-color: #ff7779;
+    background-color: #F78513;
     padding: 10px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
@@ -78,7 +78,7 @@
 }
 
 .host-navigation > li:hover {
-    background-color: #ff7779;
+    background-color: #F78513;
     color: white;
 }
 
@@ -213,7 +213,7 @@
 .admin-fourth__info-right > table > tbody > tr > td > span {
     display: flex;
     align-items: center;
-    background-color: #ff7779;
+    background-color: #F78513;
     cursor: pointer;
     padding: 5px;
     color: white;
@@ -222,7 +222,7 @@
 
 .admin-fourth__info-right > table > tbody > tr > td > span:hover {
     background-color: white;
-    border: 1px solid #ff7779;
+    border: 1px solid #F78513;
     color: black;
 }
 
@@ -351,7 +351,7 @@
     }
     
     .host-navigation > li:hover {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
     }
     
@@ -477,7 +477,7 @@
     .admin-fourth__info-right > table > tbody > tr > td > span {
         display: flex;
         align-items: center;
-        background-color: #ff7779;
+        background-color: #F78513;
         cursor: pointer;
         padding: 5px;
         color: white;
@@ -486,7 +486,7 @@
     
     .admin-fourth__info-right > table > tbody > tr > td > span:hover {
         background-color: white;
-        border: 1px solid #ff7779;
+        border: 1px solid #F78513;
         color: black;
     }
     
@@ -609,7 +609,7 @@
     }
     
     .host-navigation > li:hover {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
     }
     
@@ -735,7 +735,7 @@
     .admin-fourth__info-right > table > tbody > tr > td > span {
         display: flex;
         align-items: center;
-        background-color: #ff7779;
+        background-color: #F78513;
         cursor: pointer;
         padding: 5px;
         color: white;
@@ -744,7 +744,7 @@
     
     .admin-fourth__info-right > table > tbody > tr > td > span:hover {
         background-color: white;
-        border: 1px solid #ff7779;
+        border: 1px solid #F78513;
         color: black;
     }
     

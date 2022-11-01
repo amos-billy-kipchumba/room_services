@@ -305,8 +305,10 @@ function MoreDetails() {
                 hourDuration: hours,
             };
 
-
-            Navigate(`/customer-house-room-reservation/${paramaId}`);
+            Navigate(`/customer-house-room-reservation/${paramaId}`,{state:{
+                allHousesForMore
+            }
+            });
             localStorage.setItem("booking-data", JSON.stringify(formData));
         }
     }
@@ -408,7 +410,10 @@ function MoreDetails() {
                 </div>
 
                 <Button className="viewAllImages" onClick={()=> {
-                    Navigate(`/all-house-images/${paramaId}`)
+                    Navigate(`/all-house-images/${paramaId}`,{state:{
+                        allHousesForMore
+                    }
+                    });
                 }}>View all house images</Button>
 
                 <div className='hosted-by'>

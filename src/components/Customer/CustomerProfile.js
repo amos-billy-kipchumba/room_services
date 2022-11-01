@@ -144,7 +144,7 @@ function CustomerProfile() {
               <ul className='host-navigation'>
                 <li onClick={()=> Navigate('/customer-main-account')}>Dashboard</li>
                 <li onClick={()=> Navigate('/customer-second-page')}>Booked house</li>
-                <li style={{ backgroundColor: '#ff7779' }}>Profile</li>
+                <li style={{ backgroundColor: '#F78513' }}>Profile</li>
                 <li
                 onClick={()=> {
                   Navigate('/customer-settings');

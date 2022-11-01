@@ -39,7 +39,7 @@
 }
 
 .selected-info .viewAllImages:hover { 
-    border-image-source: linear-gradient(90deg, #ff7779 50%, orange 50%);
+    border-image-source: linear-gradient(90deg, #F78513 50%, orange 50%);
     border-image-slice: 1;
 }
 .selected-info > h2 {
@@ -379,7 +379,7 @@
     margin: auto;
     color: white;
     text-transform: inherit;
-    background-color: #ff7779;
+    background-color: #F78513;
     transition: all 0.3s ease-in-out;
 }
 
@@ -392,8 +392,8 @@
 }
 
 .strike-one > button:hover {
-    border: 1px solid #ff7779;
-    color: #ff7779;
+    border: 1px solid #F78513;
+    color: #F78513;
 }
 
 .strike-one > input {
@@ -410,13 +410,13 @@
     margin: auto;
     color: white;
     text-transform: inherit;
-    background-color: #ff7779;
+    background-color: #F78513;
     transition: all 0.3s ease-in-out;
 }
 
 .strike-two > button:hover {
-    border: 1px solid #ff7779;
-    color: #ff7779;
+    border: 1px solid #F78513;
+    color: #F78513;
 }
 
 .strike-two > input {
@@ -436,7 +436,7 @@
 }
 
 .right-host-form-inner > button {
-    background-color: #ff7779;
+    background-color: #F78513;
     color: white;
     margin-top: 20px;
     text-transform: inherit;
@@ -445,9 +445,9 @@
 }
 
 .right-host-form-inner > button:hover {
-    border: 1px solid #ff7779;
+    border: 1px solid #F78513;
     background-color: white;
-    color: #ff7779;
+    color: #F78513;
 }
 
 .right-host-form-inner > p {
@@ -564,7 +564,7 @@
 .calendar-days > div > span:nth-child(3) {
     width: 2px;
     height: 0;
-    background-color: #ff7779;
+    background-color: #F78513;
 }
 
 .calendar-days > div:hover > span:nth-child(1),
@@ -586,7 +586,7 @@
 .calendar-days > div > span:nth-child(4) {
     width: 0;
     height: 2px;
-    background-color: #ff7779;
+    background-color: #F78513;
 }
 
 .calendar-days > div:hover > span:nth-child(2),
@@ -685,16 +685,16 @@
 }
 
 .magicDateClassHolders > button {
-    background-color: #ff7779;
+    background-color: #F78513;
     color: white;
     text-transform: inherit;
     transition: all 0.3s ease-in-out;
 }
 
 .magicDateClassHolders > button:hover {
-    border: 1px solid #ff7779;
+    border: 1px solid #F78513;
     background-color: white;
-    color: #ff7779;
+    color: #F78513;
 }
 
 .magicTimeClass {
@@ -716,16 +716,16 @@
 }
 
 .magicTimeClassHolders > button {
-    background-color: #ff7779;
+    background-color: #F78513;
     color: white;
     text-transform: inherit;
     transition: all 0.3s ease-in-out;
 }
 
 .magicTimeClassHolders > button:hover {
-    border: 1px solid #ff7779;
+    border: 1px solid #F78513;
     background-color: white;
-    color: #ff7779;
+    color: #F78513;
 }
 
 
@@ -1102,7 +1102,7 @@
         margin: auto;
         color: white;
         text-transform: inherit;
-        background-color: #ff7779;
+        background-color: #F78513;
         transition: all 0.3s ease-in-out;
     }
     
@@ -1116,8 +1116,8 @@
     }
     
     .strike-one > button:hover {
-        border: 1px solid #ff7779;
-        color: #ff7779;
+        border: 1px solid #F78513;
+        color: #F78513;
     }
     
     .strike-one > input {
@@ -1134,13 +1134,13 @@
         margin: auto;
         color: white;
         text-transform: inherit;
-        background-color: #ff7779;
+        background-color: #F78513;
         transition: all 0.3s ease-in-out;
     }
     
     .strike-two > button:hover {
-        border: 1px solid #ff7779;
-        color: #ff7779;
+        border: 1px solid #F78513;
+        color: #F78513;
     }
     
     .strike-two > input {
@@ -1161,7 +1161,7 @@
     }
     
     .right-host-form-inner > button {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
         margin-top: 20px;
         text-transform: inherit;
@@ -1170,9 +1170,9 @@
     }
     
     .right-host-form-inner > button:hover {
-        border: 1px solid #ff7779;
+        border: 1px solid #F78513;
         background-color: white;
-        color: #ff7779;
+        color: #F78513;
     }
     
     .right-host-form-inner > p {
@@ -1224,7 +1224,7 @@
     }
     
     .selected-info .viewAllImages:hover { 
-        border-image-source: linear-gradient(90deg, #ff7779 50%, orange 50%);
+        border-image-source: linear-gradient(90deg, #F78513 50%, orange 50%);
         border-image-slice: 1;
     }
     
@@ -1301,7 +1301,7 @@
     .calendar-days > div > span:nth-child(3) {
         width: 2px;
         height: 0;
-        background-color: #ff7779;
+        background-color: #F78513;
     }
     
     .calendar-days > div:hover > span:nth-child(1),
@@ -1323,7 +1323,7 @@
     .calendar-days > div > span:nth-child(4) {
         width: 0;
         height: 2px;
-        background-color: #ff7779;
+        background-color: #F78513;
     }
     
     .calendar-days > div:hover > span:nth-child(2),
@@ -1422,16 +1422,16 @@
     }
     
     .magicDateClassHolders > button {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
         text-transform: inherit;
         transition: all 0.3s ease-in-out;
     }
     
     .magicDateClassHolders > button:hover {
-        border: 1px solid #ff7779;
+        border: 1px solid #F78513;
         background-color: white;
-        color: #ff7779;
+        color: #F78513;
     }
     
     .magicTimeClass {
@@ -1453,16 +1453,16 @@
     }
     
     .magicTimeClassHolders > button {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
         text-transform: inherit;
         transition: all 0.3s ease-in-out;
     }
     
     .magicTimeClassHolders > button:hover {
-        border: 1px solid #ff7779;
+        border: 1px solid #F78513;
         background-color: white;
-        color: #ff7779;
+        color: #F78513;
     }
 }
 
@@ -1842,7 +1842,7 @@
         margin: auto;
         color: white;
         text-transform: inherit;
-        background-color: #ff7779;
+        background-color: #F78513;
         transition: all 0.3s ease-in-out;
     }
     
@@ -1856,8 +1856,8 @@
     }
     
     .strike-one > button:hover {
-        border: 1px solid #ff7779;
-        color: #ff7779;
+        border: 1px solid #F78513;
+        color: #F78513;
     }
     
     .strike-one > input {
@@ -1874,13 +1874,13 @@
         margin: auto;
         color: white;
         text-transform: inherit;
-        background-color: #ff7779;
+        background-color: #F78513;
         transition: all 0.3s ease-in-out;
     }
     
     .strike-two > button:hover {
-        border: 1px solid #ff7779;
-        color: #ff7779;
+        border: 1px solid #F78513;
+        color: #F78513;
     }
     
     .strike-two > input {
@@ -1901,7 +1901,7 @@
     }
     
     .right-host-form-inner > button {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
         margin-top: 20px;
         text-transform: inherit;
@@ -1910,9 +1910,9 @@
     }
     
     .right-host-form-inner > button:hover {
-        border: 1px solid #ff7779;
+        border: 1px solid #F78513;
         background-color: white;
-        color: #ff7779;
+        color: #F78513;
     }
     
     .right-host-form-inner > p {
@@ -1964,7 +1964,7 @@
     }
     
     .selected-info .viewAllImages:hover { 
-        border-image-source: linear-gradient(90deg, #ff7779 50%, orange 50%);
+        border-image-source: linear-gradient(90deg, #F78513 50%, orange 50%);
         border-image-slice: 1;
     }
     
@@ -2041,7 +2041,7 @@
     .calendar-days > div > span:nth-child(3) {
         width: 2px;
         height: 0;
-        background-color: #ff7779;
+        background-color: #F78513;
     }
     
     .calendar-days > div:hover > span:nth-child(1),
@@ -2063,7 +2063,7 @@
     .calendar-days > div > span:nth-child(4) {
         width: 0;
         height: 2px;
-        background-color: #ff7779;
+        background-color: #F78513;
     }
     
     .calendar-days > div:hover > span:nth-child(2),
@@ -2162,16 +2162,16 @@
     }
     
     .magicDateClassHolders > button {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
         text-transform: inherit;
         transition: all 0.3s ease-in-out;
     }
     
     .magicDateClassHolders > button:hover {
-        border: 1px solid #ff7779;
+        border: 1px solid #F78513;
         background-color: white;
-        color: #ff7779;
+        color: #F78513;
     }
     
     .magicTimeClass {
@@ -2193,16 +2193,16 @@
     }
     
     .magicTimeClassHolders > button {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
         text-transform: inherit;
         transition: all 0.3s ease-in-out;
     }
     
     .magicTimeClassHolders > button:hover {
-        border: 1px solid #ff7779;
+        border: 1px solid #F78513;
         background-color: white;
-        color: #ff7779;
+        color: #F78513;
     }
 }
 
@@ -2582,7 +2582,7 @@
         margin: auto;
         color: white;
         text-transform: inherit;
-        background-color: #ff7779;
+        background-color: #F78513;
         transition: all 0.3s ease-in-out;
     }
     
@@ -2596,8 +2596,8 @@
     }
     
     .strike-one > button:hover {
-        border: 1px solid #ff7779;
-        color: #ff7779;
+        border: 1px solid #F78513;
+        color: #F78513;
     }
     
     .strike-one > input {
@@ -2614,13 +2614,13 @@
         margin: auto;
         color: white;
         text-transform: inherit;
-        background-color: #ff7779;
+        background-color: #F78513;
         transition: all 0.3s ease-in-out;
     }
     
     .strike-two > button:hover {
-        border: 1px solid #ff7779;
-        color: #ff7779;
+        border: 1px solid #F78513;
+        color: #F78513;
     }
     
     .strike-two > input {
@@ -2641,7 +2641,7 @@
     }
     
     .right-host-form-inner > button {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
         margin-top: 20px;
         text-transform: inherit;
@@ -2650,9 +2650,9 @@
     }
     
     .right-host-form-inner > button:hover {
-        border: 1px solid #ff7779;
+        border: 1px solid #F78513;
         background-color: white;
-        color: #ff7779;
+        color: #F78513;
     }
     
     .right-host-form-inner > p {
@@ -2704,7 +2704,7 @@
     }
     
     .selected-info .viewAllImages:hover { 
-        border-image-source: linear-gradient(90deg, #ff7779 50%, orange 50%);
+        border-image-source: linear-gradient(90deg, #F78513 50%, orange 50%);
         border-image-slice: 1;
     }
     
@@ -2781,7 +2781,7 @@
     .calendar-days > div > span:nth-child(3) {
         width: 2px;
         height: 0;
-        background-color: #ff7779;
+        background-color: #F78513;
     }
     
     .calendar-days > div:hover > span:nth-child(1),
@@ -2803,7 +2803,7 @@
     .calendar-days > div > span:nth-child(4) {
         width: 0;
         height: 2px;
-        background-color: #ff7779;
+        background-color: #F78513;
     }
     
     .calendar-days > div:hover > span:nth-child(2),
@@ -2902,16 +2902,16 @@
     }
     
     .magicDateClassHolders > button {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
         text-transform: inherit;
         transition: all 0.3s ease-in-out;
     }
     
     .magicDateClassHolders > button:hover {
-        border: 1px solid #ff7779;
+        border: 1px solid #F78513;
         background-color: white;
-        color: #ff7779;
+        color: #F78513;
     }
     
     .magicTimeClass {
@@ -2933,16 +2933,16 @@
     }
     
     .magicTimeClassHolders > button {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
         text-transform: inherit;
         transition: all 0.3s ease-in-out;
     }
     
     .magicTimeClassHolders > button:hover {
-        border: 1px solid #ff7779;
+        border: 1px solid #F78513;
         background-color: white;
-        color: #ff7779;
+        color: #F78513;
     }
 }
 /* end */
