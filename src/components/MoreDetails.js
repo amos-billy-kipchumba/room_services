@@ -506,7 +506,11 @@ function MoreDetails() {
                         <div className='dive-right'>
                             <div className='dive-right-two'>
                                 <h2>What this place offers</h2>
+                                {allHousesForMore.bathtub === `1` || allHousesForMore.bathtub === `1` ?
                                 <h4>Bedroom</h4>
+                                :
+                                null
+                                }
                                 {allHousesForMore.bathtub === `1` ?
                                 <div style={{ display: 'flex', flexDirection: 'column' }}>
                                     <p style={{ alignItems: 'center', marginTop: '10px', display: 'flex' }}><span style={{ marginRight: '10px', color: 'black', alignItems: 'center' }}><FaBath /></span> <span style={{ alignItems: 'center' }}>bath tub</span></p>
@@ -522,9 +526,13 @@ function MoreDetails() {
                                 null}
 
 
-                                <h4 style={{ marginTop: '10px' }}>Bedroom and laundry</h4>
-                                
                                 {allHousesForMore.washer === `1` ?
+                                <h4 style={{ marginTop: '10px' }}>Bedroom and laundry</h4>
+                                :
+                                null
+                                }
+                                
+                                {allHousesForMore.washer === `1` || allHousesForMore.drier === `1` || allHousesForMore.essentials === `1` || allHousesForMore.iron === `1` ?
                                 <div className="mine-rude">
                                     <div className='less-rude'>
                                         <span><LocalLaundryServiceIcon /></span>
@@ -573,7 +581,11 @@ function MoreDetails() {
                                 :
                                 null}
                         
+                                {allHousesForMore.tv === `1` ?
                                 <h4 style={{ marginTop: '10px' }}>Entertainment</h4>
+                                :
+                                null
+                                }
                                 {allHousesForMore.tv === `1` ?
                                 <div className="mine-rude">
                                     <div className='less-rude'>
@@ -586,8 +598,12 @@ function MoreDetails() {
                                 :
                                 null}
 
-                                <h4 style={{ marginTop: '10px' }}>Heating and cooling</h4>
                                 {allHousesForMore.air_condition === `1` ?
+                                <h4 style={{ marginTop: '10px' }}>Heating and cooling</h4>
+                                :
+                                null
+                                }
+                                {allHousesForMore.air_condition === `1` || allHousesForMore.heating === `1` ?
                                 <div className="mine-rude">
                                     <div className='less-rude'>
                                         <span><AcUnitIcon /></span>
@@ -611,7 +627,11 @@ function MoreDetails() {
                                 :
                                 null}
 
+                                {allHousesForMore.wifi === `1` ?
                                 <h4 style={{ marginTop: '10px' }}>Internet and office</h4>
+                                :
+                                null
+                                }
                                 {allHousesForMore.wifi === `1` ?
                                 <div className="mine-rude">
                                     <div className='less-rude'>
@@ -624,8 +644,12 @@ function MoreDetails() {
                                 :
                                 null}
 
-                                <h4 style={{ marginTop: '10px' }}>Kitchen and dining</h4>
                                 {allHousesForMore.refrigeration === `1` ?
+                                <h4 style={{ marginTop: '10px' }}>Kitchen and dining</h4>
+                                :
+                                null
+                                }
+                                {allHousesForMore.refrigeration === `1` || allHousesForMore.microwave === `1` || allHousesForMore.dishes_silverware === `1` || allHousesForMore.kitchen === `1` || allHousesForMore.blender === `1` || allHousesForMore.coffee_maker === `1` || allHousesForMore.fire_extinguisher === `1` || allHousesForMore.bread_toaster === `1` ?
                                 <div className="mine-rude">
                                     <div className='less-rude'>
                                         <span><KitchenIcon /></span>
@@ -722,8 +746,12 @@ function MoreDetails() {
                                 :
                                 null}
 
-                                <h4 style={{ marginTop: '10px' }}>Outdoor</h4>
                                 {allHousesForMore.patio_balcony === `1` ?
+                                <h4 style={{ marginTop: '10px' }}>Outdoor</h4>
+                                :
+                                null
+                                }
+                                {allHousesForMore.patio_balcony === `1` || allHousesForMore.backyard === `1` || allHousesForMore.outdoor_grill === `1` || allHousesForMore.beach_essential === `1` || allHousesForMore.pool === `1` || allHousesForMore.parking === `1` || allHousesForMore.long_term === `1` || allHousesForMore.private_entrance === `1` ?
                                 <div className="mine-rude">
                                     <div className='less-rude'>
                                         <span><BalconyIcon /></span>
