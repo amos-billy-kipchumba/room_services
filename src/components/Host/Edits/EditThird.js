@@ -6,7 +6,7 @@ import axios from 'axios'
 import { Button } from '@mui/material';
 import {useNavigate, useParams} from 'react-router-dom'
 
-import { FaBath, FaToiletPaper, FaTv, FaTemperatureHigh, FaWifi, FaBreadSlice } from "react-icons/fa";
+import { FaBath, FaToiletPaper, FaTv, FaTemperatureHigh, FaWifi, FaBreadSlice, FaPencilRuler, FaUtensils, FaToilet } from "react-icons/fa";
 import LocalLaundryServiceIcon from '@mui/icons-material/LocalLaundryService';
 import DryCleaningIcon from '@mui/icons-material/DryCleaning';
 import IronIcon from '@mui/icons-material/Iron';
@@ -31,7 +31,7 @@ import KitchenIcon from '@mui/icons-material/Kitchen';
 import BaseURL from '../../BaseUrl';
 
 import swal from 'sweetalert';
-import { MoreHoriz } from '@mui/icons-material';
+import { BeachAccessOutlined, Camera, ChildCare, Grass, HeatPump, Landscape, MoreHoriz, ShoppingBag, Shower, SportsSoccer } from '@mui/icons-material';
 
 function EditThird() {
   const params = useParams();
@@ -67,6 +67,19 @@ function EditThird() {
   const [editLong, setEditLong] = useState("0");
   const [editPrivate, setEditPrivate] = useState("0");
 
+  const [editOffice, setEditOffice] = useState("0");
+  const [editOven, setEditOven] = useState("0");
+  const [editChef, setEditChef] = useState("0");
+  const [editShopping, setEditShopping] = useState("0");
+  const [editGames, setEditGames] = useState("0");
+  const [editFarm, setEditFarm] = useState("0");
+  const [editRanch, setEditRanch] = useState("0");
+  const [editChildren, setEditChildren] = useState("0");
+  const [editBeach, setEditBeach] = useState("0");
+  const [editToilet, setEditToilet] = useState("0");
+  const [editShower, setEditShower] = useState("0");
+  const [editCinema, setEditCinema] = useState("0");
+
   const [boxChecked, setBoxChecked] = useState(false);
   const [boxChecked2, setBoxChecked2] = useState(false);
   const [boxChecked3, setBoxChecked3] = useState(false);
@@ -93,6 +106,19 @@ function EditThird() {
   const [boxChecked24, setBoxChecked24] = useState(false);
   const [boxChecked25, setBoxChecked25] = useState(false);
   const [boxChecked26, setBoxChecked26] = useState(false);
+
+  const [boxChecked28, setBoxChecked28] = useState(false);
+  const [boxChecked29, setBoxChecked29] = useState(false);
+  const [boxChecked30, setBoxChecked30] = useState(false);
+  const [boxChecked31, setBoxChecked31] = useState(false);
+  const [boxChecked32, setBoxChecked32] = useState(false);
+  const [boxChecked33, setBoxChecked33] = useState(false);
+  const [boxChecked34, setBoxChecked34] = useState(false);
+  const [boxChecked35, setBoxChecked35] = useState(false);
+  const [boxChecked36, setBoxChecked36] = useState(false);
+  const [boxChecked37, setBoxChecked37] = useState(false);
+  const [boxChecked38, setBoxChecked38] = useState(false);
+  const [boxChecked39, setBoxChecked39] = useState(false);
 
   const Navigate = useNavigate();
 
@@ -141,6 +167,56 @@ function EditThird() {
         if(love.data.stars.wifi === "1"){
             setBoxChecked10(true);
         }
+
+        setEditOffice(love.data.stars.office_equipment)
+        if(love.data.stars.office_equipment === "1"){
+            setBoxChecked28(true);
+        }
+        setEditOven(love.data.stars.oven)
+        if(love.data.stars.oven === "1"){
+            setBoxChecked29(true);
+        }
+        setEditChef(love.data.stars.chef)
+        if(love.data.stars.chef === "1"){
+            setBoxChecked30(true);
+        }
+        setEditShopping(love.data.stars.shopping)
+        if(love.data.stars.shopping === "1"){
+            setBoxChecked31(true);
+        }
+        setEditGames(love.data.stars.games_court)
+        if(love.data.stars.games_court === "1"){
+            setBoxChecked32(true);
+        }
+        setEditFarm(love.data.stars.farm)
+        if(love.data.stars.farm === "1"){
+            setBoxChecked33(true);
+        }
+        setEditRanch(love.data.stars.ranch)
+        if(love.data.stars.ranch === "1"){
+            setBoxChecked34(true);
+        }
+        setEditChildren(love.data.stars.children_play)
+        if(love.data.stars.children_play === "1"){
+            setBoxChecked35(true);
+        }
+        setEditBeach(love.data.stars.beach_front)
+        if(love.data.stars.beach_front === "1"){
+            setBoxChecked36(true);
+        }
+        setEditToilet(love.data.stars.toilet)
+        if(love.data.stars.toilet === "1"){
+            setBoxChecked37(true);
+        }
+        setEditShower(love.data.stars.shower)
+        if(love.data.stars.shower === "1"){
+            setBoxChecked38(true);
+        }
+        setEditCinema(love.data.stars.cinema)
+        if(love.data.stars.cinema === "1"){
+            setBoxChecked39(true);
+        }
+
         setEditRefrigerator(love.data.stars.refrigeration);
         if(love.data.stars.refrigeration === "1"){
             setBoxChecked11(true);
@@ -190,11 +266,11 @@ function EditThird() {
             setBoxChecked22(true);
         }
         setEditPool(love.data.stars.pool);
-        if(love.data.stars.Pool === "1"){
+        if(love.data.stars.pool === "1"){
             setBoxChecked23(true);
         }
         setEditParking(love.data.stars.parking);
-        if(love.data.stars.Parking === "1"){
+        if(love.data.stars.parking === "1"){
             setBoxChecked24(true);
         }
         setEditLong(love.data.stars.long_term);
@@ -505,6 +581,138 @@ function EditThird() {
     }
   }
 
+  const handleOffice = () => {
+    if(editOffice === "1"){
+        setEditOffice("0");
+        setBoxChecked28(false);
+    }
+    if(editOffice === "0"){
+        setEditOffice("1");
+        setBoxChecked28(true);
+    }
+  }
+
+  const handleOven = () => {
+    if(editOven === "1"){
+        setEditOven("0");
+        setBoxChecked29(false);
+    }
+    if(editOven === "0"){
+        setEditOven("1");
+        setBoxChecked29(true);
+    }
+  }
+
+  const handleChef = () => {
+    if(editChef === "1"){
+        setEditChef("0");
+        setBoxChecked30(false);
+    }
+    if(editChef === "0"){
+        setEditChef("1");
+        setBoxChecked30(true);
+    }
+  }
+
+  const handleShopping = () => {
+    if(editShopping === "1"){
+        setEditShopping("0");
+        setBoxChecked31(false);
+    }
+    if(editShopping === "0"){
+        setEditShopping("1");
+        setBoxChecked31(true);
+    }
+  }
+
+  const handleGames = () => {
+    if(editGames === "1"){
+        setEditGames("0");
+        setBoxChecked32(false);
+    }
+    if(editGames === "0"){
+        setEditGames("1");
+        setBoxChecked32(true);
+    }
+  }
+
+  const handleFarm = () => {
+    if(editFarm === "1"){
+        setEditFarm("0");
+        setBoxChecked33(false);
+    }
+    if(editFarm === "0"){
+        setEditFarm("1");
+        setBoxChecked33(true);
+    }
+  }
+
+  const handleRanch = () => {
+    if(editRanch === "1"){
+        setEditRanch("0");
+        setBoxChecked34(false);
+    }
+    if(editRanch === "0"){
+        setEditRanch("1");
+        setBoxChecked34(true);
+    }
+  }
+
+  const handleChildren = () => {
+    if(editChildren === "1"){
+        setEditChildren("0");
+        setBoxChecked35(false);
+    }
+    if(editChildren === "0"){
+        setEditChildren("1");
+        setBoxChecked35(true);
+    }
+  }
+
+  const handleBeach = () => {
+    if(editBeach === "1"){
+        setEditBeach("0");
+        setBoxChecked36(false);
+    }
+    if(editBeach === "0"){
+        setEditBeach("1");
+        setBoxChecked36(true);
+    }
+  }
+
+  const handleToilet = () => {
+    if(editToilet === "1"){
+        setEditToilet("0");
+        setBoxChecked37(false);
+    }
+    if(editToilet === "0"){
+        setEditToilet("1");
+        setBoxChecked37(true);
+    }
+  }
+
+  const handleShower = () => {
+    if(editShower === "1"){
+        setEditShower("0");
+        setBoxChecked38(false);
+    }
+    if(editShower === "0"){
+        setEditShower("1");
+        setBoxChecked38(true);
+    }
+  }
+
+  const handleCinema = () => {
+    if(editCinema === "1"){
+        setEditCinema("0");
+        setBoxChecked39(false);
+    }
+    if(editCinema === "0"){
+        setEditCinema("1");
+        setBoxChecked39(true);
+    }
+  }
+
   const handleUpdate2 = (e) => {
     e.preventDefault();
     const url = `${BaseURL}/api/update-seventy_five-details/${paramaId}`;
@@ -535,6 +743,20 @@ function EditThird() {
     data.append('long_term', editLong);
     data.append('private_entrance', editPrivate);
     data.append('essentials', editEssentials);
+
+    data.append('office_equipment', editOffice);
+    data.append('oven', editOven);
+    data.append('chef', editChef);
+    data.append('shopping', editShopping);
+    data.append('games_court', editGames);
+    data.append('farm', editFarm);
+    data.append('ranch', editRanch);
+    data.append('children_play', editChildren);
+    data.append('beach_front', editBeach);
+    data.append('toilet', editToilet);
+    data.append('shower', editShower);
+    data.append('cinema', editCinema);
+
     data.append('userId', userId);
     data.append('house_id', paramaId);
     axios.post(url,data).then((res)=>{
@@ -614,6 +836,14 @@ function EditThird() {
                         <div className='icon-name-value'>
                             <div className='icon-name-value-one'><input type="checkbox" name="bathtub" checked={boxChecked} value={editBaths} onChange={handleBaths} /></div> <div className='icon-name-value-two'><span>Bathtub</span></div> <div className='icon-name-value-three'><span><FaBath /></span></div>
                         </div>
+
+                        <div className='icon-name-value'>
+                            <div className='icon-name-value-one'><input type="checkbox" name="toilet" checked={boxChecked37} value={editToilet} onChange={handleToilet} /></div> <div className='icon-name-value-two'><span>Toilet</span></div> <div className='icon-name-value-three'><span><FaToilet /></span></div>
+                        </div>
+                        <div className='icon-name-value'>
+                            <div className='icon-name-value-one'><input type="checkbox" name="shower" checked={boxChecked38} value={editShower} onChange={handleShower} /></div> <div className='icon-name-value-two'><span>Shower</span></div> <div className='icon-name-value-three'><span><Shower /></span></div>
+                        </div>
+
                         <div className='icon-name-value' style={{ borderBottom: '1px solid antiquewhite' }}>
                             <div className='icon-name-value-one'><input type="checkbox" name="hair_drier" checked={boxChecked2} value={editHair} onChange={handleHair} /></div> <div className='icon-name-value-two'><span>Hair Drier</span></div> <div className='icon-name-value-three'><span><img width="20px" src={Drier} alt="" /></span></div>
                         </div>
@@ -634,8 +864,10 @@ function EditThird() {
                         <div className='icon-name-value'>
                             <div className='icon-name-value-one'><input type="checkbox" name="tv" checked={boxChecked7} value={editTV} onChange={handleTv} /></div> <div className='icon-name-value-two'><span>TV</span></div> <div className='icon-name-value-three'><span><FaTv /></span></div>
                         </div>
-                    </div>
-                    <div className='edit-three-form-container-two'>
+                        <div className='icon-name-value'>
+                            <div className='icon-name-value-one'><input type="checkbox" name="cinema" checked={boxChecked39} value={editCinema} onChange={handleCinema} /></div> <div className='icon-name-value-two'><span>Allows photography and cinematography</span></div> <div className='icon-name-value-three'><span><Camera /></span></div>
+                        </div>
+
                         <h4><strong>Heating & Cooling</strong></h4>
                         <div className='icon-name-value'>
                             <div className='icon-name-value-one'><input type="checkbox" name="air_condition" checked={boxChecked8} value={editAir} onChange={handleAir} /></div> <div className='icon-name-value-two'><span>Air condition</span></div> <div className='icon-name-value-three'><span><AcUnitIcon /></span></div>
@@ -644,17 +876,25 @@ function EditThird() {
                             <div className='icon-name-value-one'><input type="checkbox" name="heating" checked={boxChecked9} value={editHeating} onChange={handleHeating} /></div> <div className='icon-name-value-two'><span>Heating</span></div> <div className='icon-name-value-three'><span><FaTemperatureHigh /></span></div>
                         </div>
                         <h4><strong>Internet & Office</strong></h4>
-                        <div className='icon-name-value' style={{ borderBottom: '1px solid antiquewhite' }}>
+                        <div className='icon-name-value'>
                             <div className='icon-name-value-one'><input type="checkbox" name="wifi" checked={boxChecked10} value={editWifi} onChange={handleWifi} /></div> <div className='icon-name-value-two'><span>wifi</span></div> <div className='icon-name-value-three'><span><FaWifi /></span></div>
                         </div>
+
+                        <div className='icon-name-value' style={{ borderBottom: '1px solid antiquewhite' }}>
+                            <div className='icon-name-value-one'><input type="checkbox" name="office_equipment" checked={boxChecked28} value={editOffice} onChange={handleOffice} /></div> <div className='icon-name-value-two'><span>Office equipment</span></div> <div className='icon-name-value-three'><span><FaPencilRuler /></span></div>
+                        </div>
                     </div>
-                    <div className='edit-three-form-container-three'>
+                    <div className='edit-three-form-container-two'>
                         <h4><strong>Kitchen & Dining</strong></h4>
                         <div className='icon-name-value'>
                             <div className='icon-name-value-one'><input type="checkbox" name="refrigeration" checked={boxChecked11} value={editRefrigerator} onChange={handleRefrigerator} /></div> <div className='icon-name-value-two'><span>Refrigerator</span></div> <div className='icon-name-value-three'><span><KitchenIcon /></span></div>
                         </div>
                         <div className='icon-name-value'>
                             <div className='icon-name-value-one'><input type="checkbox" name="microwave" checked={boxChecked12} value={editMicrowave} onChange={handleMicrowave} /></div> <div className='icon-name-value-two'><span>Microwave</span></div> <div className='icon-name-value-three'><span><MicrowaveIcon /></span></div>
+                        </div>
+
+                        <div className='icon-name-value'>
+                            <div className='icon-name-value-one'><input type="checkbox" name="oven" checked={boxChecked29} value={editOven} onChange={handleOven} /></div> <div className='icon-name-value-two'><span>Oven</span></div> <div className='icon-name-value-three'><span><HeatPump /></span></div>
                         </div>
                         <div className='icon-name-value'>
                             <div className='icon-name-value-one'><input type="checkbox" name="dishes_silverware" checked={boxChecked13} value={editDishes} onChange={handleDishes} /></div> <div className='icon-name-value-two'><span>Dishes and Silverware</span></div> <div className='icon-name-value-three'><span><RiceBowlIcon /></span></div>
@@ -671,9 +911,18 @@ function EditThird() {
                         <div className='icon-name-value'>
                             <div className='icon-name-value-one'><input type="checkbox" name="fire_extinguisher" checked={boxChecked17} value={editFire} onChange={handleFire} /></div> <div className='icon-name-value-two'><span>Fire extinguisher</span></div> <div className='icon-name-value-three'><span><FireExtinguisherIcon /></span></div>
                         </div>
-                        <div className='icon-name-value' style={{ borderBottom: '1px solid antiquewhite' }}>
+                        <div className='icon-name-value'>
                             <div className='icon-name-value-one'><input type="checkbox" name="bread_toaster" checked={boxChecked18} value={editBread} onChange={handleBread} /></div> <div className='icon-name-value-two'><span>Bread Toaster</span></div> <div className='icon-name-value-three'><span><FaBreadSlice /></span></div>
                         </div>
+
+                        <div className='icon-name-value'>
+                            <div className='icon-name-value-one'><input type="checkbox" name="chef" checked={boxChecked30} value={editChef} onChange={handleChef} /></div> <div className='icon-name-value-two'><span>Chef at a cost</span></div> <div className='icon-name-value-three'><span><FaUtensils /></span></div>
+                        </div>
+                        <div className='icon-name-value' style={{ borderBottom: '1px solid antiquewhite' }}>
+                            <div className='icon-name-value-one'><input type="checkbox" name="shopping" checked={boxChecked31} value={editShopping} onChange={handleShopping} /></div> <div className='icon-name-value-two'><span>Shopping at an extra cost</span></div> <div className='icon-name-value-three'><span><ShoppingBag /></span></div>
+                        </div>
+                    </div>
+                    <div className='edit-three-form-container-three'>
                         <h4><strong>Outdoor</strong></h4>
                         <div className='icon-name-value'>
                             <div className='icon-name-value-one'><input type="checkbox" name="patio_balcony" checked={boxChecked19} value={editPatio} onChange={handlePatio} /></div> <div className='icon-name-value-two'><span>Patio or balcony</span></div> <div className='icon-name-value-three'><span><BalconyIcon /></span></div>
@@ -698,6 +947,21 @@ function EditThird() {
                         </div>
                         <div className='icon-name-value'>
                             <div className='icon-name-value-one'><input type="checkbox" name="private_entrance" checked={boxChecked26} value={editPrivate} onChange={handlePrivate} /></div> <div className='icon-name-value-two'><span>Private entrance</span></div> <div className='icon-name-value-three'><span><NoMeetingRoomIcon /></span></div>
+                        </div>
+                        <div className='icon-name-value'>
+                            <div className='icon-name-value-one'><input type="checkbox" name="games_court" checked={boxChecked32} value={editGames} onChange={handleGames} /></div> <div className='icon-name-value-two'><span>Games court</span></div> <div className='icon-name-value-three'><span><SportsSoccer /></span></div>
+                        </div>
+                        <div className='icon-name-value'>
+                            <div className='icon-name-value-one'><input type="checkbox" name="farm" checked={boxChecked33} value={editFarm} onChange={handleFarm} /></div> <div className='icon-name-value-two'><span>Farm</span></div> <div className='icon-name-value-three'><span><Landscape /></span></div>
+                        </div>
+                        <div className='icon-name-value'>
+                            <div className='icon-name-value-one'><input type="checkbox" name="ranch" checked={boxChecked34} value={editRanch} onChange={handleRanch} /></div> <div className='icon-name-value-two'><span>Ranch</span></div> <div className='icon-name-value-three'><span><Grass /></span></div>
+                        </div>
+                        <div className='icon-name-value'>
+                            <div className='icon-name-value-one'><input type="checkbox" name="children" checked={boxChecked35} value={editChildren} onChange={handleChildren} /></div> <div className='icon-name-value-two'><span>Children play</span></div> <div className='icon-name-value-three'><span><ChildCare /></span></div>
+                        </div>
+                        <div className='icon-name-value'>
+                            <div className='icon-name-value-one'><input type="checkbox" name="beach" checked={boxChecked36} value={editBeach} onChange={handleBeach} /></div> <div className='icon-name-value-two'><span>Beach Front</span></div> <div className='icon-name-value-three'><span><BeachAccessOutlined /></span></div>
                         </div>
                     </div>
                 </div>

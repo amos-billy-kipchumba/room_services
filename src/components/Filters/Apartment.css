@@ -1,4 +1,4 @@
-.search__page {
+.apartment {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -6,21 +6,21 @@
     position: relative;
 }
 
-.searchPage__info {
+.apartment__info {
     padding: 20px;
     position: relative;
 }
 
-.searchPage__info > p {
+.apartment__info > p {
     margin-bottom: 10px;
     font-size: 14px;
 }
 
-.searchPage__info > h1 {
+.apartment__info > h1 {
     margin-bottom: 30px;
 }
 
-.searchPage__info > button {
+.apartment__info > button {
     border-radius: 30px;
     text-transform: inherit;
     margin: 5px;
@@ -29,13 +29,14 @@
     transition: all 0.3s ease-in-out;
 }
 
-.searchPage__info > button:hover {
+
+.apartment__info > button:hover {
     background-color: white;
     color: #F78513;
     border: 1px solid #F78513;
 }
 
-.HEYo {
+.HEYoApartment {
     width: 60%;
     min-height: 50vh;
     max-height: 60vh;
@@ -54,11 +55,11 @@
     overflow-y: auto;
 }
 
-.HEYo::-webkit-scrollbar {
+.HEYoApartment::-webkit-scrollbar {
     display: none;
 }
 
-.HEYo > button {
+.HEYoApartment > button {
     background-color: #F78513;
     width: 150px;
     color: white;
@@ -67,7 +68,13 @@
     margin: 10px auto;
 }
 
-.HEYo > button:hover {
+.HEYoApartment > button:nth-of-type(2) {
+    background-color: white;
+    color: #F78513;
+    border: 1px solid #F78513;
+}
+
+.HEYoApartment > button:hover {
     background-color: white;
     border: 1px solid #F78513;
     color: #F78513;
@@ -75,20 +82,20 @@
 
 /* 440px Mobile resposive */
 @media screen and (max-width: 440px) {
-    .searchPage__info {
+    .apartment__info {
         padding: 10px;
     }
     
-    .searchPage__info > p {
+    .apartment__info > p {
         margin-bottom: 10px;
         font-size: 14px;
     }
     
-    .searchPage__info > h1 {
+    .apartment__info > h1 {
         margin-bottom: 30px;
     }
     
-    .searchPage__info > button {
+    .apartment__info > button {
         border-radius: 30px;
         text-transform: inherit;
         margin: 5px;

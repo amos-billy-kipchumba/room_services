@@ -5,6 +5,7 @@ import Button from '@mui/material/Button';
 import {Link} from 'react-router-dom'
 import BaseURL from './BaseUrl'
 import swal from 'sweetalert';
+import {useNavigate} from 'react-router-dom'
 class Signin extends Component {
     constructor() {
         super() 
@@ -50,6 +51,7 @@ class Signin extends Component {
         axios.post(url,data).then(res => {
             if(res.data.status === 200)
             {
+           this.props.navigation('/login-user');
            document.getElementById('submit').innerHTML = "created";
            swal('success','account created successfully you can now proceed to login','success')
             this.setState({
@@ -108,4 +110,9 @@ class Signin extends Component {
   }
 }
 
-export default Signin
+export function SigninWithRouter(props) {
+    const navigation = useNavigate();
+    return <Signin {...props} navigation={navigation} />;
+  }
+
+export default Signin;
