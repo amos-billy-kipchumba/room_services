@@ -165,15 +165,21 @@ function Header() {
                 {showLogOut !== false ?
                     <div className='header__right-float' ref={menuRef}>
                         <div className='magicFloatingHeader'>
-                            <span onClick={()=>{
-                                navigate('/sign-in')
-                            }}>Create client account</span>
-                            <span onClick={()=>{
-                                navigate('/become-a-host-register');
-                            }}>Create host account</span>
-                            <span onClick={()=>{
-                                navigate('/login-user')
-                            }}>Sign in</span>
+                            {userData ? 
+                                null
+                                :
+                                <>
+                                <span onClick={()=>{
+                                    navigate('/sign-in')
+                                }}>Create client account</span>
+                                <span onClick={()=>{
+                                    navigate('/become-a-host-register');
+                                }}>Create host account</span>
+                                <span onClick={()=>{
+                                    navigate('/login-user')
+                                }}>Sign in</span>
+                                </>
+                            }
                             <Button onClick={handleNowLogOut}>Log out</Button>
                             <Button onClick={()=> {
                                 setShowLogOut(!showLogOut)

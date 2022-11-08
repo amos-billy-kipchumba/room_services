@@ -4,7 +4,7 @@ import Button from '@mui/material/Button';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
 
-import { FaBath, FaToiletPaper, FaTv, FaTemperatureHigh, FaWifi, FaBreadSlice } from "react-icons/fa";
+import { FaBath, FaToiletPaper, FaTv, FaTemperatureHigh, FaWifi, FaBreadSlice, FaUtensils, FaToilet } from "react-icons/fa";
 import LocalLaundryServiceIcon from '@mui/icons-material/LocalLaundryService';
 import DryCleaningIcon from '@mui/icons-material/DryCleaning';
 import IronIcon from '@mui/icons-material/Iron';
@@ -27,7 +27,7 @@ import Drier from '../../Images/drier.jpg'
 import KitchenIcon from '@mui/icons-material/Kitchen';
 import BaseURL from '../../BaseUrl';
 import swal from 'sweetalert';
-import { Add, MoreHoriz } from '@mui/icons-material';
+import { Add, BeachAccessTwoTone, Camera, ChildCare, Edit, Grass, HeatPump, Landscape, MoreHoriz, ShoppingBag, Shower, SportsSoccer } from '@mui/icons-material';
 class PageThreeAdd extends Component {
     constructor() {
       super()
@@ -59,6 +59,20 @@ class PageThreeAdd extends Component {
          parking: 0,
          long_term: 0,
          private_entrance: 0,
+
+         oven: 0,
+         cinema: 0,
+         children_play: 0,
+         farm: 0,
+         ranch: 0,
+         office_equipment: 0,
+         shower: 0,
+         beach_front: 0,
+         games_court: 0,
+         chef: 0,
+         shopping: 0,
+         toilet: 0,
+
          user: '',
          userId: '',
          houseData: [],
@@ -94,6 +108,20 @@ class PageThreeAdd extends Component {
       this.handleChange24 = this.handleChange24.bind(this)
       this.handleChange25 = this.handleChange25.bind(this)
       this.handleChange26 = this.handleChange26.bind(this)
+
+      this.handleChange27 = this.handleChange27.bind(this)
+      this.handleChange28 = this.handleChange28.bind(this)
+      this.handleChange29 = this.handleChange29.bind(this)
+      this.handleChange30 = this.handleChange30.bind(this)
+      this.handleChange31 = this.handleChange31.bind(this)
+      this.handleChange32 = this.handleChange32.bind(this)
+      this.handleChange33 = this.handleChange33.bind(this)
+      this.handleChange34 = this.handleChange34.bind(this)
+      this.handleChange35 = this.handleChange35.bind(this)
+      this.handleChange37 = this.handleChange37.bind(this)
+      this.handleChange38 = this.handleChange38.bind(this)
+      this.handleChange39 = this.handleChange39.bind(this)
+
       this.handleMenuBar = this.handleMenuBar.bind(this)
     }
     
@@ -228,6 +256,79 @@ class PageThreeAdd extends Component {
         });
     }
 
+    handleChange27 = () => {
+        this.setState({
+            games_court: 1,
+        });
+    }
+
+    handleChange28 = () => {
+        this.setState({
+            farm: 1,
+        });
+    }
+
+    handleChange29 = () => {
+        this.setState({
+            ranch: 1,
+        });
+    }
+
+    handleChange30 = () => {
+        this.setState({
+            children_play: 1,
+        });
+    }
+
+    handleChange31 = () => {
+        this.setState({
+            chef: 1,
+        });
+    }
+
+    handleChange32 = () => {
+        this.setState({
+            shopping: 1,
+        });
+    }
+
+    handleChange33 = () => {
+        this.setState({
+            cinema: 1,
+        });
+    }
+
+    handleChange34 = () => {
+        this.setState({
+            oven: 1,
+        });
+    }
+
+    handleChange35 = () => {
+        this.setState({
+            beach_front: 1,
+        });
+    }
+
+    handleChange37 = () => {
+        this.setState({
+            shower: 1,
+        });
+    }
+
+
+    handleChange38 = () => {
+        this.setState({
+            toilet: 1,
+        });
+    }
+
+    handleChange39 = () => {
+        this.setState({
+            office_equipment: 1,
+        });
+    }
+
     componentDidMount = async () => {
         const userData = JSON.parse(localStorage.getItem('user-info'));
         const userInfo = userData;
@@ -290,6 +391,20 @@ class PageThreeAdd extends Component {
         data.append('parking', this.state.parking);
         data.append('long_term', this.state.long_term);
         data.append('private_entrance', this.state.private_entrance);
+
+        data.append('games_court', this.state.games_court);
+        data.append('farm', this.state.farm);
+        data.append('ranch', this.state.ranch);
+        data.append('children_play', this.state.children_play);
+        data.append('chef', this.state.chef);
+        data.append('shopping', this.state.shopping);
+        data.append('cinema', this.state.cinema);
+        data.append('oven', this.state.oven);
+        data.append('beach_front', this.state.beach_front);
+        data.append('shower', this.state.shower);
+        data.append('office_equipment', this.state.office_equipment);
+        data.append('toilet', this.state.toilet);
+
         data.append('userId', this.state.user);
         data.append('house_id', this.state.house_id);
 
@@ -373,9 +488,18 @@ class PageThreeAdd extends Component {
                             <div className='icon-name-value'>
                                 <div className='icon-name-value-one'><input type="checkbox" id="back_input" name="bathtub" value={this.state.bathtub} onChange={this.handleChange1} /></div> <div className='icon-name-value-two'><span>Bathtub</span></div> <div className='icon-name-value-three'><span><FaBath /></span></div>
                             </div>
-                            <div className='icon-name-value' style={{ borderBottom: '1px solid antiquewhite' }}>
+                            <div className='icon-name-value'>
                                 <div className='icon-name-value-one'><input type="checkbox" id="back_input1" name="hair_drier" value={this.state.hair_drier} onChange={this.handleChange2} /></div> <div className='icon-name-value-two'><span>Hair Drier</span></div> <div className='icon-name-value-three'><span><img width="20px" src={Drier} alt="" /></span></div>
                             </div>
+
+
+                            <div className='icon-name-value'>
+                                <div className='icon-name-value-one'><input type="checkbox" id="back_input37" name="shower" value={this.state.shower} onChange={this.handleChange37} /></div> <div className='icon-name-value-two'><span>Shower</span></div> <div className='icon-name-value-three'><span><Shower /> </span></div>
+                            </div>
+                            <div className='icon-name-value' style={{ borderBottom: '1px solid antiquewhite' }}>
+                                <div className='icon-name-value-one'><input type="checkbox" id="back_input38" name="toilet" value={this.state.toilet} onChange={this.handleChange38} /></div> <div className='icon-name-value-two'><span>Toilet</span></div> <div className='icon-name-value-three'><span><FaToilet /> </span></div>
+                            </div>
+
                             <h4><strong>Bedroom & Laundry</strong></h4>
                             <div className='icon-name-value'>
                                 <div className='icon-name-value-one'><input type="checkbox" id="back_input2" name="washer" value={this.state.washer} onChange={this.handleChange3} /></div> <div className='icon-name-value-two'><span>Washer</span></div> <div className='icon-name-value-three'><span><LocalLaundryServiceIcon /></span></div>
@@ -393,21 +517,30 @@ class PageThreeAdd extends Component {
                             <div className='icon-name-value'>
                                 <div className='icon-name-value-one'><input type="checkbox" id="back_input6" name="tv" value={this.state.tv} onChange={this.handleChange7} /></div> <div className='icon-name-value-two'><span>TV</span></div> <div className='icon-name-value-three'><span><FaTv /></span></div>
                             </div>
-                        </div>
-                        <div className='page-three-form-container-two'>
+
+                            <div className='icon-name-value' style={{ borderBottom: '1px solid antiquewhite' }}>
+                                <div className='icon-name-value-one'><input type="checkbox" id="back_input33" name="cinema" value={this.state.cinema} onChange={this.handleChange33} /></div> <div className='icon-name-value-two'><span>Allows photography and cinematography</span></div> <div className='icon-name-value-three'><span><Camera /></span></div>
+                            </div>
+
                             <h4><strong>Heating & Cooling</strong></h4>
                             <div className='icon-name-value'>
                                 <div className='icon-name-value-one'><input type="checkbox" id="back_input7" name="air_condition" value={this.state.air_condition} onChange={this.handleChange8} /></div> <div className='icon-name-value-two'><span>Air condition</span></div> <div className='icon-name-value-three'><span><AcUnitIcon /></span></div>
                             </div>
-                            <div className='icon-name-value' style={{ borderBottom: '1px solid antiquewhite' }}>
+                            <div className='icon-name-value'>
                                 <div className='icon-name-value-one'><input type="checkbox" id="back_input8" name="heating" value={this.state.heating} onChange={this.handleChange9} /></div> <div className='icon-name-value-two'><span>Heating</span></div> <div className='icon-name-value-three'><span><FaTemperatureHigh /></span></div>
                             </div>
+                        </div>
+                        <div className='page-three-form-container-two'>
+
                             <h4><strong>Internet & Office</strong></h4>
-                            <div className='icon-name-value' style={{ borderBottom: '1px solid antiquewhite' }}>
+                            <div className='icon-name-value'>
                                 <div className='icon-name-value-one'><input type="checkbox" id="back_input9" name="wifi" value={this.state.wifi} onChange={this.handleChange10} /></div> <div className='icon-name-value-two'><span>wifi</span></div> <div className='icon-name-value-three'><span><FaWifi /></span></div>
                             </div>
-                        </div>
-                        <div className='page-three-form-container-three'>
+
+                            <div className='icon-name-value' style={{ borderBottom: '1px solid antiquewhite' }}>
+                                <div className='icon-name-value-one'><input type="checkbox" id="back_input39" name="office_equipments" value={this.state.office_equipments} onChange={this.handleChange39} /></div> <div className='icon-name-value-two'><span>Office equipments</span></div> <div className='icon-name-value-three'><span><Edit /> </span></div>
+                            </div>
+
                             <h4><strong>Kitchen & Dining</strong></h4>
                             <div className='icon-name-value'>
                                 <div className='icon-name-value-one'><input type="checkbox" id="back_input10" name="refrigeration" value={this.state.refrigeration} onChange={this.handleChange11} /></div> <div className='icon-name-value-two'><span>Refrigerator</span></div> <div className='icon-name-value-three'><span><KitchenIcon /></span></div>
@@ -424,15 +557,28 @@ class PageThreeAdd extends Component {
                             <div className='icon-name-value'>
                                 <div className='icon-name-value-one'><input type="checkbox" id="back_input14" name="blender" value={this.state.blender} onChange={this.handleChange15} /></div> <div className='icon-name-value-two'><span>Blender</span></div> <div className='icon-name-value-three'><span><BlenderIcon /></span></div>
                             </div>
+
+                            <div className='icon-name-value' style={{ borderBottom: '1px solid antiquewhite' }}>
+                                <div className='icon-name-value-one'><input type="checkbox" id="back_input34" name="oven" value={this.state.oven} onChange={this.handleChange34} /></div> <div className='icon-name-value-two'><span>Oven</span></div> <div className='icon-name-value-three'><span><HeatPump /></span></div>
+                            </div>
                             <div className='icon-name-value'>
                                 <div className='icon-name-value-one'><input type="checkbox" id="back_input15" name="coffee_maker" value={this.state.coffee_maker} onChange={this.handleChange16} /></div> <div className='icon-name-value-two'><span>Coffee maker</span></div> <div className='icon-name-value-three'><span><CoffeeMakerIcon /></span></div>
                             </div>
                             <div className='icon-name-value'>
                                 <div className='icon-name-value-one'><input type="checkbox" id="back_input16" name="fire_extinguisher" value={this.state.fire_extinguisher} onChange={this.handleChange17} /></div> <div className='icon-name-value-two'><span>Fire extinguisher</span></div> <div className='icon-name-value-three'><span><FireExtinguisherIcon /></span></div>
                             </div>
-                            <div className='icon-name-value' style={{ borderBottom: '1px solid antiquewhite' }}>
+                            <div className='icon-name-value'>
                                 <div className='icon-name-value-one'><input type="checkbox" id="back_input17" name="bread_toaster" value={this.state.bread_toaster} onChange={this.handleChange18} /></div> <div className='icon-name-value-two'><span>Bread Toaster</span></div> <div className='icon-name-value-three'><span><FaBreadSlice /></span></div>
                             </div>
+
+                            <div className='icon-name-value'>
+                                <div className='icon-name-value-one'><input type="checkbox" id="back_input31" name="chef" value={this.state.chef} onChange={this.handleChange31} /></div> <div className='icon-name-value-two'><span>Chef at a cost</span></div> <div className='icon-name-value-three'><span><FaUtensils /></span></div>
+                            </div>
+                            <div className='icon-name-value'>
+                                <div className='icon-name-value-one'><input type="checkbox" id="back_input32" name="shopping" value={this.state.shopping} onChange={this.handleChange32} /></div> <div className='icon-name-value-two'><span>Shopping at an extra cost</span></div> <div className='icon-name-value-three'><span><ShoppingBag /></span></div>
+                            </div>
+                        </div>
+                        <div className='page-three-form-container-three'>
                             <h4><strong>Outdoor</strong></h4>
                             <div className='icon-name-value'>
                                 <div className='icon-name-value-one'><input type="checkbox" id="back_input18" name="patio_balcony" value={this.state.patio_balcony} onChange={this.handleChange19} /></div> <div className='icon-name-value-two'><span>Patio or balcony</span></div> <div className='icon-name-value-three'><span><BalconyIcon /></span></div>
@@ -458,9 +604,26 @@ class PageThreeAdd extends Component {
                             <div className='icon-name-value'>
                                 <div className='icon-name-value-one'><input type="checkbox" id="back_input25" name="private_entrance" value={this.state.private_entrance} onChange={this.handleChange26} /></div> <div className='icon-name-value-two'><span>Private entrance</span></div> <div className='icon-name-value-three'><span><NoMeetingRoomIcon /></span></div>
                             </div>
+
+
+                            <div className='icon-name-value'>
+                                <div className='icon-name-value-one'><input type="checkbox" id="back_input27" name="games_court" value={this.state.games_court} onChange={this.handleChange27} /></div> <div className='icon-name-value-two'><span>Games court</span></div> <div className='icon-name-value-three'><span><SportsSoccer /></span></div>
+                            </div>
+                            <div className='icon-name-value'>
+                                <div className='icon-name-value-one'><input type="checkbox" id="back_input28" name="farm" value={this.state.farm} onChange={this.handleChange28} /></div> <div className='icon-name-value-two'><span>Farm</span></div> <div className='icon-name-value-three'><span><Landscape /></span></div>
+                            </div>
+                            <div className='icon-name-value'>
+                                <div className='icon-name-value-one'><input type="checkbox" id="back_input29" name="ranch" value={this.state.ranch} onChange={this.handleChange29} /></div> <div className='icon-name-value-two'><span>Ranch</span></div> <div className='icon-name-value-three'><span><Grass /></span></div>
+                            </div>
+                            <div className='icon-name-value'>
+                                <div className='icon-name-value-one'><input type="checkbox" id="back_input30" name="children_play" value={this.state.children_play} onChange={this.handleChange30} /></div> <div className='icon-name-value-two'><span>Children play</span></div> <div className='icon-name-value-three'><span><ChildCare /></span></div>
+                            </div>
+                            <div className='icon-name-value'>
+                                <div className='icon-name-value-one'><input type="checkbox" id="back_input35" name="beach_front" value={this.state.beach_front} onChange={this.handleChange35} /></div> <div className='icon-name-value-two'><span>Beach Front</span></div> <div className='icon-name-value-three'><span><BeachAccessTwoTone /></span></div>
+                            </div>
                         </div>
                     </div>
-                    <Button type="submit" id="submit">Submit</Button>
+                    <Button type="submit" id="submit" style={{ backgroundColor: '#F78513' }}>Submit</Button>
                 </form>
                 <Button onClick={()=>{
                     this.props.navigation(`/back-second/${this.state.house_id}`);
@@ -529,6 +692,18 @@ export function PageThreeAddWithRouter(props) {
                 document.getElementById('back_input23').disabled = true;
                 document.getElementById('back_input24').disabled = true;
                 document.getElementById('back_input25').disabled = true;
+
+                document.getElementById('back_input27').disabled = true;
+                document.getElementById('back_input28').disabled = true;
+                document.getElementById('back_input29').disabled = true;
+                document.getElementById('back_input30').disabled = true;
+                document.getElementById('back_input31').disabled = true;
+                document.getElementById('back_input32').disabled = true;
+                document.getElementById('back_input33').disabled = true;
+                document.getElementById('back_input34').disabled = true;
+                document.getElementById('back_input35').disabled = true;
+                document.getElementById('back_input37').disabled = true;
+                document.getElementById('back_input39').disabled = true;
                 document.getElementById('submit').disabled = true;
             }
         }

@@ -42,10 +42,12 @@ import LoginUser from "./components/LoginUser";
 import MainHostAccount from "./components/MainHostAccount";
 import PageNotFound from './components/PageNotFound';
 import SearchPage from "./components/SearchPage";
-import SignIn from "./components/Signin";
+import SigninWithRouter from "./components/Signin";
 import Slider from "./components/Slider";
 import Protected from './Protected';
 import MoreDetails from "./components/MoreDetails";
+import CreativeHeaven from './components/Filters/CreativeHeaven';
+import Apartment from './components/Filters/Apartment';
 
 // import Home from './components/Home';
 const LazyHome = React.lazy(() => import('./components/Home'))
@@ -59,6 +61,8 @@ function App() {
         <div className="App">
           <Header />
           <Routes>
+            <Route exact path="/apartments" element={ <Apartment /> } />
+            <Route exact path="/creative-heaven" element={ <CreativeHeaven /> } />
             <Route exact path="/customer-settings" element={ 
               <Protected Cmp={CustomerSettings} />
              } />
@@ -154,7 +158,7 @@ function App() {
                 <MoreDetails />
                } />
             <Route exact path="/slider" element={ <Slider /> } />
-            <Route exact path="/sign-in" element={ <SignIn /> } />
+            <Route exact path="/sign-in" element={ <SigninWithRouter /> } />
             <Route exact path="/admin-dashboard" element={ <Protected Cmp={AdminFirst} /> } />
             <Route exact path="/login-user" element={ <LoginUser /> }  />
             <Route exact path="/become-a-host" element={ <HostDashboard /> } />

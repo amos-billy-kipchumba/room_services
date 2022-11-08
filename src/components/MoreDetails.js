@@ -2,7 +2,7 @@
 import React, {useState, useEffect} from 'react'
 import './MoreDetails.css'
 import Button from '@mui/material/Button';
-import { FaSwimmingPool, FaUpload, FaRegStar, FaRegCalendarTimes, FaBed } from 'react-icons/fa';
+import { FaSwimmingPool, FaUpload, FaRegStar, FaRegCalendarTimes, FaBed, FaToilet, FaUtensils, FaPencilRuler } from 'react-icons/fa';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import Slider from './Slider';
 import {useParams} from 'react-router-dom'
@@ -30,7 +30,7 @@ import NoMeetingRoomIcon from '@mui/icons-material/NoMeetingRoom';
 import LocalDiningIcon from '@mui/icons-material/LocalDining';
 import Drier from './Images/drier.jpg'
 import KitchenIcon from '@mui/icons-material/Kitchen';
-import { BookOnline, ContactMail, Favorite} from '@mui/icons-material';
+import { BeachAccessTwoTone, BookOnline, Camera, ChildCare, ContactMail, Favorite, Grass, HeatPump, Landscape, ShoppingBag, Shower, SportsSoccer} from '@mui/icons-material';
 import MoreDetailsLoader from '../MoreDetailsLoader';
 
 import DatePicker from "react-datepicker";
@@ -270,7 +270,17 @@ function MoreDetails() {
         if(userData === null || userData === "") {
             swal({
                 title: "Not signed in",
-                text: "please login first!",
+                text: "please register or login as customer first!",
+                icon: "warning",
+                dangerMode: true,
+            });
+            Navigate("/sign-in")
+        }
+
+        if(userData.data.user_type !== 2) {
+            swal({
+                title: "Not signed in",
+                text: "please register or login as customer first!",
                 icon: "warning",
                 dangerMode: true,
             });
@@ -556,6 +566,30 @@ function MoreDetails() {
                                 :
                                 null}
 
+                                {allHousesForMore.shower === `1` ?
+                                <div className="mine-rude">
+                                    <div className='less-rude'>
+                                        <span><Shower /></span>
+                                    </div>
+                                    <div className="more-rude">
+                                        <span>Shower</span>
+                                    </div>
+                                </div>
+                                :
+                                null}
+
+                                {allHousesForMore.toilet === `1` ?
+                                <div className="mine-rude">
+                                    <div className='less-rude'>
+                                        <span><FaToilet /></span>
+                                    </div>
+                                    <div className="more-rude">
+                                        <span>Toilet</span>
+                                    </div>
+                                </div>
+                                :
+                                null}
+
                                 {allHousesForMore.essentials === `1` ?
                                 <div className="mine-rude">
                                     <div className='less-rude'>
@@ -586,6 +620,7 @@ function MoreDetails() {
                                 :
                                 null
                                 }
+
                                 {allHousesForMore.tv === `1` ?
                                 <div className="mine-rude">
                                     <div className='less-rude'>
@@ -593,6 +628,18 @@ function MoreDetails() {
                                     </div>
                                     <div className="more-rude">
                                         <span>TV</span>
+                                    </div>
+                                </div>
+                                :
+                                null}
+
+                                {allHousesForMore.cinema === `1` ?
+                                <div className="mine-rude">
+                                    <div className='less-rude'>
+                                        <span><Camera /></span>
+                                    </div>
+                                    <div className="more-rude">
+                                        <span>Allows photography and cinematography</span>
                                     </div>
                                 </div>
                                 :
@@ -639,6 +686,18 @@ function MoreDetails() {
                                     </div>
                                     <div className="more-rude">
                                         <span>wifi</span>
+                                    </div>
+                                </div>
+                                :
+                                null}
+
+                                {allHousesForMore.office_equipment === `1` ?
+                                <div className="mine-rude">
+                                    <div className='less-rude'>
+                                        <span><FaPencilRuler /></span>
+                                    </div>
+                                    <div className="more-rude">
+                                        <span>Office equipment</span>
                                     </div>
                                 </div>
                                 :
@@ -746,6 +805,42 @@ function MoreDetails() {
                                 :
                                 null}
 
+                                {allHousesForMore.oven === `1` ?
+                                <div className="mine-rude">
+                                    <div className='less-rude'>
+                                        <span><HeatPump /></span>
+                                    </div>
+                                    <div className="more-rude">
+                                        <span>Oven</span>
+                                    </div>
+                                </div>
+                                :
+                                null}
+
+                                {allHousesForMore.chef === `1` ?
+                                <div className="mine-rude">
+                                    <div className='less-rude'>
+                                        <span><FaUtensils /></span>
+                                    </div>
+                                    <div className="more-rude">
+                                        <span>Chef at a cost</span>
+                                    </div>
+                                </div>
+                                :
+                                null}
+
+                                {allHousesForMore.shopping === `1` ?
+                                <div className="mine-rude">
+                                    <div className='less-rude'>
+                                        <span><ShoppingBag /></span>
+                                    </div>
+                                    <div className="more-rude">
+                                        <span>Shopping at an extra cost</span>
+                                    </div>
+                                </div>
+                                :
+                                null}
+
                                 {allHousesForMore.patio_balcony === `1` ?
                                 <h4 style={{ marginTop: '10px' }}>Outdoor</h4>
                                 :
@@ -819,6 +914,66 @@ function MoreDetails() {
                                     </div>
                                     <div className="more-rude">
                                         <span>parking</span>
+                                    </div>
+                                </div>
+                                :
+                                null}
+
+                                {allHousesForMore.beach_front === `1` ?
+                                <div className="mine-rude">
+                                    <div className='less-rude'>
+                                        <span><BeachAccessTwoTone /></span>
+                                    </div>
+                                    <div className="more-rude">
+                                        <span>Beach Front</span>
+                                    </div>
+                                </div>
+                                :
+                                null}
+
+                                {allHousesForMore.games_court === `1` ?
+                                <div className="mine-rude">
+                                    <div className='less-rude'>
+                                        <span><SportsSoccer /></span>
+                                    </div>
+                                    <div className="more-rude">
+                                        <span>Games court</span>
+                                    </div>
+                                </div>
+                                :
+                                null}
+
+                                {allHousesForMore.ranch === `1` ?
+                                <div className="mine-rude">
+                                    <div className='less-rude'>
+                                        <span><Grass /></span>
+                                    </div>
+                                    <div className="more-rude">
+                                        <span>Ranch</span>
+                                    </div>
+                                </div>
+                                :
+                                null}
+
+                                {allHousesForMore.farm === `1` ?
+                                <div className="mine-rude">
+                                    <div className='less-rude'>
+                                        <span><Landscape /></span>
+                                    </div>
+                                    <div className="more-rude">
+                                        <span>Farm</span>
+                                    </div>
+                                </div>
+                                :
+                                null}
+
+                                {allHousesForMore.children_play === `1` ?
+                                <div className="mine-rude">
+                                    <div className='less-rude'>
+                                        <span><ChildCare /></span>
+                                    </div>
+                                    <div className="more-rude">
+                                        <span>Children play</span>
                                     </div>
                                 </div>
                                 :
