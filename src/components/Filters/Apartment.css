@@ -6,6 +6,14 @@
     position: relative;
 }
 
+.no-record {
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .apartment__info {
     padding: 20px;
     position: relative;
@@ -19,6 +27,8 @@
 .apartment__info > h1 {
     margin-bottom: 30px;
 }
+
+
 
 .apartment__info > button {
     border-radius: 30px;

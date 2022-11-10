@@ -1,4 +1,4 @@
-.creative_heaven {
+.condominium {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -6,29 +6,21 @@
     position: relative;
 }
 
-.no-record {
-    width: 100%;
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.creative_heaven__info {
+.condominium__info {
     padding: 20px;
     position: relative;
 }
 
-.creative_heaven__info > p {
+.condominium__info > p {
     margin-bottom: 10px;
     font-size: 14px;
 }
 
-.creative_heaven__info > h1 {
+.condominium__info > h1 {
     margin-bottom: 30px;
 }
 
-.creative_heaven__info > button {
+.condominium__info > button {
     border-radius: 30px;
     text-transform: inherit;
     margin: 5px;
@@ -38,13 +30,13 @@
 }
 
 
-.creative_heaven__info > button:hover {
+.condominium__info > button:hover {
     background-color: white;
     color: #F78513;
     border: 1px solid #F78513;
 }
 
-.HEYoCreative {
+.HEYocondominium {
     width: 60%;
     min-height: 50vh;
     max-height: 60vh;
@@ -63,11 +55,11 @@
     overflow-y: auto;
 }
 
-.HEYoCreative::-webkit-scrollbar {
+.HEYocondominium::-webkit-scrollbar {
     display: none;
 }
 
-.HEYoCreative > button {
+.HEYocondominium > button {
     background-color: #F78513;
     width: 150px;
     color: white;
@@ -76,13 +68,13 @@
     margin: 10px auto;
 }
 
-.HEYoCreative > button:nth-of-type(1) {
+.HEYocondominium > button:nth-of-type(16) {
     background-color: white;
     color: #F78513;
     border: 1px solid #F78513;
 }
 
-.HEYoCreative > button:hover {
+.HEYocondominium > button:hover {
     background-color: white;
     border: 1px solid #F78513;
     color: #F78513;
@@ -90,20 +82,20 @@
 
 /* 440px Mobile resposive */
 @media screen and (max-width: 440px) {
-    .creative_heaven__info {
+    .condominium__info {
         padding: 10px;
     }
     
-    .creative_heaven__info > p {
+    .condominium__info > p {
         margin-bottom: 10px;
         font-size: 14px;
     }
     
-    .creative_heaven__info > h1 {
+    .condominium__info > h1 {
         margin-bottom: 30px;
     }
     
-    .creative_heaven__info > button {
+    .condominium__info > button {
         border-radius: 30px;
         text-transform: inherit;
         margin: 5px;
