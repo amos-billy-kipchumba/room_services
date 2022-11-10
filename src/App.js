@@ -48,6 +48,30 @@ import Protected from './Protected';
 import MoreDetails from "./components/MoreDetails";
 import CreativeHeaven from './components/Filters/CreativeHeaven';
 import Apartment from './components/Filters/Apartment';
+import Bungalow from './components/Filters/Bungalow';
+import Mansion from './components/Filters/Mansion';
+import Villa from './components/Filters/Villa';
+import Palace from './components/Filters/Palace';
+import Castle from './components/Filters/Castle';
+import SplitHouse from './components/Filters/SplitHouse';
+import Tower from './components/Filters/Tower';
+import SplitLevel from './components/Filters/SplitLevel';
+import Ranch from './components/Filters/Ranch';
+import IHouse from './components/Filters/IHouse';
+import LongHouse from './components/Filters/LongHouse';
+import HouseBarn from './components/Filters/HouseBarn';
+import TownHouse from './components/Filters/TownHouse';
+import Condominium from './components/Filters/Condominium';
+import Duplex from './components/Filters/Duplex';
+import Courtyard from './components/Filters/Courtyard';
+import SnoutHouse from './components/Filters/SnoutHouse';
+import Octagon from './components/Filters/Octagon';
+import MobileHome from './components/Filters/MobileHome';
+import ModularBuilding from './components/Filters/ModularBuilding';
+import Cottage from './components/Filters/Cottage';
+import TerracedHouse from './components/Filters/TerracedHouse';
+import FamilyHomes from './components/Filters/FamilyHomes';
+import GableFront from './components/Filters/GableFront';
 
 // import Home from './components/Home';
 const LazyHome = React.lazy(() => import('./components/Home'))
@@ -61,6 +85,30 @@ function App() {
         <div className="App">
           <Header />
           <Routes>
+            <Route exact path="/gable-front" element={ <GableFront /> } />
+            <Route exact path="/single-family-homes" element={ <FamilyHomes /> } />
+            <Route exact path="/terraced-house" element={ <TerracedHouse /> } />
+            <Route exact path="/cottage" element={ <Cottage /> } />
+            <Route exact path="/modular-building" element={ <ModularBuilding /> } />
+            <Route exact path="/mobile-home" element={ <MobileHome /> } />
+            <Route exact path="/octagon" element={ <Octagon /> } />
+            <Route exact path="/snout-house" element={ <SnoutHouse /> } />
+            <Route exact path="/courtyard" element={ <Courtyard /> } />
+            <Route exact path="/duplex" element={ <Duplex /> } />
+            <Route exact path="/condominium" element={ <Condominium /> } />
+            <Route exact path="/town-house" element={ <TownHouse /> } />
+            <Route exact path="/house-barn" element={ <HouseBarn /> } />
+            <Route exact path="/long-house" element={ <LongHouse /> } />
+            <Route exact path="/i-house" element={ <IHouse /> } />
+            <Route exact path="/ranch" element={ <Ranch /> } />
+            <Route exact path="/split-level" element={ <SplitLevel /> } />
+            <Route exact path="/tower" element={ <Tower /> } />
+            <Route exact path="/split-house" element={ <SplitHouse /> } />
+            <Route exact path="/castle" element={ <Castle /> } />
+            <Route exact path="/palace" element={ <Palace /> } />
+            <Route exact path="/villa" element={ <Villa /> } />
+            <Route exact path="/mansion" element={ <Mansion /> } />
+            <Route exact path="/bungalow" element={ <Bungalow /> } />
             <Route exact path="/apartments" element={ <Apartment /> } />
             <Route exact path="/creative-heaven" element={ <CreativeHeaven /> } />
             <Route exact path="/customer-settings" element={ 
