@@ -1,29 +1,60 @@
-const HtmlWebPackPlugin = require('html-webpack-plugin');
-const path = require('path');
+const path = require("path");
+const HtmlWebPackPlugin = require("html-webpack-plugin");
+const getFilesFromDir = require("./config/files");
+const PAGE_DIR = path.join("src", "pages", path.sep);
+
+const htmlPlugins = getFilesFromDir(PAGE_DIR, [".html"]).map( filePath => {
+  const fileName = filePath.replace(PAGE_DIR, "");
+  return new HtmlWebPackPlugin({
+    chunks:[fileName.replace(path.extname(fileName), ""), "vendor"],
+    template: filePath,
+    filename: fileName
+  })
+});
+
+const entry = getFilesFromDir(PAGE_DIR, [".js"]).reduce( (obj, filePath) => {
+  const entryChunkName = filePath.replace(path.extname(filePath), "").replace(PAGE_DIR, "");
+  obj[entryChunkName] = `./${filePath}`;
+  return obj;
+}, {}); 
 
 module.exports = {
-  context: __dirname,
-  entry: './src/index.js',
-  output: {
-    filename: 'main.js',
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: '/',
-  },
-  devServer: {
-    historyApiFallback: true,
+  entry: entry,
+  plugins: [
+    ...htmlPlugins
+  ],
+  resolve:{
+    alias:{
+      src: path.resolve(__dirname, "src"),
+      components: path.resolve(__dirname, "src", "components")
+    }
   },
   module: {
     rules: [
-        {
-            test: /\.js$/,
-            use: 'babel-loader',
+      {
+	test: /\.js$/,
+	exclude: /node_modules/,
+	use: {
+	  loader:"babel-loader",
+	  options:{
+	    presets: [
+	      "@babel/preset-env",
+	      "@babel/preset-react"
+	    ], 
+	  }
+	},
+      }]
+    },
+    optimization: {
+      splitChunks: {
+        cacheGroups: {
+          vendor: {
+            test: /node_modules/,
+            chunks: "initial",
+            name: "vendor",
+            enforce: true
+          }
         }
-    ]
-  },
-  plugins: [
-    new HtmlWebPackPlugin({
-        template: path.resolve(__dirname, 'public/index.html'),
-        filename: 'index.html'
-    })
-  ]
+      }
+    }
 };
