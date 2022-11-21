@@ -172,7 +172,7 @@ class AddHouse extends Component {
                                 })}
                             </select>
                             <textarea name="description" value={this.state.description} placeholder="Enter the description" onChange={this.handleChange} required></textarea>
-                            <input type="number" name="price" value={this.state.price} placeholder="Enter the price in $ /night" onChange={this.handleChange} required />
+                            <input type="number" name="price" value={this.state.price} placeholder="Enter the price in ksh /night" onChange={this.handleChange} required />
                             <Button type="submit" id="submit" style={{ backgroundColor: '#F78513' }}>Submit</Button>
                         </form>
                    </div>
