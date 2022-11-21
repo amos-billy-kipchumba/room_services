@@ -382,8 +382,6 @@ function MoreDetails() {
         },[]);
     //End of Scroll to the top on load
 
-    
-
   return (
     <>
     {loading !== false ?
@@ -1073,22 +1071,23 @@ function MoreDetails() {
                                      :
                                      null}
                                 </div>
-
+            
                                 <Button onClick={handleBookSubmit} disabled={trueFalse2}>
                                     Reserve<BookOnline style={{ marginLeft: '5px' }} />
                                 </Button>
+                                
                                 <p>You won't be charged yet</p>
                                 
-                                {handleMaxGuestNo !== undefined ?
+                                {handleMaxGuestNo === undefined || handleMaxGuestNo === null ?
+                                    null
+                                    :
                                     <div className="strike-price">
                                         <h4>Total price</h4>
                                         <div className='strike-price-top'>
-                                            <p>{numberTag} guest x ${priceTag} x {dayDay} days</p>
-                                            <p>${totalPriceTag}</p>
+                                            <p>{numberTag} guest  x Ksh {priceTag}  x {dayDay} days</p>
+                                            <p>Ksh {totalPriceTag}</p>
                                         </div>
                                     </div>
-                                    :
-                                    null
                                 }
 
                             </div>
