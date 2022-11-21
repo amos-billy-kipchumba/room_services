@@ -51,7 +51,6 @@ class Signin extends Component {
         axios.post(url,data).then(res => {
             if(res.data.status === 200)
             {
-           this.props.navigation('/login-user');
            document.getElementById('submit').innerHTML = "created";
            swal('success','account created successfully you can now proceed to login','success')
             this.setState({
