@@ -154,6 +154,12 @@ function CustomerSecond() {
                         :
                         <Button onClick={(e)=> handleDeleteBooking(object.bid)}>Cancel booking</Button>
                         }
+
+                        {loco6 <= -1 ?
+                          <Button onClick={(e)=> handleDeleteBooking(object.bid)}>Cancel booking</Button>
+                        :
+                          null
+                        }
                       </div>
                     </div>
                 </div>

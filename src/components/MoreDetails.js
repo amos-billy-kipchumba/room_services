@@ -192,7 +192,7 @@ function MoreDetails() {
     const [trueFalse, setTrueFalse] = useState(true);
     const [trueFalse2, setTrueFalse2] = useState(true);
 
-    const [handleMaxGuestNo, setHandleMaxGuestNo] = useState();
+    const [handleMaxGuestNo, setHandleMaxGuestNo] = useState(null);
 
     const time = Math.abs(selectedDate2 - selectedDate);
 
@@ -313,6 +313,7 @@ function MoreDetails() {
                 totalPrice: totalPriceTag,
                 numberOfGuests: handleMaxGuestNo,
                 hourDuration: hours,
+                hostEmail: hostDit.email,
             };
 
             Navigate(`/customer-house-room-reservation/${paramaId}`,{state:{

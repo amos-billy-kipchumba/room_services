@@ -17,6 +17,9 @@ function Checkout() {
     const [endDate] = useState(bookingData.customerEndDateRAW);
     const [customerId] = useState(bookingData.customerId);
     const [totals] = useState(bookingData.totalPrice);
+    const [customer_email] = useState(bookingData.customerEmail);
+    const [customer_first_name] = useState(bookingData.customerFirstName);
+    const [host_email] = useState(bookingData.hostEmail);
 
     const [bookingPhone, setBookingPhone] = useState('');
     const Navigate = useNavigate();
@@ -35,7 +38,10 @@ function Checkout() {
     formData.append('number_of_days', numberOfGuests);
     formData.append('total_price', totals);
     formData.append('booking_phone', bookingPhone);
-    
+    formData.append('customer_email', customer_email);
+    formData.append('customer_first_name', customer_first_name);
+    formData.append('host_email', host_email);
+
     const url = `${BaseURL}/api/add-booking-info`;
     const request = await axios.post(url, formData);
     if(request.data.status === 200) {
