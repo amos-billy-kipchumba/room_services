@@ -1009,7 +1009,7 @@ function MoreDetails() {
                         <div className="right-host-form">
                             <div className='right-host-form-inner'>
                                 {allHousesForMore ?
-                                <h4><span className='strong-text'>${allHousesForMore.price}</span> / night</h4>
+                                <h4><span className='strong-text'>Ksh {allHousesForMore.price}</span> / night</h4>
                                 :
                                 null}
                                 <div className="striker-date">
@@ -1075,7 +1075,7 @@ function MoreDetails() {
                                 <Button onClick={handleBookSubmit} disabled={trueFalse2}>
                                     Reserve<BookOnline style={{ marginLeft: '5px' }} />
                                 </Button>
-                                
+
                                 <p>You won't be charged yet</p>
                                 
                                 {handleMaxGuestNo === undefined || handleMaxGuestNo === null ?
