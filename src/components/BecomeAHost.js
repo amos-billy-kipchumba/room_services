@@ -17,6 +17,7 @@ class BecomeAHost extends Component {
             error_list: [],
             base_url: BaseURL,
             image: '',
+            host_id: '',
         }
         this.handleChange = this.handleChange.bind(this)
         this.saveHost = this.saveHost.bind(this)
@@ -44,6 +45,7 @@ class BecomeAHost extends Component {
         data.append('email', this.state.email);
         data.append('phone', this.state.phone);
         data.append('password', this.state.password);
+        data.append('host_id', this.state.host_id);
         data.append('image', this.state.image);
 
         axios.post(url,data).then(res => {
@@ -91,6 +93,8 @@ class BecomeAHost extends Component {
             <span className='validate-span'>{this.state.error_list.email}</span>
             <input type="text" name="phone" placeholder="Enter your Phone Number" onChange={this.handleChange} value={this.state.phone} />
             <span className='validate-span'>{this.state.error_list.phone}</span>
+            <input type="number" min="1" name="host_id" placeholder="Enter your ID Number" onChange={this.handleChange} value={this.state.host_id} />
+            <span className='validate-span'>{this.state.error_list.host_id}</span>
             <input type="password" name="password" placeholder="Enter your password" onChange={this.handleChange} value={this.state.password} />
             <span className='validate-span'>{this.state.error_list.password}</span>
 

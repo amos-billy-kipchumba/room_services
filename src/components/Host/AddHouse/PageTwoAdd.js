@@ -70,7 +70,6 @@ class PageTwoAdd extends Component {
         e.preventDefault();
         document.getElementById('submit').innerHTML = "sending"
         document.getElementById('submit').disabled = true;
-        console.log(this.state.house_name);
         const url = `${BaseURL}/api/add-fifty-details`;
         const data = new FormData();
         data.append('guests', this.state.guests);
@@ -83,7 +82,7 @@ class PageTwoAdd extends Component {
         axios.post(url,data).then(res => {
             document.getElementById('submit').innerHTML = "sending"
             if(res.data.status === 200) {
-                swal('success','House details added! You are remaining with 50% to completion','success')
+                swal('success','House details added! You are remaining with 60% to completion','success')
             this.setState({
                 guests: '',
                 bedrooms: '',
@@ -128,12 +127,12 @@ class PageTwoAdd extends Component {
                     }
                    </div>
                    <div className="page-two-add__info-right">
-                        <div className="fill-up-detail-header"><p>Add your house/room details:</p> <p><span><strong>50%</strong></span> of completion</p></div>
+                        <div className="fill-up-detail-header"><p>Add your house/room details:</p> <p><span><strong>40%</strong></span> of completion</p></div>
                         <form className="fill-up-detail-form page-two" onSubmit={this.SubmitForm}>
                             <input type="number" min="1" value={this.state.guests} name="guests" onChange={this.handleChange} placeholder="Enter the max-number of Guests" id="back_input" />
                             <input type="number" min="0" value={this.state.bedrooms} name="bedrooms" onChange={this.handleChange} placeholder="Enter the number of bedrooms" id="back_input1" />
                             <input type="number" min="0" value={this.state.beds} name="beds" onChange={this.handleChange} placeholder="Enter the number of beds" id="back_input2" />
-                            <input type="number" min="0" value={this.state.bathtubs} name="bathtubs" onChange={this.handleChange} placeholder="Enter the number of bathtubs" id="back_input3" />
+                            <input type="number" min="0" value={this.state.bathtubs} name="bathtubs" onChange={this.handleChange} placeholder="Enter the number of bathrooms/bathtubs" id="back_input3" />
                             <Button type="submit" id="submit">Submit</Button>
                         </form>
         

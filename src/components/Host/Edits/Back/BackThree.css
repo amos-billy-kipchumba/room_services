@@ -29,7 +29,7 @@
 }
 
 .backThreeMenuBar {
-    background-color: #ff7779;
+    background-color: #F78513;
     padding: 10px;
     cursor: pointer;
     border-radius: 50%;
@@ -78,7 +78,7 @@
 }
 
 .host-navigation > li:hover {
-    background-color: #ff7779;
+    background-color: #F78513;
     color: white;
 }
 
@@ -142,12 +142,12 @@
 .back-third__info-right-buttonOne > button{
     background-color: antiquewhite;
     text-transform: inherit;
-    color: #ff7779;
+    color: #F78513;
     transition: all 0.3s ease-in-out;
 }
 
 .back-third__info-right-buttonOne > button:hover {
-    background-color: #ff7779;
+    background-color: #F78513;
     color: white;
 }
 
@@ -158,12 +158,12 @@
 .back-third__info-right-buttonTwo > button {
     background-color: antiquewhite;
     text-transform: inherit;
-    color: #ff7779;
+    color: #F78513;
     transition: all 0.3s ease-in-out;
 }
 
 .back-third__info-right-buttonTwo > button:hover {
-    background-color: #ff7779;
+    background-color: #F78513;
     color: white;
 }
 
@@ -250,7 +250,7 @@
 }
 
 .fill-up-detail-form-three > button:hover {
-    background-color: #ff7779;
+    background-color: #F78513;
     color: white;
 }
 
@@ -329,7 +329,7 @@
     }
 
     .host-navigation > li:hover {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
     }
     
@@ -393,12 +393,12 @@
     .back-third__info-right-buttonOne > button{
         background-color: antiquewhite;
         text-transform: inherit;
-        color: #ff7779;
+        color: #F78513;
         transition: all 0.3s ease-in-out;
     }
     
     .back-third__info-right-buttonOne > button:hover {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
     }
     
@@ -410,12 +410,12 @@
         background-color: antiquewhite;
         text-transform: inherit;
         margin: 5px auto 5px 5px;
-        color: #ff7779;
+        color: #F78513;
         transition: all 0.3s ease-in-out;
     }
     
     .back-third__info-right-buttonTwo > button:hover {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
     }
     
@@ -503,7 +503,7 @@
     }
     
     .fill-up-detail-form-three > button:hover {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
     }
 }
@@ -585,7 +585,7 @@
     }
 
     .host-navigation > li:hover {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
     }
     
@@ -649,12 +649,12 @@
     .back-third__info-right-buttonOne > button{
         background-color: antiquewhite;
         text-transform: inherit;
-        color: #ff7779;
+        color: #F78513;
         transition: all 0.3s ease-in-out;
     }
     
     .back-third__info-right-buttonOne > button:hover {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
     }
     
@@ -666,12 +666,12 @@
         background-color: antiquewhite;
         text-transform: inherit;
         margin: 5px auto 5px 5px;
-        color: #ff7779;
+        color: #F78513;
         transition: all 0.3s ease-in-out;
     }
     
     .back-third__info-right-buttonTwo > button:hover {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
     }
     
@@ -759,7 +759,7 @@
     }
     
     .fill-up-detail-form-three > button:hover {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
     }
 }
@@ -840,7 +840,7 @@
     }
 
     .host-navigation > li:hover {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
     }
     
@@ -904,12 +904,12 @@
     .back-third__info-right-buttonOne > button{
         background-color: antiquewhite;
         text-transform: inherit;
-        color: #ff7779;
+        color: #F78513;
         transition: all 0.3s ease-in-out;
     }
     
     .back-third__info-right-buttonOne > button:hover {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
     }
     
@@ -921,12 +921,12 @@
         background-color: antiquewhite;
         text-transform: inherit;
         margin: 5px auto 5px 5px;
-        color: #ff7779;
+        color: #F78513;
         transition: all 0.3s ease-in-out;
     }
     
     .back-third__info-right-buttonTwo > button:hover {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
     }
     
@@ -1014,7 +1014,7 @@
     }
     
     .fill-up-detail-form-three > button:hover {
-        background-color: #ff7779;
+        background-color: #F78513;
         color: white;
     }
 }

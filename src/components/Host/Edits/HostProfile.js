@@ -175,11 +175,11 @@ function HostProfile() {
                         style={{ display: 'none' }}
                         ref={fileInputRef} />
 
-                        <input type="text" placeholder="Your first name" name="profileFirst" value={profileFirst} onChange={(e)=>setProfileFirst(e.target.value)} />
-                        <input type="text" placeholder="Your last name" name="profileLast" value={profileLast} onChange={(e)=>setProfileLast(e.target.value)} />
-                        <input type="email" placeholder="Your email address" name="profileEmail" value={profileEmail} onChange={(e)=>setProfileEmail(e.target.value)} />
-                        <input type="phone" placeholder="Your phone number" name="profilePhone" value={profilePhone} onChange={(e)=>setProfilePhone(e.target.value)} />
-                        <input type="password" placeholder="Your password" name="title" value={profilePassword} onChange={(e)=>setProfilePassword(e.target.value)} />
+                        <input type="text" placeholder="Your first name" name="profileFirst" value={profileFirst} onChange={(e)=>setProfileFirst(e.target.value)} required />
+                        <input type="text" placeholder="Your last name" name="profileLast" value={profileLast} onChange={(e)=>setProfileLast(e.target.value)} required />
+                        <input type="email" placeholder="Your email address" name="profileEmail" value={profileEmail} onChange={(e)=>setProfileEmail(e.target.value)} required />
+                        <input type="phone" placeholder="Your phone number" name="profilePhone" value={profilePhone} onChange={(e)=>setProfilePhone(e.target.value)} required />
+                        <input type="password" placeholder="Your password" name="title" value={profilePassword} onChange={(e)=>setProfilePassword(e.target.value)} required />
                         <Button type="submit">submit</Button>
                     </div>
                 </form>

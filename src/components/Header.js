@@ -180,7 +180,11 @@ function Header() {
                                 }}>Sign in</span>
                                 </>
                             }
+                            {userData ? 
                             <Button onClick={handleNowLogOut}>Log out</Button>
+                            :
+                            null
+                            }
                             <Button onClick={()=> {
                                 setShowLogOut(!showLogOut)
                             }}><Close /></Button>

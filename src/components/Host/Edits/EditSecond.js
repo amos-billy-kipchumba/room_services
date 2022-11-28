@@ -150,13 +150,14 @@ function EditSecond() {
                   <input type="number" name="price" value={editBathtubs} placeholder={realDetails.price} onChange={(e)=>setEditBathtubs(e.target.value)} />
                 </div>
 
-                <div className="edit-second__info-right-buttonOne"><Button type="submit">Update (2/4) </Button></div>
+                <div className="edit-second__info-right-buttonOne"><Button type="submit">Update (2/5) </Button></div>
 
                 <div className="edit-second__info-right-buttonTwo">
                     <Button onClick={()=> Navigate(`/edit-first/${paramaId}`)} style={{ marginRight: '10px' }}>Page 1</Button>
                     <Button style={{ marginRight: '10px', backgroundColor: '#F78513', color: 'white' }} id="updated">Page 2</Button>
                     <Button onClick={()=> Navigate(`/edit-third/${paramaId}`)} style={{ marginRight: '10px' }}>Page 3</Button>
-                    <Button onClick={()=> Navigate(`/edit-four/${paramaId}`)}>Page 4</Button>
+                    <Button onClick={()=> Navigate(`/edit-four/${paramaId}`)} style={{ marginRight: '10px' }}>Page 4</Button>
+                    <Button onClick={()=> Navigate(`/edit-five/${paramaId}`)}>Page 5</Button>
                 </div>
               </form>
              </div>

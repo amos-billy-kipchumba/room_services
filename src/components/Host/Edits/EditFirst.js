@@ -233,13 +233,14 @@ function EditFirst() {
                   </select>
                 </div>
 
-                <div className="edit-first__info-right-buttonOne"><Button type="submit">Update (1/4) </Button></div>
+                <div className="edit-first__info-right-buttonOne"><Button type="submit">Update (1/5) </Button></div>
 
                 <div className="edit-first__info-right-buttonTwo">
                 <Button onClick={()=> Navigate('/edit-first')} style={{ marginRight: '10px', backgroundColor: '#F78513', color: 'white' }} id="updated">Page 1</Button>
                 <Button onClick={()=> Navigate(`/edit-second/${paramaId}`)} style={{ marginRight: '10px' }}>Page 2</Button>
                 <Button onClick={()=> Navigate(`/edit-third/${paramaId}`)} style={{ marginRight: '10px' }}>Page 3</Button>
-                <Button onClick={()=> Navigate(`/edit-four/${paramaId}`)}>Page 4</Button>
+                <Button onClick={()=> Navigate(`/edit-four/${paramaId}`)} style={{ marginRight: '10px' }}>Page 4</Button>
+                <Button onClick={()=> Navigate(`/edit-five/${paramaId}`)}>Page 5</Button>
                 </div>
               </form>
              </div>

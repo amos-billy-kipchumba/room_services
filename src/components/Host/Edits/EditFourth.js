@@ -1827,13 +1827,14 @@ function EditFourth() {
                 </div>
                 
 
-                <div className="edit-fourth__info-right-buttonOne"><Button type="submit">Update (4/4) </Button></div>
+                <div className="edit-fourth__info-right-buttonOne"><Button type="submit">Update (4/5) </Button></div>
 
                 <div className="edit-fourth__info-right-buttonTwo">
                 <Button onClick={()=> Navigate(`/edit-first/${paramaId}`)} style={{ marginRight: '10px' }}>Page 1</Button>
                 <Button onClick={()=> Navigate(`/edit-second/${paramaId}`)} style={{ marginRight: '10px' }}>Page 2</Button>
                 <Button onClick={()=> Navigate(`/edit-third/${paramaId}`)} style={{ marginRight: '10px' }}>Page 3</Button>
-                <Button onClick={()=> Navigate(`/edit-four/${paramaId}`)} style={{ backgroundColor: '#F78513', color: 'white' }} id="updated">Page 4</Button>
+                <Button onClick={()=> Navigate(`/edit-four/${paramaId}`)} style={{ backgroundColor: '#F78513', color: 'white', marginRight: '10px' }} id="updated">Page 4</Button>
+                <Button onClick={()=> Navigate(`/edit-five/${paramaId}`)}>Page 5</Button>
                 </div>
               </form>
              </div>

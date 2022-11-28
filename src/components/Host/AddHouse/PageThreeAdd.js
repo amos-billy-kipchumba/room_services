@@ -4,7 +4,7 @@ import Button from '@mui/material/Button';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
 
-import { FaBath, FaToiletPaper, FaTv, FaTemperatureHigh, FaWifi, FaBreadSlice, FaUtensils, FaToilet } from "react-icons/fa";
+import { FaBath, FaToiletPaper, FaTv, FaTemperatureHigh, FaWifi, FaBreadSlice, FaUtensils, FaToilet, FaWineBottle } from "react-icons/fa";
 import LocalLaundryServiceIcon from '@mui/icons-material/LocalLaundryService';
 import DryCleaningIcon from '@mui/icons-material/DryCleaning';
 import IronIcon from '@mui/icons-material/Iron';
@@ -27,7 +27,7 @@ import Drier from '../../Images/drier.jpg'
 import KitchenIcon from '@mui/icons-material/Kitchen';
 import BaseURL from '../../BaseUrl';
 import swal from 'sweetalert';
-import { Add, BeachAccessTwoTone, Camera, ChildCare, Edit, Grass, HeatPump, Landscape, MoreHoriz, ShoppingBag, Shower, SportsSoccer } from '@mui/icons-material';
+import { Add, BabyChangingStation, BeachAccessTwoTone, Camera, ChildCare, Edit, Grass, HeatPump, Landscape, MoreHoriz, ShoppingBag, Shower, SportsSoccer } from '@mui/icons-material';
 class PageThreeAdd extends Component {
     constructor() {
       super()
@@ -72,6 +72,9 @@ class PageThreeAdd extends Component {
          chef: 0,
          shopping: 0,
          toilet: 0,
+
+         mini_bar: 0,
+         baby_cot: 0,
 
          user: '',
          userId: '',
@@ -121,6 +124,9 @@ class PageThreeAdd extends Component {
       this.handleChange37 = this.handleChange37.bind(this)
       this.handleChange38 = this.handleChange38.bind(this)
       this.handleChange39 = this.handleChange39.bind(this)
+
+      this.handleChange50 = this.handleChange50.bind(this)
+      this.handleChange51 = this.handleChange51.bind(this)
 
       this.handleMenuBar = this.handleMenuBar.bind(this)
     }
@@ -329,6 +335,18 @@ class PageThreeAdd extends Component {
         });
     }
 
+    handleChange50 = () => {
+        this.setState({
+            mini_bar: 1,
+        });
+    }
+
+    handleChange51 = () => {
+        this.setState({
+            baby_cot: 1,
+        });
+    }
+
     componentDidMount = async () => {
         const userData = JSON.parse(localStorage.getItem('user-info'));
         const userInfo = userData;
@@ -405,12 +423,15 @@ class PageThreeAdd extends Component {
         data.append('office_equipment', this.state.office_equipment);
         data.append('toilet', this.state.toilet);
 
+        data.append('mini_bar', this.state.mini_bar);
+        data.append('baby_cot', this.state.baby_cot);
+
         data.append('userId', this.state.user);
         data.append('house_id', this.state.house_id);
 
         axios.post(url,data).then(res => {
             if(res.data.status === 200){
-            swal('success','House details added! You are remaining with 25% to completion','success')
+            swal('success','House details added! You are remaining with 40% to completion','success')
             this.setState({
                 bathtub: '',
                 hair_drier: '',
@@ -438,6 +459,7 @@ class PageThreeAdd extends Component {
                 parking: '',
                 long_term: '',
                 private_entrance: '',
+                mini_bar: '',
             });
             this.props.navigation('/add-house-host-page-four');
             }
@@ -475,7 +497,7 @@ class PageThreeAdd extends Component {
            </div>
            <div className="page-three-add__info-right">
                 <div className="fill-up-detail-header">
-                    <p>Add your house/room details:</p> <p><span><strong>75%</strong></span> to completion</p>
+                    <p>Add your house/room details:</p> <p><span><strong>60%</strong></span> to completion</p>
                 </div>
                 <div className='what-the-place-offers'>
                     <p>What the place offer [select if it exists]</p>
@@ -510,12 +532,20 @@ class PageThreeAdd extends Component {
                             <div className='icon-name-value'>
                                 <div className='icon-name-value-one'><input type="checkbox" id="back_input4" name="essentials" value={this.state.essentials} onChange={this.handleChange5} /></div> <div className='icon-name-value-two'><span>Essentials</span></div> <div className='icon-name-value-three'><span><FaToiletPaper /></span></div>
                             </div>
+
+                            <div className='icon-name-value'>
+                                <div className='icon-name-value-one'><input type="checkbox" id="back_input51" name="baby_cot" value={this.state.baby_cot} onChange={this.handleChange51} /></div> <div className='icon-name-value-two'><span>Baby cot</span></div> <div className='icon-name-value-three'><span><BabyChangingStation /></span></div>
+                            </div>
                             <div className='icon-name-value' style={{ borderBottom: '1px solid antiquewhite' }}>
                                 <div className='icon-name-value-one'><input type="checkbox" id="back_input5" name="iron" value={this.state.iron} onChange={this.handleChange6} /></div> <div className='icon-name-value-two'><span>Iron</span></div> <div className='icon-name-value-three'><span><IronIcon /></span></div>
                             </div>
                             <h4><strong>Entertainment</strong></h4>
                             <div className='icon-name-value'>
                                 <div className='icon-name-value-one'><input type="checkbox" id="back_input6" name="tv" value={this.state.tv} onChange={this.handleChange7} /></div> <div className='icon-name-value-two'><span>TV</span></div> <div className='icon-name-value-three'><span><FaTv /></span></div>
+                            </div>
+
+                            <div className='icon-name-value'>
+                                <div className='icon-name-value-one'><input type="checkbox" id="back_input50" name="mini_bar" value={this.state.mini_bar} onChange={this.handleChange50} /></div> <div className='icon-name-value-two'><span>Mini bar</span></div> <div className='icon-name-value-three'><span><FaWineBottle /></span></div>
                             </div>
 
                             <div className='icon-name-value' style={{ borderBottom: '1px solid antiquewhite' }}>
