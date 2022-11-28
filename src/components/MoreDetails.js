@@ -2,7 +2,7 @@
 import React, {useState, useEffect} from 'react'
 import './MoreDetails.css'
 import Button from '@mui/material/Button';
-import { FaSwimmingPool, FaUpload, FaRegStar, FaRegCalendarTimes, FaBed, FaToilet, FaUtensils, FaPencilRuler } from 'react-icons/fa';
+import { FaSwimmingPool, FaRegStar, FaRegCalendarTimes, FaBed, FaToilet, FaUtensils, FaPencilRuler } from 'react-icons/fa';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import Slider from './Slider';
 import {useParams} from 'react-router-dom'
@@ -30,7 +30,7 @@ import NoMeetingRoomIcon from '@mui/icons-material/NoMeetingRoom';
 import LocalDiningIcon from '@mui/icons-material/LocalDining';
 import Drier from './Images/drier.jpg'
 import KitchenIcon from '@mui/icons-material/Kitchen';
-import { BeachAccessTwoTone, BookOnline, Camera, ChildCare, ContactMail, Favorite, Grass, HeatPump, Landscape, ShoppingBag, Shower, SportsSoccer} from '@mui/icons-material';
+import { BeachAccessTwoTone, BookOnline, Camera, ChildCare, Close, ContactMail, Favorite, Grass, HeatPump, Landscape, MiscellaneousServices, ShoppingBag, Shower, SportsSoccer} from '@mui/icons-material';
 import MoreDetailsLoader from '../MoreDetailsLoader';
 
 import DatePicker from "react-datepicker";
@@ -57,6 +57,9 @@ function MoreDetails() {
     const params = useParams();
     const paramaId = params.id;
 
+    var [nomaCount] = useState([]);
+    var [outputNoma] = useState([]);
+
 
     const [allHousesForMore, setAllHousesForMore] = useState([]);
     useEffect(()=>{
@@ -64,12 +67,110 @@ function MoreDetails() {
             const userPin = paramaId;
             const request = await axios.get(`${BaseURL}/api/get-all-house-more-details/${userPin}`);
             if(request.data.status === 200){
-                setAllHousesForMore(request.data.bookingInfoForHost[0])
+                setAllHousesForMore(request.data.bookingInfoForHost[0]);
+                if(request.data.bookingInfoForHost[0].aqua_farm === "1") {
+                    nomaCount.push("aqua_farm");
+                }
+
+
+                if(request.data.bookingInfoForHost[0].barber === "1") {
+                    nomaCount.push("barber")
+                }
+
+                if(request.data.bookingInfoForHost[0].bookshop === "1") {
+                    nomaCount.push("bookshop")
+                }
+
+                if(request.data.bookingInfoForHost[0].butchery === "1") {
+                    nomaCount.push("butchery")
+                }
+
+                if(request.data.bookingInfoForHost[0].cake_baker === "1") {
+                    nomaCount.push("cake_baker")
+                }
+
+                if(request.data.bookingInfoForHost[0].chef === "1") {
+                    nomaCount.push("chef")
+                }
+
+                if(request.data.bookingInfoForHost[0].chemist === "1") {
+                    nomaCount.push("chemist")
+                }
+
+                if(request.data.bookingInfoForHost[0].creamy_inn === "1") {
+                    nomaCount.push("creamy_inn")
+                }
+
+                if(request.data.bookingInfoForHost[0].event_planner === "1") {
+                    nomaCount.push("event_planner")
+                }
+
+                if(request.data.bookingInfoForHost[0].grocery_store === "1") {
+                    nomaCount.push("grocery_store")
+                }
+
+                if(request.data.bookingInfoForHost[0].hotel === "1") {
+                    nomaCount.push("hotel")
+                }
+
+                if(request.data.bookingInfoForHost[0].kfc === "1") {
+                    nomaCount.push("kfc")
+                }
+
+                if(request.data.bookingInfoForHost[0].java === "1") {
+                    nomaCount.push("java")
+                }
+
+                if(request.data.bookingInfoForHost[0].library === "1") {
+                    nomaCount.push("library")
+                }
+
+                if(request.data.bookingInfoForHost[0].maasai_market === "1") {
+                    nomaCount.push("maasai_market")
+                }
+
+                if(request.data.bookingInfoForHost[0].min_mart === "1") {
+                    nomaCount.push("min_mart")
+                }
+
+                if(request.data.bookingInfoForHost[0].organic_farm === "1") {
+                    nomaCount.push("organic_farm")
+                }
+
+                if(request.data.bookingInfoForHost[0].petrol_station === "1") {
+                    nomaCount.push("petrol_station")
+                }
+
+                if(request.data.bookingInfoForHost[0].pizza_inn === "1") {
+                    nomaCount.push("pizza_inn")
+                }
+
+                if(request.data.bookingInfoForHost[0].supermarket === "1") {
+                    nomaCount.push("supermarket")
+                }
+
+                if(request.data.bookingInfoForHost[0].ranch === "1") {
+                    nomaCount.push("ranch")
+                }
+
+                if(request.data.bookingInfoForHost[0].spice_mart === "1") {
+                    nomaCount.push("spice_mart")
+                }
+
+                if(request.data.bookingInfoForHost[0].tent_hire === "1") {
+                    nomaCount.push("tent_hire")
+                }
+
+                nomaCount.forEach((item) => {
+                    if (outputNoma.indexOf(item) === -1) {
+                      outputNoma.push(item);
+                    }
+                  })
                 setLoading(false);
             }
         }
         getAllForMoreDetails();
-    },[paramaId]);
+    },[paramaId, nomaCount, outputNoma]);
 
     //booked dates converter
 
@@ -376,6 +477,9 @@ function MoreDetails() {
     }
 
 
+    const [showExploreMore, setShowExploreMore] = useState(false);
+
+
     //Scroll to the top on load
         useEffect(()=>{
             window.scrollTo({top: 0, left: 0, behavior: 'smooth'})
@@ -404,7 +508,9 @@ function MoreDetails() {
                     null
                 }
                     <div className='button-share'>
-                        <Button><span><FaUpload /></span>Share</Button>
+                        <Button onClick={()=>{
+                            setShowExploreMore(!showExploreMore);
+                        }}><span><MiscellaneousServices /></span>Nearby services</Button>
                         {trueLike === false ?
                         <Button
                         onClick={handleLike}><span><FavoriteBorderIcon /></span>like</Button>
@@ -1098,6 +1204,241 @@ function MoreDetails() {
                 </div>
             </div>
         </div>
+
+        {showExploreMore === false ? 
+        null 
+        :
+        <div className='explore-nearby-services' id="all_about_noma">
+            <h4>Nearby services</h4>
+            <Button onClick={()=>{
+                setShowExploreMore(!showExploreMore);
+            }}><Close /> </Button>
+            <div className='explore-nearby-services-wrapper'>
+                {allHousesForMore.aqua_farm === "1" ?
+                <div className='explore-nearby-services-wrapper-child'>
+                    <label>Aqua farm</label>
+                    <p>{allHousesForMore.aqua_farm_distance} km</p>
+                </div>
+                :
+                null
+                }
+
+                {allHousesForMore.barber === "1" ?
+                <div className='explore-nearby-services-wrapper-child'>
+                    <label>Barber shop</label>
+                    <p>{allHousesForMore.barber_distance} km</p>
+                </div>
+                :
+                null
+                }
+
+                {allHousesForMore.bookshop === "1" ?
+                <div className='explore-nearby-services-wrapper-child'>
+                    <label>Bookshop</label>
+                    <p>{allHousesForMore.bookshop_distance} km</p>
+                </div>
+                :
+                null
+                }
+
+                {allHousesForMore.butchery === "1" ?
+                <div className='explore-nearby-services-wrapper-child'>
+                    <label>Butchery</label>
+                    <p>{allHousesForMore.butchery_distance} km</p>
+                </div>
+                :
+                null
+                }
+
+                {allHousesForMore.cake_baker === "1" ?
+                <div className='explore-nearby-services-wrapper-child'>
+                    <label>Cake baker</label>
+                    <p>{allHousesForMore.cake_baker_distance} km</p>
+                </div>
+                :
+                null
+                }
+
+                {allHousesForMore.chef === "1" ?
+                <div className='explore-nearby-services-wrapper-child'>
+                    <label>Chef</label>
+                    <p>{allHousesForMore.chef_distance} km</p>
+                </div>
+                :
+                null
+                }
+
+                {allHousesForMore.chemist === "1" ?
+                <div className='explore-nearby-services-wrapper-child'>
+                    <label>Chemist</label>
+                    <p>{allHousesForMore.chemist_distance} km</p>
+                </div>
+                :
+                null
+                }
+
+                {allHousesForMore.creamy_inn === "1" ?
+                <div className='explore-nearby-services-wrapper-child'>
+                    <label>Creamy inn</label>
+                    <p>{allHousesForMore.creamy_inn_distance} km</p>
+                </div>
+                :
+                null
+                }
+
+                {allHousesForMore.event_planner === "1" ?
+                <div className='explore-nearby-services-wrapper-child'>
+                    <label>Event planner</label>
+                    <p>{allHousesForMore.event_planner_distance} km</p>
+                </div>
+                :
+                null
+                }
+
+                {allHousesForMore.grocery_store === "1" ?
+                <div className='explore-nearby-services-wrapper-child'>
+                    <label>Grocery store</label>
+                    <p>{allHousesForMore.grocery_store_distance} km</p>
+                </div>
+                :
+                null
+                }
+
+                {allHousesForMore.hotel === "1" ?
+                <div className='explore-nearby-services-wrapper-child'>
+                    <label>Hotel</label>
+                    <p>{allHousesForMore.hotel_distance} km</p>
+                </div>
+                :
+                null
+                }
+
+                {allHousesForMore.java === "1" ?
+                <div className='explore-nearby-services-wrapper-child'>
+                    <label>Java</label>
+                    <p>{allHousesForMore.java_distance} km</p>
+                </div>
+                :
+                null
+                }
+
+                {allHousesForMore.kfc === "1" ?
+                <div className='explore-nearby-services-wrapper-child'>
+                    <label>KFC</label>
+                    <p>{allHousesForMore.kfc_distance} km</p>
+                </div>
+                :
+                null
+                }
+
+                {allHousesForMore.library === "1" ?
+                <div className='explore-nearby-services-wrapper-child'>
+                    <label>Library</label>
+                    <p>{allHousesForMore.library_distance} km</p>
+                </div>
+                :
+                null
+                }
+
+                {allHousesForMore.maasai_market === "1" ?
+                <div className='explore-nearby-services-wrapper-child'>
+                    <label>Maasai market</label>
+                    <p>{allHousesForMore.maasai_market_distance} km</p>
+                </div>
+                :
+                null
+                }
+
+                {allHousesForMore.mini_mart === "1" ?
+                <div className='explore-nearby-services-wrapper-child'>
+                    <label>Mini mart</label>
+                    <p>{allHousesForMore.mini_mart_distance} km</p>
+                </div>
+                :
+                null
+                }
+
+                {allHousesForMore.organic_farm === "1" ?
+                <div className='explore-nearby-services-wrapper-child'>
+                    <label>Organic farm</label>
+                    <p>{allHousesForMore.organic_farm_distance} km</p>
+                </div>
+                :
+                null
+                }
+
+                {allHousesForMore.petrol_station === "1" ?
+                <div className='explore-nearby-services-wrapper-child'>
+                    <label>Petrol station</label>
+                    <p>{allHousesForMore.petrol_station_distance} km</p>
+                </div>
+                :
+                null
+                }
+
+                {allHousesForMore.pizza_inn === "1" ?
+                <div className='explore-nearby-services-wrapper-child'>
+                    <label>Pizza inn</label>
+                    <p>{allHousesForMore.pizza_inn_distance} km</p>
+                </div>
+                :
+                null
+                }
+
+                {allHousesForMore.ranch === "1" ?
+                <div className='explore-nearby-services-wrapper-child'>
+                    <label>Ranch</label>
+                    <p>{allHousesForMore.ranch_distance} km</p>
+                </div>
+                :
+                null
+                }
+
+                {allHousesForMore.salon === "1" ?
+                <div className='explore-nearby-services-wrapper-child'>
+                    <label>Salon</label>
+                    <p>{allHousesForMore.salon_distance} km</p>
+                </div>
+                :
+                null
+                }
+
+                {allHousesForMore.spice_mart === "1" ?
+                <div className='explore-nearby-services-wrapper-child'>
+                    <label>Spice mart</label>
+                    <p>{allHousesForMore.spice_mart_distance} km</p>
+                </div>
+                :
+                null
+                }
+
+                {allHousesForMore.supermarket === "1" ?
+                <div className='explore-nearby-services-wrapper-child'>
+                    <label>Supermarket</label>
+                    <p>{allHousesForMore.supermarket_distance} km</p>
+                </div>
+                :
+                null
+                }
+
+                {allHousesForMore.tent_hire === "1" ?
+                <div className='explore-nearby-services-wrapper-child'>
+                    <label>Tent hire</label>
+                    <p>{allHousesForMore.tent_hire_distance} km</p>
+                </div>
+                :
+                null
+                }
+            </div>
+            {outputNoma.length <= 9 ? 
+            null
+            :
+            <Button onClick={()=>{
+                setShowExploreMore(!showExploreMore);
+            }}><Close /> </Button>
+            }
+        </div>
+        }
 
     </div>
     }

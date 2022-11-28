@@ -245,7 +245,7 @@ function Ranch() {
                         location={`${item.location}`}
                         description={`${item.max_no_of_guests} guests . ${item.number_of_bedrooms} bedrooms . ${item.number_of_beds} beds . ${item.number_of_bathtubs} bathrooms`}
                         star={4.73}
-                        price={`$${item.price} / night`}
+                        price={`Ksh ${item.price} / night`}
                         />
                         </div>
                     );

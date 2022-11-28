@@ -115,7 +115,7 @@ class AddHouse extends Component {
             localStorage.setItem("house_data_detail_api", JSON.stringify(res.data.house_details_data));
             document.getElementById('submit').disabled = "true";
             document.getElementById('submit').innerHTML = "posted";
-            swal('success','House details added! You are remaining with 75% to completion','success');
+            swal('success','House details added! You are remaining with 80% to completion','success');
             this.props.navigation('/add-house-host-page-two');
         })
     }
@@ -157,7 +157,7 @@ class AddHouse extends Component {
                     }
                    </div>
                    <div className="add-house-host__info-right">
-                        <div className="fill-up-detail-header"><p>Add your house details:</p> <p><span><strong>25%</strong></span> of completion</p></div>
+                        <div className="fill-up-detail-header"><p>Add your house details:</p> <p><span><strong>20%</strong></span> of completion</p></div>
                         <form className="fill-up-detail-form" encType='multipart/form-data' onSubmit={this.handleSubmit}>
                             <label>Enter house cover image</label>
                             <input type="file" name="image" value={this.state.houseCoverImage} onChange={this.handleImage} required />

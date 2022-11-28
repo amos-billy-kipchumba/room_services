@@ -243,7 +243,7 @@ class PageFourAdd extends Component {
         axios.post(url,data).then(res => {
             if(res.data.status === 200) {
                 document.getElementById("submit").innerHTML = "congrats";
-                swal('success','Congrats! You have successfully added a house','success');
+                swal('success','House details added! You are remaining with 20% to completion','success');
                 this.setState({
                     sitting_room: '',
                     dinning_room: '',
@@ -262,7 +262,7 @@ class PageFourAdd extends Component {
                     back: '',
                     aerial: '',
                 });
-                this.props.navigation('/host-houses');
+                this.props.navigation('/add-house-host-page-five');
             }
         })
     }
@@ -297,7 +297,7 @@ class PageFourAdd extends Component {
             }
            </div>
            <div className="page-four-add__info-right grown-ups">
-                <div className="fill-up-detail-header"><p>Add your house/room details:</p> <p><span><strong>100%</strong></span> to completion</p></div>
+                <div className="fill-up-detail-header"><p>Add your house/room details:</p> <p><span><strong>80%</strong></span> to completion</p></div>
                 <p>House Images<strong>(they are optional)</strong></p>
                 <form className='tough-tech' onSubmit={this.handleSubmit}>
                     <div className='now-house-images'>
@@ -367,7 +367,7 @@ class PageFourAdd extends Component {
                             <input type="file" name="aerial" value={this.state.houseCoverImage16} onChange={this.handleImage16} />
                         </div>
                     </div>
-                    <Button type="submit" id="submit">Finish</Button>
+                    <Button type="submit" id="submit">Next</Button>
                 </form>
                 <Button onClick={()=>{
                     this.props.navigation(`/back-third/${this.state.house_id}`);

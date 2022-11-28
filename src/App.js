@@ -23,6 +23,7 @@ import Footer from './components/Footer';
 import ForgotPassword from './components/ForgotPassword';
 import Header from './components/Header';
 import {AddHouseWithRouter} from "./components/Host/AddHouse/AddHouse";
+import { PageFiveAddWithRouter } from './components/Host/AddHouse/PageFiveAdd';
 import {PageFourAddWithRouter} from "./components/Host/AddHouse/PageFourAdd";
 import {PageThreeAddWithRouter} from "./components/Host/AddHouse/PageThreeAdd";
 import {PageTwoAddWithRouter} from "./components/Host/AddHouse/PageTwoAdd";
@@ -72,6 +73,7 @@ import Cottage from './components/Filters/Cottage';
 import TerracedHouse from './components/Filters/TerracedHouse';
 import FamilyHomes from './components/Filters/FamilyHomes';
 import GableFront from './components/Filters/GableFront';
+import EditFive from './components/Host/Edits/EditFive';
 
 // import Home from './components/Home';
 const LazyHome = React.lazy(() => import('./components/Home'))
@@ -177,6 +179,9 @@ function App() {
             <Route exact path="/customer-main-account" element={ 
               <Protected Cmp={CustomerFirst} />
              } />
+             <Route exact path="/edit-five/:id" element={ 
+              <Protected Cmp={EditFive} />
+             } />
             <Route exact path="/edit-four/:id" element={ 
               <Protected Cmp={EditFourth} />
              } />
@@ -188,6 +193,9 @@ function App() {
              } />
             <Route exact path="/edit-first/:id" element={ 
               <Protected Cmp={EditFirst} />
+             } />
+             <Route exact path="/add-house-host-page-five" element={ 
+              <Protected Cmp={PageFiveAddWithRouter} />
              } />
             <Route exact path="/add-house-host-page-four" element={ 
               <Protected Cmp={PageFourAddWithRouter} />

@@ -189,11 +189,11 @@ function BackThree() {
             setBoxChecked22(true);
         }
         setEditPool(love.data.stars.pool);
-        if(love.data.stars.Pool === "1"){
+        if(love.data.stars.pool === "1"){
             setBoxChecked23(true);
         }
         setEditParking(love.data.stars.parking);
-        if(love.data.stars.Parking === "1"){
+        if(love.data.stars.parking === "1"){
             setBoxChecked24(true);
         }
         setEditLong(love.data.stars.long_term);
@@ -590,7 +590,7 @@ function BackThree() {
                 {showMenuBar ?
               <ul className='host-navigation'>
                 <li><Link to="/main-host-account" className='lilo-link'>DashBoard</Link></li>
-                <li style={{ backgroundColor: '#ff7779' }}><Link to="/host-houses" className='lilo-link'>Your houses</Link></li>
+                <li style={{ backgroundColor: '#F78513' }}><Link to="/host-houses" className='lilo-link'>Your houses</Link></li>
                 <li><Link to="/add-house-host" className='lilo-link'><Add /> house</Link></li>
                 <li>Tenants Details</li>
                 <li onClick={()=> Navigate('/host-profile')}>Host Profile</li>
@@ -699,7 +699,7 @@ function BackThree() {
                 <div className="back-third__info-right-buttonOne"><Button type="submit">Update (3/4) </Button></div>
 
                 <div className="back-third__info-right-buttonTwo">
-                    <Button onClick={()=> Navigate(`/add-house-host-page-four`)} style={{ marginRight: '10px', backgroundColor: '#ff7779', color: 'white' }} id="updated">next</Button>
+                    <Button onClick={()=> Navigate(`/add-house-host-page-four`)} style={{ marginRight: '10px', backgroundColor: '#F78513', color: 'white' }} id="updated">next</Button>
                 </div>
               </form>
              </div>

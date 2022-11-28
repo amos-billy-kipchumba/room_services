@@ -1,4 +1,4 @@
-.edit-second__page {
+.edit-five__page {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -6,13 +6,13 @@
     padding: 10px 20px;
 }
 
-.edit-second__info {
+.edit-five__info {
     width: 100%;
     min-height: 80vh;
     display: flex;
 }
 
-.edit-second__info-left {
+.edit-five__info-left {
     flex: 1;
     width: 100%;
     min-height: 100%;
@@ -28,15 +28,15 @@
     margin-top: 10px;
 }
 
-.editSecondMenuBar {
+.editFirstMenuBar {
     background-color: #F78513;
     padding: 10px;
+    border-radius: 50%;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
-    border-radius: 50%;
 }
 
-.editSecondMenuBar:hover {
+.editFirstMenuBar:hover {
     color: white;
 }
 
@@ -53,7 +53,7 @@
     border-radius: 100%;
 }
 
-.edit-second__info-left > p {
+.edit-five__info-left > p {
     margin: 20px 10px 10px 10px;
 }
 
@@ -82,7 +82,7 @@
     color: white;
 }
 
-.edit-second__info-right {
+.edit-five__info-right {
     flex: 4;
     width: 100%;
     min-height: 100%;
@@ -91,85 +91,136 @@
     display: flex;
     justify-content: space-evenly;
 }
-.edit-second__info-right-block {
+.edit-five__info-right-block {
     display: flex;
     flex-direction: column;
     margin: 10px auto;
     border: 1px solid antiquewhite;
-    padding: 10px;
+    width: 80%;
+    justify-content: center;
 }
-.edit-second__info-right-image-container {
+
+.stress-tupu {
+    width: 100%;
+    min-height: 10vh;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.stress-container {
+    width: 30%;
+    min-height: 10vh;
+    border: 1px solid antiquewhite;
+    border-radius: 10px;
+    margin: 10px auto;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
-.edit-second__info-right-image-container > input {
+
+.stress-container > h4 {
+    margin: 5px auto 0 auto;
+}
+
+.stress-container > input:nth-of-type(1) {
+    margin: 5px auto 0 auto;
+}
+
+
+.stress-container > input:nth-of-type(2) {
+    margin: 5px auto;
+    border: 1px solid lightgray;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.edit-five__info-right-image-container {
+    display: flex;
+    flex-direction: column;
+    margin: 10px auto;
+}
+
+.edit-five__info-right-input {
+    align-self: center;
+}
+.edit-five__info-right-image-container > input {
     margin: 20px 20px;
 }
 
-.edit-second__info-right-image {
+.edit-five__info-right-image {
     width: 30vw;
     height: 40vh;
     border-radius: 10px;
+    position: relative;
 }
 
-.edit-second__info-right-image > img {
+.edit-five__info-right-image > img {
     width: 100%;
     height: 100%;
     object-fit: fill;
     border-radius: 10px;
 }
 
-.edit-second__info-right-input {
+.edit-five__info-right-input {
     display: flex;
     align-items: center;
     margin: 10px 10px;
 }
 
-.edit-second__info-right-input > label {
-    width: 10vw;
+.edit-five__info-right-input > label {
+    min-width: 8vw;
     padding: 10px;
 }
 
-.edit-second__info-right-input > input {
+.edit-five__info-right-input > input {
+    width: 20vw;
+    padding: 10px;
+}
+.edit-five__info-right-input > textarea {
+    width: 20vw;
     padding: 10px;
 }
 
+.edit-five__info-right-input > select {
+    width: 20vw;
+    padding: 10px;
+}
 
-.edit-second__info-right-buttonOne {
+.edit-five__info-right-buttonOne {
     margin: 10px auto;
 }
 
-.edit-second__info-right-buttonOne > button{
+.edit-five__info-right-buttonOne > button{
     background-color: antiquewhite;
     text-transform: inherit;
     color: #F78513;
     transition: all 0.3s ease-in-out;
 }
 
-.edit-second__info-right-buttonOne > button:hover {
+.edit-five__info-right-buttonOne > button:hover {
     background-color: #F78513;
     color: white;
 }
 
-.edit-second__info-right-buttonTwo {
+.edit-five__info-right-buttonTwo {
     margin: 10px auto;
 }
 
-.edit-second__info-right-buttonTwo > button {
+.edit-five__info-right-buttonTwo > button {
     background-color: antiquewhite;
     text-transform: inherit;
     color: #F78513;
     transition: all 0.3s ease-in-out;
 }
 
-.edit-second__info-right-buttonTwo > button:hover {
+.edit-five__info-right-buttonTwo > button:hover {
     background-color: #F78513;
     color: white;
 }
 
 /* 440px Mobile resposive */
 @media screen and (max-width: 440px) {
-    .edit-second__page {
+    .edit-five__page {
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -177,14 +228,14 @@
         padding: 10px 20px;
     }
     
-    .edit-second__info {
+    .edit-five__info {
         width: 100%;
         min-height: 80vh;
         display: flex;
         flex-direction: column;
     }
     
-    .edit-second__info-left {
+    .edit-five__info-left {
         flex: 1;
         width: 100%;
         min-height: 100%;
@@ -213,7 +264,7 @@
         border-radius: 100%;
     }
     
-    .edit-second__info-left > p {
+    .edit-five__info-left > p {
         margin: 20px 10px 10px 10px;
     }
     
@@ -224,6 +275,10 @@
         width: fit-content;
         justify-items: center;
         margin: 5px auto;
+    }
+
+    .baby {
+        margin-bottom: 10px;
     }
     
     .host-navigation > li {
@@ -236,17 +291,13 @@
         margin-top: 10px;
         justify-content: center;
     }
-
-    .baby {
-        margin-bottom: 10px;
-    }
     
     .host-navigation > li:hover {
         background-color: #F78513;
         color: white;
     }
     
-    .edit-second__info-right {
+    .edit-five__info-right {
         flex: 4;
         width: 100%;
         min-height: 100%;
@@ -255,83 +306,143 @@
         display: flex;
         justify-content: space-evenly;
     }
-    .edit-second__info-right-block {
+    .edit-five__info-right-block {
         display: flex;
-        width: 90%;
         flex-direction: column;
         margin: 10px auto;
         border: 1px solid antiquewhite;
-        padding: 0;
+        width: 90%;
+        justify-content: center;
     }
-    .edit-second__info-right-image-container {
+
+    /*  */
+
+    
+    .stress-tupu {
+        width: 100%;
+        min-height: 10vh;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .stress-container {
+        width: 90%;
+        min-height: 10vh;
+        border: 1px solid antiquewhite;
+        border-radius: 10px;
+        margin: 10px auto;
         display: flex;
         flex-direction: column;
+        align-items: center;
     }
-    .edit-second__info-right-image-container > input {
+
+    .stress-container > h4 {
+        margin: 5px auto 0 auto;
+    }
+
+    .stress-container > input:nth-of-type(1) {
+        margin: 5px auto 0 auto;
+    }
+
+
+    .stress-container > input:nth-of-type(2) {
+        margin: 5px auto;
+        border: 1px solid lightgray;
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+
+    /*  */
+    .edit-five__info-right-image-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 10px auto;
+    }
+    
+    .edit-five__info-right-input {
+        align-self: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .edit-five__info-right-image-container > input {
         margin: 20px 20px;
     }
     
-    .edit-second__info-right-image {
-        width: 30vw;
-        height: 40vh;
+    .edit-five__info-right-image {
+        width: 100%;
+        height: 20vh;
         border-radius: 10px;
+        position: relative;
     }
     
-    .edit-second__info-right-image > img {
+    .edit-five__info-right-image > img {
         width: 100%;
         height: 100%;
         object-fit: fill;
         border-radius: 10px;
     }
     
-    .edit-second__info-right-input {
+    .edit-five__info-right-input {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
+        align-items: center;
         margin: 10px 10px;
     }
     
-    .edit-second__info-right-input > label {
-        width: 80%;
+    .edit-five__info-right-input > label {
+        min-width: 8vw;
         padding: 10px;
     }
     
-    .edit-second__info-right-input > input {
-        padding: 10px;
+    .edit-five__info-right-input > input {
         width: 80%;
         border: 1px solid lightblue;
+        padding: 10px;
+    }
+    .edit-five__info-right-input > textarea {
+        width: 80%;
+        border: 1px solid lightblue;
+        padding: 10px;
     }
     
+    .edit-five__info-right-input > select {
+        width: 80%;
+        border: 1px solid lightblue;
+        padding: 10px;
+    }
     
-    .edit-second__info-right-buttonOne {
+    .edit-five__info-right-buttonOne {
         margin: 10px auto;
     }
     
-    .edit-second__info-right-buttonOne > button{
+    .edit-five__info-right-buttonOne > button{
         background-color: antiquewhite;
         text-transform: inherit;
         color: #F78513;
         transition: all 0.3s ease-in-out;
     }
     
-    .edit-second__info-right-buttonOne > button:hover {
+    .edit-five__info-right-buttonOne > button:hover {
         background-color: #F78513;
         color: white;
     }
     
-    .edit-second__info-right-buttonTwo {
+    .edit-five__info-right-buttonTwo {
         margin: 10px auto;
     }
     
-    .edit-second__info-right-buttonTwo > button {
+    .edit-five__info-right-buttonTwo > button {
         background-color: antiquewhite;
-        margin: 5px auto 5px 5px;
         text-transform: inherit;
         color: #F78513;
         transition: all 0.3s ease-in-out;
+        margin: 5px auto 5px 5px;
     }
     
-    .edit-second__info-right-buttonTwo > button:hover {
+    .edit-five__info-right-buttonTwo > button:hover {
         background-color: #F78513;
         color: white;
     }
@@ -341,7 +452,7 @@
 
 /* 540px to 750px Mobile resposive */
 @media screen and (min-width: 540px) and (max-width: 750px) {
-    .edit-second__page {
+    .edit-five__page {
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -349,14 +460,14 @@
         padding: 10px 20px;
     }
     
-    .edit-second__info {
+    .edit-five__info {
         width: 100%;
         min-height: 80vh;
         display: flex;
         flex-direction: column;
     }
     
-    .edit-second__info-left {
+    .edit-five__info-left {
         flex: 1;
         width: 100%;
         min-height: 100%;
@@ -385,7 +496,7 @@
         border-radius: 100%;
     }
     
-    .edit-second__info-left > p {
+    .edit-five__info-left > p {
         margin: 20px 10px 10px 10px;
     }
     
@@ -396,6 +507,10 @@
         width: fit-content;
         justify-items: center;
         margin: 5px auto;
+    }
+
+    .baby {
+        margin-bottom: 10px;
     }
     
     .host-navigation > li {
@@ -408,17 +523,13 @@
         margin-top: 10px;
         justify-content: center;
     }
-
-    .baby {
-        margin-bottom: 10px;
-    }
     
     .host-navigation > li:hover {
         background-color: #F78513;
         color: white;
     }
     
-    .edit-second__info-right {
+    .edit-five__info-right {
         flex: 4;
         width: 100%;
         min-height: 100%;
@@ -427,83 +538,144 @@
         display: flex;
         justify-content: space-evenly;
     }
-    .edit-second__info-right-block {
+    .edit-five__info-right-block {
         display: flex;
-        width: 90%;
         flex-direction: column;
         margin: 10px auto;
-        padding: 0;
         border: 1px solid antiquewhite;
+        width: 90%;
+        justify-content: center;
     }
-    .edit-second__info-right-image-container {
+
+        /*  */
+
+    
+        .stress-tupu {
+            width: 100%;
+            min-height: 10vh;
+            display: flex;
+            flex-wrap: wrap;
+        }
+    
+        .stress-container {
+            width: 45%;
+            min-height: 10vh;
+            border: 1px solid antiquewhite;
+            border-radius: 10px;
+            margin: 10px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        .stress-container > h4 {
+            margin: 5px auto 0 auto;
+        }
+    
+        .stress-container > input:nth-of-type(1) {
+            margin: 5px auto 0 auto;
+        }
+    
+    
+        .stress-container > input:nth-of-type(2) {
+            margin: 5px auto;
+            border: 1px solid lightgray;
+            padding: 5px;
+            border-radius: 5px;
+        }
+    
+    
+        /*  */
+
+    .edit-five__info-right-image-container {
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        margin: 10px auto;
     }
-    .edit-second__info-right-image-container > input {
+    
+    .edit-five__info-right-input {
+        align-self: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .edit-five__info-right-image-container > input {
         margin: 20px 20px;
     }
     
-    .edit-second__info-right-image {
-        width: 30vw;
+    .edit-five__info-right-image {
+        width: 100%;
         height: 40vh;
         border-radius: 10px;
+        position: relative;
     }
     
-    .edit-second__info-right-image > img {
+    .edit-five__info-right-image > img {
         width: 100%;
         height: 100%;
         object-fit: fill;
         border-radius: 10px;
     }
     
-    .edit-second__info-right-input {
+    .edit-five__info-right-input {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
+        align-items: center;
         margin: 10px 10px;
     }
     
-    .edit-second__info-right-input > label {
-        width: 80%;
+    .edit-five__info-right-input > label {
+        min-width: 8vw;
         padding: 10px;
     }
     
-    .edit-second__info-right-input > input {
-        padding: 10px;
+    .edit-five__info-right-input > input {
         width: 80%;
         border: 1px solid lightblue;
+        padding: 10px;
+    }
+    .edit-five__info-right-input > textarea {
+        width: 80%;
+        border: 1px solid lightblue;
+        padding: 10px;
     }
     
+    .edit-five__info-right-input > select {
+        width: 80%;
+        border: 1px solid lightblue;
+        padding: 10px;
+    }
     
-    .edit-second__info-right-buttonOne {
+    .edit-five__info-right-buttonOne {
         margin: 10px auto;
     }
     
-    .edit-second__info-right-buttonOne > button{
+    .edit-five__info-right-buttonOne > button{
         background-color: antiquewhite;
         text-transform: inherit;
         color: #F78513;
         transition: all 0.3s ease-in-out;
     }
     
-    .edit-second__info-right-buttonOne > button:hover {
+    .edit-five__info-right-buttonOne > button:hover {
         background-color: #F78513;
         color: white;
     }
     
-    .edit-second__info-right-buttonTwo {
+    .edit-five__info-right-buttonTwo {
         margin: 10px auto;
     }
     
-    .edit-second__info-right-buttonTwo > button {
+    .edit-five__info-right-buttonTwo > button {
         background-color: antiquewhite;
-        margin: 5px auto 5px 5px;
         text-transform: inherit;
         color: #F78513;
         transition: all 0.3s ease-in-out;
+        margin: 5px auto 5px 5px;
     }
     
-    .edit-second__info-right-buttonTwo > button:hover {
+    .edit-five__info-right-buttonTwo > button:hover {
         background-color: #F78513;
         color: white;
     }
@@ -513,7 +685,7 @@
 
 /* 760px  to 1030px Mobile resposive */
 @media screen and (min-width: 760px) and (max-width: 1030px) {
-    .edit-second__page {
+    .edit-five__page {
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -521,14 +693,14 @@
         padding: 10px 20px;
     }
     
-    .edit-second__info {
+    .edit-five__info {
         width: 100%;
         min-height: 80vh;
         display: flex;
         flex-direction: column;
     }
     
-    .edit-second__info-left {
+    .edit-five__info-left {
         flex: 1;
         width: 100%;
         min-height: 100%;
@@ -557,7 +729,7 @@
         border-radius: 100%;
     }
     
-    .edit-second__info-left > p {
+    .edit-five__info-left > p {
         margin: 20px 10px 10px 10px;
     }
     
@@ -568,6 +740,10 @@
         width: fit-content;
         justify-items: center;
         margin: 5px auto;
+    }
+
+    .baby {
+        margin-bottom: 10px;
     }
     
     .host-navigation > li {
@@ -580,17 +756,13 @@
         margin-top: 10px;
         justify-content: center;
     }
-
-    .baby {
-        margin-bottom: 10px;
-    }
     
     .host-navigation > li:hover {
         background-color: #F78513;
         color: white;
     }
     
-    .edit-second__info-right {
+    .edit-five__info-right {
         flex: 4;
         width: 100%;
         min-height: 100%;
@@ -599,83 +771,143 @@
         display: flex;
         justify-content: space-evenly;
     }
-    .edit-second__info-right-block {
+    .edit-five__info-right-block {
         display: flex;
-        width: 90%;
         flex-direction: column;
         margin: 10px auto;
         border: 1px solid antiquewhite;
-        padding: 0;
+        width: 90%;
+        justify-content: center;
     }
-    .edit-second__info-right-image-container {
+
+        /*  */
+
+    
+        .stress-tupu {
+            width: 100%;
+            min-height: 10vh;
+            display: flex;
+            flex-wrap: wrap;
+        }
+    
+        .stress-container {
+            width: 30%;
+            min-height: 10vh;
+            border: 1px solid antiquewhite;
+            border-radius: 10px;
+            margin: 10px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        .stress-container > h4 {
+            margin: 5px auto 0 auto;
+        }
+    
+        .stress-container > input:nth-of-type(1) {
+            margin: 5px auto 0 auto;
+        }
+    
+    
+        .stress-container > input:nth-of-type(2) {
+            margin: 5px auto;
+            border: 1px solid lightgray;
+            padding: 5px;
+            border-radius: 5px;
+        }
+    
+    
+        /*  */
+    .edit-five__info-right-image-container {
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        margin: 10px auto;
     }
-    .edit-second__info-right-image-container > input {
+    
+    .edit-five__info-right-input {
+        align-self: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .edit-five__info-right-image-container > input {
         margin: 20px 20px;
     }
     
-    .edit-second__info-right-image {
-        width: 30vw;
+    .edit-five__info-right-image {
+        width: 100%;
         height: 40vh;
         border-radius: 10px;
+        position: relative;
     }
     
-    .edit-second__info-right-image > img {
+    .edit-five__info-right-image > img {
         width: 100%;
         height: 100%;
         object-fit: fill;
         border-radius: 10px;
     }
     
-    .edit-second__info-right-input {
+    .edit-five__info-right-input {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
+        align-items: center;
         margin: 10px 10px;
     }
     
-    .edit-second__info-right-input > label {
-        width: 80%;
+    .edit-five__info-right-input > label {
+        min-width: 8vw;
         padding: 10px;
     }
     
-    .edit-second__info-right-input > input {
-        padding: 10px;
+    .edit-five__info-right-input > input {
         width: 80%;
         border: 1px solid lightblue;
+        padding: 10px;
+    }
+    .edit-five__info-right-input > textarea {
+        width: 80%;
+        border: 1px solid lightblue;
+        padding: 10px;
     }
     
+    .edit-five__info-right-input > select {
+        width: 80%;
+        border: 1px solid lightblue;
+        padding: 10px;
+    }
     
-    .edit-second__info-right-buttonOne {
+    .edit-five__info-right-buttonOne {
         margin: 10px auto;
     }
     
-    .edit-second__info-right-buttonOne > button{
+    .edit-five__info-right-buttonOne > button{
         background-color: antiquewhite;
         text-transform: inherit;
         color: #F78513;
         transition: all 0.3s ease-in-out;
     }
     
-    .edit-second__info-right-buttonOne > button:hover {
+    .edit-five__info-right-buttonOne > button:hover {
         background-color: #F78513;
         color: white;
     }
     
-    .edit-second__info-right-buttonTwo {
+    .edit-five__info-right-buttonTwo {
         margin: 10px auto;
     }
     
-    .edit-second__info-right-buttonTwo > button {
+    .edit-five__info-right-buttonTwo > button {
         background-color: antiquewhite;
-        margin: 5px auto 5px 5px;
         text-transform: inherit;
         color: #F78513;
         transition: all 0.3s ease-in-out;
+        margin: 5px auto 5px 5px;
     }
     
-    .edit-second__info-right-buttonTwo > button:hover {
+    .edit-five__info-right-buttonTwo > button:hover {
         background-color: #F78513;
         color: white;
     }
