@@ -94,7 +94,7 @@
 .edit-second__info-right-block {
     display: flex;
     flex-direction: column;
-    margin: 10px auto;
+    margin: auto;
     border: 1px solid antiquewhite;
     padding: 10px;
 }

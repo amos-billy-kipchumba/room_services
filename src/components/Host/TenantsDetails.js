@@ -3,15 +3,20 @@ import './TenantsDetails.css'
 import Add from '@mui/icons-material/Add';
 import {Link} from 'react-router-dom'
 import axios from 'axios'
-import {useNavigate} from 'react-router-dom'
+import {useNavigate, useParams} from 'react-router-dom'
 import BaseURL from '../BaseUrl';
 import { Button } from '@mui/material';
-import { MoreHoriz } from '@mui/icons-material';
+import { Close, MoreHoriz } from '@mui/icons-material';
+import swal from 'sweetalert'
+import { FaStar } from 'react-icons/fa';
 function TenantsDetails() {
   const userData = JSON.parse(localStorage.getItem('user-info'));
   const [userId] = useState(userData.data.id);
   const [userFirstName] = useState(userData.data.first_name);
   const [imageToBe, setImageToBe] = useState(null); 
+
+  const params = useParams();
+  const paramaId = params.id;
 
   useEffect(()=>{
     const realThree = async () => {
@@ -58,6 +63,113 @@ function TenantsDetails() {
   //End of Scroll to the top on load
 
     const Navigate = useNavigate();
+
+      const handleLogout = async () => {
+        const willDelete = await swal({
+          title: "Are you sure?",
+          text: "Are you sure that you want to logout ? if no click outside the box",
+          icon: "warning",
+          dangerMode: true,
+      });
+    
+        if (willDelete) {
+          localStorage.removeItem("user-info");
+          Navigate('/');
+      }
+    }
+
+        // star ratings
+        const colors = {
+          orange: '#FFBA5A',
+          gray: '#a9a9a9'
+      }
+
+      const stars = Array(5).fill(0);
+      const [currentValue, setCurrentValue] = useState(0);
+      const [hoverValue, setHoverValue] = useState(undefined);
+
+      const handleStarRatings = value => {
+          setCurrentValue(value);
+      }
+
+      const handleMouseOver = value => {
+          setHoverValue(value);
+      }
+
+      const handleMouseLeave = () => {
+          setHoverValue(undefined);
+      }
+
+      const [showButtonText, setShowButtonText] = useState(false);
+
+      const [reviewNumber, setReviewNumber] = useState();
+
+      const [reviewComment, setReviewComment] = useState(''); 
+
+      var [arr] = useState([]);
+
+      const handleSubmitReview = async (e, id) => {
+          e.preventDefault();
+
+          const reviewForm = new FormData();
+
+          reviewForm.append('review_rating', reviewNumber);
+          reviewForm.append('review_comment', reviewComment);
+          reviewForm.append('user', userId);
+          reviewForm.append('house_id', id);
+
+          console.log(reviewNumber, reviewComment, id);
+
+          const url = `${BaseURL}/api/add-customer-review`;
+          const request = await axios.post(url, reviewForm);
+          if(request.data.status === 200) {
+              setShowButtonText(!showButtonText);
+          }
+      }
+
+      var [finalFinaly, setFinalyFinaly] = useState([]);
+
+      var [allSpecificReviews, setAllSpecificReviews] = useState(0);
+
+      const [reviewFalse, setReviewFalse] = useState(false);
+
+      useEffect(()=>{
+          const getAllSpecificReviews = async (e, id) => {
+              let url = `${BaseURL}/api/get-all-specific-customer-review/${userId}`;
+              const request = await axios.get(url);
+              if(request.data.status === 200) {
+                  setFinalyFinaly(request.data.review_page);
+                  var finalSpecificReviews = () => request.data.review_page.map((item)=>{
+                      let i = 0;
+                      if(userId === parseInt(item.user)) {
+                          setReviewFalse(true);
+                      }
+                      setAllSpecificReviews((i += parseInt(item.review_rating)))
+                      return arr;
+                  })
+              }
+
+              finalSpecificReviews();
+          }
+          getAllSpecificReviews();
+      },[paramaId, arr, userId]);
+
+      const handleSubmitReviewUpdate = async (e, id) => {
+          e.preventDefault();
+          const reviewForm = new FormData();
+
+          reviewForm.append('review_rating', reviewNumber);
+          reviewForm.append('review_comment', reviewComment);
+          reviewForm.append('user', userId);
+          reviewForm.append('house_id', id);
+
+          const url = `${BaseURL}/api/update-customer-review/${userId}`;
+          const request = await axios.post(url, reviewForm);
+          if(request.data.status === 200) {
+              setShowButtonText(!showButtonText);
+          }
+      }
+      // end
     return (
       <div className='tenants-details__page'>
   
@@ -87,10 +199,7 @@ function TenantsDetails() {
                 <li style={{ backgroundColor: '#F78513' }}>Tenants Details</li>
                 <li onClick={()=> Navigate('/host-profile')}>Host Profile</li>
                 <li onClick={()=> Navigate('/host-settings')} className='deal-done'>Settings</li>
-                <li onClick={()=> {
-                  localStorage.removeItem("user-info");
-                  Navigate('/');
-                }}
+                <li onClick={handleLogout}
                 className='baby'>Logout</li>
               </ul>
               :
@@ -98,6 +207,8 @@ function TenantsDetails() {
               }
              </div>
              <div className="tenants-details__info-right">
+             {totalBooked.length > 0 ?
+              <>
              {totalBooked && totalBooked.map((object, index)=>{
                     let loco = new Date(object.start_date);
                     var dateTo =  loco.toLocaleDateString(loco);
@@ -140,10 +251,115 @@ function TenantsDetails() {
                                     Navigate(`/more-details/${object.house_id}`);
                                 }}>More</Button>
                             </div>
+
+                            <p>Rate this customer</p>
+                            <p>{allSpecificReviews} from {finalFinaly.length} hosts</p>
+                            {reviewFalse === false ?
+                              <div className='rate_this_host'>
+                                  <p>Rate this customer</p>
+                                  <div className='rate_this_host_container'>
+                                      {stars.map((_, index)=>{
+                                          return(
+                                              <FaStar
+                                              key={index} 
+                                              className='rate_this_host_container_star'
+                                              color={(hoverValue || currentValue) > index ? colors.orange : colors.gray}
+                                              onMouseOver={()=>{
+                                                  handleMouseOver(index + 1);
+                                              }}
+                                              onMouseLeave={handleMouseLeave}
+                                              onClick={()=>{
+                                                  handleStarRatings(index + 1);
+                                                  setShowButtonText(!showButtonText);
+                                                  setReviewNumber(index + 1)
+                                              }} />
+                                          );
+                                      })}
+                                  </div>
+                                  {showButtonText !== false ? 
+                                      <>
+                                          <textarea 
+                                          placeholder='What is your feedback' 
+                                          name='review_comment' 
+                                          value={reviewComment} 
+                                          onChange={(e)=>setReviewComment(e.target.value)} 
+                                          className='rate_this_host_container_comment'></textarea>
+                                          <div className='rate_this_host_container_comment_button_button'>
+                                              <Button 
+                                              className='rate_this_host_container_button' 
+                                              onClick={(e)=>{
+                                                handleSubmitReview(e, object.house_id)
+                                              }}>Send your review</Button>
+              
+                                              <Button 
+                                              className='rate_this_host_container_button' 
+                                              onClick={()=>{
+                                                  setShowButtonText(!showButtonText);
+                                              }}><Close /></Button>
+                                          </div>
+                                      </>
+                                  :
+                                      null
+                                  }
+                              </div>
+                              :
+                              <div className='rate_this_host'>
+                                  <p>Update this customer ratings</p>
+                                  <div className='rate_this_host_container'>
+                                      {stars.map((_, index)=>{
+                                          return(
+                                              <FaStar
+                                              key={index} 
+                                              className='rate_this_host_container_star'
+                                              color={(hoverValue || currentValue) > index ? colors.orange : colors.gray}
+                                              onMouseOver={()=>{
+                                                  handleMouseOver(index + 1);
+                                              }}
+                                              onMouseLeave={handleMouseLeave}
+                                              onClick={()=>{
+                                                  handleStarRatings(index + 1);
+                                                  setShowButtonText(!showButtonText);
+                                                  setReviewNumber(index + 1)
+                                              }} />
+                                          );
+                                      })}
+                                  </div>
+                                  {showButtonText !== false ? 
+                                      <>
+                                          <textarea 
+                                          placeholder='What is your feedback' 
+                                          name='review_comment' 
+                                          value={reviewComment} 
+                                          onChange={(e)=>setReviewComment(e.target.value)} 
+                                          className='rate_this_host_container_comment'></textarea>
+                                          <div className='rate_this_host_container_comment_button_button'>
+                                              <Button 
+                                              className='rate_this_host_container_button' 
+                                              onClick={(e)=>{
+                                                handleSubmitReviewUpdate(e, object.house_id);
+                                              }}>Update your review</Button>
+              
+                                              <Button 
+                                              className='rate_this_host_container_button' 
+                                              onClick={()=>{
+                                                  setShowButtonText(!showButtonText);
+                                              }}><Close /></Button>
+                                          </div>
+                                      </>
+                                  :
+                                      null
+                                  }
+                              </div>
+              
+                                  }
                         </div>
                     </div>
                 );
              })}
+             </>
+              :
+              <>No tenant yet</>
+              }
              </div>
           </div>
   

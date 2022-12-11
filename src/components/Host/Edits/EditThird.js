@@ -6,7 +6,7 @@ import axios from 'axios'
 import { Button } from '@mui/material';
 import {useNavigate, useParams} from 'react-router-dom'
 
-import { FaBath, FaToiletPaper, FaTv, FaTemperatureHigh, FaWifi, FaBreadSlice, FaPencilRuler, FaUtensils, FaToilet } from "react-icons/fa";
+import { FaBath, FaToiletPaper, FaTv, FaTemperatureHigh, FaWifi, FaBreadSlice, FaPencilRuler, FaUtensils, FaToilet, FaWineBottle, FaBabyCarriage } from "react-icons/fa";
 import LocalLaundryServiceIcon from '@mui/icons-material/LocalLaundryService';
 import DryCleaningIcon from '@mui/icons-material/DryCleaning';
 import IronIcon from '@mui/icons-material/Iron';
@@ -80,6 +80,9 @@ function EditThird() {
   const [editShower, setEditShower] = useState("0");
   const [editCinema, setEditCinema] = useState("0");
 
+  const [editMiniBar, setEditMiniBar] = useState("0");
+  const [editBabyCot, setEditBabyCot] = useState("0");
+
   const [boxChecked, setBoxChecked] = useState(false);
   const [boxChecked2, setBoxChecked2] = useState(false);
   const [boxChecked3, setBoxChecked3] = useState(false);
@@ -119,6 +122,9 @@ function EditThird() {
   const [boxChecked37, setBoxChecked37] = useState(false);
   const [boxChecked38, setBoxChecked38] = useState(false);
   const [boxChecked39, setBoxChecked39] = useState(false);
+
+  const [boxChecked40, setBoxChecked40] = useState(false);
+  const [boxChecked41, setBoxChecked41] = useState(false);
 
   const Navigate = useNavigate();
 
@@ -280,6 +286,16 @@ function EditThird() {
         setEditPrivate(love.data.stars.private_entrance);
         if(love.data.stars.private_entrance === "1"){
             setBoxChecked26(true);
+        }
+
+        setEditMiniBar(love.data.stars.mini_bar);
+        if(love.data.stars.mini_bar === "1"){
+            setBoxChecked40(true);
+        }
+
+        setEditBabyCot(love.data.stars.baby_cot);
+        if(love.data.stars.baby_cot === "1"){
+            setBoxChecked41(true);
         }
         }
       }
@@ -713,6 +729,28 @@ function EditThird() {
     }
   }
 
+  const handleMiniBar = () => {
+    if(editMiniBar === "1"){
+        setEditMiniBar("0");
+        setBoxChecked40(false);
+    }
+    if(editMiniBar === "0"){
+        setEditMiniBar("1");
+        setBoxChecked40(true);
+    }
+  }
+
+  const handleBabyCot = () => {
+    if(editBabyCot === "1"){
+        setEditBabyCot("0");
+        setBoxChecked41(false);
+    }
+    if(editBabyCot === "0"){
+        setEditBabyCot("1");
+        setBoxChecked41(true);
+    }
+  }
+
   const handleUpdate2 = (e) => {
     e.preventDefault();
     const url = `${BaseURL}/api/update-seventy_five-details/${paramaId}`;
@@ -757,6 +795,9 @@ function EditThird() {
     data.append('shower', editShower);
     data.append('cinema', editCinema);
 
+    data.append('mini_bar', editMiniBar);
+    data.append('baby_cot', editBabyCot);
+
     data.append('userId', userId);
     data.append('house_id', paramaId);
     axios.post(url,data).then((res)=>{
@@ -791,6 +832,19 @@ function EditThird() {
   //End of Scroll to the top on load
 
 
+    const handleLogout = async () => {
+        const willDelete = await swal({
+        title: "Are you sure?",
+        text: "Are you sure that you want to logout ? if no click outside the box",
+        icon: "warning",
+        dangerMode: true,
+    });
+
+        if (willDelete) {
+        localStorage.removeItem("user-info");
+        Navigate('/');
+    }
+    }
     return (
       <div className='edit-third__page'>
   
@@ -817,11 +871,8 @@ function EditThird() {
                 <li><Link to="/add-house-host" className='lilo-link'><Add /> house</Link></li>
                 <li onClick={()=> Navigate('/tenants-details')}>Tenants Details</li>
                 <li onClick={()=> Navigate('/host-profile')}>Host Profile</li>
-                <li onClick={()=> Navigate('/host-profile')} className='baby'>Settings</li>
-                <li onClick={()=> {
-                    localStorage.removeItem("user-info");
-                    Navigate('/');
-                  }}
+                <li onClick={()=> Navigate('/host-profile')}>Settings</li>
+                <li onClick={handleLogout}
                   className='baby'>Logout</li>
               </ul>
               :
@@ -857,6 +908,10 @@ function EditThird() {
                         <div className='icon-name-value'>
                             <div className='icon-name-value-one'><input type="checkbox" name="essentials" checked={boxChecked5} value={editEssentials} onChange={handleEssentials} /></div> <div className='icon-name-value-two'><span>Essentials</span></div> <div className='icon-name-value-three'><span><FaToiletPaper /></span></div>
                         </div>
+
+                        <div className='icon-name-value'>
+                            <div className='icon-name-value-one'><input type="checkbox" name="baby_cot" checked={boxChecked41} value={editBabyCot} onChange={handleBabyCot} /></div> <div className='icon-name-value-two'><span>Baby cot</span></div> <div className='icon-name-value-three'><span><FaBabyCarriage /></span></div>
+                        </div>
                         <div className='icon-name-value' style={{ borderBottom: '1px solid antiquewhite' }}>
                             <div className='icon-name-value-one'><input type="checkbox" name="iron" checked={boxChecked6} value={editIron} onChange={handleIron} /></div> <div className='icon-name-value-two'><span>Iron</span></div> <div className='icon-name-value-three'><span><IronIcon /></span></div>
                         </div>
@@ -864,6 +919,11 @@ function EditThird() {
                         <div className='icon-name-value'>
                             <div className='icon-name-value-one'><input type="checkbox" name="tv" checked={boxChecked7} value={editTV} onChange={handleTv} /></div> <div className='icon-name-value-two'><span>TV</span></div> <div className='icon-name-value-three'><span><FaTv /></span></div>
                         </div>
+
+                        <div className='icon-name-value'>
+                            <div className='icon-name-value-one'><input type="checkbox" name="mini_bar" checked={boxChecked40} value={editMiniBar} onChange={handleMiniBar} /></div> <div className='icon-name-value-two'><span>Mini bar</span></div> <div className='icon-name-value-three'><span><FaWineBottle /></span></div>
+                        </div>
+
                         <div className='icon-name-value'>
                             <div className='icon-name-value-one'><input type="checkbox" name="cinema" checked={boxChecked39} value={editCinema} onChange={handleCinema} /></div> <div className='icon-name-value-two'><span>Allows photography and cinematography</span></div> <div className='icon-name-value-three'><span><Camera /></span></div>
                         </div>

@@ -2,8 +2,7 @@
 import React, {useState, useEffect} from 'react'
 import './MoreDetails.css'
 import Button from '@mui/material/Button';
-import { FaSwimmingPool, FaRegStar, FaRegCalendarTimes, FaBed, FaToilet, FaUtensils, FaPencilRuler } from 'react-icons/fa';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
+import { FaSwimmingPool, FaRegStar, FaRegCalendarTimes, FaBed, FaToilet, FaUtensils, FaPencilRuler, FaWineBottle, FaBabyCarriage, FaStar } from 'react-icons/fa';
 import Slider from './Slider';
 import {useParams} from 'react-router-dom'
 import axios from 'axios'
@@ -30,7 +29,7 @@ import NoMeetingRoomIcon from '@mui/icons-material/NoMeetingRoom';
 import LocalDiningIcon from '@mui/icons-material/LocalDining';
 import Drier from './Images/drier.jpg'
 import KitchenIcon from '@mui/icons-material/Kitchen';
-import { BeachAccessTwoTone, BookOnline, Camera, ChildCare, Close, ContactMail, Favorite, Grass, HeatPump, Landscape, MiscellaneousServices, ShoppingBag, Shower, SportsSoccer} from '@mui/icons-material';
+import { BeachAccessTwoTone, BookOnline, Camera, ChildCare, Close, ContactMail, Grass, HeatPump, Landscape, MiscellaneousServices, ShoppingBag, Shower, SportsSoccer} from '@mui/icons-material';
 import MoreDetailsLoader from '../MoreDetailsLoader';
 
 import DatePicker from "react-datepicker";
@@ -41,7 +40,7 @@ import swal from 'sweetalert';
 
 function MoreDetails() {
     var userData = JSON.parse(localStorage.getItem('user-info'));
-    var [userDataPie] = useState(JSON.parse(localStorage.getItem('user-info')));
+    var userDataPie = JSON.parse(localStorage.getItem('user-info'));
     if (userDataPie !== null) {
         var userId = userDataPie.data.id;
         var firstName = userDataPie.data.first_name;
@@ -50,9 +49,8 @@ function MoreDetails() {
         var userEmail = userDataPie.data.email;
         var userPhone = userDataPie.data.phone;
     }
-    const [hostImage, setHostImage] = useState(null);
-    const [loading, setLoading] = useState(true);
-    const [hostDit, setHostDit] = useState([]);
+    var [loading, setLoading] = useState(true);
+    var [hostDit, setHostDit] = useState([]);
 
     const params = useParams();
     const paramaId = params.id;
@@ -67,6 +65,7 @@ function MoreDetails() {
             const userPin = paramaId;
             const request = await axios.get(`${BaseURL}/api/get-all-house-more-details/${userPin}`);
             if(request.data.status === 200){
+                setLoading(false);
                 setAllHousesForMore(request.data.bookingInfoForHost[0]);
                 if(request.data.bookingInfoForHost[0].aqua_farm === "1") {
                     nomaCount.push("aqua_farm");
@@ -165,8 +164,7 @@ function MoreDetails() {
                     if (outputNoma.indexOf(item) === -1) {
                       outputNoma.push(item);
                     }
-                  })
-                setLoading(false);
+                  });
             }
         }
         getAllForMoreDetails();
@@ -253,12 +251,14 @@ function MoreDetails() {
     //
 
    
-
+    const [hostImageFor, setHostImageFor] = useState();
     useEffect(()=>{
         const seventhHeaven = async () => {
             const request = await axios.get(`${BaseURL}/api/get-host-join-details/${paramaId}`);
-            setHostImage(`${BaseURL}/users/${request.data.hostJoin[0].image}`);
-            setHostDit(request.data.hostJoin[0]);
+            if(request.data.status === 200) {
+                setHostDit(request.data.hostJoin[0]);
+                setHostImageFor(`${BaseURL}/users/${request.data.hostJoin[0].image}`);
+            }
         }
         seventhHeaven();
     },[paramaId]);
@@ -293,7 +293,7 @@ function MoreDetails() {
     const [trueFalse, setTrueFalse] = useState(true);
     const [trueFalse2, setTrueFalse2] = useState(true);
 
-    const [handleMaxGuestNo, setHandleMaxGuestNo] = useState(null);
+    const [handleMaxGuestNo, setHandleMaxGuestNo] = useState(1);
 
     const time = Math.abs(selectedDate2 - selectedDate);
 
@@ -433,49 +433,6 @@ function MoreDetails() {
         }
     },[Navigate, allHousesForMore]);
 
-    const [likeLike, setLikeLike] = useState([]);
-
-    useEffect(()=>{
-        const getLikes = async () => {
-            const userPin = paramaId;
-            const request = await axios.get(`${BaseURL}/api/get-house-like/${userPin}`);
-            setLikeLike(request.data.likes);
-        }
-        getLikes()
-    },[paramaId]);
-
-    const [trueLike, setTrueLike] = useState(false);
-
-    useEffect(()=>{
-        const handsLike = likeLike.find((element) => element.user_id === userId);
-
-        if(handsLike !== null) {
-            setTrueLike(true);
-        }
-
-        if(handsLike === undefined) {
-            setTrueLike(false);
-        }
-    },[likeLike, userId]);
-
-    const handleLike = async (e) => {
-        e.preventDefault();
-        if(userDataPie !== null) {
-            const formData = new FormData();
-            formData.append('house_id', paramaId);
-            formData.append('user_id', userId);
-            let url = `${BaseURL}/api/add-house-like`;
-
-            const request = await axios.post(url, formData);
-            if(request.data.status === 200) {
-                window.location.reload();
-            }
-        }
-        else {
-            Navigate('/sign-in');
-        }
-    }
-
 
     const [showExploreMore, setShowExploreMore] = useState(false);
 
@@ -485,6 +442,100 @@ function MoreDetails() {
             window.scrollTo({top: 0, left: 0, behavior: 'smooth'})
         },[]);
     //End of Scroll to the top on load
+
+    const [showHide, setShowHide] = useState(false);
+
+    // star ratings
+    const colors = {
+        orange: '#FFBA5A',
+        gray: '#a9a9a9'
+    }
+
+    const stars = Array(5).fill(0);
+    const [currentValue, setCurrentValue] = useState(0);
+    const [hoverValue, setHoverValue] = useState(undefined);
+
+    const handleStarRatings = value => {
+        setCurrentValue(value);
+    }
+
+    const handleMouseOver = value => {
+        setHoverValue(value);
+    }
+
+    const handleMouseLeave = () => {
+        setHoverValue(undefined);
+    }
+
+    const [showButtonText, setShowButtonText] = useState(false);
+
+    const [reviewNumber, setReviewNumber] = useState();
+
+    const [reviewComment, setReviewComment] = useState(''); 
+
+    const reviewForm = new FormData();
+
+    reviewForm.append('review_rating', reviewNumber);
+    reviewForm.append('review_comment', reviewComment);
+    reviewForm.append('user', userId);
+    reviewForm.append('house_id', paramaId);
+
+    const handleSubmitReview = async (e) => {
+        e.preventDefault();
+
+        const url = `${BaseURL}/api/add-review`;
+        const request = await axios.post(url, reviewForm);
+        if(request.data.status === 200) {
+            setShowButtonText(!showButtonText);
+        }
+    }
+
+    var [finalFinaly, setFinalyFinaly] = useState([]);
+    var [allSpecificReviews, setAllSpecificReviews] = useState(0);
+
+    const [reviewFalse, setReviewFalse] = useState(false);
+
+    const [reviewFinalId, setReviewFinalId] = useState('');
+    useEffect(()=>{
+        const getAllSpecificReviews = async () => {
+            let url = `${BaseURL}/api/get-all-specific-review/${paramaId}`;
+            const request = await axios.get(url);
+            if(request.data.status === 200) {
+                setFinalyFinaly(request.data.review_page);
+                var finalSpecificReviews = () => request.data.review_page.map((item)=>{
+                    let i = 0;
+                    if(userId === parseInt(item.user)) {
+                        setReviewFalse(true);
+                    }
+                    if(userId === parseInt(item.user) && parseInt(paramaId) === parseInt(item.house_id)){
+                        setReviewFinalId(item.id);
+                    }
+                    setAllSpecificReviews((i += parseInt(item.review_rating)))
+                    return arr;
+                })
+            }
+
+            finalSpecificReviews();
+        }
+        getAllSpecificReviews();
+    },[paramaId, arr, userId]);
+
+    const handleSubmitReviewUpdate = async (e) => {
+        e.preventDefault();
+        const reviewForm = new FormData();
+
+        reviewForm.append('review_rating', reviewNumber);
+        reviewForm.append('review_comment', reviewComment);
+        reviewForm.append('user', userId);
+        reviewForm.append('house_id', paramaId);
+
+        const url = `${BaseURL}/api/update-review/${reviewFinalId}`;
+        const request = await axios.post(url, reviewForm);
+        if(request.data.status === 200) {
+            setShowButtonText(!showButtonText);
+        }
+    }
+    // end
 
   return (
     <>
@@ -511,12 +562,6 @@ function MoreDetails() {
                         <Button onClick={()=>{
                             setShowExploreMore(!showExploreMore);
                         }}><span><MiscellaneousServices /></span>Nearby services</Button>
-                        {trueLike === false ?
-                        <Button
-                        onClick={handleLike}><span><FavoriteBorderIcon /></span>like</Button>
-                        :
-                        <Button><span style={{ color: '#ff7779' }}><Favorite /></span>liked</Button>
-                    }
                     </div>
                 </div>
 
@@ -530,6 +575,101 @@ function MoreDetails() {
                     }
                     });
                 }}>View all house images</Button>
+
+                {reviewFalse === false ?
+                <div className='rate_this_host'>
+                    <p>Rate this host</p>
+                    <div className='rate_this_host_container'>
+                        {stars.map((_, index)=>{
+                            return(
+                                <FaStar
+                                key={index} 
+                                className='rate_this_host_container_star'
+                                color={(hoverValue || currentValue) > index ? colors.orange : colors.gray}
+                                onMouseOver={()=>{
+                                    handleMouseOver(index + 1);
+                                }}
+                                onMouseLeave={handleMouseLeave}
+                                onClick={()=>{
+                                    handleStarRatings(index + 1);
+                                    setShowButtonText(!showButtonText);
+                                    setReviewNumber(index + 1)
+                                }} />
+                            );
+                        })}
+                    </div>
+                    {showButtonText !== false ? 
+                        <>
+                            <textarea 
+                            placeholder='What is your feedback' 
+                            name='review_comment' 
+                            value={reviewComment} 
+                            onChange={(e)=>setReviewComment(e.target.value)} 
+                            className='rate_this_host_container_comment'></textarea>
+                            <div className='rate_this_host_container_comment_button_button'>
+                                <Button 
+                                className='rate_this_host_container_button' 
+                                onClick={handleSubmitReview}>Send your review</Button>
+
+                                <Button 
+                                className='rate_this_host_container_button' 
+                                onClick={()=>{
+                                    setShowButtonText(!showButtonText);
+                                }}><Close /></Button>
+                            </div>
+                        </>
+                    :
+                        null
+                    }
+                </div>
+                :
+                <div className='rate_this_host'>
+                    <p>Update this host ratings</p>
+                    <div className='rate_this_host_container'>
+                        {stars.map((_, index)=>{
+                            return(
+                                <FaStar
+                                key={index} 
+                                className='rate_this_host_container_star'
+                                color={(hoverValue || currentValue) > index ? colors.orange : colors.gray}
+                                onMouseOver={()=>{
+                                    handleMouseOver(index + 1);
+                                }}
+                                onMouseLeave={handleMouseLeave}
+                                onClick={()=>{
+                                    handleStarRatings(index + 1);
+                                    setShowButtonText(!showButtonText);
+                                    setReviewNumber(index + 1)
+                                }} />
+                            );
+                        })}
+                    </div>
+                    {showButtonText !== false ? 
+                        <>
+                            <textarea 
+                            placeholder='What is your feedback' 
+                            name='review_comment' 
+                            value={reviewComment} 
+                            onChange={(e)=>setReviewComment(e.target.value)} 
+                            className='rate_this_host_container_comment'></textarea>
+                            <div className='rate_this_host_container_comment_button_button'>
+                                <Button 
+                                className='rate_this_host_container_button' 
+                                onClick={handleSubmitReviewUpdate}>Update your review</Button>
+
+                                <Button 
+                                className='rate_this_host_container_button' 
+                                onClick={()=>{
+                                    setShowButtonText(!showButtonText);
+                                }}><Close /></Button>
+                            </div>
+                        </>
+                    :
+                        null
+                    }
+                </div>
+
+                    }
 
                 <div className='hosted-by'>
                     <div className='hosted-by-left-main'>
@@ -548,7 +688,7 @@ function MoreDetails() {
                                 }
                             </div>
                             <div className='hosted-by-left-two'>
-                                <img src={hostImage} alt="" />
+                                <img src={hostImageFor} alt="" />
                             </div>
                         </div>
                         :
@@ -586,11 +726,21 @@ function MoreDetails() {
                             <div className='dive-right-two'>
                                 <h2>Experienced host</h2>
                                 <p>{hostDit.first_name} has:</p>
-                                <p>{likeLike.length} {likeLike.length > 1 ?
-                                'likes'
+                                <p>{allSpecificReviews / finalFinaly.length} {allSpecificReviews > 1 ?
+                                'star rating'
                                 :
-                                'like'
-                                }</p>
+                                'star rating'
+                                } from {finalFinaly.length} {finalFinaly.length > 1 ?
+                                    'reviews'
+                                    :
+                                    'review'
+                                    }</p>
+                                <Button onClick={()=>{
+                                    Navigate(`/host-reviews/${paramaId}`,{state:{
+                                        finalFinaly
+                                    }
+                                    });
+                                }}>View all reviews</Button>
                             </div>
                         </div>
 
@@ -719,6 +869,18 @@ function MoreDetails() {
                                 </div>
                                 :
                                 null}
+
+                                {allHousesForMore.baby_cot === `1` ?
+                                <div className="mine-rude">
+                                    <div className='less-rude'>
+                                        <span><FaBabyCarriage /></span>
+                                    </div>
+                                    <div className="more-rude">
+                                        <span>Baby cot</span>
+                                    </div>
+                                </div>
+                                :
+                                null}
                         
                                 {allHousesForMore.tv === `1` ?
                                 <h4 style={{ marginTop: '10px' }}>Entertainment</h4>
@@ -733,6 +895,18 @@ function MoreDetails() {
                                     </div>
                                     <div className="more-rude">
                                         <span>TV</span>
+                                    </div>
+                                </div>
+                                :
+                                null}
+
+                                {allHousesForMore.mini_bar === `1` ?
+                                <div className="mine-rude">
+                                    <div className='less-rude'>
+                                        <span><FaWineBottle /></span>
+                                    </div>
+                                    <div className="more-rude">
+                                        <span>Mini bar</span>
                                     </div>
                                 </div>
                                 :
@@ -1148,6 +1322,7 @@ function MoreDetails() {
                                          onChange={date=> {
                                             setSelectedDate2(date);
                                             setTrueFalse2(false);
+                                            setShowHide(true);
                                             }}
                                          excludeDates={excludedDates}
                                          className="datePickerTribe"
@@ -1164,6 +1339,7 @@ function MoreDetails() {
                                 </div>
 
                                 <div className="strike-number-guests">
+                                <p style={{ marginRight: '20px' }}>Number of guests</p>
                                 {allHousesForMore ?
                                     <input type="number"
                                      min="1"
@@ -1184,7 +1360,7 @@ function MoreDetails() {
 
                                 <p>You won't be charged yet</p>
                                 
-                                {handleMaxGuestNo === undefined || handleMaxGuestNo === null ?
+                                {showHide === false ?
                                     null
                                     :
                                     <div className="strike-price">

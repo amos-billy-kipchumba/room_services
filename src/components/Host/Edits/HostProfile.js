@@ -99,6 +99,20 @@ function HostProfile() {
         }
     });
   }
+
+    const handleLogout = async () => {
+      const willDelete = await swal({
+        title: "Are you sure?",
+        text: "Are you sure that you want to logout ? if no click outside the box",
+        icon: "warning",
+        dangerMode: true,
+    });
+
+      if (willDelete) {
+        localStorage.removeItem("user-info");
+        Navigate('/');
+    }
+  }
     return (
       <div className='host-profile__page'>
   
@@ -127,11 +141,8 @@ function HostProfile() {
                 onClick={()=> Navigate('/add-house-host')}><Add /> house</li>
                 <li onClick={()=> Navigate('/tenants-details')}>Tenants details</li>
                 <li style={{ backgroundColor: '#F78513' }}>Profile</li>
-                <li className='baby' onClick={()=> Navigate('/host-settings')}>Settings</li>
-                <li onClick={()=> {
-                  localStorage.removeItem("user-info");
-                  Navigate('/');
-                }}
+                <li onClick={()=> Navigate('/host-settings')}>Settings</li>
+                <li onClick={handleLogout}
                 className='baby'>Logout</li>
               </ul>
               :
