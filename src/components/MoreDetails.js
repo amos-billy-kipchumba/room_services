@@ -483,10 +483,22 @@ function MoreDetails() {
     const handleSubmitReview = async (e) => {
         e.preventDefault();
 
-        const url = `${BaseURL}/api/add-review`;
-        const request = await axios.post(url, reviewForm);
-        if(request.data.status === 200) {
-            setShowButtonText(!showButtonText);
+        if(userData === null || userData === "") {
+            swal({
+                title: "Not signed in",
+                text: "please register or login as customer first!",
+                icon: "warning",
+                dangerMode: true,
+            });
+            Navigate("/sign-in")
+        } 
+
+        else {
+            const url = `${BaseURL}/api/add-review`;
+            const request = await axios.post(url, reviewForm);
+            if(request.data.status === 200) {
+                setShowButtonText(!showButtonText);
+            }
         }
     }
 
