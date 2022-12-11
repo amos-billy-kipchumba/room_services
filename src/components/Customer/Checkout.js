@@ -42,7 +42,7 @@ function Checkout() {
     formData.append('customer_first_name', customer_first_name);
     formData.append('host_email', host_email);
 
-    const url = `${BaseURL}/api/add-booking-info`;
+    const url = `${BaseURL}/api/v1/stk/push`;
     const request = await axios.post(url, formData);
     if(request.data.status === 200) {
       swal('success','booked successfully','success');
@@ -53,18 +53,24 @@ function Checkout() {
   }
   return (
     <div className='checkout-container'>
-        <form className='checkout-and-pin'>
-            <label>Please enter your phone number</label>
-            <input type="phone"
+        <form className='checkout-and-pin' onSubmit={handleSubmit}>
+            <label htmlFor='tel'>
+              Please enter your phone number. The number format should be for example : <strong>254700256728</strong>
+            </label>
+            
+            <input type="tel"
              min="0"
              max="9999" 
              placeholder='PHONE NUMBER'
              required
+             id='tel'
+             title='############'
              value={bookingPhone}
+             pattern="\d{12}"
              onChange={(e) => {
               setBookingPhone(e.target.value);
              }} />
-            <Button onClick={handleSubmit} id="submit">Book</Button>
+            <Button type="submit" id="submit">Make it count</Button>
             <CardGiftcard />
         </form>
     </div>

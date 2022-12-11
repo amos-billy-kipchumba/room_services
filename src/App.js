@@ -74,6 +74,7 @@ import TerracedHouse from './components/Filters/TerracedHouse';
 import FamilyHomes from './components/Filters/FamilyHomes';
 import GableFront from './components/Filters/GableFront';
 import EditFive from './components/Host/Edits/EditFive';
+import HostReviews from './components/HostReviews';
 
 // import Home from './components/Home';
 const LazyHome = React.lazy(() => import('./components/Home'))
@@ -87,6 +88,7 @@ function App() {
         <div className="App">
           <Header />
           <Routes>
+            <Route exact path="/host-reviews/:id" element={ <HostReviews /> } />
             <Route exact path="/gable-front" element={ <GableFront /> } />
             <Route exact path="/single-family-homes" element={ <FamilyHomes /> } />
             <Route exact path="/terraced-house" element={ <TerracedHouse /> } />

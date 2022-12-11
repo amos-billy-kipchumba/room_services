@@ -94,7 +94,7 @@ class Signin extends Component {
                 <span className='validate-span'>{this.state.error_list.last_name}</span>
                 <input type="email" name="email" placeholder="Enter your Email" onChange={this.handleChange} value={this.state.email} />
                 <span className='validate-span'>{this.state.error_list.email}</span>
-                <input type="text" name="phone" placeholder="Enter your Phone Number" onChange={this.handleChange} value={this.state.phone} />
+                <input type="tel" name="phone" placeholder="Enter your Phone Number" onChange={this.handleChange} value={this.state.phone} />
                 <span className='validate-span'>{this.state.error_list.phone}</span>
                 <input type="password" name="password" placeholder="Enter your password" onChange={this.handleChange} value={this.state.password} />
                 <span className='validate-span'>{this.state.error_list.password}</span>

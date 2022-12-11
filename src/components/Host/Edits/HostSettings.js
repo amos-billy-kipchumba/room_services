@@ -57,6 +57,21 @@ function HostSettings() {
     
   }
 
+    // logout
+    const handleLogout = async () => {
+      const willDelete = await swal({
+        title: "Are you sure?",
+        text: "Are you sure that you want to logout ? if no click outside the box",
+        icon: "warning",
+        dangerMode: true,
+    });
+
+      if (willDelete) {
+        localStorage.removeItem("user-info");
+        Navigate('/');
+    }
+  }
+
   //Scroll to the top on load
   useEffect(()=>{
     window.scrollTo({top: 0, left: 0, behavior: 'smooth'})
@@ -96,10 +111,7 @@ function HostSettings() {
                 }}>Tenants Details</li>
                 <li onClick={()=> Navigate('/host-profile')}>Host Profile</li>
                 <li className='deal-done' style={{ backgroundColor: '#F78513' }}>Settings</li>
-                <li onClick={()=> {
-                  localStorage.removeItem("user-info");
-                  Navigate('/');
-                }}
+                <li onClick={handleLogout}
                 className='baby'>Logout</li>
               </ul>
               :

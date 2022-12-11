@@ -91,6 +91,20 @@ function EditSecond() {
     },[]);
     //End of Scroll to the top on load
 
+      const handleLogout = async () => {
+        const willDelete = await swal({
+          title: "Are you sure?",
+          text: "Are you sure that you want to logout ? if no click outside the box",
+          icon: "warning",
+          dangerMode: true,
+      });
+    
+        if (willDelete) {
+          localStorage.removeItem("user-info");
+          Navigate('/');
+      }
+    }
+
     return (
       <div className='edit-second__page'>
   
@@ -117,11 +131,8 @@ function EditSecond() {
                 <li><Link to="/add-house-host" className='lilo-link'><Add /> house</Link></li>
                 <li onClick={()=> Navigate('/tenants-details')}>Tenants Details</li>
                 <li onClick={()=> Navigate('/host-profile')}>Host Profile</li>
-                <li onClick={()=> Navigate('/host-profile')} className='baby'>Settings</li>
-                <li onClick={()=> {
-                  localStorage.removeItem("user-info");
-                  Navigate('/');
-                }}
+                <li onClick={()=> Navigate('/host-profile')}>Settings</li>
+                <li onClick={handleLogout}
                 className='baby'>Logout</li>
               </ul>
               :

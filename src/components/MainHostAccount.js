@@ -6,6 +6,8 @@ import axios from 'axios'
 import {useNavigate} from 'react-router-dom'
 import { House, MoreHoriz, People } from '@mui/icons-material';
 import BaseURL from './BaseUrl';
+
+import swal from 'sweetalert';
 function MainHostAccount() {
   const Navigate = useNavigate();
   const userData = JSON.parse(localStorage.getItem('user-info'));
@@ -61,6 +63,20 @@ function MainHostAccount() {
     
   }
 
+    const handleLogout = async () => {
+        const willDelete = await swal({
+          title: "Are you sure?",
+          text: "Are you sure that you want to logout ? if no click outside the box",
+          icon: "warning",
+          dangerMode: true,
+      });
+    
+        if (willDelete) {
+          localStorage.removeItem("user-info");
+          Navigate('/');
+      }
+    }
+
   //Scroll to the top on load
   useEffect(()=>{
     window.scrollTo({top: 0, left: 0, behavior: 'smooth'})
@@ -100,10 +116,7 @@ function MainHostAccount() {
                 }}>Tenants Details</li>
                 <li onClick={()=> Navigate('/host-profile')}>Host Profile</li>
                 <li onClick={()=> Navigate('/host-settings')} className='deal-done'>Settings</li>
-                <li onClick={()=> {
-                  localStorage.removeItem("user-info");
-                  Navigate('/');
-                }}
+                <li onClick={handleLogout}
                 className='baby'>Logout</li>
               </ul>
               :

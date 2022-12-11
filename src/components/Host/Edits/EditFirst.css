@@ -284,6 +284,7 @@
         flex-direction: column;
         justify-content: center;
         margin: 10px auto;
+        width: 80%;
     }
     
     .edit-first__info-right-input {
@@ -476,6 +477,7 @@
         flex-direction: column;
         justify-content: center;
         margin: 10px auto;
+        width: 80%;
     }
     
     .edit-first__info-right-input {
@@ -668,6 +670,7 @@
         flex-direction: column;
         justify-content: center;
         margin: 10px auto;
+        width: 80%;
     }
     
     .edit-first__info-right-input {

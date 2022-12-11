@@ -123,7 +123,6 @@ function EditFive() {
     const realTwo = async () => {
       const love = await axios.get(`${BaseURL}/api/get-nearby-services/${paramaId}`);
       if(love.data.status === 200){
-        console.log(love.data.NearbyServices[0]);
 
         if(love.data.NearbyServices[0].aqua_farm === "1"){
             setEdit1(true);
@@ -640,6 +639,20 @@ function EditFive() {
     },[]);
     //End of Scroll to the top on load
 
+    const handleLogout = async () => {
+        const willDelete = await swal({
+          title: "Are you sure?",
+          text: "Are you sure that you want to logout ? if no click outside the box",
+          icon: "warning",
+          dangerMode: true,
+      });
+    
+        if (willDelete) {
+          localStorage.removeItem("user-info");
+          Navigate('/');
+      }
+    }
+
     return (
       <div className='edit-five__page'>
   
@@ -666,11 +679,8 @@ function EditFive() {
                 <li><Link to="/add-house-host" className='lilo-link'><Add /> house</Link></li>
                 <li onClick={()=> Navigate('/tenants-details')}>Tenants Details</li>
                 <li onClick={()=> Navigate('/host-profile')}>Host Profile</li>
-                <li onClick={()=> Navigate('/host-profile')} className='baby'>Settings</li>
-                <li onClick={()=> {
-                  localStorage.removeItem("user-info");
-                  Navigate('/');
-                }}
+                <li onClick={()=> Navigate('/host-profile')}>Settings</li>
+                <li onClick={handleLogout}
                 className='baby'>Logout</li>
               </ul>
               :
