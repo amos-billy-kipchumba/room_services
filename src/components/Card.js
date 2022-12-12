@@ -1,9 +1,9 @@
 import React from 'react'
 import './Card.css'
-function Card({ src, title, description, price, location, handleNavigation}) {
+function Card({ src, title, description, price, location, handleNavigating}) {
 
   return (
-    <div className='card' onClick={handleNavigation}>
+    <div className='card' onClick={handleNavigating}>
 
         <img src={src} alt="" />
 
