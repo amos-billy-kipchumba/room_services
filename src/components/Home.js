@@ -52,7 +52,7 @@ function Home() {
             price={data.price}
             location={data.location}
             key={data.id}
-            handleNavigation={(e)=> handleNavigation(e, data.id)}
+            handleNavigating={(e)=> handleNavigation(e, data.id)}
           />
         );
       })}
