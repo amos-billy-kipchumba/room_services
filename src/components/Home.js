@@ -32,7 +32,7 @@ function Home() {
     const Navigate = useNavigate();
 
     const handleNavigation =(e, id)=> {
-      Navigate(`more-details/${id}`)
+      Navigate(`/more-details/${id}`)
     }
 
   return (
