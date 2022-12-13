@@ -2,8 +2,9 @@ import React, {useState, useEffect} from 'react'
 import './AdminFirst.css'
 import {useNavigate} from 'react-router-dom'
 import axios from 'axios'
-import { Dashboard, Logout, MoreHoriz, People, PeopleAltOutlined, PeopleAltRounded, PeopleOutlineTwoTone } from '@mui/icons-material';
+import { Logout, MoreHoriz, PeopleAltRounded} from '@mui/icons-material';
 import BaseURL from '../BaseUrl';
+import swal from 'sweetalert'
 function AdminFirst() {
   const userData = JSON.parse(localStorage.getItem('user-info'));
   const [userId] = useState(userData.data.id);
@@ -99,26 +100,40 @@ function AdminFirst() {
   
               {showMenuBar ?
               <ul className='host-navigation'>
-                <li style={{ backgroundColor: '#F78513' }}><Dashboard style={{ margin: 'auto 5px' }} /> Dashboard</li>
+                <li style={{ backgroundColor: '#F78513' }}>Dashboard</li>
                 <li
                 onClick={()=> {
                   Navigate('/admin-second')
-                }}><People style={{ margin: 'auto 5px' }} /> Hosts</li>
+                }}>Hosts</li>
                 <li
                 onClick={()=> {
                   Navigate('/admin-third')
-                }}><PeopleAltOutlined style={{ margin: 'auto 5px' }} /> Admins</li>
+                }}>Admins</li>
                 <li
                 onClick={()=> {
                   Navigate('/admin-fourth')
-                }}><PeopleOutlineTwoTone style={{ margin: 'auto 5px' }} /> Customers</li>
+                }}>Customers</li>
+
+                <li
+                onClick={()=> {
+                  Navigate('/all-payments')
+                }}>Payments</li>
                 <li
                 onClick={()=> {
                   Navigate('/admin-fifth')
                 }}>Profile</li>
-                <li onClick={()=> {
-                  localStorage.removeItem("user-info");
-                  Navigate('/');
+                <li onClick={async()=> {
+                  const willDelete = await swal({
+                    title: "Are you sure?",
+                    text: "Are you sure that you want to logout ? if no click outside the box",
+                    icon: "warning",
+                    dangerMode: true,
+                  });
+              
+                  if (willDelete) {
+                    localStorage.removeItem("user-info");
+                    Navigate('/');
+                  }
                 }}
                 className="baby"><Logout style={{ margin: 'auto 5px' }} /> Logout</li>
               </ul>
@@ -143,6 +158,7 @@ function AdminFirst() {
                 <p style={{ marginLeft: '10px' }}>Customers</p>
                 <p style={{ marginLeft: '10px' }}>{customerLength.length}</p>
               </div>
+
               <div className="admin_first__info-rightTHREE"
               onClick={()=>{
                 Navigate('/admin-third');
@@ -150,6 +166,14 @@ function AdminFirst() {
                 <PeopleAltRounded />
                 <p style={{ marginLeft: '10px' }}>Admins</p>
                 <p style={{ marginLeft: '10px' }}>{adminLength.length}</p>
+              </div>
+
+              <div className="admin_first__info-rightTHREE"
+                onClick={()=>{
+                  Navigate('/all-payments');
+                }}>
+                  <p style={{ marginLeft: '10px' }}>Payments</p>
+                  <p style={{ marginLeft: '10px' }}>{adminLength.length}</p>
               </div>
              </div>
           </div>

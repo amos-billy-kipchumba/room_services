@@ -94,6 +94,10 @@
     flex-direction: column;
 }
 
+.customer_second__info-right > p {
+    margin: auto;
+}
+
 .customer_second__info-right-container {
     width: 80%;
     min-height: 60vh;

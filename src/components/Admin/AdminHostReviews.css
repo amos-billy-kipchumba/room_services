@@ -1,4 +1,4 @@
-.admin_first__page {
+.admin_host_reviews__page {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -6,13 +6,13 @@
     padding: 10px 20px;
 }
 
-.admin_first__info {
+.admin_host_reviews__info {
     width: 100%;
     min-height: 80vh;
     display: flex;
 }
 
-.admin_first__info-left {
+.admin_host_reviews__info-left {
     flex: 1;
     width: 100%;
     min-height: 100%;
@@ -53,7 +53,7 @@
     border-radius: 100%;
 }
 
-.admin_first__info-left > p {
+.admin_host_reviews__info-left > p {
     margin: 20px 10px 10px 10px;
 }
 
@@ -86,19 +86,46 @@
     color: white;
 }
 
-.admin_first__info-right {
+.admin_host_reviews__info-right {
     flex: 4;
     width: 100%;
-    min-height: 20vh;
+    min-height: 100%;
     background-color: white;
     border: 1px solid antiquewhite;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
-.admin_first__info-rightONE {
+.admin_host_reviews__info-right > p {
+    margin-top: 10px;
+    width: 60%;
+    background-color: #EEEE;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.admin_host_reviews__info-right_search {
+    width: 60%;
+    min-height: 5vh;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.admin_host_reviews__info-right_search > input {
+    width: 40%;
+    margin: auto;
+    padding: 5px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid rgba(212, 209, 209, 0.933);
+} 
+
+.admin_host_reviews__info-rightONE {
     width: 30%;
     background-color: antiquewhite;
     padding: 10px;
@@ -115,7 +142,7 @@
 }
 
 
-.admin_first__info-rightONE:hover {
+.admin_host_reviews__info-rightONE:hover {
     -webkit-filter: brightness(95%);
     -webkit-transition: all 1s ease;
     -moz-transition: all 1s ease;
@@ -125,7 +152,7 @@
 }
 
 
-.admin_first__info-rightTWO {
+.admin_host_reviews__info-rightTWO {
     background-color: antiquewhite;
     padding: 10px;
     width: 30%;
@@ -142,7 +169,7 @@
 }
 
 
-.admin_first__info-rightTWO:hover {
+.admin_host_reviews__info-rightTWO:hover {
     -webkit-filter: brightness(95%);
     -webkit-transition: all 1s ease;
     -moz-transition: all 1s ease;
@@ -151,7 +178,7 @@
     transition: all 1s ease;
 }
 
-.admin_first__info-rightTHREE {
+.admin_host_reviews__info-rightTHREE {
     background-color: antiquewhite;
     padding: 10px;
     width: 30%;
@@ -168,19 +195,44 @@
 }
 
 
-.admin_first__info-rightTHREE:hover {
+.admin_host_reviews__info-rightTHREE:hover {
     -webkit-filter: brightness(95%);
     -webkit-transition: all 1s ease;
     -moz-transition: all 1s ease;
     -o-transition: all 1s ease;
     -ms-transition: all 1s ease;
     transition: all 1s ease;
+}
+
+.admin_host_reviews__info-right_child {
+    width: 70%;
+    min-height: 20vh;
+    margin: 10px auto;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.admin_host_reviews__info-right_child_tag {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #EEEE;
+    padding: 5px;
+}
+
+.admin_host_reviews__info-right_child_tag > p {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
 /* 440px Mobile resposive */
 @media screen and (max-width: 440px) {
-    .admin_first__page {
+    .admin_host_reviews__page {
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -188,14 +240,14 @@
         padding: 10px 20px;
     }
     
-    .admin_first__info {
+    .admin_host_reviews__info {
         width: 100%;
         min-height: 80vh;
         display: flex;
         flex-direction: column;
     }
     
-    .admin_first__info-left {
+    .admin_host_reviews__info-left {
         flex: 1;
         width: 100%;
         min-height: 100%;
@@ -224,7 +276,7 @@
         border-radius: 100%;
     }
     
-    .admin_first__info-left > p {
+    .admin_host_reviews__info-left > p {
         margin: 20px 10px 10px 10px;
     }
     
@@ -253,7 +305,7 @@
         color: white;
     }
     
-    .admin_first__info-right {
+    .admin_host_reviews__info-right {
         flex: 4;
         width: 100%;
         min-height: 100%;
@@ -264,7 +316,7 @@
         align-items: center;
     }
 
-    .admin_first__info-rightONE {
+    .admin_host_reviews__info-rightONE {
         width: 60%;
         background-color: antiquewhite;
         padding: 10px;
@@ -283,7 +335,7 @@
     }
     
     
-    .admin_first__info-rightONE:hover {
+    .admin_host_reviews__info-rightONE:hover {
         -webkit-filter: brightness(95%);
         -webkit-transition: all 1s ease;
         -moz-transition: all 1s ease;
@@ -293,7 +345,7 @@
     }
     
     
-    .admin_first__info-rightTWO {
+    .admin_host_reviews__info-rightTWO {
         background-color: antiquewhite;
         padding: 10px;
         width: 60%;
@@ -311,7 +363,7 @@
     }
     
     
-    .admin_first__info-rightTWO:hover {
+    .admin_host_reviews__info-rightTWO:hover {
         -webkit-filter: brightness(95%);
         -webkit-transition: all 1s ease;
         -moz-transition: all 1s ease;
@@ -320,7 +372,7 @@
         transition: all 1s ease;
     }
     
-    .admin_first__info-rightTHREE {
+    .admin_host_reviews__info-rightTHREE {
         background-color: antiquewhite;
         padding: 10px;
         width: 60%;
@@ -338,7 +390,7 @@
     }
     
     
-    .admin_first__info-rightTHREE:hover {
+    .admin_host_reviews__info-rightTHREE:hover {
         -webkit-filter: brightness(95%);
         -webkit-transition: all 1s ease;
         -moz-transition: all 1s ease;
@@ -352,7 +404,7 @@
 
 /* 540px to 750px Mobile resposive */
 @media screen and (min-width: 540px) and (max-width: 750px) {
-    .admin_first__page {
+    .admin_host_reviews__page {
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -360,14 +412,14 @@
         padding: 10px 20px;
     }
     
-    .admin_first__info {
+    .admin_host_reviews__info {
         width: 100%;
         min-height: 80vh;
         display: flex;
         flex-direction: column;
     }
     
-    .admin_first__info-left {
+    .admin_host_reviews__info-left {
         flex: 1;
         width: 100%;
         min-height: 100%;
@@ -396,7 +448,7 @@
         border-radius: 100%;
     }
     
-    .admin_first__info-left > p {
+    .admin_host_reviews__info-left > p {
         margin: 20px 10px 10px 10px;
     }
     
@@ -425,7 +477,7 @@
         color: white;
     }
     
-    .admin_first__info-right {
+    .admin_host_reviews__info-right {
         flex: 4;
         width: 100%;
         min-height: 100%;

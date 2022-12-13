@@ -1,4 +1,4 @@
-.tenants-details__page {
+.tenant-review__page {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -6,13 +6,13 @@
     padding: 10px 20px;
 }
 
-.tenants-details__info {
+.tenant-review__info {
     width: 100%;
     min-height: 80vh;
     display: flex;
 }
 
-.tenants-details__info-left {
+.tenant-review__info-left {
     flex: 1;
     width: 100%;
     min-height: 100%;
@@ -53,7 +53,7 @@
     border-radius: 100%;
 }
 
-.tenants-details__info-left > p {
+.tenant-review__info-left > p {
     margin: 20px 10px 10px 10px;
 }
 
@@ -82,20 +82,42 @@
     color: white;
 }
 
-.tenants-details__info-right {
+.tenant-review__info-right {
     flex: 4;
     width: 100%;
     min-height: 100%;
     background-color: white;
     border: 1px solid antiquewhite;
     display: flex;
-    justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tenant-review__info-right > button {
+    background-color: #F78513;
+    color: white;
+    text-transform: inherit;
+    transition: all 0.3s ease-in-out;
+} 
+
+.tenant-review__info-right > button:hover {
+    background-color: white;
+    color: #F78513;
+    border: 1px solid #F78513;
+}
+
+.tenant-review__info-right > h4 {
+    margin: 10px auto;
 }
 
 
-.tenants-details__info-rightMainContainer {
+.tenant-review__info-right > p {
+    margin: 10px auto;
+}
+
+.tenant-review__info-rightMainContainer {
     width: 30%;
     min-height: 80vh;
     background-color: white;
@@ -107,14 +129,14 @@
     box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
 }
 
-.tenants-details__info-rightMainContainerTop {
+.tenant-review__info-rightMainContainerTop {
     width: 100%;
     height: 30vh;
     display: flex;
     flex-direction: column;
 }
 
-.tenants-details__info-rightMainContainerTop:hover {
+.tenant-review__info-rightMainContainerTop:hover {
     -webkit-filter: brightness(95%);
     -webkit-transition: all 1s ease;
     -moz-transition: all 1s ease;
@@ -123,13 +145,13 @@
     transition: all 1s ease;
 }
 
-.tenants-details__info-rightMainContainerTop > img {
+.tenant-review__info-rightMainContainerTop > img {
     width: 100%;
     height: 100%;
     object-fit: fill;
 }
 
-.tenants-details__info-rightMainContainerBottom {
+.tenant-review__info-rightMainContainerBottom {
     width: 100%;
     min-height: 50vh;
     display: flex;
@@ -137,22 +159,22 @@
     position: relative;
 }
 
-.tenants-details__info-rightMainContainerBottom > label {
+.tenant-review__info-rightMainContainerBottom > label {
     margin: 5px 10px;
     border-bottom: 1px solid lightgray;
     width: 180px;
     font-weight: bold;
 }
 
-.tenants-details__info-rightMainContainerBottom > p { 
+.tenant-review__info-rightMainContainerBottom > p { 
     margin: 0 10px;
 }
 
-.tenants-details__info-rightMainContainerBottom > p:nth-of-type(10) {
+.tenant-review__info-rightMainContainerBottom > p:nth-of-type(10) {
     margin: 0 10px 10px 10px;
 }
 
-.tenants-details__info-rightMainContainerBottomImage {
+.tenant-review__info-rightMainContainerBottomImage {
     position: absolute;
     width: 80px;
     height: 60px;
@@ -160,7 +182,7 @@
     right: 20px;
 }
 
-.tenants-details__info-rightMainContainerBottomImage:hover {
+.tenant-review__info-rightMainContainerBottomImage:hover {
     -webkit-filter: brightness(95%);
     -webkit-transition: all 1s ease;
     -moz-transition: all 1s ease;
@@ -169,13 +191,13 @@
     transition: all 1s ease;
 }
 
-.tenants-details__info-rightMainContainerBottomImage > img {
+.tenant-review__info-rightMainContainerBottomImage > img {
     width: 100%;
     height: 100%;
     object-fit: fill;
 }
 
-.tenants-details__info-rightMainContainerBottomButton {
+.tenant-review__info-rightMainContainerBottomButton {
     position: absolute;
     top: 80px;
     right: 20px;
@@ -196,20 +218,20 @@
     padding: 5px;
 }
 
-.tenants-details__info-rightMainContainerBottomButton > button {
+.tenant-review__info-rightMainContainerBottomButton > button {
     background-color: #F78513;
     color: white;
     text-transform: inherit;
     transition: all 0.3s ease-in-out;
 }
 
-.tenants-details__info-rightMainContainerBottomButton > button:hover {
+.tenant-review__info-rightMainContainerBottomButton > button:hover {
     background-color: white;
     color: #F78513;
     border: 1px solid #F78513;
 }
 
-.tenants-details__info-rightMainContainerBottomButtonTwo {
+.tenant-review__info-rightMainContainerBottomButtonTwo {
     width: 100%;
     display: flex;
     justify-content: space-evenly;
@@ -218,7 +240,7 @@
     border-top: 1px solid #EEEE;
 }
 
-.tenants-details__info-rightMainContainerBottomButtonTwo > button {
+.tenant-review__info-rightMainContainerBottomButtonTwo > button {
     background-color: #F78513;
     color: white;
     text-transform: inherit;
@@ -226,16 +248,33 @@
 }
 
 
-.tenants-details__info-rightMainContainerBottomButtonTwo > button:hover {
+.tenant-review__info-rightMainContainerBottomButtonTwo > button:hover {
     background-color: white;
     color: #F78513;
     border: 1px solid #F78513;
 }
 
+.tenant-review__info-right_container_rating {
+    width: 60%;
+    min-height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.tenant-review__info-right_child_rating {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
 
 /* 440px Mobile resposive */
 @media screen and (max-width: 440px) {
-    .tenants-details__page {
+    .tenant-review__page {
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -243,14 +282,14 @@
         padding: 10px 10px;
     }
     
-    .tenants-details__info {
+    .tenant-review__info {
         width: 100%;
         min-height: 80vh;
         display: flex;
         flex-direction: column;
     }
     
-    .tenants-details__info-left {
+    .tenant-review__info-left {
         flex: 1;
         width: 100%;
         min-height: 100%;
@@ -279,7 +318,7 @@
         border-radius: 100%;
     }
     
-    .tenants-details__info-left > p {
+    .tenant-review__info-left > p {
         margin: 20px 10px 10px 10px;
     }
     
@@ -312,7 +351,7 @@
         color: white;
     }
     
-    .tenants-details__info-right {
+    .tenant-review__info-right {
         flex: 4;
         width: 100%;
         min-height: 100%;
@@ -325,7 +364,7 @@
         flex-wrap: wrap;
     }
     
-    .tenants-details__info-rightMainContainer {
+    .tenant-review__info-rightMainContainer {
         width: 90%;
         min-height: 80vh;
         background-color: white;
@@ -337,14 +376,14 @@
         box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
     }
     
-    .tenants-details__info-rightMainContainerTop {
+    .tenant-review__info-rightMainContainerTop {
         width: 100%;
         height: 30vh;
         display: flex;
         flex-direction: column;
     }
     
-    .tenants-details__info-rightMainContainerTop:hover {
+    .tenant-review__info-rightMainContainerTop:hover {
         -webkit-filter: brightness(95%);
         -webkit-transition: all 1s ease;
         -moz-transition: all 1s ease;
@@ -353,13 +392,13 @@
         transition: all 1s ease;
     }
     
-    .tenants-details__info-rightMainContainerTop > img {
+    .tenant-review__info-rightMainContainerTop > img {
         width: 100%;
         height: 100%;
         object-fit: fill;
     }
     
-    .tenants-details__info-rightMainContainerBottom {
+    .tenant-review__info-rightMainContainerBottom {
         width: 100%;
         min-height: 50vh;
         display: flex;
@@ -367,22 +406,22 @@
         position: relative;
     }
     
-    .tenants-details__info-rightMainContainerBottom > label {
+    .tenant-review__info-rightMainContainerBottom > label {
         margin: 5px 10px;
         border-bottom: 1px solid lightgray;
         width: 180px;
         font-weight: bold;
     }
     
-    .tenants-details__info-rightMainContainerBottom > p { 
+    .tenant-review__info-rightMainContainerBottom > p { 
         margin: 0 10px;
     }
     
-    .tenants-details__info-rightMainContainerBottom > p:nth-of-type(10) {
+    .tenant-review__info-rightMainContainerBottom > p:nth-of-type(10) {
         margin: 0 10px 10px 10px;
     }
     
-    .tenants-details__info-rightMainContainerBottomImage {
+    .tenant-review__info-rightMainContainerBottomImage {
         position: absolute;
         width: 80px;
         height: 60px;
@@ -390,7 +429,7 @@
         right: 20px;
     }
     
-    .tenants-details__info-rightMainContainerBottomImage:hover {
+    .tenant-review__info-rightMainContainerBottomImage:hover {
         -webkit-filter: brightness(95%);
         -webkit-transition: all 1s ease;
         -moz-transition: all 1s ease;
@@ -399,29 +438,33 @@
         transition: all 1s ease;
     }
     
-    .tenants-details__info-rightMainContainerBottomImage > img {
+    .tenant-review__info-rightMainContainerBottomImage > img {
         width: 100%;
         height: 100%;
         object-fit: fill;
     }
     
-    .tenants-details__info-rightMainContainerBottomButton {
+    .tenant-review__info-rightMainContainerBottomButton {
         position: absolute;
         top: 80px;
         right: 20px;
     }
     
-    .tenants-details__info-rightMainContainerBottomButton > button {
+    .tenant-review__info-rightMainContainerBottomButton > button {
         background-color: #F78513;
         color: white;
         text-transform: inherit;
         transition: all 0.3s ease-in-out;
     }
     
-    .tenants-details__info-rightMainContainerBottomButton > button:hover {
+    .tenant-review__info-rightMainContainerBottomButton > button:hover {
         background-color: white;
         color: #F78513;
         border: 1px solid #F78513;
+    }
+
+    .tenant-review__info-right_container_rating {
+        width: 95%;
     }
 }
 /* end */
@@ -430,7 +473,7 @@
 
 /* 540px to 750px Mobile resposive */
 @media screen and (min-width: 540px) and (max-width: 750px) {
-    .tenants-details__page {
+    .tenant-review__page {
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -438,14 +481,14 @@
         padding: 10px 10px;
     }
     
-    .tenants-details__info {
+    .tenant-review__info {
         width: 100%;
         min-height: 80vh;
         display: flex;
         flex-direction: column;
     }
     
-    .tenants-details__info-left {
+    .tenant-review__info-left {
         flex: 1;
         width: 100%;
         min-height: 100%;
@@ -474,7 +517,7 @@
         border-radius: 100%;
     }
     
-    .tenants-details__info-left > p {
+    .tenant-review__info-left > p {
         margin: 20px 10px 10px 10px;
     }
     
@@ -507,7 +550,7 @@
         color: white;
     }
     
-    .tenants-details__info-right {
+    .tenant-review__info-right {
         flex: 4;
         width: 100%;
         min-height: 100%;
@@ -520,7 +563,7 @@
         flex-wrap: wrap;
     }
     
-    .tenants-details__info-rightMainContainer {
+    .tenant-review__info-rightMainContainer {
         width: 60%;
         min-height: 80vh;
         background-color: white;
@@ -532,14 +575,14 @@
         box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
     }
     
-    .tenants-details__info-rightMainContainerTop {
+    .tenant-review__info-rightMainContainerTop {
         width: 100%;
         height: 30vh;
         display: flex;
         flex-direction: column;
     }
     
-    .tenants-details__info-rightMainContainerTop:hover {
+    .tenant-review__info-rightMainContainerTop:hover {
         -webkit-filter: brightness(95%);
         -webkit-transition: all 1s ease;
         -moz-transition: all 1s ease;
@@ -548,13 +591,13 @@
         transition: all 1s ease;
     }
     
-    .tenants-details__info-rightMainContainerTop > img {
+    .tenant-review__info-rightMainContainerTop > img {
         width: 100%;
         height: 100%;
         object-fit: fill;
     }
     
-    .tenants-details__info-rightMainContainerBottom {
+    .tenant-review__info-rightMainContainerBottom {
         width: 100%;
         min-height: 50vh;
         display: flex;
@@ -562,22 +605,22 @@
         position: relative;
     }
     
-    .tenants-details__info-rightMainContainerBottom > label {
+    .tenant-review__info-rightMainContainerBottom > label {
         margin: 5px 10px;
         border-bottom: 1px solid lightgray;
         width: 180px;
         font-weight: bold;
     }
     
-    .tenants-details__info-rightMainContainerBottom > p { 
+    .tenant-review__info-rightMainContainerBottom > p { 
         margin: 0 10px;
     }
     
-    .tenants-details__info-rightMainContainerBottom > p:nth-of-type(10) {
+    .tenant-review__info-rightMainContainerBottom > p:nth-of-type(10) {
         margin: 0 10px 10px 10px;
     }
     
-    .tenants-details__info-rightMainContainerBottomImage {
+    .tenant-review__info-rightMainContainerBottomImage {
         position: absolute;
         width: 80px;
         height: 60px;
@@ -585,7 +628,7 @@
         right: 20px;
     }
     
-    .tenants-details__info-rightMainContainerBottomImage:hover {
+    .tenant-review__info-rightMainContainerBottomImage:hover {
         -webkit-filter: brightness(95%);
         -webkit-transition: all 1s ease;
         -moz-transition: all 1s ease;
@@ -594,29 +637,33 @@
         transition: all 1s ease;
     }
     
-    .tenants-details__info-rightMainContainerBottomImage > img {
+    .tenant-review__info-rightMainContainerBottomImage > img {
         width: 100%;
         height: 100%;
         object-fit: fill;
     }
     
-    .tenants-details__info-rightMainContainerBottomButton {
+    .tenant-review__info-rightMainContainerBottomButton {
         position: absolute;
         top: 80px;
         right: 20px;
     }
     
-    .tenants-details__info-rightMainContainerBottomButton > button {
+    .tenant-review__info-rightMainContainerBottomButton > button {
         background-color: #F78513;
         color: white;
         text-transform: inherit;
         transition: all 0.3s ease-in-out;
     }
     
-    .tenants-details__info-rightMainContainerBottomButton > button:hover {
+    .tenant-review__info-rightMainContainerBottomButton > button:hover {
         background-color: white;
         color: #F78513;
         border: 1px solid #F78513;
+    }
+
+    .tenant-review__info-right_container_rating {
+        width: 90%;
     }
 }
 /* end */
@@ -624,7 +671,7 @@
 
 /* 760px  to 1030px Mobile resposive */
 @media screen and (min-width: 760px) and (max-width: 1030px) {
-    .tenants-details__page {
+    .tenant-review__page {
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -632,14 +679,14 @@
         padding: 10px 10px;
     }
     
-    .tenants-details__info {
+    .tenant-review__info {
         width: 100%;
         min-height: 80vh;
         display: flex;
         flex-direction: column;
     }
     
-    .tenants-details__info-left {
+    .tenant-review__info-left {
         flex: 1;
         width: 100%;
         min-height: 100%;
@@ -668,7 +715,7 @@
         border-radius: 100%;
     }
     
-    .tenants-details__info-left > p {
+    .tenant-review__info-left > p {
         margin: 20px 10px 10px 10px;
     }
     
@@ -701,7 +748,7 @@
         color: white;
     }
     
-    .tenants-details__info-right {
+    .tenant-review__info-right {
         flex: 4;
         width: 100%;
         min-height: 100%;
@@ -714,7 +761,7 @@
         flex-wrap: wrap;
     }
     
-    .tenants-details__info-rightMainContainer {
+    .tenant-review__info-rightMainContainer {
         width: 45%;
         min-height: 80vh;
         background-color: white;
@@ -726,14 +773,14 @@
         box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
     }
     
-    .tenants-details__info-rightMainContainerTop {
+    .tenant-review__info-rightMainContainerTop {
         width: 100%;
         height: 30vh;
         display: flex;
         flex-direction: column;
     }
     
-    .tenants-details__info-rightMainContainerTop:hover {
+    .tenant-review__info-rightMainContainerTop:hover {
         -webkit-filter: brightness(95%);
         -webkit-transition: all 1s ease;
         -moz-transition: all 1s ease;
@@ -742,13 +789,13 @@
         transition: all 1s ease;
     }
     
-    .tenants-details__info-rightMainContainerTop > img {
+    .tenant-review__info-rightMainContainerTop > img {
         width: 100%;
         height: 100%;
         object-fit: fill;
     }
     
-    .tenants-details__info-rightMainContainerBottom {
+    .tenant-review__info-rightMainContainerBottom {
         width: 100%;
         min-height: 50vh;
         display: flex;
@@ -756,22 +803,22 @@
         position: relative;
     }
     
-    .tenants-details__info-rightMainContainerBottom > label {
+    .tenant-review__info-rightMainContainerBottom > label {
         margin: 5px 10px;
         border-bottom: 1px solid lightgray;
         width: 180px;
         font-weight: bold;
     }
     
-    .tenants-details__info-rightMainContainerBottom > p { 
+    .tenant-review__info-rightMainContainerBottom > p { 
         margin: 0 10px;
     }
     
-    .tenants-details__info-rightMainContainerBottom > p:nth-of-type(10) {
+    .tenant-review__info-rightMainContainerBottom > p:nth-of-type(10) {
         margin: 0 10px 10px 10px;
     }
     
-    .tenants-details__info-rightMainContainerBottomImage {
+    .tenant-review__info-rightMainContainerBottomImage {
         position: absolute;
         width: 80px;
         height: 60px;
@@ -779,7 +826,7 @@
         right: 20px;
     }
     
-    .tenants-details__info-rightMainContainerBottomImage:hover {
+    .tenant-review__info-rightMainContainerBottomImage:hover {
         -webkit-filter: brightness(95%);
         -webkit-transition: all 1s ease;
         -moz-transition: all 1s ease;
@@ -788,29 +835,33 @@
         transition: all 1s ease;
     }
     
-    .tenants-details__info-rightMainContainerBottomImage > img {
+    .tenant-review__info-rightMainContainerBottomImage > img {
         width: 100%;
         height: 100%;
         object-fit: fill;
     }
     
-    .tenants-details__info-rightMainContainerBottomButton {
+    .tenant-review__info-rightMainContainerBottomButton {
         position: absolute;
         top: 80px;
         right: 20px;
     }
     
-    .tenants-details__info-rightMainContainerBottomButton > button {
+    .tenant-review__info-rightMainContainerBottomButton > button {
         background-color: #F78513;
         color: white;
         text-transform: inherit;
         transition: all 0.3s ease-in-out;
     }
     
-    .tenants-details__info-rightMainContainerBottomButton > button:hover {
+    .tenant-review__info-rightMainContainerBottomButton > button:hover {
         background-color: white;
         color: #F78513;
         border: 1px solid #F78513;
+    }
+
+    .tenant-review__info-right_container_rating {
+        width: 80%;
     }
 }
 /* end */

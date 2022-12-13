@@ -203,14 +203,18 @@
         min-height: 100%;
         background-color: white;
         border: 1px solid antiquewhite;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
     .customer_first__info-rightBookedHouses {
         margin: 20px auto;
         background-color: antiquewhite;
         padding: 20px;
-        width: 48%;
-        min-height: 20vh;
+        width: 50%;
+        min-height: 10vh;
         display: flex;
         align-items: center;
         justify-content: center;

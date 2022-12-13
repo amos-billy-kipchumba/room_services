@@ -102,9 +102,18 @@ function CustomerSecond() {
                 onClick={()=> {
                   Navigate('/customer-settings');
                 }}><Settings style={{ margin: 'auto 5px' }} /> Settings</li>
-                <li onClick={()=> {
-                  localStorage.removeItem("user-info");
-                  Navigate('/');
+                <li onClick={async()=> {
+                  const willDelete = await swal({
+                    title: "Are you sure?",
+                    text: "Are you sure that you want to logout ? if no click outside the box",
+                    icon: "warning",
+                    dangerMode: true,
+                  });
+              
+                  if (willDelete) {
+                    localStorage.removeItem("user-info");
+                    Navigate('/');
+                  }
                 }}
                 className='baby'>Logout</li>
               </ul>
@@ -113,6 +122,9 @@ function CustomerSecond() {
               }
              </div>
              <div className="customer_second__info-right">
+
+             {bookedInfo.length >= 1 ?
+              <>
               {bookedInfo && bookedInfo.map((object, index)=>{
                     let loco = new Date(object.start_date);
                     var dateTo =  loco.toLocaleDateString(loco);
@@ -165,6 +177,10 @@ function CustomerSecond() {
                 </div>
                 );
               })}
+              </>
+              :
+              <p>No booking made yet</p>
+            }
              </div>
           </div>
   

@@ -2,8 +2,9 @@ import React, {useState, useEffect} from 'react'
 import './CustomerFirst.css'
 import axios from 'axios'
 import {useNavigate} from 'react-router-dom';
-import { House, MoreHoriz, Settings } from '@mui/icons-material';
+import { MoreHoriz, Settings } from '@mui/icons-material';
 import BaseURL from '../BaseUrl';
+import swal from 'sweetalert';
 function CustomerFirst() {
   const userData = JSON.parse(localStorage.getItem('user-info'));
   const [userId] = useState(userData.data.id);
@@ -78,9 +79,18 @@ function CustomerFirst() {
                 <li onClick={()=> {
                   Navigate('/customer-settings');
                 }}><Settings style={{ margin: 'auto 5px' }} /> Settings</li>
-                <li onClick={()=> {
-                  localStorage.removeItem("user-info");
-                  Navigate('/');
+                <li onClick={async() => {
+                  const willDelete = await swal({
+                    title: "Are you sure?",
+                    text: "Are you sure that you want to logout ? if no click outside the box",
+                    icon: "warning",
+                    dangerMode: true,
+                  });
+              
+                  if (willDelete) {
+                    localStorage.removeItem("user-info");
+                    Navigate('/');
+                  }
                 }}>Logout</li>
               </ul>
               :
@@ -92,10 +102,9 @@ function CustomerFirst() {
               onClick={()=>{
                 Navigate('/customer-second-page');
               }}>
-                <House />
                 <p style={{
                   marginLeft: '10px',
-                  }}>Booked houses</p>
+                  }}>Booked houses:</p>
                 <span style={{
                    marginLeft: '10px',
                    }}><strong>{totalBooked.length}</strong></span>

@@ -4,7 +4,7 @@ import Add from '@mui/icons-material/Add';
 import {Link} from 'react-router-dom'
 import axios from 'axios'
 import {useNavigate} from 'react-router-dom'
-import { House, MoreHoriz, People } from '@mui/icons-material';
+import { MoreHoriz } from '@mui/icons-material';
 import BaseURL from './BaseUrl';
 
 import swal from 'sweetalert';
@@ -130,14 +130,14 @@ function MainHostAccount() {
                 onClick={()=> {
                   Navigate('/host-houses');
                 }}>
-                  <h2><House style={{margin: 'auto 5px'}} /> houses</h2>
+                  <h2>houses</h2>
                   <span>{houseData.length}</span>
                 </div>
 
                 <div className='main-host-account__info-rightCustomerCard' onClick={()=>{
                   Navigate('/tenants-details');
                 }}>
-                  <h2><People style={{margin: 'auto 5px'}} /> tenants</h2>
+                  <h2>tenants</h2>
                   <span>{totalBooked.length}</span>
                 </div>
              </div>

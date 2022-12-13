@@ -3,10 +3,11 @@ import './AdminFifth.css'
 import '../Customer/CustomerProfile.css';
 import {useNavigate} from 'react-router-dom'
 import axios from 'axios'
-import { Dashboard, Logout, MoreHoriz, People, PeopleAltOutlined, PeopleOutlineTwoTone } from '@mui/icons-material';
+import { Logout, MoreHoriz } from '@mui/icons-material';
 import BaseURL from '../BaseUrl';
 import { Button } from '@mui/material';
 import { FaPen, FaTimes } from 'react-icons/fa';
+import swal from 'sweetalert'
 function AdminFifth() {
   const userData = JSON.parse(localStorage.getItem('user-info'));
   const [userId] = useState(userData.data.id);
@@ -141,24 +142,37 @@ function AdminFifth() {
                 <li
                 onClick={()=> {
                     Navigate('/admin-dashboard')
-                  }}><Dashboard style={{ margin: 'auto 5px' }} /> Dashboard</li>
+                  }}>Dashboard</li>
                 <li
                 onClick={()=> {
                   Navigate('/admin-second')
-                }}><People style={{ margin: 'auto 5px' }} /> Hosts</li>
+                }}>Hosts</li>
                 <li
                 onClick={()=> {
                   Navigate('/admin-third')
-                }}><PeopleAltOutlined style={{ margin: 'auto 5px' }} /> Admins</li>
+                }}>Admins</li>
                 <li
                 onClick={()=> {
                   Navigate('/admin-fourth')
-                }}><PeopleOutlineTwoTone style={{ margin: 'auto 5px' }} /> Customers</li>
+                }}>Customers</li>
+                <li
+                onClick={()=> {
+                  Navigate('/all-payments')
+                }}>Payments</li>
                 <li
                 style={{ backgroundColor: '#F78513' }}>Profile</li>
-                <li onClick={()=> {
-                  localStorage.removeItem("user-info");
-                  Navigate('/');
+                <li onClick={async()=> {
+                  const willDelete = await swal({
+                    title: "Are you sure?",
+                    text: "Are you sure that you want to logout ? if no click outside the box",
+                    icon: "warning",
+                    dangerMode: true,
+                  });
+              
+                  if (willDelete) {
+                    localStorage.removeItem("user-info");
+                    Navigate('/');
+                  }
                 }}
                 className="baby"><Logout style={{ margin: 'auto 5px' }} /> Logout</li>
               </ul>
