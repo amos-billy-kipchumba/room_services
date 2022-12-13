@@ -84,9 +84,18 @@ function CustomerSettings() {
                 <li onClick={()=> Navigate('/customer-profile')}>Profile</li>
                 <li
                 style={{ backgroundColor: '#F78513' }}><Settings style={{ margin: 'auto 5px' }} /> Settings</li>
-                <li onClick={()=> {
-                  localStorage.removeItem("user-info");
-                  Navigate('/');
+                <li onClick={async()=> {
+                  const willDelete = await swal({
+                    title: "Are you sure?",
+                    text: "Are you sure that you want to logout ? if no click outside the box",
+                    icon: "warning",
+                    dangerMode: true,
+                  });
+              
+                  if (willDelete) {
+                    localStorage.removeItem("user-info");
+                    Navigate('/');
+                  }
                 }}
                 >Logout</li>
               </ul>

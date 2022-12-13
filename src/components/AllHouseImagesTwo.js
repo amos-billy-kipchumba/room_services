@@ -4,7 +4,7 @@ import {useNavigate} from 'react-router-dom'
 import { Button } from '@mui/material';
 import BaseURL from './BaseUrl';
 import {useLocation} from 'react-router-dom'
-function AllhouseImage() {
+function AllhouseImageTwo() {
 
     const room = useLocation();
 
@@ -91,7 +91,7 @@ function AllhouseImage() {
   return (
     <div className='AllHousesAmerica'>
         <Button onClick={()=> {
-            Navigate(`/more-details/${thousand.house_id}`);
+            Navigate(-1);
         }}>Back</Button>
         <p>{room.state.allHousesForMore.title}</p>
         <div className='ParentAllHouses'>
@@ -243,4 +243,4 @@ function AllhouseImage() {
   )
 }
 
-export default AllhouseImage
+export default AllhouseImageTwo

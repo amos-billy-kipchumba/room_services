@@ -513,6 +513,7 @@ function MoreDetails() {
             let url = `${BaseURL}/api/get-all-specific-review/${paramaId}`;
             const request = await axios.get(url);
             if(request.data.status === 200) {
+
                 setFinalyFinaly(request.data.review_page);
                 var finalSpecificReviews = () => request.data.review_page.map((item)=>{
                     let i = 0;
@@ -738,10 +739,14 @@ function MoreDetails() {
                             <div className='dive-right-two'>
                                 <h2>Experienced host</h2>
                                 <p>{hostDit.first_name} has:</p>
-                                <p>{allSpecificReviews / finalFinaly.length} {allSpecificReviews > 1 ?
+                                <p>{finalFinaly.length > 0 ?
+                                    <>{allSpecificReviews / finalFinaly.length}</>
+                                    :
+                                    <>No</>
+                                }    {allSpecificReviews > 1 ?
                                 'star rating'
                                 :
-                                'star rating'
+                                'star rating yet'
                                 } from {finalFinaly.length} {finalFinaly.length > 1 ?
                                     'reviews'
                                     :

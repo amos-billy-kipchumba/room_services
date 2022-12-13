@@ -75,6 +75,9 @@ import FamilyHomes from './components/Filters/FamilyHomes';
 import GableFront from './components/Filters/GableFront';
 import EditFive from './components/Host/Edits/EditFive';
 import HostReviews from './components/HostReviews';
+import TenantsReview from './components/Host/TenantReview';
+import AllhouseImageTwo from './components/AllHouseImagesTwo';
+import AllPayments from './components/Admin/AllPayments';
 
 // import Home from './components/Home';
 const LazyHome = React.lazy(() => import('./components/Home'))
@@ -88,7 +91,9 @@ function App() {
         <div className="App">
           <Header />
           <Routes>
+            <Route exact path="/tenant-review/:id" element={ <TenantsReview /> } />
             <Route exact path="/host-reviews/:id" element={ <HostReviews /> } />
+
             <Route exact path="/gable-front" element={ <GableFront /> } />
             <Route exact path="/single-family-homes" element={ <FamilyHomes /> } />
             <Route exact path="/terraced-house" element={ <TerracedHouse /> } />
@@ -115,6 +120,7 @@ function App() {
             <Route exact path="/bungalow" element={ <Bungalow /> } />
             <Route exact path="/apartments" element={ <Apartment /> } />
             <Route exact path="/creative-heaven" element={ <CreativeHeaven /> } />
+
             <Route exact path="/customer-settings" element={ 
               <Protected Cmp={CustomerSettings} />
              } />
@@ -140,6 +146,9 @@ function App() {
             <Route exact path="/all-house-images/:id" element={ 
               <AllhouseImage />
              } />
+             <Route exact path="/all-house-images-when-booking/:id" element={ 
+              <AllhouseImageTwo />
+             } />
             <Route exact path="/edit-admin-third/:id" element={ 
               <Protected Cmp={EditAdminThird} />
              } />
@@ -148,6 +157,9 @@ function App() {
              } />
             <Route exact path="/edit-admin-second/:id" element={ 
               <Protected Cmp={EditAdminSecond} />
+             } />
+             <Route exact path="/all-payments" element={ 
+              <Protected Cmp={AllPayments} />
              } />
              <Route exact path="/admin-fifth" element={ 
               <Protected Cmp={AdminFifth} />

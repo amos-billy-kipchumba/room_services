@@ -6,6 +6,7 @@ import { FaPen, FaTimes } from 'react-icons/fa';
 import { Button } from '@mui/material';
 import { MoreHoriz, Settings } from '@mui/icons-material';
 import BaseURL from '../BaseUrl';
+import swal from 'sweetalert'
 function CustomerProfile() {
   const userData = JSON.parse(localStorage.getItem('user-info'));
   const [userId] = useState(userData.data.id);
@@ -149,9 +150,18 @@ function CustomerProfile() {
                 onClick={()=> {
                   Navigate('/customer-settings');
                 }}><Settings style={{ margin: 'auto 5px' }} /> Settings</li>
-                <li onClick={()=> {
+                <li onClick={async()=> {
+                  const willDelete = await swal({
+                    title: "Are you sure?",
+                    text: "Are you sure that you want to logout ? if no click outside the box",
+                    icon: "warning",
+                    dangerMode: true,
+                  });
+              
+                  if (willDelete) {
                     localStorage.removeItem("user-info");
                     Navigate('/');
+                  }
                 }}
                 className='baby'>Logout</li>
               </ul>

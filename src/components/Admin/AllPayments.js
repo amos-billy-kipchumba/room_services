@@ -1,21 +1,16 @@
 import React, {useState, useEffect} from 'react'
-import './EditAdminSecond.css'
-import {useNavigate, useParams} from 'react-router-dom'
+import './AllPayments.css'
+import {useNavigate} from 'react-router-dom'
 import axios from 'axios'
 import { Logout, MoreHoriz } from '@mui/icons-material';
 import BaseURL from '../BaseUrl';
 import swal from 'sweetalert'
-function EditAdminSecond() {
+function AllPayments() {
   const userData = JSON.parse(localStorage.getItem('user-info'));
   const [userId] = useState(userData.data.id);
   const [imageToBe, setImageToBe] = useState(null);
   const [useful, setUseful] = useState([]);
-  const [oneHost, setOneHost] = useState([]);
 
-  const [sendImage, setSendImage] = useState(null);
-
-  const params = useParams();
-    const paramaId = params.id;
 
   useEffect(()=>{
     const realThree = async () => {
@@ -27,16 +22,7 @@ function EditAdminSecond() {
     realThree();
   },[userId]);
 
-  useEffect(()=>{
-    const realFive = async () => {
-      const request = await axios.get(`${BaseURL}/api/get-one-host-details/${paramaId}`);
-      setOneHost(request.data.oneHost[0]);
-      setSendImage(`${BaseURL}/users/${request.data.oneHost[0].image}`)
-    }
-    realFive();
-  },[paramaId]);
-
-  const [showMenuBar, setShowMenuBar] = useState(false);
+    const [showMenuBar, setShowMenuBar] = useState(false);
 
     useEffect(()=>{
       if(window.innerWidth < 1024) {
@@ -53,43 +39,47 @@ function EditAdminSecond() {
       
     }
 
-  //Scroll to the top on load
-  useEffect(()=>{
-    window.scrollTo({top: 0, left: 0, behavior: 'smooth'})
-    },[]);
-  //End of Scroll to the top on load
+    
+
+    //Scroll to the top on load
+    useEffect(()=>{
+      window.scrollTo({top: 0, left: 0, behavior: 'smooth'})
+      },[]);
+    //End of Scroll to the top on load
 
   const Navigate = useNavigate();
+
+    //from back end data
+
+    // end   
     return (
-      <div className='edit_admin_second__page'>
+      <div className='admin_host_reviews__page'>
   
-          <div className='edit_admin_second__info'>
-             <div className="edit_admin_second__info-left">
+          <div className='admin_host_reviews__info'>
+             <div className="admin_host_reviews__info-left">
               <div className='incase-you-know'>
                   <div className="host-image"><img src={imageToBe} alt="" /></div>
                   <div>
                       <h4>{useful.first_name}</h4>
                       <p>Admin</p>
                   </div>
-                  <div className='editAdminMenuBar' onClick={handleMenuBar}><h2 style={{ display: 'flex', alignItems: 'center' }}><MoreHoriz /> </h2></div>
+                  <div className='adminFirstMenuBar' onClick={handleMenuBar}><h2 style={{ display: 'flex', alignItems: 'center' }}><MoreHoriz /> </h2></div>
               </div>
               {showMenuBar ?
               <p>Navigation</p>
               :
-              null
+              null 
               }
   
               {showMenuBar ?
               <ul className='host-navigation'>
-                <li 
-                onClick={()=>{
-                  Navigate('/admin-dashboard');
+                <li onClick={()=>{
+                    Navigate('/admin-dashboard');
                 }}>Dashboard</li>
                 <li
                 onClick={()=> {
                   Navigate('/admin-second')
-                }}
-                style={{ backgroundColor: '#F78513' }}>Hosts</li>
+                }}>Hosts</li>
                 <li
                 onClick={()=> {
                   Navigate('/admin-third')
@@ -99,6 +89,7 @@ function EditAdminSecond() {
                   Navigate('/admin-fourth')
                 }}>Customers</li>
                 <li
+                style={{ backgroundColor: '#F78513' }}
                 onClick={()=> {
                   Navigate('/all-payments')
                 }}>Payments</li>
@@ -125,24 +116,8 @@ function EditAdminSecond() {
               null
               }
              </div>
-             <div className="edit_admin_second__info-right">
-             
-                <div className="edit_admin_second__info-rightContainer">
-                    <div className="edit_admin_second__info-rightContainerImage">
-                        <img src={sendImage} alt="" />
-                    </div>
-                    <div className="edit_admin_second__info-rightContainerDetails">
-                        <p>First name</p>
-                        <span>{oneHost.first_name}</span>
-                        <p>Last Name</p>
-                        <span>{oneHost.last_name}</span>
-                        <p>Email</p>
-                        <span>{oneHost.email}</span>
-                        <p>Phone</p>
-                        <span>{oneHost.phone}</span>
-                    </div>
-                </div>
-               
+             <div className="admin_host_reviews__info-right">
+                <h4>Hello</h4>
              </div>
           </div>
   
@@ -150,4 +125,4 @@ function EditAdminSecond() {
     )
   }
 
-export default EditAdminSecond
+export default AllPayments

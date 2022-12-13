@@ -57,11 +57,11 @@ function Reserve() {
             <label>Description</label>
             <p>{editDescription}</p>
             <label>Price</label>
-            <p>${editPrice} / night</p>
+            <p>ksh {editPrice} / night</p>
             <label>Location</label>
             <p>{editLocation}</p>
             <Button onClick={()=> {
-              Navigate(`/all-house-images/${paramaId}`,{state:{
+              Navigate(`/all-house-images-when-booking/${paramaId}`,{state:{
                 allHousesForMore
             }
             });
@@ -75,7 +75,7 @@ function Reserve() {
             <label>Number of visitors</label>
             <p>{numberOfGuests}</p>
             <label>Total price</label>
-            <p>${numberOfPrice}</p>
+            <p>ksh {numberOfPrice}</p>
             <Button onClick={()=> {
               Navigate(`/customer-house-room-checkout/${paramaId}`)
             }} onMouseEnter={()=>{

@@ -62,6 +62,25 @@
     padding: 5px;
 }
 
+.checkout-and-pin-tales {
+    display: flex;
+    margin: auto;
+    padding: 5px;
+}
+.checkout-and-pin-tales > span {
+    min-height: 100%;
+    padding: 5px;
+    border: 1px solid rgba(165, 164, 164, 0.933);
+    margin-right: 1px;
+}
+
+.checkout-and-pin-tales > input {
+    min-height: 100%;
+    padding: 5px;
+    outline: none;
+    border: 1px solid rgba(165, 164, 164, 0.933);
+}
+
 /* 440px Mobile resposive */
 @media screen and (max-width: 440px) {
     .checkout-container {

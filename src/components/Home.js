@@ -32,6 +32,7 @@ function Home() {
     const Navigate = useNavigate();
 
     const handleNavigation =(e, id)=> {
+      e.preventDefault();
       Navigate(`/more-details/${id}`)
     }
 

@@ -6,7 +6,7 @@ import axios from 'axios'
 import {useNavigate, useParams} from 'react-router-dom'
 import BaseURL from '../BaseUrl';
 import { Button } from '@mui/material';
-import { Close, MoreHoriz } from '@mui/icons-material';
+import { Close, Delete, MoreHoriz, StarBorderOutlined } from '@mui/icons-material';
 import swal from 'sweetalert'
 import { FaStar } from 'react-icons/fa';
 function TenantsDetails() {
@@ -70,12 +70,12 @@ function TenantsDetails() {
           text: "Are you sure that you want to logout ? if no click outside the box",
           icon: "warning",
           dangerMode: true,
-      });
+        });
     
         if (willDelete) {
           localStorage.removeItem("user-info");
           Navigate('/');
-      }
+        }
     }
 
         // star ratings
@@ -170,6 +170,28 @@ function TenantsDetails() {
           }
       }
       // end
+
+      // deleting a tenant
+      const handleDeleteTenant = async (e, id) => {
+        e.preventDefault();
+
+        const willDelete = await swal({
+          title: "Are you sure?",
+          text: "Are you sure that you want to delete ? if no click outside the box",
+          icon: "warning",
+          dangerMode: true,
+        });
+    
+        if (willDelete) {
+          const request = await axios.delete(`${BaseURL}/api/delete-customer-booking-two/${id}`);
+          if(request.data.status === 200) {
+            swal('success','deleted successfully','success');
+            Navigate('/main-host-account');
+          }
+        }
+
+      }
+      // end
     return (
       <div className='tenants-details__page'>
   
@@ -252,8 +274,21 @@ function TenantsDetails() {
                                 }}>More</Button>
                             </div>
 
-                            <p>Rate this customer</p>
-                            <p>{allSpecificReviews} from {finalFinaly.length} hosts</p>
+                            <div className="tenants-details__info-rightMainContainerBottomButtonTwo">
+                                <Button onClick={()=> {
+                                    Navigate(`/tenant-review/${object.house_id}`);
+                                }}>Reviews</Button>
+
+                                <Button onClick={(e)=> {
+                                  handleDeleteTenant(e, object.id);
+                                }}><Delete /> </Button>
+                            </div>
+
+                            <p className='whyP'><StarBorderOutlined style={{ marginRight: '5px' }} /> Rate this customer</p>
+                            <p className='whyP2'>Has {allSpecificReviews} star rating from {finalFinaly.length} {finalFinaly.length > '1' ?
+                            'hosts'
+                            :
+                            'host'}</p>
                             {reviewFalse === false ?
                               <div className='rate_this_host'>
                                   <p>Rate this customer</p>
@@ -304,7 +339,7 @@ function TenantsDetails() {
                               </div>
                               :
                               <div className='rate_this_host'>
-                                  <p>Update this customer ratings</p>
+                                  <p>Update this customer rating</p>
                                   <div className='rate_this_host_container'>
                                       {stars.map((_, index)=>{
                                           return(

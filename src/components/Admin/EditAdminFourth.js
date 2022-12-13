@@ -2,8 +2,9 @@ import React, {useState, useEffect} from 'react'
 import './EditAdminFourth.css'
 import {useNavigate, useParams} from 'react-router-dom'
 import axios from 'axios'
-import { Dashboard, Logout, MoreHoriz, People, PeopleAltOutlined, PeopleOutlineTwoTone } from '@mui/icons-material';
+import { Logout, MoreHoriz } from '@mui/icons-material';
 import BaseURL from '../BaseUrl';
+import swal from 'sweetalert'
 function EditAdminFourth() {
   const userData = JSON.parse(localStorage.getItem('user-info'));
   const [userId] = useState(userData.data.id);
@@ -84,27 +85,44 @@ function EditAdminFourth() {
                 <li
                 onClick={()=> {
                     Navigate('/admin-dashboard');
-                }}><Dashboard style={{ margin: 'auto 5px' }} /> Dashboard</li>
+                }}>Dashboard</li>
                 <li
                 onClick={()=> {
                   Navigate('/admin-second')
-                }}><People style={{ margin: 'auto 5px' }} /> Hosts</li>
+                }}>Hosts</li>
                 <li
                 onClick={()=> {
                   Navigate('/admin-third')
-                }}><PeopleAltOutlined style={{ margin: 'auto 5px' }} /> Admins</li>
+                }}>Admins</li>
                 <li
                 style={{ backgroundColor: '#F78513' }}
                 onClick={()=> {
                   Navigate('/admin-fourth')
-                }}><PeopleOutlineTwoTone style={{ margin: 'auto 5px' }} /> Customers</li>
+                }}>Customers</li>
+                <li
+                onClick={()=> {
+                  Navigate('/all-payments')
+                }}>Payments</li>
+                <li
+                onClick={()=> {
+                  Navigate('/admin-host-reviews')
+                }}>Host reviews</li>
                 <li
                 onClick={()=> {
                   Navigate('/admin-fifth')
                 }}>Profile</li>
-                <li onClick={()=> {
-                  localStorage.removeItem("user-info");
-                  Navigate('/');
+                <li onClick={async()=> {
+                  const willDelete = await swal({
+                    title: "Are you sure?",
+                    text: "Are you sure that you want to logout ? if no click outside the box",
+                    icon: "warning",
+                    dangerMode: true,
+                  });
+              
+                  if (willDelete) {
+                    localStorage.removeItem("user-info");
+                    Navigate('/');
+                  }
                 }}
                 className='baby'><Logout style={{ margin: 'auto 5px' }} /> Logout</li>
               </ul>

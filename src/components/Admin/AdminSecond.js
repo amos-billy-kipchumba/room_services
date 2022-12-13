@@ -2,8 +2,9 @@ import React, {useState, useEffect} from 'react'
 import './AdminSecond.css'
 import {useNavigate} from 'react-router-dom'
 import axios from 'axios'
-import { CheckOutlined, Dashboard, Delete, Logout, MoreHoriz, People, PeopleAltOutlined, PeopleOutlineTwoTone } from '@mui/icons-material';
+import { ArrowDownwardSharp, Delete, Logout, MoreHoriz} from '@mui/icons-material';
 import BaseURL from '../BaseUrl';
+import swal from 'sweetalert'
 function AdminSecond() {
   const userData = JSON.parse(localStorage.getItem('user-info'));
   const [userId] = useState(userData.data.id);
@@ -91,23 +92,36 @@ function AdminSecond() {
                 <li
                 onClick={()=> {
                     Navigate('/admin-dashboard');
-                }}><Dashboard style={{ margin: 'auto 5px' }} /> Dashboard</li>
-                <li style={{ backgroundColor: '#F78513' }}><People style={{ margin: 'auto 5px' }} /> Hosts</li>
+                }}>Dashboard</li>
+                <li style={{ backgroundColor: '#F78513' }}>Hosts</li>
                 <li
                 onClick={()=> {
                     Navigate('/admin-third')
-                  }}><PeopleAltOutlined style={{ margin: 'auto 5px' }} /> Admins</li>
+                  }}>Admins</li>
                 <li
                 onClick={()=> {
                     Navigate('/admin-fourth')
-                  }}><PeopleOutlineTwoTone style={{ margin: 'auto 5px' }} /> Customers</li>
+                  }}>Customers</li>
+                  <li
+                  onClick={()=> {
+                    Navigate('/all-payments')
+                  }}>Payments</li>
                   <li
                   onClick={()=> {
                     Navigate('/admin-fifth')
                   }}>Profile</li>
-                <li onClick={()=> {
-                  localStorage.removeItem("user-info");
-                  Navigate('/');
+                <li onClick={async()=> {
+                  const willDelete = await swal({
+                    title: "Are you sure?",
+                    text: "Are you sure that you want to logout ? if no click outside the box",
+                    icon: "warning",
+                    dangerMode: true,
+                  });
+              
+                  if (willDelete) {
+                    localStorage.removeItem("user-info");
+                    Navigate('/');
+                  }
                 }}
                 className='baby'><Logout style={{ margin: 'auto 5px' }} /> Logout</li>
               </ul>
@@ -165,7 +179,7 @@ function AdminSecond() {
                       <td>
                         <div className="realFunny"><img src={`${BaseURL}/users/${data.image}`} alt="" /></div>
                       </td>
-                      <td><span onClick={()=> Navigate(`/edit-admin-second/${data.id}`)}><CheckOutlined /></span></td>
+                      <td><span onClick={()=> Navigate(`/edit-admin-second/${data.id}`)}><ArrowDownwardSharp /></span></td>
                       <td><span onClick={(e) => deleteStudent(e, data.id)}><Delete /></span></td>
                     </tr>
                   );
