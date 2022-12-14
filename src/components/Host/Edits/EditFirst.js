@@ -132,7 +132,7 @@ function EditFirst() {
           text: "Are you sure that you want to logout ? if no click outside the box",
           icon: "warning",
           dangerMode: true,
-      });
+        });
     
         if (willDelete) {
           localStorage.removeItem("user-info");

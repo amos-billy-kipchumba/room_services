@@ -6,6 +6,31 @@
     bottom: 0;
 }
 
+.social_handles {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.social_handles > p {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.social_handles > p > a {
+    display: flex;
+    align-items: center;
+    color: #272727;
+    transition: all 0.3s ease-in-out;
+}
+
+.social_handles > p > a:hover {
+    color: #F78513;
+}
+
 .footer > p {
     padding: 5px;
     font-size: 14px;
