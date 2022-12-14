@@ -117,7 +117,7 @@ function AllPayments() {
               }
              </div>
              <div className="admin_host_reviews__info-right">
-                <h4>Hello</h4>
+                <div><input type='search' placeholder='Search ...' /></div>
              </div>
           </div>
   

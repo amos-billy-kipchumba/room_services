@@ -142,39 +142,41 @@ function AdminFirst() {
               }
              </div>
              <div className="admin_first__info-right">
-              <div className="admin_first__info-rightONE"
-              onClick={()=>{
-                Navigate('/admin-second');
-              }}>
-                <PeopleAltRounded />
-                <p style={{ marginLeft: '10px' }}>Hosts</p>
-                <p style={{ marginLeft: '10px' }}>{hostLength.length}</p>
-              </div>
-              <div className="admin_first__info-rightTWO"
-              onClick={()=>{
-                Navigate('/admin-fourth');
-              }}>
-                <PeopleAltRounded />
-                <p style={{ marginLeft: '10px' }}>Customers</p>
-                <p style={{ marginLeft: '10px' }}>{customerLength.length}</p>
-              </div>
+                <div className='another_chance'>
+                  <div className="admin_first__info-rightONE"
+                  onClick={()=>{
+                    Navigate('/admin-second');
+                  }}>
+                    <PeopleAltRounded />
+                    <p style={{ marginLeft: '10px' }}>Hosts</p>
+                    <p style={{ marginLeft: '10px' }}>{hostLength.length}</p>
+                  </div>
+                  <div className="admin_first__info-rightTWO"
+                  onClick={()=>{
+                    Navigate('/admin-fourth');
+                  }}>
+                    <PeopleAltRounded />
+                    <p style={{ marginLeft: '10px' }}>Customers</p>
+                    <p style={{ marginLeft: '10px' }}>{customerLength.length}</p>
+                  </div>
 
-              <div className="admin_first__info-rightTHREE"
-              onClick={()=>{
-                Navigate('/admin-third');
-              }}>
-                <PeopleAltRounded />
-                <p style={{ marginLeft: '10px' }}>Admins</p>
-                <p style={{ marginLeft: '10px' }}>{adminLength.length}</p>
-              </div>
+                  <div className="admin_first__info-rightTHREE"
+                  onClick={()=>{
+                    Navigate('/admin-third');
+                  }}>
+                    <PeopleAltRounded />
+                    <p style={{ marginLeft: '10px' }}>Admins</p>
+                    <p style={{ marginLeft: '10px' }}>{adminLength.length}</p>
+                  </div>
 
-              <div className="admin_first__info-rightTHREE"
-                onClick={()=>{
-                  Navigate('/all-payments');
-                }}>
-                  <p style={{ marginLeft: '10px' }}>Payments</p>
-                  <p style={{ marginLeft: '10px' }}>{adminLength.length}</p>
-              </div>
+                  <div className="admin_first__info-rightTHREE"
+                    onClick={()=>{
+                      Navigate('/all-payments');
+                    }}>
+                      <p style={{ marginLeft: '10px' }}>Payments</p>
+                      <p style={{ marginLeft: '10px' }}>{adminLength.length}</p>
+                  </div>
+                </div>
              </div>
           </div>
   
