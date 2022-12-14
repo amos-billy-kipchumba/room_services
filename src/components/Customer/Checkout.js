@@ -58,12 +58,15 @@ function Checkout() {
     const url = `${BaseURL}/api/v1/stk/push`;
     const request = await axios.post(url, formData2);
     if(request.data.status === 200) {
-      swal('success','booked successfully','success');
-      document.getElementById('submit').innerHTML = "booked";
-      localStorage.removeItem('booking-data');
-      Navigate('/customer-second-page');
+      const url = `${BaseURL}/api/add-booking-info`;
+      const request = await axios.post(url, formData); 
+      if(request.data.status === 200) {
+        swal('success','booked successfully','success');
+        document.getElementById('submit').innerHTML = "booked";
+        localStorage.removeItem('booking-data');
+        Navigate('/customer-second-page');
+      }
 
-      console.log(request.data.bookingInfoForHost);
     }
   }
   return (
