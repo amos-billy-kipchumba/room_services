@@ -1,5 +1,5 @@
 import React from 'react'
-import { Routes, Route, BrowserRouter, HashRouter } from "react-router-dom"
+import { Routes, Route, BrowserRouter } from "react-router-dom"
 import './App.css';
 import AdminFifth from './components/Admin/AdminFifth';
 import AdminFirst from "./components/Admin/AdminFirst";
@@ -94,7 +94,7 @@ function App() {
             <Route exact path="/tenant-review" element={ <TenantsReview /> }>
               <Route exact path=":id" element={ <TenantsReview /> } />
             </Route>
-
+            
             <Route exact path="/host-reviews" element={ <HostReviews /> }>
               <Route exact path=":id" element={ <HostReviews /> } />
             </Route>
@@ -357,13 +357,13 @@ function App() {
               <Protected Cmp={MainHostAccount} />} />
 
 
-            <HashRouter exact path="/more-details" element={
+            <Route exact path="/more-details" element={
                 <MoreDetails />
             }>
                <Route exact path=":id" element={
                 <MoreDetails />
                } />
-            </HashRouter>
+            </Route>
 
             <Route exact path="/slider" element={ <Slider /> } />
 
