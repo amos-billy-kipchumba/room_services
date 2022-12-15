@@ -91,8 +91,13 @@ function App() {
         <div className="App">
           <Header />
           <Routes>
-            <Route exact path="/tenant-review/:id" element={ <TenantsReview /> } />
-            <Route exact path="/host-reviews/:id" element={ <HostReviews /> } />
+            <Route exact path="/tenant-review" element={ <TenantsReview /> }>
+              <Route exact path=":id" element={ <TenantsReview /> } />
+            </Route>
+            
+            <Route exact path="/host-reviews" element={ <HostReviews /> }>
+              <Route exact path=":id" element={ <HostReviews /> } />
+            </Route>
 
             <Route exact path="/gable-front" element={ <GableFront /> } />
             <Route exact path="/single-family-homes" element={ <FamilyHomes /> } />
@@ -124,121 +129,262 @@ function App() {
             <Route exact path="/customer-settings" element={ 
               <Protected Cmp={CustomerSettings} />
              } />
+
             <Route exact path="/host-settings" element={ 
               <Protected Cmp={HostSettings} />
              } />
+
             <Route exact path="/tenants-details" element={ 
               <Protected Cmp={TenantsDetails} />
              } />
-            <Route exact path="/back-third/:id" element={ 
+
+             
+            <Route exact path="/back-third" element={ 
               <Protected Cmp={BackThree} />
-             } />
-            <Route exact path="/back-second/:id" element={ 
-              <Protected Cmp={BackSecond} /> } />
-            <Route exact path="/back-first/:id" element={ 
+             }>
+              <Route exact path=":id" element={ 
+                <Protected Cmp={BackThree} />
+              } />
+             </Route>
+
+
+            <Route exact path="/back-second" element={ 
+              <Protected Cmp={BackSecond} /> }>
+              
+              <Route exact path=":id" element={ 
+                <Protected Cmp={BackSecond} /> } />
+            </Route>
+
+
+            <Route exact path="/back-first" element={ 
               <Protected Cmp={BackFirst} />
-             } />
+             }>
+              <Route exact path=":id" element={ 
+                <Protected Cmp={BackFirst} />
+              } />
+             </Route>
+
+
             <Route exact path="/forgot-password" element={ <ForgotPassword /> } />
+
+
             <Route exact path="/*" element={ <PageNotFound /> } />
+
+
             <Route exact path="/host-houses" element={ 
               <Protected Cmp={HostHouses} />
              } />
-            <Route exact path="/all-house-images/:id" element={ 
+
+
+            <Route exact path="/all-house-images" element={ 
               <AllhouseImage />
-             } />
-             <Route exact path="/all-house-images-when-booking/:id" element={ 
+             }>
+              <Route exact path=":id" element={ 
+                <AllhouseImage />
+              } />
+             </Route>
+
+
+             <Route exact path="/all-house-images-when-booking" element={ 
               <AllhouseImageTwo />
-             } />
-            <Route exact path="/edit-admin-third/:id" element={ 
+             }>
+              <Route exact path=":id" element={ 
+                <AllhouseImageTwo />
+              } />
+             </Route>
+
+
+            <Route exact path="/edit-admin-third" element={ 
               <Protected Cmp={EditAdminThird} />
-             } />
-            <Route exact path="/edit-admin-fourth/:id" element={ 
+             }>
+              <Route exact path=":id" element={ 
+                <Protected Cmp={EditAdminThird} />
+              } />
+             </Route>
+
+
+            <Route exact path="/edit-admin-fourth" element={ 
               <Protected Cmp={EditAdminFourth} />
-             } />
-            <Route exact path="/edit-admin-second/:id" element={ 
+             }>
+              <Route exact path=":id" element={ 
+                <Protected Cmp={EditAdminFourth} />
+              } />
+             </Route>
+
+
+            <Route exact path="/edit-admin-second" element={ 
               <Protected Cmp={EditAdminSecond} />
-             } />
+             }>
+              <Route exact path=":id" element={ 
+                <Protected Cmp={EditAdminSecond} />
+              } />
+             </Route>
+
+
              <Route exact path="/all-payments" element={ 
               <Protected Cmp={AllPayments} />
              } />
+
+
              <Route exact path="/admin-fifth" element={ 
               <Protected Cmp={AdminFifth} />
              } />
+
+
             <Route exact path="/admin-fourth" element={ 
               <Protected Cmp={AdminFourth} />
              } />
+
+
             <Route exact path="/admin-third" element={ 
               <Protected Cmp={AdminThird} />
              } />
+
+
             <Route exact path="/admin-second" element={ 
               <Protected Cmp={AdminSecond} />
              } />
+
+
             <Route exact path="/host-profile" element={ 
               <Protected Cmp={HostProfile} />
              } />
+
+
             <Route exact path="/customer-profile" element={ 
               <Protected Cmp={CustomerProfile} />
              } />
-            <Route exact path="/customer-house-room-checkout-with-bank/:paramaId" element={ 
+
+
+            <Route exact path="/customer-house-room-checkout-with-bank" element={ 
               <Protected Cmp={BankCard} />
-             } />
-            <Route exact path="/customer-house-room-checkout/:paramaId" element={ 
-              <Protected Cmp={Checkout} /> } />
-            <Route exact path="/customer-house-room-reservation/:paramaId" element={ 
+             }>
+              <Route exact path=":paramaId" element={ 
+                <Protected Cmp={BankCard} />
+              } />
+             </Route>
+
+
+            <Route exact path="/customer-house-room-checkout" element={ 
+              <Protected Cmp={Checkout} /> }>
+                <Route exact path=":paramaId" element={ 
+                  <Protected Cmp={Checkout} /> } />
+            </Route>
+
+
+            <Route exact path="/customer-house-room-reservation" element={ 
               <Protected Cmp={Reserve} />
-             } />
+             }>
+              <Route exact path=":paramaId" element={ 
+                <Protected Cmp={Reserve} />
+              } />
+             </Route>
+
+
             <Route exact path="/customer-second-page" element={ 
               <Protected Cmp={CustomerSecond} />
              } />
+
+
             <Route exact path="/customer-main-account" element={ 
               <Protected Cmp={CustomerFirst} />
              } />
-             <Route exact path="/edit-five/:id" element={ 
+
+
+             <Route exact path="/edit-five" element={ 
               <Protected Cmp={EditFive} />
-             } />
-            <Route exact path="/edit-four/:id" element={ 
+             }>
+              <Route exact path=":id" element={ 
+                <Protected Cmp={EditFive} />
+              } />
+             </Route>
+
+
+            <Route exact path="/edit-four" element={ 
               <Protected Cmp={EditFourth} />
-             } />
-            <Route exact path="/edit-third/:id" element={ 
+             }>
+              <Route exact path=":id" element={ 
+                <Protected Cmp={EditFourth} />
+              } />
+             </Route>
+
+
+            <Route exact path="/edit-third" element={ 
+              <Protected Cmp={EditThird} />
+             }>
+             <Route exact path=":id" element={ 
               <Protected Cmp={EditThird} />
              } />
-            <Route exact path="/edit-Second/:id" element={ 
+             </Route>
+
+
+            <Route exact path="/edit-Second" element={ 
               <Protected Cmp={EditSecond} />
-             } />
-            <Route exact path="/edit-first/:id" element={ 
+             }>
+              <Route exact path=":id" element={ 
+                <Protected Cmp={EditSecond} />
+              } />
+             </Route>
+
+            <Route exact path="/edit-first" element={ 
               <Protected Cmp={EditFirst} />
-             } />
+             }> 
+              <Route exact path=":id" element={ 
+                <Protected Cmp={EditFirst} />
+              } /> 
+             </Route>
+
              <Route exact path="/add-house-host-page-five" element={ 
               <Protected Cmp={PageFiveAddWithRouter} />
              } />
+
             <Route exact path="/add-house-host-page-four" element={ 
               <Protected Cmp={PageFourAddWithRouter} />
              } />
+
             <Route exact path="/add-house-host-page-three" element={ 
               <Protected Cmp={PageThreeAddWithRouter}/>
              } />
+
             <Route exact path="/add-house-host-page-two" element={ 
               <Protected Cmp={PageTwoAddWithRouter} /> } />
+
             <Route exact path="/add-house-host" element={ 
               <Protected Cmp={AddHouseWithRouter} />
               } />
+
             <Route exact path="/main-host-account" element={ 
               <Protected Cmp={MainHostAccount} />} />
-            <Route exact path="/more-details/:id" element={
+
+
+            <Route exact path="/more-details" element={
+                <MoreDetails />
+            }>
+               <Route exact path=":id" element={
                 <MoreDetails />
                } />
+            </Route>
+
             <Route exact path="/slider" element={ <Slider /> } />
+
             <Route exact path="/sign-in" element={ <SigninWithRouter /> } />
+
             <Route exact path="/admin-dashboard" element={ <Protected Cmp={AdminFirst} /> } />
+
             <Route exact path="/login-user" element={ <LoginUser /> }  />
+
             <Route exact path="/become-a-host" element={ <HostDashboard /> } />
+
             <Route exact path="/become-a-host-register" element={ 
               <React.Suspense fallback={<CircularLoader />}>
                 <LazyBecomeAHost />
               </React.Suspense>
              } />
+
             <Route exact path="/search-page" element={ <SearchPage /> } />
+
             <Route exact path="/explore-nearby" element={ <ExploreNearby /> } />
+
             <Route exact path="/" element={ 
               <React.Suspense fallback={<CircularLoader />}>
                 <LazyHome />
