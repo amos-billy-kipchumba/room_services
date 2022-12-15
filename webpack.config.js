@@ -1,51 +1,25 @@
-const TerserPlugin = require('terser-webpack-plugin');
+var path = require('path');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: `${__dirname}/src/index.js`,
+  entry: './app/index.js',
   output: {
-    path: `${__dirname}/build`,
-    publicPath: '/build/',
-    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'index_bundle.js',
+    publicPath: '/'
   },
-
-  // generate different source maps for dev and production
-  devtool: process.argv.indexOf('-p') === -1 ? 'eval-source-map' : 'source-map',
-
-  resolve: {
-    extensions: ['.ts', '.js', '.js'],
-  },
-
   module: {
     rules: [
-      // use ts-loader for ts and js files so all files are converted to es5
-      { test: /\.(js?|js)$/, exclude: /node_modules/, loader: 'ts-loader' },
-      { test: /\.js$/, loader: 'source-map-loader' },
-    ],
+      { test: /\.(js)$/, use: 'babel-loader' },
+      { test: /\.css$/, use: [ 'style-loader', 'css-loader' ]}
+    ]
   },
-
-  // required because the defaults for webpack -p don't remove multiline comments
-  optimization:
-    process.argv.indexOf('-p') === -1
-      ? {}
-      : {
-          minimize: true,
-          minimizer: [
-            new TerserPlugin({
-              terserOptions: {
-                output: {
-                  comments: false,
-                },
-              },
-              extractComments: false,
-            }),
-          ],
-        },
-
-  // to mimic GitHub Pages serving 404.html for all paths
-  // and test spa-github-pages redirect in dev
   devServer: {
-    historyApiFallback: {
-      rewrites: [{ from: /\//, to: '/404.html' }],
-    },
+    historyApiFallback: true,
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: 'app/index.html'
+    })
+  ]
 };
