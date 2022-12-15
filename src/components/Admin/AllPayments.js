@@ -2,9 +2,10 @@ import React, {useState, useEffect} from 'react'
 import './AllPayments.css'
 import {useNavigate} from 'react-router-dom'
 import axios from 'axios'
-import { Logout, MoreHoriz } from '@mui/icons-material';
+import { ArrowUpward, Logout, MoreHoriz } from '@mui/icons-material';
 import BaseURL from '../BaseUrl';
 import swal from 'sweetalert'
+import { Button } from '@mui/material';
 function AllPayments() {
   const userData = JSON.parse(localStorage.getItem('user-info'));
   const [userId] = useState(userData.data.id);
@@ -51,6 +52,26 @@ function AllPayments() {
 
     //from back end data
 
+    const [searchFul, setSearchFul] = useState('');
+
+    const [paymentStatus, setPaymentStatus] = useState([]);
+    useEffect(()=>{
+      const realSa = async () => {
+        const request = await axios.get(`${BaseURL}/api/get-total-booked-for-admin`);
+        if(request.data.status === 200) {
+          setPaymentStatus(request.data.bookingInfoForAdmin);
+        }
+      }
+      realSa();
+    },[]);
+
+    const changeStatus = async (e, id) => {
+      e.preventDefault();
+      const request = await axios.get(`${BaseURL}/api/get-total-booked-for-admin`); 
+      if(request.data.status === 200){
+
+      }
+    }
     // end   
     return (
       <div className='admin_host_reviews__page'>
@@ -117,7 +138,78 @@ function AllPayments() {
               }
              </div>
              <div className="admin_host_reviews__info-right">
-                <div><input type='search' placeholder='Search ...' /></div>
+                <div className='admin_host_reviews__info-right_search'><input type='search' placeholder='Search ...' value={searchFul} onChange={(e)=>{
+                  setSearchFul(e.target.value);
+                }} /></div>
+
+                <div className='admin_host_reviews__info-right_payment'>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>id</th>
+                        <th>House name</th>
+                        <th>host name</th>
+                        <th>host email</th>
+                        <th>host phone</th>
+                        <th>payment status</th>
+                        <th>amount</th>
+                        <th>mpesa receipt_no</th>
+                        <th>transaction date</th>
+                        <th>customer number</th>
+                        <th>make transfer</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    {paymentStatus && paymentStatus.filter((val) => {
+                      if(searchFul === "") {
+                        return val
+                      }
+                      else if (val.first_name.toLowerCase().includes(searchFul.toLowerCase())) {
+                        return val
+                      }
+                      else if (val.title.toLowerCase().includes(searchFul.toLowerCase())) {
+                        return val
+                      }
+                     
+                      else if (val.Amount.toLowerCase().includes(searchFul.toLowerCase())) {
+                        return val
+                      }
+                      else if (val.paid.toString().includes(searchFul.toString())) {
+                        return val
+                      }
+                      else if (val.email.toLowerCase().includes(searchFul.toLowerCase())) {
+                        return val
+                      }
+                      else if (val.phone.toString().includes(searchFul.toString())) {
+                        return val
+                      }
+                      else {
+                        return ""
+                      }
+                    }).map((data, index)=> {
+                      let loco = new Date(data.created_at);
+                      var dateTo =  loco.toLocaleDateString(loco);
+                      return(
+                        <tr key={index}>
+                          <td>{index + 1}</td>
+                          <td>{data.title}</td>
+                          <td>{data.first_name}</td>
+                          <td>{data.email}</td>
+                          <td>{data.phone}</td>
+                          <td>{data.paid}</td>
+                          <td>ksh {data.Amount}</td>
+                          <td>{data.MpesaReceiptNumber}</td>
+                          <td>{dateTo}</td>
+                          <td>+{data.booking_phone}</td>
+                          <td><Button onClick={(e)=>{
+                            changeStatus(e, data.id)
+                          }}>Make <ArrowUpward style={{ marginLeft: '5px' }} /></Button></td>
+                      </tr>
+                      );
+                    })}
+                    </tbody>
+                  </table>
+                </div>
              </div>
           </div>
   

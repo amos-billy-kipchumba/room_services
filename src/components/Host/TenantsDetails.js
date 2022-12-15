@@ -285,7 +285,7 @@ function TenantsDetails() {
                             </div>
 
                             <p className='whyP'><StarBorderOutlined style={{ marginRight: '5px' }} /> Rate this customer</p>
-                            <p className='whyP2'>Has {allSpecificReviews} star rating from {finalFinaly.length} {finalFinaly.length > '1' ?
+                            <p className='whyP2'>Has {finalFinaly.length > 1 ? {allSpecificReviews} : 'no'} star rating {finalFinaly.length > 1 ? null : 'yet'} from {finalFinaly.length} {finalFinaly.length > 1 ?
                             'hosts'
                             :
                             'host'}</p>

@@ -93,88 +93,110 @@
     background-color: white;
     border: 1px solid antiquewhite;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
-.admin_host_reviews__info-rightONE {
-    width: 30%;
-    background-color: antiquewhite;
-    padding: 10px;
-    min-height: 20vh;
+.admin_host_reviews__info-right_search {
+    margin: 10px auto 0 auto;
     display: flex;
     align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    cursor: pointer;
-    flex-wrap: wrap;
+}
 
-    border: 0px solid black;
-    box-shadow: 0px 6px 18px -9px lightblue;
+.admin_host_reviews__info-right_search > input {
+    width: 260px;
+    height: 5vh;
+    padding: 5px;
+    border: 1px solid gray;
+    outline: none;
+
+    border-radius: 5px;
 }
 
 
-.admin_host_reviews__info-rightONE:hover {
-    -webkit-filter: brightness(95%);
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    -ms-transition: all 1s ease;
-    transition: all 1s ease;
-}
-
-
-.admin_host_reviews__info-rightTWO {
-    background-color: antiquewhite;
-    padding: 10px;
-    width: 30%;
+.admin_host_reviews__info-right_payment {
+    max-width: 800px;
     min-height: 20vh;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+    overflow-x: auto;
+    box-shadow: 2px 4px 8px 2px rgba(0,0,0,0.2);
+
+    border-radius: 5px;
+}
+
+.admin_host_reviews__info-right_payment::-webkit-scrollbar {
+    display: none;
+}
+
+.admin_host_reviews__info-right_payment > table {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin_host_reviews__info-right_payment > table > thead {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.admin_host_reviews__info-right_payment > table > thead > tr {
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    cursor: pointer;
-    flex-wrap: wrap;
-
-    border: 0px solid black;
-    box-shadow: 0px 6px 18px -9px lightblue;
+    border-bottom: 1px solid #EEEE;
+    padding: 5px 0;
 }
 
+.admin_host_reviews__info-right_payment > table > thead > tr > th {
+    min-width: 250px;
 
-.admin_host_reviews__info-rightTWO:hover {
-    -webkit-filter: brightness(95%);
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    -ms-transition: all 1s ease;
-    transition: all 1s ease;
-}
-
-.admin_host_reviews__info-rightTHREE {
-    background-color: antiquewhite;
-    padding: 10px;
-    width: 30%;
-    min-height: 20vh;
     display: flex;
     align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    cursor: pointer;
-    flex-wrap: wrap;
-
-    border: 0px solid black;
-    box-shadow: 0px 6px 18px -9px lightblue;
+    border-right: 1px solid #EEEE;
+    padding: 2px;
 }
 
+.admin_host_reviews__info-right_payment > table > tbody {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
-.admin_host_reviews__info-rightTHREE:hover {
-    -webkit-filter: brightness(95%);
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    -ms-transition: all 1s ease;
-    transition: all 1s ease;
+.admin_host_reviews__info-right_payment > table > tbody > tr {
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    padding: 5px 0;
+}
+
+.admin_host_reviews__info-right_payment > table > tbody > tr > td {
+    min-width: 250px;
+    display: flex;
+    align-items: center;
+
+    border-right: 1px solid #EEEE;
+    padding: 2px;
+}
+
+.admin_host_reviews__info-right_payment > table > tbody > tr > td > button {
+    background-color: #F78513;
+    color: white;
+    transition: all 0.3s ease-in-out;
+    text-transform: inherit;
+}
+
+.admin_host_reviews__info-right_payment > table > tbody > tr > td > button:hover {
+    background-color: white;
+    color: #F78513;
+    border: 1px solid #F78513;
 }
 
 
@@ -346,6 +368,110 @@
         -ms-transition: all 1s ease;
         transition: all 1s ease;
     }
+
+
+
+
+    .admin_host_reviews__info-right_search {
+        margin: 10px auto 0 auto;
+        display: flex;
+        align-items: center;
+    }
+    
+    .admin_host_reviews__info-right_search > input {
+        width: 260px;
+        height: 5vh;
+        padding: 5px;
+        border: 1px solid gray;
+        outline: none;
+        border-radius: 5px;
+    }
+    
+    
+    .admin_host_reviews__info-right_payment {
+        max-width: 95%;
+        min-height: 20vh;
+        margin: 10px auto;
+        display: flex;
+        flex-direction: column;
+        overflow-x: auto;
+        box-shadow: 2px 4px 8px 2px rgba(0,0,0,0.2);
+        overflow-y: auto;
+
+        border-radius: 5px;
+    }
+    
+    .admin_host_reviews__info-right_payment::-webkit-scrollbar {
+        display: flex;
+    }
+    
+    .admin_host_reviews__info-right_payment > table {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .admin_host_reviews__info-right_payment > table > thead {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .admin_host_reviews__info-right_payment > table > thead > tr {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #EEEE;
+        padding: 5px 0;
+    }
+    
+    .admin_host_reviews__info-right_payment > table > thead > tr > th {
+        min-width: 250px;
+    
+        display: flex;
+        align-items: center;
+        border-right: 1px solid #EEEE;
+        padding: 2px;
+    }
+    
+    .admin_host_reviews__info-right_payment > table > tbody {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .admin_host_reviews__info-right_payment > table > tbody > tr {
+        width: 100%;
+        display: flex;
+        align-items: center;
+    
+        padding: 5px 0;
+    }
+    
+    .admin_host_reviews__info-right_payment > table > tbody > tr > td {
+        min-width: 250px;
+        display: flex;
+        align-items: center;
+    
+        border-right: 1px solid #EEEE;
+        padding: 2px;
+    }
+    
+    .admin_host_reviews__info-right_payment > table > tbody > tr > td > button {
+        background-color: #F78513;
+        color: white;
+        transition: all 0.3s ease-in-out;
+        text-transform: inherit;
+    }
+    
+    .admin_host_reviews__info-right_payment > table > tbody > tr > td > button:hover {
+        background-color: white;
+        color: #F78513;
+        border: 1px solid #F78513;
+    }
 }
 /* end */
 
@@ -431,6 +557,304 @@
         min-height: 100%;
         background-color: white;
         border: 1px solid antiquewhite;
+    }
+
+
+
+    .admin_host_reviews__info-right_search {
+        margin: 10px auto 0 auto;
+        display: flex;
+        align-items: center;
+    }
+    
+    .admin_host_reviews__info-right_search > input {
+        width: 260px;
+        height: 5vh;
+        padding: 5px;
+        border: 1px solid gray;
+        outline: none;
+
+        border-radius: 5px;
+    }
+    
+    
+    .admin_host_reviews__info-right_payment {
+        max-width: 95%;
+        min-height: 20vh;
+        margin: 10px auto;
+        display: flex;
+        flex-direction: column;
+        overflow-x: auto;
+        box-shadow: 2px 4px 8px 2px rgba(0,0,0,0.2);
+        overflow-y: auto;
+
+        border-radius: 5px;
+    }
+    
+    .admin_host_reviews__info-right_payment::-webkit-scrollbar {
+        display: flex;
+    }
+    
+    .admin_host_reviews__info-right_payment > table {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .admin_host_reviews__info-right_payment > table > thead {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .admin_host_reviews__info-right_payment > table > thead > tr {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #EEEE;
+        padding: 5px 0;
+    }
+    
+    .admin_host_reviews__info-right_payment > table > thead > tr > th {
+        min-width: 250px;
+    
+        display: flex;
+        align-items: center;
+        border-right: 1px solid #EEEE;
+        padding: 2px;
+    }
+    
+    .admin_host_reviews__info-right_payment > table > tbody {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .admin_host_reviews__info-right_payment > table > tbody > tr {
+        width: 100%;
+        display: flex;
+        align-items: center;
+    
+        padding: 5px 0;
+    }
+    
+    .admin_host_reviews__info-right_payment > table > tbody > tr > td {
+        min-width: 250px;
+        display: flex;
+        align-items: center;
+    
+        border-right: 1px solid #EEEE;
+        padding: 2px;
+    }
+    
+    .admin_host_reviews__info-right_payment > table > tbody > tr > td > button {
+        background-color: #F78513;
+        color: white;
+        transition: all 0.3s ease-in-out;
+        text-transform: inherit;
+    }
+    
+    .admin_host_reviews__info-right_payment > table > tbody > tr > td > button:hover {
+        background-color: white;
+        color: #F78513;
+        border: 1px solid #F78513;
+    }
+}
+/* end */
+
+
+
+
+
+
+/* 760px to 1020px Mobile resposive */
+@media screen and (min-width: 760px) and (max-width: 1030px) {
+    .admin_host_reviews__page {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        min-height: 80vh;
+        padding: 10px 20px;
+    }
+    
+    .admin_host_reviews__info {
+        width: 100%;
+        min-height: 80vh;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .admin_host_reviews__info-left {
+        flex: 1;
+        width: 100%;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: antiquewhite;
+    }
+    
+    .incase-you-know {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 10px;
+    }
+    
+    .host-image {
+        border-radius: 100%;
+        height: 40px;
+        width: 40px;
+    }
+    
+    .host-image > img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        border-radius: 100%;
+    }
+    
+    .admin_host_reviews__info-left > p {
+        margin: 20px 10px 10px 10px;
+    }
+    
+    .host-navigation {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        justify-items: center;
+        margin: 5px auto;
+    }
+    
+    .host-navigation > li {
+        display: flex;
+        background-color: white;
+        padding: 5px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        margin-top: 10px;
+        justify-content: center;
+    }
+    
+    .host-navigation > li:hover {
+        background-color: #F78513;
+        color: white;
+    }
+    
+    .admin_host_reviews__info-right {
+        flex: 4;
+        width: 100%;
+        min-height: 100%;
+        background-color: white;
+        border: 1px solid antiquewhite;
+    }
+
+
+
+    .admin_host_reviews__info-right_search {
+        margin: 10px auto 0 auto;
+        display: flex;
+        align-items: center;
+    }
+    
+    .admin_host_reviews__info-right_search > input {
+        width: 260px;
+        height: 5vh;
+        padding: 5px;
+        border: 1px solid gray;
+        outline: none;
+
+        border-radius: 5px;
+    }
+    
+    
+    .admin_host_reviews__info-right_payment {
+        max-width: 95%;
+        min-height: 20vh;
+        margin: 10px auto;
+        display: flex;
+        flex-direction: column;
+        overflow-x: auto;
+        box-shadow: 2px 4px 8px 2px rgba(0,0,0,0.2);
+        overflow-y: auto;
+
+        border-radius: 5px;
+    }
+    
+    .admin_host_reviews__info-right_payment::-webkit-scrollbar {
+        display: flex;
+    }
+    
+    .admin_host_reviews__info-right_payment > table {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .admin_host_reviews__info-right_payment > table > thead {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .admin_host_reviews__info-right_payment > table > thead > tr {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #EEEE;
+        padding: 5px 0;
+    }
+    
+    .admin_host_reviews__info-right_payment > table > thead > tr > th {
+        min-width: 250px;
+    
+        display: flex;
+        align-items: center;
+        border-right: 1px solid #EEEE;
+        padding: 2px;
+    }
+    
+    .admin_host_reviews__info-right_payment > table > tbody {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .admin_host_reviews__info-right_payment > table > tbody > tr {
+        width: 100%;
+        display: flex;
+        align-items: center;
+    
+        padding: 5px 0;
+    }
+    
+    .admin_host_reviews__info-right_payment > table > tbody > tr > td {
+        min-width: 250px;
+        display: flex;
+        align-items: center;
+    
+        border-right: 1px solid #EEEE;
+        padding: 2px;
+    }
+    
+    .admin_host_reviews__info-right_payment > table > tbody > tr > td > button {
+        background-color: #F78513;
+        color: white;
+        transition: all 0.3s ease-in-out;
+        text-transform: inherit;
+    }
+    
+    .admin_host_reviews__info-right_payment > table > tbody > tr > td > button:hover {
+        background-color: white;
+        color: #F78513;
+        border: 1px solid #F78513;
     }
 }
 /* end */
