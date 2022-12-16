@@ -31,9 +31,12 @@ function Home() {
 
     const Navigate = useNavigate();
 
-    const handleNavigation =(e, id)=> {
+    const handleNavigation =(e, title, id)=> {
       e.preventDefault();
-      Navigate(`/more-details/${id}`)
+      Navigate(`/more-details?name=${title}&id=${id}`,{state:{
+          paramaId: id,
+      }
+      });
     }
 
   return (
@@ -53,7 +56,7 @@ function Home() {
             price={data.price}
             location={data.location}
             key={data.id}
-            handleNavigating={(e)=> handleNavigation(e, data.id)}
+            handleNavigating={(e)=> handleNavigation(e, data.title, data.id)}
           />
         );
       })}
