@@ -24,6 +24,8 @@ function Checkout() {
     const [bookingPhone, setBookingPhone] = useState('');
     const Navigate = useNavigate();
 
+    const [returnData, setReturnData] = useState([]);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -56,18 +58,24 @@ function Checkout() {
     formData2.append('total_price', totals);
 
     const url = `${BaseURL}/api/v1/stk/push`;
-    const request = await axios.post(url, formData2);
-    if(request.data.status === 200) {
-      const url = `${BaseURL}/api/add-booking-info`;
-      const request = await axios.post(url, formData); 
+    const request = await axios.post(url, formData2).then(async(res)=>{
       if(request.data.status === 200) {
-        swal('success','booked successfully','success');
-        document.getElementById('submit').innerHTML = "booked";
-        localStorage.removeItem('booking-data');
-        Navigate('/customer-second-page');
+        const url = `${BaseURL}/api/add-booking-info`;
+  
+        setReturnData(res.data.bookingInfoForHost[0].id)
+  
+        formData.append('pay_id', returnData);
+        const request = await axios.post(url, formData); 
+        if(request.data.status === 200) {
+          swal('success','booked successfully','success');
+          document.getElementById('submit').innerHTML = "booked";
+          localStorage.removeItem('booking-data');
+          Navigate('/customer-second-page');
+        }
+  
       }
-
-    }
+    });
+    
   }
   return (
     <div className='checkout-container'>
