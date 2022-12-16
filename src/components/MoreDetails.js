@@ -4,7 +4,7 @@ import './MoreDetails.css'
 import Button from '@mui/material/Button';
 import { FaSwimmingPool, FaRegStar, FaRegCalendarTimes, FaBed, FaToilet, FaUtensils, FaPencilRuler, FaWineBottle, FaBabyCarriage, FaStar } from 'react-icons/fa';
 import Slider from './Slider';
-import {useParams} from 'react-router-dom'
+import {useLocation} from 'react-router-dom'
 import axios from 'axios'
 import {useNavigate} from 'react-router-dom'
 
@@ -52,8 +52,9 @@ function MoreDetails() {
     var [loading, setLoading] = useState(true);
     var [hostDit, setHostDit] = useState([]);
 
-    const params = useParams();
-    const paramaId = params.id;
+    const room = useLocation();
+
+    const { paramaId } = room.state;
 
     var [nomaCount] = useState([]);
     var [outputNoma] = useState([]);

@@ -360,9 +360,7 @@ function App() {
             <Route exact path="/more-details" element={
                 <MoreDetails />
             }>
-               <Route exact path=":id" element={
-                <MoreDetails />
-               } />
+               
             </Route>
 
             <Route exact path="/slider" element={ <Slider /> } />
