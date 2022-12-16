@@ -58,24 +58,22 @@ function Checkout() {
     formData2.append('total_price', totals);
 
     const url = `${BaseURL}/api/v1/stk/push`;
-    const request = await axios.post(url, formData2).then(async(res)=>{
+    const request = await axios.post(url, formData2);
+    console.log(request);
+    if(request.data.status === 200) {
+      const url = `${BaseURL}/api/add-booking-info`;
+      setReturnData(1);
+
+      formData.append('pay_id', returnData);
+      const request = await axios.post(url, formData); 
       if(request.data.status === 200) {
-        const url = `${BaseURL}/api/add-booking-info`;
-  
-        console.log(res.data.bookingInfoForHost[0].id);
-        setReturnData(res.data.bookingInfoForHost[0].id)
-  
-        formData.append('pay_id', returnData);
-        const request = await axios.post(url, formData); 
-        if(request.data.status === 200) {
-          swal('success','booked successfully','success');
-          document.getElementById('submit').innerHTML = "booked";
-          localStorage.removeItem('booking-data');
-          Navigate('/customer-second-page');
-        }
-  
+        swal('success','booked successfully','success');
+        document.getElementById('submit').innerHTML = "booked";
+        localStorage.removeItem('booking-data');
+        Navigate('/customer-second-page');
       }
-    });
+
+    }
     
   }
   return (
