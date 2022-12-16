@@ -24,7 +24,7 @@ function Checkout() {
     const [bookingPhone, setBookingPhone] = useState('');
     const Navigate = useNavigate();
 
-    const [returnData, setReturnData] = useState([]);
+    const [returnData, setReturnData] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -62,6 +62,7 @@ function Checkout() {
       if(request.data.status === 200) {
         const url = `${BaseURL}/api/add-booking-info`;
   
+        console.log(res.data.bookingInfoForHost[0].id);
         setReturnData(res.data.bookingInfoForHost[0].id)
   
         formData.append('pay_id', returnData);
