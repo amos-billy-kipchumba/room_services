@@ -79,11 +79,17 @@ function Checkout() {
     formData2.append('total_price', totals);
 
     const url = `${BaseURL}/api/v1/stk/push`;
-    const request = await axios.post(url, formData2);
-    console.log(request);
+    const request = await axios.post(url, formData2).then(res=>{
+      console.log(res.data.data.bookingInfoForHost[0].id);
+      console.log(res);
+    });
+
+    if(request) {
+
+    }
+
     // if(request.data.status === 200) {
     //   const url = `${BaseURL}/api/add-booking-info`;
-    //   setReturnData(1);
 
     //   formData.append('pay_id', returnData);
     //   const request = await axios.post(url, formData); 
