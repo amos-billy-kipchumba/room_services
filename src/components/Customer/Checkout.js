@@ -80,8 +80,7 @@ function Checkout() {
 
     const url = `${BaseURL}/api/v1/stk/push`;
     const request = await axios.post(url, formData2).then(res=>{
-      console.log(res.data.data.bookingInfoForHost[0].id);
-      console.log(res);
+      console.log(res.data);
     });
 
     if(request) {
