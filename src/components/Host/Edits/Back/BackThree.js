@@ -4,7 +4,7 @@ import Add from '@mui/icons-material/Add';
 import {Link} from 'react-router-dom'
 import axios from 'axios'
 import { Button } from '@mui/material';
-import {useNavigate, useParams} from 'react-router-dom'
+import {useNavigate, useSearchParams} from 'react-router-dom'
 
 import { FaBath, FaToiletPaper, FaTv, FaTemperatureHigh, FaWifi, FaBreadSlice } from "react-icons/fa";
 import LocalLaundryServiceIcon from '@mui/icons-material/LocalLaundryService';
@@ -33,8 +33,9 @@ import { MoreHoriz } from '@mui/icons-material';
 
 
 function BackThree() {
-  const params = useParams();
-  const paramaId = params.id;
+  const [searchParams] = useSearchParams();
+    
+  var paramaId = searchParams.get('id');
 
   const userData = JSON.parse(localStorage.getItem('user-info'));
   const [imageToBe, setImageToBe] = useState(null);

@@ -402,7 +402,7 @@
     }
     
     .admin_host_reviews__info-right_payment::-webkit-scrollbar {
-        display: flex;
+        display: none;
     }
     
     .admin_host_reviews__info-right_payment > table {

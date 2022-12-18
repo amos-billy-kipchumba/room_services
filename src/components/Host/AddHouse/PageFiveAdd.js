@@ -546,7 +546,7 @@ class PageFiveAdd extends Component {
 
                                 <div className='finish-form-container'>
                                     <label>Tent hire</label>
-                                    <input type='checkbox' value={this.state.tent_hire} onChange={this.handleTent} />
+                                    <input type='checkbox' value={this.state.tent_hire} onChange={this.handleTentHire} />
                                     {this.state.tent_hire === 1 ?
                                     <input type="number" placeholder="How far away in Km?" name="tent_hire_distance" value={this.state.tent_hire_distance} onChange={this.handleDistances} />
                                     :

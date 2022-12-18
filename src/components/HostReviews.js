@@ -1,25 +1,19 @@
 import React, {useState, useEffect} from 'react'
 import './HostReviews.css'
-import {useLocation, useNavigate, useParams} from 'react-router-dom'
+import { useSearchParams, useNavigate } from 'react-router-dom'
 import { Button } from '@mui/material';
 import { Face } from '@mui/icons-material'
 import { StarBorderOutlined } from '@mui/icons-material';
 import BaseURL from './BaseUrl';
+import axios from 'axios'
 function HostReviews() {
-    const params = useParams();
-    const paramaId = params.id;
 
-    const reviews = useLocation();
 
-    const [allReviews, setAllReviews] = useState([]);
-    useEffect(()=>{
-        const getAllSpecificReviews = () => {
-            if(reviews.state.finalFinaly) {
-                setAllReviews(reviews.state.finalFinaly);
-            }
-        }
-        getAllSpecificReviews();
-    },[reviews]);
+    const [searchParams] = useSearchParams();
+    
+    var paramaId = searchParams.get('id');
+
+    var title = searchParams.get('title');
 
     const Navigate = useNavigate();
 
@@ -28,21 +22,41 @@ function HostReviews() {
             window.scrollTo({top: 0, left: 0, behavior: 'smooth'})
         },[]);
     //End of Scroll to the top on load
+
+
+    var [finalFinaly, setFinalyFinaly] = useState([]);
+
+    useEffect(()=>{
+        const getAllSpecificReviews = async () => {
+            let url = `${BaseURL}/api/get-all-specific-review/${paramaId}`;
+            const request = await axios.get(url);
+            if(request.data.status === 200) {
+
+                setFinalyFinaly(request.data.review_page);
+    
+            }
+
+        }
+        getAllSpecificReviews();
+    },[paramaId]);
   return (
     <div className='host_review_container'>
         <Button onClick={()=>{
-            Navigate(`/more-details/${paramaId}`);
+            Navigate(`/more-details?name=${title}&id=${paramaId}`,{state:{
+                paramaId: paramaId,
+            }
+            });
         }}>Back</Button>
 
-        <p>{allReviews.length} {allReviews.length > 1 ?
+        <p>{finalFinaly.length} {finalFinaly.length > 1 ?
         'reviews'
         :
         'review'}</p>
 
         <div className='host_review_container_wrapper'>
-        {allReviews.length > 0 ?
+        {finalFinaly.length > 0 ?
         <>
-        {allReviews.map((object, index)=>{
+        {finalFinaly.map((object, index)=>{
             return(
                 <div 
                 key={index}

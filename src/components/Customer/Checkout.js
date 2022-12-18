@@ -1,30 +1,51 @@
 import React, {useState} from 'react'
 import './Checkout.css'
-import {useParams, useNavigate} from 'react-router-dom'
+import { useSearchParams} from 'react-router-dom'
 import { Button } from '@mui/material';
 import { CardGiftcard } from '@mui/icons-material';
 import axios from 'axios';
 import BaseURL from '../BaseUrl';
-import swal from 'sweetalert';
+// import swal from 'sweetalert';
 function Checkout() {
-    const params = useParams();
-    const paramaId = params.paramaId;
+  
+    const [searchParams] = useSearchParams();
+    
+    var paramaId = searchParams.get('id');
 
-    const bookingData = JSON.parse(localStorage.getItem('booking-data'));
-    const [numberOfGuests] = useState(bookingData.numberOfGuests);
-    const [numberOfHours] = useState(bookingData.hourDuration);
-    const [startDate] = useState(bookingData.customerStartDateRAW);
-    const [endDate] = useState(bookingData.customerEndDateRAW);
-    const [customerId] = useState(bookingData.customerId);
-    const [totals] = useState(bookingData.totalPrice);
-    const [customer_email] = useState(bookingData.customerEmail);
-    const [customer_first_name] = useState(bookingData.customerFirstName);
-    const [host_email] = useState(bookingData.hostEmail);
+    var guests = searchParams.get('guests');
+
+    var hours = searchParams.get('hours');
+
+    var start_date = searchParams.get('start-date');
+
+    var end_date = searchParams.get('end-date');
+
+    var c_id = searchParams.get('c-id');
+
+    var total = searchParams.get('total');
+
+    var c_mail = searchParams.get('c-email');
+
+    var c_first = searchParams.get('c-first');
+
+    var h_email = searchParams.get('h-email');
+
+    // name=${editTitle}&id=${id}&c-id=${c_id}&c-first=${c_first}&c-email=${c_email}&c-phone=${c_phone}&h-email=${h_mail}&start-date=${start_date}&end-date=${end_date}&desc=${editDescription}&image=${editImage}&price=${editPrice}&total=${numberOfPrice}&guests=${numberOfGuests}&hours=${numberOfHours}&location=${editLocation}
+
+    const [numberOfGuests] = useState(guests);
+    const [numberOfHours] = useState(hours);
+    const [startDate] = useState(start_date);
+    const [endDate] = useState(end_date);
+    const [customerId] = useState(c_id);
+    const [totals] = useState(total);
+    const [customer_email] = useState(c_mail);
+    const [customer_first_name] = useState(c_first);
+    const [host_email] = useState(h_email);
 
     const [bookingPhone, setBookingPhone] = useState('');
-    const Navigate = useNavigate();
+    // const Navigate = useNavigate();
 
-    const [returnData, setReturnData] = useState("");
+    // const [returnData, setReturnData] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -58,24 +79,22 @@ function Checkout() {
     formData2.append('total_price', totals);
 
     const url = `${BaseURL}/api/v1/stk/push`;
-    const request = await axios.post(url, formData2).then(async(res)=>{
-      if(request.data.status === 200) {
-        const url = `${BaseURL}/api/add-booking-info`;
-  
-        console.log(res.data.bookingInfoForHost[0].id);
-        setReturnData(res.data.bookingInfoForHost[0].id)
-  
-        formData.append('pay_id', returnData);
-        const request = await axios.post(url, formData); 
-        if(request.data.status === 200) {
-          swal('success','booked successfully','success');
-          document.getElementById('submit').innerHTML = "booked";
-          localStorage.removeItem('booking-data');
-          Navigate('/customer-second-page');
-        }
-  
-      }
-    });
+    const request = await axios.post(url, formData2);
+    console.log(request);
+    // if(request.data.status === 200) {
+    //   const url = `${BaseURL}/api/add-booking-info`;
+    //   setReturnData(1);
+
+    //   formData.append('pay_id', returnData);
+    //   const request = await axios.post(url, formData); 
+    //   if(request.data.status === 200) {
+    //     swal('success','booked successfully','success');
+    //     document.getElementById('submit').innerHTML = "booked";
+    //     localStorage.removeItem('booking-data');
+    //     Navigate('/customer-second-page');
+    //   }
+
+    // }
     
   }
   return (

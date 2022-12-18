@@ -137,7 +137,10 @@ class PageTwoAdd extends Component {
                         </form>
         
                         <Button onClick={()=>{
-                            this.props.navigation(`/back-first/${this.state.house_id}`);
+                            this.props.navigation(`/back-first?id=${this.state.house_id}`,{state:{
+                                paramaId: this.state.house_id,
+                              }
+                              });
                         }}>Back</Button>
 
                         <Button id="back_id"

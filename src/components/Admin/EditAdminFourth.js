@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import './EditAdminFourth.css'
-import {useNavigate, useParams} from 'react-router-dom'
+import {useNavigate, useSearchParams} from 'react-router-dom'
 import axios from 'axios'
 import { Logout, MoreHoriz } from '@mui/icons-material';
 import BaseURL from '../BaseUrl';
@@ -12,8 +12,10 @@ function EditAdminFourth() {
   const [useful, setUseful] = useState([]);
   const [oneHost, setOneHost] = useState([]);
 
-  const params = useParams();
-  const paramaId = params.id;
+  const [searchParams] = useSearchParams();
+    
+  var paramaId = searchParams.get('id');
+  
   const [sendImage, setSendImage] = useState(null);
 
   useEffect(()=>{

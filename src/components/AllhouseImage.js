@@ -3,10 +3,15 @@ import './AllHouseImage.css'
 import {useNavigate} from 'react-router-dom'
 import { Button } from '@mui/material';
 import BaseURL from './BaseUrl';
-import {useLocation} from 'react-router-dom'
+import {useSearchParams} from 'react-router-dom'
+import axios from 'axios'
 function AllhouseImage() {
 
-    const room = useLocation();
+    const [searchParams] = useSearchParams();
+    
+    var paramaId = searchParams.get('id');
+
+    var title = searchParams.get('name');
 
     const Navigate = useNavigate();
 
@@ -27,61 +32,62 @@ function AllhouseImage() {
     const [lebo14, setLebo14] = useState(null);
     const [lebo15, setLebo15] = useState(null);
     const [lebo16, setLebo16] = useState(null);
-
  
    useEffect(()=>{
     const getThousandDetails = async () => {
-        if(room.state.allHousesForMore) {
-        setThousand(room.state.allHousesForMore);
+        const userPin = paramaId;
+        const request = await axios.get(`${BaseURL}/api/get-all-house-more-details/${userPin}`);
+        if(request.data.status) {
+        setThousand(request.data.bookingInfoForHost[0]);
     
-        setLebo(`${BaseURL}/parts/${room.state.allHousesForMore.sitting_room}`);
+        setLebo(`${BaseURL}/parts/${request.data.bookingInfoForHost[0].sitting_room}`);
        
     
-        setLebo2(`${BaseURL}/parts/${room.state.allHousesForMore.dinning_room}`);
+        setLebo2(`${BaseURL}/parts/${request.data.bookingInfoForHost[0].dinning_room}`);
        
     
-        setLebo3(`${BaseURL}/parts/${room.state.allHousesForMore.kitchen}`);
+        setLebo3(`${BaseURL}/parts/${request.data.bookingInfoForHost[0].kitchen}`);
        
     
-        setLebo4(`${BaseURL}/parts/${room.state.allHousesForMore.bathroom}`);
+        setLebo4(`${BaseURL}/parts/${request.data.bookingInfoForHost[0].bathroom}`);
        
     
-        setLebo5(`${BaseURL}/parts/${room.state.allHousesForMore.bedroom}`);
+        setLebo5(`${BaseURL}/parts/${request.data.bookingInfoForHost[0].bedroom}`);
         
     
-        setLebo6(`${BaseURL}/parts/${room.state.allHousesForMore.swimming_pool}`);
+        setLebo6(`${BaseURL}/parts/${request.data.bookingInfoForHost[0].swimming_pool}`);
         
     
-        setLebo7(`${BaseURL}/parts/${room.state.allHousesForMore.lake}`);
+        setLebo7(`${BaseURL}/parts/${request.data.bookingInfoForHost[0].lake}`);
     
-        setLebo8(`${BaseURL}/parts/${room.state.allHousesForMore.beach}`);
+        setLebo8(`${BaseURL}/parts/${request.data.bookingInfoForHost[0].beach}`);
     
-        setLebo9(`${BaseURL}/parts/${room.state.allHousesForMore.ocean_view}`);
+        setLebo9(`${BaseURL}/parts/${request.data.bookingInfoForHost[0].ocean_view}`);
     
-        setLebo10(`${BaseURL}/parts/${room.state.allHousesForMore.balcony}`);
+        setLebo10(`${BaseURL}/parts/${request.data.bookingInfoForHost[0].balcony}`);
       
     
-        setLebo11(`${BaseURL}/parts/${room.state.allHousesForMore.parking}`);
+        setLebo11(`${BaseURL}/parts/${request.data.bookingInfoForHost[0].parking}`);
         
     
-        setLebo12(`${BaseURL}/parts/${room.state.allHousesForMore.front}`);
+        setLebo12(`${BaseURL}/parts/${request.data.bookingInfoForHost[0].front}`);
         
     
-        setLebo13(`${BaseURL}/parts/${room.state.allHousesForMore.right}`);
+        setLebo13(`${BaseURL}/parts/${request.data.bookingInfoForHost[0].right}`);
        
     
-        setLebo14(`${BaseURL}/parts/${room.state.allHousesForMore.left}`);
+        setLebo14(`${BaseURL}/parts/${request.data.bookingInfoForHost[0].left}`);
        
     
-        setLebo15(`${BaseURL}/parts/${room.state.allHousesForMore.back}`);
+        setLebo15(`${BaseURL}/parts/${request.data.bookingInfoForHost[0].back}`);
        
     
-        setLebo16(`${BaseURL}/parts/${room.state.allHousesForMore.aerial}`);
+        setLebo16(`${BaseURL}/parts/${request.data.bookingInfoForHost[0].aerial}`);
         }
         
       }
      getThousandDetails();
-   },[room.state.allHousesForMore]);
+   },[paramaId]);
 
     //Scroll to the top on load
     useEffect(()=>{
@@ -91,9 +97,12 @@ function AllhouseImage() {
   return (
     <div className='AllHousesAmerica'>
         <Button onClick={()=> {
-            Navigate(`/more-details/${thousand.house_id}`);
+            Navigate(`/more-details?name=${title}&id=${thousand.house_id}`,{state:{
+                paramaId: thousand.house_id,
+            }
+            });
         }}>Back</Button>
-        <p>{room.state.allHousesForMore.title}</p>
+        <p>{title}</p>
         <div className='ParentAllHouses'>
         {thousand.sitting_room !== null ?
             <div className='ChildAllHouses'>
