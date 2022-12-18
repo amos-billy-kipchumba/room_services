@@ -1,11 +1,11 @@
 import React, {useState} from 'react'
 import './Checkout.css'
-import { useNavigate,useSearchParams} from 'react-router-dom'
+import { useSearchParams} from 'react-router-dom'
 import { Button } from '@mui/material';
 import { CardGiftcard } from '@mui/icons-material';
 import axios from 'axios';
 import BaseURL from '../BaseUrl';
-import swal from 'sweetalert';
+// import swal from 'sweetalert';
 function Checkout() {
   
     const [searchParams] = useSearchParams();
@@ -43,9 +43,9 @@ function Checkout() {
     const [host_email] = useState(h_email);
 
     const [bookingPhone, setBookingPhone] = useState('');
-    const Navigate = useNavigate();
+    // const Navigate = useNavigate();
 
-    const [returnData, setReturnData] = useState("");
+    // const [returnData, setReturnData] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -80,22 +80,30 @@ function Checkout() {
 
     const url = `${BaseURL}/api/v1/stk/push`;
     const request = await axios.post(url, formData2).then(res=>{
-      setReturnData(res.data.bookingInfoForHost[0].id);
+      console.log(res.data.bookingInfoForHost[0].id);
+    }).then(res=>{
+      if(res.data.status ===200){
+        console.log('proceed amos');
+      }
     });
 
-    if(request.data.status === 200) {
-      const url = `${BaseURL}/api/add-booking-info`;
-
-      formData.append('pay_id', returnData);
-      const request = await axios.post(url, formData); 
-      if(request.data.status === 200) {
-        swal('success','booked successfully','success');
-        document.getElementById('submit').innerHTML = "booked";
-        localStorage.removeItem('booking-data');
-        Navigate('/customer-second-page');
-      }
+    if(request) {
 
     }
+
+    // if(request.data.status === 200) {
+    //   const url = `${BaseURL}/api/add-booking-info`;
+
+    //   formData.append('pay_id', returnData);
+    //   const request = await axios.post(url, formData); 
+    //   if(request.data.status === 200) {
+    //     swal('success','booked successfully','success');
+    //     document.getElementById('submit').innerHTML = "booked";
+    //     localStorage.removeItem('booking-data');
+    //     Navigate('/customer-second-page');
+    //   }
+
+    // }
     
   }
   return (
