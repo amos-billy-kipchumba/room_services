@@ -1,8 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import './SearchPage.css'
 import SearchResult from './SearchResult';
-import {useLocation} from 'react-router-dom'
-import { format } from 'date-fns'
+import {useSearchParams} from 'react-router-dom'
 import axios from 'axios'
 import {useNavigate} from 'react-router-dom'
 import NoRecordYet from './NoRecordYet';
@@ -13,15 +12,25 @@ import { Close } from '@mui/icons-material';
 
 function SearchPage() {
 
-    const room = useLocation();
+    const [searchParams] = useSearchParams();
+    
+    var location = searchParams.get('location');
 
-    const { location, startDate, endDate, noOfGuests } = room.state;
+    var startDate = searchParams.get('start-date');
 
-    const formattedStartDate = format(new Date(startDate), "dd MMM yy");
+    var endDate = searchParams.get('end-date');
 
-    const formattedEndDate = format(new Date(endDate), "dd MMM yy");
+    var noOfGuests = searchParams.get('end-date');
 
-    const range = `${formattedStartDate} --- ${formattedEndDate}`;
+    let formattedStartDate = new Date(startDate);
+
+    var newStart = formattedStartDate.toLocaleDateString(formattedStartDate)
+
+    let formattedEndDate = new Date(endDate);
+
+    var newEnd = formattedEndDate.toLocaleDateString(formattedEndDate)
+
+    const range = `${newStart} --- ${newEnd}`;
 
     const [matchSearch, setMatchSearch] = useState([]);
     const [loadStone, setLoadStone] = useState(true);
@@ -42,7 +51,7 @@ function SearchPage() {
     const [searchPrice, setSearchPrice] = useState("");
 
     useEffect(()=>{
-        setSearchFul(location);
+            setSearchFul(location);
     },[location]);
 
     useEffect(()=>{
@@ -253,6 +262,7 @@ function SearchPage() {
                         if (val.location.toLowerCase().includes(searchFul.toLowerCase())) {
                         return val
                         }
+                    
                         if (val.title.toLowerCase().includes(searchTitle.toLowerCase())) {
                             return val
                         }
@@ -265,7 +275,7 @@ function SearchPage() {
                     }).map((item,index)=>{
                         return(
                             <div onClick={()=> {
-                                Navigate(`/more-details/${item.id}`);
+                                Navigate(`/more-details?id=${item.id}`);
                             }} key={index}>
                             <SearchResult 
                             img={`${BaseURL}/uploads/${item.cover}`}

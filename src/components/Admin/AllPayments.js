@@ -67,9 +67,26 @@ function AllPayments() {
 
     const changeStatus = async (e, id) => {
       e.preventDefault();
-      const request = await axios.get(`${BaseURL}/api/get-total-booked-for-admin`); 
-      if(request.data.status === 200){
+      const request = await axios.get(`${BaseURL}/api/get-to-booking-info/${id}`); 
 
+
+      const formData = new FormData();
+      formData.append('number_of_guests', request.data.info[0].number_of_guests);
+      formData.append('number_of_hours', request.data.info[0].number_of_hours);
+      formData.append('house_id', request.data.info[0].house_id);
+      formData.append('user_id', request.data.info[0].user_id);
+      formData.append('start_date', request.data.info[0].start_date);
+      formData.append('end_date', request.data.info[0].end_date);
+      formData.append('number_of_days', request.data.info[0].number_of_days);
+      formData.append('total_price', request.data.info[0].total_price);
+      formData.append('booking_phone', request.data.info[0].booking_phone);
+      formData.append('pay_id', request.data.info[0].pay_id);
+
+      if(request.data.status === 200){
+        const request = await axios.post(`${BaseURL}/api/update-booking-info/${id}`, formData); 
+        if(request.data.status === 200) {
+          swal('success','Payment transfer made successfully','success');
+        }
       }
     }
     // end   
@@ -177,6 +194,9 @@ function AllPayments() {
                       else if (val.paid.toString().includes(searchFul.toString())) {
                         return val
                       }
+                      else if (val.MpesaReceiptNumber.toLowerCase().includes(searchFul.toLowerCase())) {
+                        return val
+                      }
                       else if (val.email.toLowerCase().includes(searchFul.toLowerCase())) {
                         return val
                       }
@@ -202,7 +222,7 @@ function AllPayments() {
                           <td>{dateTo}</td>
                           <td>+{data.booking_phone}</td>
                           <td><Button onClick={(e)=>{
-                            changeStatus(e, data.id)
+                            changeStatus(e, data.pay_id)
                           }}>Make <ArrowUpward style={{ marginLeft: '5px' }} /></Button></td>
                       </tr>
                       );

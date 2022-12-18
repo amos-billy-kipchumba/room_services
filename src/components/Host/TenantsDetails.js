@@ -276,7 +276,11 @@ function TenantsDetails() {
 
                             <div className="tenants-details__info-rightMainContainerBottomButtonTwo">
                                 <Button onClick={()=> {
-                                    Navigate(`/tenant-review/${object.house_id}`);
+                                    Navigate(`/tenant-review?name=${object.title}&id=${object.id}`,{state:{
+                                      paramaId: object.id,
+                                      title: object.title,
+                                    }
+                                    });
                                 }}>Reviews</Button>
 
                                 <Button onClick={(e)=> {

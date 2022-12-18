@@ -4,14 +4,16 @@ import Add from '@mui/icons-material/Add';
 import {Link} from 'react-router-dom'
 import axios from 'axios'
 import { Button } from '@mui/material';
-import {useNavigate, useParams} from 'react-router-dom';
+import {useNavigate, useSearchParams } from 'react-router-dom';
 import { FaPen, FaTimes } from 'react-icons/fa';
 import BaseURL from '../../../BaseUrl';
 import { MoreHoriz } from '@mui/icons-material';
 function BackFirst() {
 
-  const params = useParams();
-  const paramaId = params.id;
+  const [searchParams] = useSearchParams();
+    
+  var paramaId = searchParams.get('id');
+
 
   const userData = JSON.parse(localStorage.getItem('user-info'));
   const [userId] = useState(userData.data.id);
@@ -146,7 +148,7 @@ function BackFirst() {
               {showMenuBar ?
               <ul className='host-navigation'>
                 <li><Link to="/main-host-account" className='lilo-link'>DashBoard</Link></li>
-                <li style={{ backgroundColor: '#ff7779' }}><Link to="/host-houses" className='lilo-link'>Your houses</Link></li>
+                <li style={{ backgroundColor: '#F78513' }}><Link to="/host-houses" className='lilo-link'>Your houses</Link></li>
                 <li><Link to="/add-house-host" className='lilo-link'><Add /> house</Link></li>
                 <li>Tenants Details</li>
                 <li onClick={()=> Navigate('/host-profile')}>Host Profile</li>
@@ -230,7 +232,7 @@ function BackFirst() {
                 <div className="back-first__info-right-buttonOne"><Button type="submit">Update (1/4) </Button></div>
 
                 <div className="back-first__info-right-buttonTwo">
-                <Button onClick={()=> Navigate('/add-house-host-page-two')} style={{ marginRight: '10px', backgroundColor: '#ff7779', color: 'white' }} id="updated">next</Button>
+                <Button onClick={()=> Navigate('/add-house-host-page-two')} style={{ marginRight: '10px', backgroundColor: '#F78513', color: 'white' }} id="updated">next</Button>
                 </div>
               </form>
              </div>

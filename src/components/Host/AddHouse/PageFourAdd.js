@@ -370,7 +370,10 @@ class PageFourAdd extends Component {
                     <Button type="submit" id="submit">Next</Button>
                 </form>
                 <Button onClick={()=>{
-                    this.props.navigation(`/back-third/${this.state.house_id}`);
+                    this.props.navigation(`/back-third?id=${this.state.house_id}`,{state:{
+                        paramaId: this.state.house_id,
+                      }
+                      });
                 }}>Back</Button>
            </div>
         </div>

@@ -40,7 +40,7 @@ function Header() {
     const navigate = useNavigate();
 
     function navigateSearch () {
-            navigate(`/search-page?location=${searchInput}&start-date=${startDate}`,{state:{
+            navigate(`/search-page?location=${searchInput}&start-date=${startDate}&end-date=${endDate}&no-of-guests=${noOfGuests}`,{state:{
                 location: searchInput,
                 startDate: startDate.toISOString(),
                 endDate: endDate.toISOString(),

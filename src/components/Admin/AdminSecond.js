@@ -179,7 +179,12 @@ function AdminSecond() {
                       <td>
                         <div className="realFunny"><img src={`${BaseURL}/users/${data.image}`} alt="" /></div>
                       </td>
-                      <td><span onClick={()=> Navigate(`/edit-admin-second/${data.id}`)}><ArrowDownwardSharp /></span></td>
+                      <td><span onClick={()=> {
+                        Navigate(`/edit-admin-second?id=${data.id}`,{state:{
+                          paramaId: data.id,
+                        }
+                        });
+                      }}><ArrowDownwardSharp /></span></td>
                       <td><span onClick={(e) => deleteStudent(e, data.id)}><Delete /></span></td>
                     </tr>
                   );

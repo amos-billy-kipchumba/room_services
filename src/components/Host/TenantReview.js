@@ -3,7 +3,7 @@ import './TenantReview.css'
 import Add from '@mui/icons-material/Add';
 import {Link} from 'react-router-dom'
 import axios from 'axios'
-import {useNavigate, useParams} from 'react-router-dom'
+import {useNavigate, useSearchParams } from 'react-router-dom'
 import BaseURL from '../BaseUrl';
 import { Button } from '@mui/material';
 import { MoreHoriz } from '@mui/icons-material';
@@ -14,8 +14,9 @@ function TenantsReview() {
   const [userFirstName] = useState(userData.data.first_name);
   const [imageToBe, setImageToBe] = useState(null); 
 
-  const params = useParams();
-  const paramaId = params.id;
+  const [searchParams] = useSearchParams();
+    
+  var paramaId = searchParams.get('id');
 
   useEffect(()=>{
     const realThree = async () => {

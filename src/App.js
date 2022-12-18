@@ -92,11 +92,9 @@ function App() {
           <Header />
           <Routes>
             <Route exact path="/tenant-review" element={ <TenantsReview /> }>
-              <Route exact path=":id" element={ <TenantsReview /> } />
             </Route>
             
             <Route exact path="/host-reviews" element={ <HostReviews /> }>
-              <Route exact path=":id" element={ <HostReviews /> } />
             </Route>
 
             <Route exact path="/gable-front" element={ <GableFront /> } />
@@ -142,26 +140,17 @@ function App() {
             <Route exact path="/back-third" element={ 
               <Protected Cmp={BackThree} />
              }>
-              <Route exact path=":id" element={ 
-                <Protected Cmp={BackThree} />
-              } />
              </Route>
 
 
             <Route exact path="/back-second" element={ 
               <Protected Cmp={BackSecond} /> }>
-              
-              <Route exact path=":id" element={ 
-                <Protected Cmp={BackSecond} /> } />
             </Route>
 
 
             <Route exact path="/back-first" element={ 
               <Protected Cmp={BackFirst} />
              }>
-              <Route exact path=":id" element={ 
-                <Protected Cmp={BackFirst} />
-              } />
              </Route>
 
 
@@ -179,45 +168,30 @@ function App() {
             <Route exact path="/all-house-images" element={ 
               <AllhouseImage />
              }>
-              <Route exact path=":id" element={ 
-                <AllhouseImage />
-              } />
              </Route>
 
 
              <Route exact path="/all-house-images-when-booking" element={ 
               <AllhouseImageTwo />
              }>
-              <Route exact path=":id" element={ 
-                <AllhouseImageTwo />
-              } />
              </Route>
 
 
             <Route exact path="/edit-admin-third" element={ 
               <Protected Cmp={EditAdminThird} />
              }>
-              <Route exact path=":id" element={ 
-                <Protected Cmp={EditAdminThird} />
-              } />
              </Route>
 
 
             <Route exact path="/edit-admin-fourth" element={ 
               <Protected Cmp={EditAdminFourth} />
              }>
-              <Route exact path=":id" element={ 
-                <Protected Cmp={EditAdminFourth} />
-              } />
              </Route>
 
 
             <Route exact path="/edit-admin-second" element={ 
               <Protected Cmp={EditAdminSecond} />
              }>
-              <Route exact path=":id" element={ 
-                <Protected Cmp={EditAdminSecond} />
-              } />
              </Route>
 
 
@@ -259,25 +233,17 @@ function App() {
             <Route exact path="/customer-house-room-checkout-with-bank" element={ 
               <Protected Cmp={BankCard} />
              }>
-              <Route exact path=":paramaId" element={ 
-                <Protected Cmp={BankCard} />
-              } />
              </Route>
 
 
             <Route exact path="/customer-house-room-checkout" element={ 
               <Protected Cmp={Checkout} /> }>
-                <Route exact path=":paramaId" element={ 
-                  <Protected Cmp={Checkout} /> } />
             </Route>
 
 
             <Route exact path="/customer-house-room-reservation" element={ 
               <Protected Cmp={Reserve} />
              }>
-              <Route exact path=":paramaId" element={ 
-                <Protected Cmp={Reserve} />
-              } />
              </Route>
 
 
@@ -294,44 +260,29 @@ function App() {
              <Route exact path="/edit-five" element={ 
               <Protected Cmp={EditFive} />
              }>
-              <Route exact path=":id" element={ 
-                <Protected Cmp={EditFive} />
-              } />
              </Route>
 
 
             <Route exact path="/edit-four" element={ 
               <Protected Cmp={EditFourth} />
              }>
-              <Route exact path=":id" element={ 
-                <Protected Cmp={EditFourth} />
-              } />
              </Route>
 
 
             <Route exact path="/edit-third" element={ 
               <Protected Cmp={EditThird} />
              }>
-             <Route exact path=":id" element={ 
-              <Protected Cmp={EditThird} />
-             } />
              </Route>
 
 
             <Route exact path="/edit-Second" element={ 
               <Protected Cmp={EditSecond} />
              }>
-              <Route exact path=":id" element={ 
-                <Protected Cmp={EditSecond} />
-              } />
              </Route>
 
             <Route exact path="/edit-first" element={ 
               <Protected Cmp={EditFirst} />
              }> 
-              <Route exact path=":id" element={ 
-                <Protected Cmp={EditFirst} />
-              } /> 
              </Route>
 
              <Route exact path="/add-house-host-page-five" element={ 

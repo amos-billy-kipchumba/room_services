@@ -184,7 +184,12 @@ function AdminThird() {
                           </div>
                         </td>
                         <td>
-                          <span onClick={()=> Navigate(`/edit-admin-third/${data.id}`)}><ArrowDownwardOutlined /></span>
+                          <span onClick={()=> {
+                            Navigate(`/edit-admin-third?id=${data.id}`,{state:{
+                              paramaId: data.id,
+                            }
+                            });
+                          }}><ArrowDownwardOutlined /></span>
                         </td>
                         <td>
                           <span onClick={(e) => deleteStudent(e, data.id)}><Delete /></span>

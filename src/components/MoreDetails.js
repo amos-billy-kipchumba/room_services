@@ -4,9 +4,8 @@ import './MoreDetails.css'
 import Button from '@mui/material/Button';
 import { FaSwimmingPool, FaRegStar, FaRegCalendarTimes, FaBed, FaToilet, FaUtensils, FaPencilRuler, FaWineBottle, FaBabyCarriage, FaStar } from 'react-icons/fa';
 import Slider from './Slider';
-import {useLocation} from 'react-router-dom'
 import axios from 'axios'
-import {useNavigate} from 'react-router-dom'
+import {useNavigate, useSearchParams} from 'react-router-dom'
 
 import { FaBath, FaToiletPaper, FaTv, FaTemperatureHigh, FaWifi, FaBreadSlice } from "react-icons/fa";
 import LocalLaundryServiceIcon from '@mui/icons-material/LocalLaundryService';
@@ -52,9 +51,9 @@ function MoreDetails() {
     var [loading, setLoading] = useState(true);
     var [hostDit, setHostDit] = useState([]);
 
-    const room = useLocation();
-
-    const { paramaId } = room.state;
+    const [searchParams] = useSearchParams();
+    
+    const paramaId = searchParams.get('id');
 
     var [nomaCount] = useState([]);
     var [outputNoma] = useState([]);
@@ -418,8 +417,37 @@ function MoreDetails() {
                 hostEmail: hostDit.email,
             };
 
-            Navigate(`/customer-house-room-reservation/${paramaId}`,{state:{
-                allHousesForMore
+            let customerId = userId;
+
+            let customerFirstName = firstName;
+
+            let customerPhone = userPhone;
+
+            let customerEmail = userEmail;
+
+            let hostEmail =  hostDit.email;
+
+            let customerStartDateRAW = selectedDate;
+
+            let customerEndDateRAW = selectedDate2;
+
+            let houseDescription = allHousesForMore.description;
+
+            let houseCover = allHousesForMore.cover;
+
+            let housePrice = allHousesForMore.price;
+
+            let totalPrice = totalPriceTag;
+
+            let numberOfGuests = handleMaxGuestNo;
+
+            let hourDuration = hours;
+
+            let houseLocation = allHousesForMore.location;
+
+            Navigate(`/customer-house-room-reservation?name=${allHousesForMore.title}&id=${paramaId}&c-id=${customerId}&c-first=${customerFirstName}&c-email=${customerEmail}&c-phone=${customerPhone}&h-email=${hostEmail}&start-date=${customerStartDateRAW}&end-date=${customerEndDateRAW}&desc=${houseDescription}&image=${houseCover}&price=${housePrice}&total=${totalPrice}&guests=${numberOfGuests}&hours=${hourDuration}&location=${houseLocation}`,{state:{
+                allHousesForMore,
+                id: paramaId,
             }
             });
             localStorage.setItem("booking-data", JSON.stringify(formData));
@@ -584,7 +612,7 @@ function MoreDetails() {
                 </div>
 
                 <Button className="viewAllImages" onClick={()=> {
-                    Navigate(`/all-house-images/${paramaId}`,{state:{
+                    Navigate(`/all-house-images?name=${allHousesForMore.title}&id=${paramaId}`,{state:{
                         allHousesForMore
                     }
                     });
@@ -754,8 +782,10 @@ function MoreDetails() {
                                     'review'
                                     }</p>
                                 <Button onClick={()=>{
-                                    Navigate(`/host-reviews/${paramaId}`,{state:{
-                                        finalFinaly
+                                    Navigate(`/host-reviews?name=${allHousesForMore.title}&id=${paramaId}`,{state:{
+                                        finalFinaly,
+                                        title: allHousesForMore.title,
+                                        id: paramaId,
                                     }
                                     });
                                 }}>View all reviews</Button>

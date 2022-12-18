@@ -4,13 +4,15 @@ import Add from '@mui/icons-material/Add';
 import {Link} from 'react-router-dom'
 import axios from 'axios'
 import { Button } from '@mui/material';
-import {useNavigate, useParams} from 'react-router-dom'
+import {useNavigate, useSearchParams } from 'react-router-dom'
 import BaseURL from '../../../BaseUrl';
 import { MoreHoriz } from '@mui/icons-material';
 
 function BackSecond() {
-  const params = useParams();
-  const paramaId = params.id;
+  const [searchParams] = useSearchParams();
+    
+  var paramaId = searchParams.get('id');
+
 
   const userData = JSON.parse(localStorage.getItem('user-info'));
   const [userId] = useState(userData.data.id);
@@ -111,7 +113,7 @@ function BackSecond() {
               {showMenuBar ?
               <ul className='host-navigation'>
                 <li><Link to="/main-host-account" className='lilo-link'>DashBoard</Link></li>
-                <li style={{ backgroundColor: '#ff7779' }}><Link to="/host-houses" className='lilo-link'>Your houses</Link></li>
+                <li style={{ backgroundColor: '#F78513' }}><Link to="/host-houses" className='lilo-link'>Your houses</Link></li>
                 <li><Link to="/add-house-host" className='lilo-link'><Add /> house</Link></li>
                 <li>Tenants Details</li>
                 <li onClick={()=> Navigate('/host-profile')}>Host Profile</li>
@@ -146,7 +148,7 @@ function BackSecond() {
                 <div className="back-second__info-right-buttonOne"><Button type="submit">Update (2/4) </Button></div>
 
                 <div className="back-second__info-right-buttonTwo">
-                    <Button style={{ marginRight: '10px', backgroundColor: '#ff7779', color: 'white' }}
+                    <Button style={{ marginRight: '10px', backgroundColor: '#F78513', color: 'white' }}
                     onClick={()=>{
                         Navigate('/add-house-host-page-three');
                     }}>next</Button>

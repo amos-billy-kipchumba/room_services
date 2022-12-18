@@ -656,7 +656,10 @@ class PageThreeAdd extends Component {
                     <Button type="submit" id="submit" style={{ backgroundColor: '#F78513' }}>Submit</Button>
                 </form>
                 <Button onClick={()=>{
-                    this.props.navigation(`/back-second/${this.state.house_id}`);
+                    this.props.navigation(`/back-second?id=${this.state.house_id}`,{state:{
+                        paramaId: this.state.house_id,
+                      }
+                      });
                 }}>Back</Button>
                 <Button id='back_id'
                 onClick={()=>{

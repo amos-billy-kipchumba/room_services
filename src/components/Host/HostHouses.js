@@ -117,7 +117,10 @@ function HostHouses() {
                         <div 
                         className='host-houses-me__info-rightHousesCard'
                         onClick={()=> {
-                          Navigate(`/edit-first/${object.id}`);
+                          Navigate(`/edit-first?name=${object.title}&id=${object.id}`,{state:{
+                            paramaId: object.id,
+                          }
+                          });
                         }}
                         key={index}>
                           <div className='host-houses-me__info-rightHousesCardImage'>

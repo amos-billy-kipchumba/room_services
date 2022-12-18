@@ -4,7 +4,7 @@ import Add from '@mui/icons-material/Add';
 import {Link} from 'react-router-dom'
 import axios from 'axios'
 import { Button } from '@mui/material';
-import {useNavigate, useParams} from 'react-router-dom'
+import {useNavigate, useSearchParams} from 'react-router-dom'
 
 import { FaBath, FaToiletPaper, FaTv, FaTemperatureHigh, FaWifi, FaBreadSlice, FaPencilRuler, FaUtensils, FaToilet, FaWineBottle, FaBabyCarriage } from "react-icons/fa";
 import LocalLaundryServiceIcon from '@mui/icons-material/LocalLaundryService';
@@ -34,8 +34,11 @@ import swal from 'sweetalert';
 import { BeachAccessOutlined, Camera, ChildCare, Grass, HeatPump, Landscape, MoreHoriz, ShoppingBag, Shower, SportsSoccer } from '@mui/icons-material';
 
 function EditThird() {
-  const params = useParams();
-  const paramaId = params.id;
+    const [searchParams] = useSearchParams();
+    
+    var paramaId = searchParams.get('id');
+
+    var title = searchParams.get('name');
 
   const userData = JSON.parse(localStorage.getItem('user-info'));
   const [imageToBe, setImageToBe] = useState(null);
@@ -1029,11 +1032,41 @@ function EditThird() {
                 <div className="edit-third__info-right-buttonOne"><Button type="submit">Update (3/5) </Button></div>
 
                 <div className="edit-third__info-right-buttonTwo">
-                    <Button onClick={()=> Navigate(`/edit-first/${paramaId}`)} style={{ marginRight: '10px' }}>Page 1</Button>
-                    <Button onClick={()=> Navigate(`/edit-second/${paramaId}`)} style={{ marginRight: '10px' }}>Page 2</Button>
-                    <Button onClick={()=> Navigate(`/edit-third/${paramaId}`)} style={{ marginRight: '10px', backgroundColor: '#F78513', color: 'white' }} id="updated">Page 3</Button>
-                    <Button onClick={()=> Navigate(`/edit-four/${paramaId}`)} style={{ marginRight: '10px' }}>Page 4</Button>
-                    <Button onClick={()=> Navigate(`/edit-five/${paramaId}`)}>Page 5</Button>
+                    <Button onClick={()=> {
+                        Navigate(`/edit-first?name=${title}&id=${paramaId}`,{state:{
+                            paramaId: paramaId,
+                            title: title,
+                          }
+                          });
+                    }} style={{ marginRight: '10px' }}>Page 1</Button>
+                    <Button onClick={()=> {
+                        Navigate(`/edit-second?name=${title}&id=${paramaId}`,{state:{
+                            paramaId: paramaId,
+                            title: title,
+                          }
+                          });
+                    }} style={{ marginRight: '10px' }}>Page 2</Button>
+                    <Button onClick={()=> {
+                        Navigate(`/edit-third?name=${title}&id=${paramaId}`,{state:{
+                            paramaId: paramaId,
+                            title: title,
+                          }
+                          });
+                    }} style={{ marginRight: '10px', backgroundColor: '#F78513', color: 'white' }} id="updated">Page 3</Button>
+                    <Button onClick={()=> {
+                        Navigate(`/edit-four?name=${title}&id=${paramaId}`,{state:{
+                            paramaId: paramaId,
+                            title: title,
+                          }
+                          });
+                    }} style={{ marginRight: '10px' }}>Page 4</Button>
+                    <Button onClick={()=> {
+                        Navigate(`/edit-five?name=${title}&id=${paramaId}`,{state:{
+                            paramaId: paramaId,
+                            title: title,
+                          }
+                          });
+                    }}>Page 5</Button>
                 </div>
               </form>
              </div>
