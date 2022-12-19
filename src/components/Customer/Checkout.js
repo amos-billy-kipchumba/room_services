@@ -84,12 +84,23 @@ function Checkout() {
 
         formData.append('pay_id', res.data.bookingInfoForHost[0].id);
   
-        const request = await axios.post(url, formData).then(res=>{
+        const request = await axios.post(url, formData).then(async(res)=>{
           if(res.data.status ===200){
             swal('success','booked successfully','success');
             document.getElementById('submit').innerHTML = "booked";
             localStorage.removeItem('booking-data');
             Navigate('/customer-second-page');
+            const formData3 = new FormData();
+            formData3.append('customer_email', customer_email);
+            formData3.append('customer_first_name', customer_first_name);
+            formData3.append('host_email', host_email);
+
+            const url = `${BaseURL}/api/booking-email`;
+            const request = await axios.post(url, formData3)
+
+            if(request) {
+
+            }
           }
         }); 
 

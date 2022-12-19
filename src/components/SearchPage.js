@@ -12,6 +12,7 @@ import { Close } from '@mui/icons-material';
 
 function SearchPage() {
 
+    // http://localhost:3000/search-page?location=&start-date=Mon%20Dec%2019%202022%2012:19:41%20GMT+0300%20(East%20Africa%20Time)&end-date=Mon%20Dec%2019%202022%2012:19:41%20GMT+0300%20(East%20Africa%20Time)&no-of-guests=1
     const [searchParams] = useSearchParams();
     
     var location = searchParams.get('location');
@@ -20,7 +21,7 @@ function SearchPage() {
 
     var endDate = searchParams.get('end-date');
 
-    var noOfGuests = searchParams.get('end-date');
+    var noOfGuests = searchParams.get('no-of-guests');
 
     let formattedStartDate = new Date(startDate);
 
@@ -70,169 +71,177 @@ function SearchPage() {
 
     const Navigate = useNavigate();
 
+    //Scroll to the top on load
+    useEffect(()=>{
+        window.scrollTo({top: 0, left: 0, behavior: 'smooth'})
+    },[]);
+    //End of Scroll to the top on load
+
   return (
     <div className='search__page'>
         {showFilter !== false ?
-            <div className='HEYo'>
-                <Button onClick={()=>{
-                    Navigate(`/creative-heaven`,{state:{
-                        matchSearch
-                    }
-                    })
-                }}>Creative heavens</Button>
-                <Button onClick={()=>{
-                    Navigate(`/apartments`,{state:{
-                        matchSearch
-                    }
-                    })
-                }}>Apartment</Button>
-                <Button onClick={()=>{
-                    Navigate(`/bungalow`,{state:{
-                        matchSearch
-                    }
-                    })
-                }}>Bungalow</Button>
-                <Button onClick={()=>{
-                    Navigate(`/mansion`,{state:{
-                        matchSearch
-                    }
-                    })
-                }}>Mansion</Button>
-                <Button onClick={()=>{
-                    Navigate(`/villa`,{state:{
-                        matchSearch
-                    }
-                    })
-                }}>Villa</Button>
-                <Button onClick={()=>{
-                    Navigate(`/palace`,{state:{
-                        matchSearch
-                    }
-                    })
-                }}>Palace</Button>
-                <Button onClick={()=>{
-                    Navigate(`/castle`,{state:{
-                        matchSearch
-                    }
-                    })
-                }}>Castle</Button>
-                <Button onClick={()=>{
-                    Navigate(`/split-house`,{state:{
-                        matchSearch
-                    }
-                    })
-                }}>Split house</Button>
-                <Button onClick={()=>{
-                    Navigate(`/tower`,{state:{
-                        matchSearch
-                    }
-                    })
-                }}>tower house</Button>
-                <Button onClick={()=>{
-                    Navigate(`/split-level`,{state:{
-                        matchSearch
-                    }
-                    })
-                }}>Split level</Button>
-                <Button onClick={()=>{
-                    Navigate(`/ranch`,{state:{
-                        matchSearch
-                    }
-                    })
-                }}>Ranch</Button>
-                <Button onClick={()=>{
-                    Navigate(`/i-house`,{state:{
-                        matchSearch
-                    }
-                    })
-                }}>i-house</Button>
-                <Button onClick={()=>{
-                    Navigate(`/long-house`,{state:{
-                        matchSearch
-                    }
-                    })
-                }}>long house</Button>
-                <Button onClick={()=>{
-                    Navigate(`/house-barn`,{state:{
-                        matchSearch
-                    }
-                    })
-                }}>house barn</Button>
-                <Button onClick={()=>{
-                    Navigate(`/town-house`,{state:{
-                        matchSearch
-                    }
-                    })
-                }}>town house</Button>
-                <Button onClick={()=>{
-                    Navigate(`/condominium`,{state:{
-                        matchSearch
-                    }
-                    })
-                }}>Condominium</Button>
-                <Button onClick={()=>{
-                    Navigate(`/duplex`,{state:{
-                        matchSearch
-                    }
-                    })
-                }}>Duplex</Button>
-                <Button onClick={()=>{
-                    Navigate(`/courtyard`,{state:{
-                        matchSearch
-                    }
-                    })
-                }}>courtyard house</Button>
-                <Button onClick={()=>{
-                    Navigate(`/snout-house`,{state:{
-                        matchSearch
-                    }
-                    })
-                }}>Snout house</Button>
-                <Button onClick={()=>{
-                    Navigate(`/octagon`,{state:{
-                        matchSearch
-                    }
-                    })
-                }}>Octagon</Button>
-                <Button onClick={()=>{
-                    Navigate(`/mobile-home`,{state:{
-                        matchSearch
-                    }
-                    })
-                }}>Mobile home</Button>
-                <Button onClick={()=>{
-                    Navigate(`/modular-building`,{state:{
-                        matchSearch
-                    }
-                    })
-                }}>Modular building</Button>
-                <Button onClick={()=>{
-                    Navigate(`/cottage`,{state:{
-                        matchSearch
-                    }
-                    })
-                }}>Cottage</Button>
-                <Button onClick={()=>{
-                    Navigate(`/terraced-house`,{state:{
-                        matchSearch
-                    }
-                    })
-                }}>Terraced house</Button>
-                <Button onClick={()=>{
-                    Navigate(`/single-family-homes`,{state:{
-                        matchSearch
-                    }
-                    })
-                }}>family homes</Button>
-                <Button onClick={()=>{
-                    Navigate(`/gable-front`,{state:{
-                        matchSearch
-                    }
-                    })
-                }}>gable front</Button>
+            <div className='heyo_before'>
                 <Button onClick={()=>{
                     setShowFilter(!showFilter);
                 }}>close <Close /></Button>
+                <div className='HEYo'>
+                    <Button onClick={()=>{
+                        Navigate(`/creative-heaven`,{state:{
+                            matchSearch
+                        }
+                        })
+                    }}>Creative heavens</Button>
+                    <Button onClick={()=>{
+                        Navigate(`/apartments`,{state:{
+                            matchSearch
+                        }
+                        })
+                    }}>Apartment</Button>
+                    <Button onClick={()=>{
+                        Navigate(`/bungalow`,{state:{
+                            matchSearch
+                        }
+                        })
+                    }}>Bungalow</Button>
+                    <Button onClick={()=>{
+                        Navigate(`/mansion`,{state:{
+                            matchSearch
+                        }
+                        })
+                    }}>Mansion</Button>
+                    <Button onClick={()=>{
+                        Navigate(`/villa`,{state:{
+                            matchSearch
+                        }
+                        })
+                    }}>Villa</Button>
+                    <Button onClick={()=>{
+                        Navigate(`/palace`,{state:{
+                            matchSearch
+                        }
+                        })
+                    }}>Palace</Button>
+                    <Button onClick={()=>{
+                        Navigate(`/castle`,{state:{
+                            matchSearch
+                        }
+                        })
+                    }}>Castle</Button>
+                    <Button onClick={()=>{
+                        Navigate(`/split-house`,{state:{
+                            matchSearch
+                        }
+                        })
+                    }}>Split house</Button>
+                    <Button onClick={()=>{
+                        Navigate(`/tower`,{state:{
+                            matchSearch
+                        }
+                        })
+                    }}>tower house</Button>
+                    <Button onClick={()=>{
+                        Navigate(`/split-level`,{state:{
+                            matchSearch
+                        }
+                        })
+                    }}>Split level</Button>
+                    <Button onClick={()=>{
+                        Navigate(`/ranch`,{state:{
+                            matchSearch
+                        }
+                        })
+                    }}>Ranch</Button>
+                    <Button onClick={()=>{
+                        Navigate(`/i-house`,{state:{
+                            matchSearch
+                        }
+                        })
+                    }}>i-house</Button>
+                    <Button onClick={()=>{
+                        Navigate(`/long-house`,{state:{
+                            matchSearch
+                        }
+                        })
+                    }}>long house</Button>
+                    <Button onClick={()=>{
+                        Navigate(`/house-barn`,{state:{
+                            matchSearch
+                        }
+                        })
+                    }}>house barn</Button>
+                    <Button onClick={()=>{
+                        Navigate(`/town-house`,{state:{
+                            matchSearch
+                        }
+                        })
+                    }}>town house</Button>
+                    <Button onClick={()=>{
+                        Navigate(`/condominium`,{state:{
+                            matchSearch
+                        }
+                        })
+                    }}>Condominium</Button>
+                    <Button onClick={()=>{
+                        Navigate(`/duplex`,{state:{
+                            matchSearch
+                        }
+                        })
+                    }}>Duplex</Button>
+                    <Button onClick={()=>{
+                        Navigate(`/courtyard`,{state:{
+                            matchSearch
+                        }
+                        })
+                    }}>courtyard house</Button>
+                    <Button onClick={()=>{
+                        Navigate(`/snout-house`,{state:{
+                            matchSearch
+                        }
+                        })
+                    }}>Snout house</Button>
+                    <Button onClick={()=>{
+                        Navigate(`/octagon`,{state:{
+                            matchSearch
+                        }
+                        })
+                    }}>Octagon</Button>
+                    <Button onClick={()=>{
+                        Navigate(`/mobile-home`,{state:{
+                            matchSearch
+                        }
+                        })
+                    }}>Mobile home</Button>
+                    <Button onClick={()=>{
+                        Navigate(`/modular-building`,{state:{
+                            matchSearch
+                        }
+                        })
+                    }}>Modular building</Button>
+                    <Button onClick={()=>{
+                        Navigate(`/cottage`,{state:{
+                            matchSearch
+                        }
+                        })
+                    }}>Cottage</Button>
+                    <Button onClick={()=>{
+                        Navigate(`/terraced-house`,{state:{
+                            matchSearch
+                        }
+                        })
+                    }}>Terraced house</Button>
+                    <Button onClick={()=>{
+                        Navigate(`/single-family-homes`,{state:{
+                            matchSearch
+                        }
+                        })
+                    }}>family homes</Button>
+                    <Button onClick={()=>{
+                        Navigate(`/gable-front`,{state:{
+                            matchSearch
+                        }
+                        })
+                    }}>gable front</Button>
+                </div>
             </div>
             :
             null
