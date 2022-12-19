@@ -78,6 +78,7 @@ import HostReviews from './components/HostReviews';
 import TenantsReview from './components/Host/TenantReview';
 import AllhouseImageTwo from './components/AllHouseImagesTwo';
 import AllPayments from './components/Admin/AllPayments';
+import PasswordResets from './components/PasswordResets';
 
 // import Home from './components/Home';
 const LazyHome = React.lazy(() => import('./components/Home'))
@@ -97,6 +98,7 @@ function App() {
             <Route exact path="/host-reviews" element={ <HostReviews /> }>
             </Route>
 
+            <Route exact path="/password-reset" element={ <PasswordResets /> } />
             <Route exact path="/gable-front" element={ <GableFront /> } />
             <Route exact path="/single-family-homes" element={ <FamilyHomes /> } />
             <Route exact path="/terraced-house" element={ <TerracedHouse /> } />

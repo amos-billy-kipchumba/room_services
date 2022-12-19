@@ -213,8 +213,8 @@
         margin: 20px auto;
         background-color: antiquewhite;
         padding: 20px;
-        width: 50%;
-        min-height: 10vh;
+        width: 70%;
+        min-height: 5vh;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -320,6 +320,13 @@
         min-height: 100%;
         background-color: white;
         border: 1px solid antiquewhite;
+    }
+
+    .customer_first__info-rightBookedHouses {
+      
+        width: 70%;
+        min-height: 5vh;
+        
     }
 }
 /* end */

@@ -2,7 +2,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    min-height: 100vh;
     position: relative;
 }
 
@@ -36,20 +36,53 @@
     border: 1px solid #F78513;
 }
 
-.HEYocondominium {
+.heyo_before {
+    position: absolute;
     width: 60%;
     min-height: 50vh;
     max-height: 60vh;
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+    margin: 20px auto;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.heyo_before > button {
+    text-transform: inherit;
+    margin: 5px;
+    background-color: #F78513;
+    color: white;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 10px;
+}
+
+.heyo_before > button:hover {
+    background-color: white;
+    color: #F78513;
+    border: 1px solid #F78513;
+}
+
+.heyo_before::-webkit-scrollbar {
+    display: none;
+}
+
+.HEYocondominium {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    align-items: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
     background-color: white;
-    margin: 20px auto 0 auto;
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
+    margin: auto;
     z-index: 2;
     box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
     overflow-y: auto;
@@ -99,6 +132,10 @@
         border-radius: 30px;
         text-transform: inherit;
         margin: 5px;
+    }
+
+    .heyo_before {
+        width: 95%;
     }
 }
 /* end */
