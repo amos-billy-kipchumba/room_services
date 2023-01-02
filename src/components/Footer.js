@@ -8,7 +8,7 @@ function Footer() {
           <p><a href='https://www.facebook.com/DinenStay?mibextid=ZbWKwL' target='_blank' rel='noreferrer'><Facebook /> </a></p>
           <p><a href='https://instagram.com/dinenstay?igshid=YmMyMTA2M2Y' target='_blank' rel='noreferrer'><Instagram /> </a></p>
           <p><a href='https://www.linkedin.com/company/dinenstay/' target='_blank' rel='noreferrer'><LinkedIn /> </a></p>
-          <p><a href='https://twitter.com/Dinenstay12?t=_lym5cOo2MYUCR9YC0BsDw&s=09' target='_blank' rel='noreferrer'><Twitter /> </a></p>
+          <p><a href='https://twitter.com/DinenStay?t=0BgPphiRhNeGJO9D_zFa_g&s=09' target='_blank' rel='noreferrer'><Twitter /> </a></p>
           <p><a href='https://youtube.com/@dinenstay1' target='_blank' rel='noreferrer'><YouTube /> </a></p>
         </div>
         <p>Copyright ©  {new Date().getFullYear()} <span>Dine N'Stay</span> All Rights Reserved</p>
